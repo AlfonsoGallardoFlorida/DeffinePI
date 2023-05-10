@@ -1,0 +1,11 @@
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.csproj.AssemblyReference.cache
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.Properties.Resources.resources
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.csproj.GenerateResource.cache
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.csproj.CoreCompileInputs.cache
+C:\Users\algagu01\Desktop\PIDeffine\bin\Debug\PIDeffine.exe.config
+C:\Users\algagu01\Desktop\PIDeffine\bin\Debug\PIDeffine.exe
+C:\Users\algagu01\Desktop\PIDeffine\bin\Debug\PIDeffine.pdb
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.exe
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.pdb
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.FrmRegistro.resources
+C:\Users\algagu01\Desktop\PIDeffine\obj\Debug\PIDeffine.FrmInicio.resources
