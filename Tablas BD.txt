@@ -1,4 +1,5 @@
-Produtos:
+Tabla "Productos":
+
 IdProducto
 Descripcion
 Stock
@@ -8,7 +9,9 @@ Color
 Género
 Imagen
 
-Clientes:
+
+Tabla "Clientes":
+
 IdCliente
 Nombre
 Apellido
@@ -16,12 +19,19 @@ Contraseña
 Correo
 Administrador
 
-Pedido:
+
+Tabla "Pedidos":
+
+IdPedido
+IdCliente
+Fecha
+ImporteTotal
+
+
+Tabla "Detalle_Pedido":
+
+IdDetalle
 IdPedido
 IdProducto
-CantidadTotal
-ImporteTotal
-IdCliente
-Nombre
-Apellido
-Dirección
+Cantidad
+Subtotal
