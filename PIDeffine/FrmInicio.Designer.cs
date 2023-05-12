@@ -45,7 +45,6 @@ namespace PIDeffine
             this.panelLogIn = new System.Windows.Forms.Panel();
             this.pcbOjoAbierto = new System.Windows.Forms.PictureBox();
             this.pcbOjoCerrado = new System.Windows.Forms.PictureBox();
-            this.lblLogIn = new System.Windows.Forms.Label();
             this.paneldecontrol = new System.Windows.Forms.Panel();
             this.pcbCerrar = new System.Windows.Forms.PictureBox();
             this.pcbMaximizar = new System.Windows.Forms.PictureBox();
@@ -243,7 +242,6 @@ namespace PIDeffine
             this.panelLogIn.Controls.Add(this.pcbOjoCerrado);
             this.panelLogIn.Controls.Add(this.lblContra);
             this.panelLogIn.Controls.Add(this.txtContra);
-            this.panelLogIn.Controls.Add(this.lblLogIn);
             this.panelLogIn.Controls.Add(this.lbliniciosesion);
             this.panelLogIn.Location = new System.Drawing.Point(685, 255);
             this.panelLogIn.Name = "panelLogIn";
@@ -273,21 +271,6 @@ namespace PIDeffine
             this.pcbOjoCerrado.TabIndex = 11;
             this.pcbOjoCerrado.TabStop = false;
             this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
-            // 
-            // lblLogIn
-            // 
-            this.lblLogIn.AutoSize = true;
-            this.lblLogIn.BackColor = System.Drawing.Color.Gray;
-            this.lblLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogIn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
-            this.lblLogIn.ForeColor = System.Drawing.Color.White;
-            this.lblLogIn.Location = new System.Drawing.Point(76, 148);
-            this.lblLogIn.Name = "lblLogIn";
-            this.lblLogIn.Size = new System.Drawing.Size(65, 23);
-            this.lblLogIn.TabIndex = 9;
-            this.lblLogIn.Text = "Log In";
-            this.lblLogIn.Visible = false;
-            this.lblLogIn.MouseHover += new System.EventHandler(this.lblLogIn_MouseHover);
             // 
             // paneldecontrol
             // 
@@ -471,7 +454,6 @@ namespace PIDeffine
         private System.Windows.Forms.Panel panelAyuda;
         private System.Windows.Forms.PictureBox pcbingle;
         private System.Windows.Forms.Panel panelLogIn;
-        private System.Windows.Forms.Label lblLogIn;
         private System.Windows.Forms.PictureBox pcbOjoAbierto;
         private System.Windows.Forms.PictureBox pcbOjoCerrado;
         private System.Windows.Forms.Panel paneldecontrol;

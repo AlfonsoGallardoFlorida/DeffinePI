@@ -72,6 +72,16 @@
     <Compile Include="PanelDeControl.Designer.cs">
       <DependentUpon>PanelDeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecursosLocalizables\StringRecursos.EN-GB.Designer.cs">
+      <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosLocalizables\StringRecursos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringRecursos.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmTienda.resx">
       <DependentUpon>FrmTienda.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +103,14 @@
     </Compile>
     <EmbeddedResource Include="PanelDeControl.resx">
       <DependentUpon>PanelDeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosLocalizables\StringRecursos.EN-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.EN-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosLocalizables\StringRecursos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
