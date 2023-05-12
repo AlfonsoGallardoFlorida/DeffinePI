@@ -14,7 +14,7 @@ Tabla "Clientes":
 
 IdCliente
 Nombre
-Apellido
+Apellidos
 Contraseña
 Correo
 Administrador
