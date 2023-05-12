@@ -15,11 +15,16 @@ namespace PIDeffine
         public FrmInicio()
         {
             InitializeComponent();
+            this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
+            this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
+            this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
+        private bool maximizar = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void lbliniciosesion_MouseHover(object sender, EventArgs e)
@@ -102,7 +107,8 @@ namespace PIDeffine
         private void IdiomaIngles()
         {
             lblContra.Text = "Password";
-            lbliniciosesion.Text = "Login";
+            lblLogIn.Show();
+            lbliniciosesion.Hide();
             lblContraOlvidada.Text = "Have you forgot the password? ";
             lblCuenta.Text = "Don't have an account?";
             lblAyuda.Text = "DO YOU NEED HELP?";
@@ -113,7 +119,8 @@ namespace PIDeffine
         private void IdiomaSpanish()
         {
             lblContra.Text = "Contraseña";
-            lbliniciosesion.Text = "Iniciar Sesión";
+            lblLogIn.Hide();
+            lbliniciosesion.Show();
             lblContraOlvidada.Text = "¿Has olvidado tu contraseña? ";
             lblCuenta.Text = "¿No tienes cuenta?";
             lblAyuda.Text = "¿NECESITAS AYUDA?";
@@ -125,7 +132,7 @@ namespace PIDeffine
 
         private void lblRegistrarse_Click(object sender, EventArgs e)
         {
-            FrmRegistro form  = new FrmRegistro();
+            FrmRegistro form = new FrmRegistro();
             form.Show();
             this.Hide();
         }
@@ -143,5 +150,82 @@ namespace PIDeffine
             pcbingle.Hide();
             pcbspain.Show();
         }
+
+        private void pcbOjoCerrado_Click(object sender, EventArgs e)
+        {
+            pcbOjoCerrado.Hide();
+            pcbOjoAbierto.Show();
+            txtContra.PasswordChar = '●';
+
+        }
+
+        private void pcbOjoAbierto_Click(object sender, EventArgs e)
+        {
+            pcbOjoAbierto.Hide();
+            pcbOjoCerrado.Show();
+            txtContra.PasswordChar = '\0';
+        }
+
+        private void paneldecontrol_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseX = e.X;
+            mouseY = e.Y;
+            mouseDown = true;
+        }
+        private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                int newX = this.Left + (e.X - mouseX);
+                int newY = this.Top + (e.Y - mouseY);
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void pcbCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult salir = MessageBox.Show("¿Estas seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (salir == DialogResult.Yes)
+            {
+                for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+                {
+                    Form formulario = Application.OpenForms[i];
+
+                    formulario.Close();
+                    formulario.Dispose();
+                }
+            }
+        }
+
+        private void pcbMaximizar_Click(object sender, EventArgs e)
+        {
+            if (maximizar)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                maximizar = false;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                maximizar = true;
+            }
+        }
+
+        private void lblLogIn_MouseHover(object sender, EventArgs e)
+        {
+            lblLogIn.ForeColor = Color.Aqua;
+
+        }
+
+        private void pcbMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTienda.Designer.cs">
+      <DependentUpon>FrmTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PanelDeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelDeControl.Designer.cs">
+      <DependentUpon>PanelDeControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmTienda.resx">
+      <DependentUpon>FrmTienda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +91,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PanelDeControl.resx">
+      <DependentUpon>PanelDeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +151,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registrarse1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrarse2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegistrarHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RegistrarBtt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross_icon_180682.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizethewindow_theapplication_maximizar_2873.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_thewindow_theapplication_2872.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtkgobackltr_104397.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closewindowapplication_cerca_ventan_2874.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rightarrow_application_derecha_flech_4432.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image-removebg-preview %2813%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_3622.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout_3622-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deffinneHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondorectangulo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programador-indio-infeliz-54668845.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ellipse 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
