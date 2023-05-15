@@ -59,16 +59,12 @@ namespace PIDeffine
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult salir = MessageBox.Show("¿Estas seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (salir == DialogResult.Yes)
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-                {
-                    Form formulario = Application.OpenForms[i];
+                Form formulario = Application.OpenForms[i];
 
-                    formulario.Close();
-                    formulario.Dispose();
-                }
+                formulario.Close();
+                formulario.Dispose();
             }
         }
 
@@ -77,11 +73,11 @@ namespace PIDeffine
             // FUNCION QUE CIERRE SESION DE USUARIO
 
             DialogResult logOut = MessageBox.Show("¿Deseas cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(logOut == DialogResult.Yes)
+            if (logOut == DialogResult.Yes)
             {
-            FrmInicio frm = new FrmInicio();
-            frm.Show();
-            this.Hide();
+                FrmInicio frm = new FrmInicio();
+                frm.Show();
+                this.Hide();
             }
         }
 
@@ -131,13 +127,156 @@ namespace PIDeffine
             }
             else
             {
-
                 DialogResult ayuda = MessageBox.Show("¿Desea enviar un correo eléctronico de ayuda?", "Ayuda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (ayuda == DialogResult.Yes)
                 {
                     MessageBox.Show("Envíe un correo electronico a: 'deffineyourstyle@info.com'.", "Correo de Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+        private void FiltrarPrecio(double minPrecio, double maxPrecio)
+        {
+            if (minPrecio < maxPrecio)
+            {
+                // INSERCION SELECT PRODUCTOS WHERE PRECIO = minPrecio && PRECIO = MAXPRECIO no se hacer sql perdon(?)
+            }
+        }
+
+        private void bttFiltrar_Click(object sender, EventArgs e)
+        {
+            // LLAMADA A LA FUNCION FILTRAR PRECIO Y QUE MUESTRE EN EL FORMULARIO PRODUCTOS QUE ESTEN ENTRE LOS PRECIOS INTRODUCIDOS
+        }
+
+        private void cmbTalla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // DEPENDIENDO SI LA TALLA ES XS S M L XL O XXL MOSTRARA EN EL FORM LOS PRODUCTOS CON LA TALLA SELECCIONADA
+        }
+
+        private void pcbPerfil_Click(object sender, EventArgs e)
+        {
+            // ABRE EL FORMULARIO CON LA INFORMACIÓN DEL USUARIO
+        }
+
+        private void bttFiltrar_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void bttFiltrar_MouseUp(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void pcbspain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pcbingle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            pcbCamiBlanca.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            pcbCamiMujer.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox5_MouseEnter(object sender, EventArgs e)
+        {
+            pcbNinyo.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            pcbPantacas.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox7_MouseEnter(object sender, EventArgs e)
+        {
+            pcbZapas.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox8_MouseEnter(object sender, EventArgs e)
+        {
+            pcbDisenyo.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox9_MouseEnter(object sender, EventArgs e)
+        {
+            pcbCamiSonrisa.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox10_MouseEnter(object sender, EventArgs e)
+        {
+            pcbCamiVerde.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox11_MouseEnter(object sender, EventArgs e)
+        {
+            pcbCamiAbuela.BackColor = Color.FromArgb(168, 168, 168);
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            pcbCamiBlanca.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            pcbCamiMujer.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            pcbNinyo.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            pcbPantacas.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        {
+            pcbZapas.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            pcbDisenyo.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox11_MouseLeave(object sender, EventArgs e)
+        {
+            pcbCamiAbuela.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            pcbCamiVerde.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pictureBox9_MouseLeave(object sender, EventArgs e)
+        {
+            pcbCamiSonrisa.BackColor = Color.FromArgb(41, 41, 41);
+        }
+
+        private void pcbCamiBlanca_Click(object sender, EventArgs e)
+        {
+            FrmPedido frm = new FrmPedido();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void pcbDisenyo_Click(object sender, EventArgs e)
+        {
+            FrmDisenyo frm = new FrmDisenyo();
+            frm.Show();
+            this.Hide();
         }
 
         private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)

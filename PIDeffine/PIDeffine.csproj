@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,17 +61,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmTienda.cs">
+    <Compile Include="FrmDisenyo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTienda.Designer.cs">
-      <DependentUpon>FrmTienda.cs</DependentUpon>
+    <Compile Include="FrmDisenyo.Designer.cs">
+      <DependentUpon>FrmDisenyo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTienda.Designer.cs">
+      <DependentUpon>FrmTienda.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
@@ -66,38 +87,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PanelDeControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FrmPedido.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PanelDeControl.Designer.cs">
-      <DependentUpon>PanelDeControl.cs</DependentUpon>
+    <Compile Include="FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmTienda.resx">
-      <DependentUpon>FrmTienda.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDisenyo.resx">
+      <DependentUpon>FrmDisenyo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTienda.resx">
+      <DependentUpon>FrmTienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="PanelDeControl.resx">
-      <DependentUpon>PanelDeControl.cs</DependentUpon>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -108,109 +132,77 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\black.jpg" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\PIFONDOGRIS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\spain.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %2811%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %2812%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iniciodesesion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iniciodesesion1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deffine.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\engli.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %2812%291.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\engli-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\engli1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deffinetitulo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\registrarse.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\registrarse1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ojo2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ojo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\registrarse2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RegistrarHover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RegistrarBtt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cross_icon_180682.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\maximizethewindow_theapplication_maximizar_2873.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\minimize_thewindow_theapplication_2872.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\gtkgobackltr_104397.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\closewindowapplication_cerca_ventan_2874.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rightarrow_application_derecha_flech_4432.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image-removebg-preview %2813%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout_3622.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout_3622-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Group 11.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Resources\abiertoojo.png" />
+    <Content Include="Resources\btttvolver.png" />
+    <Content Include="Resources\camiblanca.png" />
+    <Content Include="Resources\camisetaazul.jpg" />
+    <Content Include="Resources\camisetablancadisenyo.png" />
+    <Content Include="Resources\camisetaHombreRubio.png" />
+    <Content Include="Resources\camisetakeepcalm.png" />
+    <Content Include="Resources\camisetalargadisenyo.png" />
+    <Content Include="Resources\camisetamujer.png" />
+    <Content Include="Resources\camisetanegra.jpg" />
+    <Content Include="Resources\camisetaninyo.png" />
+    <Content Include="Resources\camisetarubius.png" />
+    <Content Include="Resources\camisetasudaderadisenyo.png" />
+    <Content Include="Resources\camisetatirantesdisenyo.png" />
+    <Content Include="Resources\camisetaverde.png" />
+    <Content Include="Resources\cerradoojo.png" />
+    <Content Include="Resources\cerrar.png" />
+    <Content Include="Resources\deffineinicio.png" />
+    <Content Include="Resources\deffinneeHeader.png" />
+    <Content Include="Resources\deffinnetitulo.png" />
+    <None Include="Resources\Rectangle 10.png" />
+    <None Include="Resources\Line 1.png" />
+    <None Include="Resources\image-removebg-preview %2813%291.png" />
     <None Include="Resources\Group11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deffinneHeader.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondorectangulo3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\programador-indio-infeliz-54668845.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\engli-removebg-preview.png" />
+    <None Include="Resources\engli-removebg-preview - copia.png" />
+    <None Include="Resources\engli1.jpg" />
+    <None Include="Resources\engli.jpg" />
+    <None Include="Resources\image-removebg-preview %2813%29.png" />
+    <None Include="Resources\gato.png" />
     <None Include="Resources\Ellipse 2.png" />
+    <None Include="Resources\disenyowili.png" />
+    <None Include="Resources\disenyocorazon.png" />
+    <None Include="Resources\disenyocalavera.png" />
+    <Content Include="Resources\elipseazul.png" />
+    <Content Include="Resources\elipseazulS.png" />
+    <Content Include="Resources\elipseblanca.png" />
+    <Content Include="Resources\elipseblancaS.png" />
+    <Content Include="Resources\elipsenegra.png" />
+    <Content Include="Resources\elipsenegraS.png" />
+    <Content Include="Resources\elipseverde.png" />
+    <Content Include="Resources\elipseverdeS.png" />
+    <Content Include="Resources\esppp.png" />
+    <Content Include="Resources\FONDOGRISS.png" />
+    <None Include="Resources\image-removebg-preview %2812%29.png" />
+    <None Include="Resources\hombre 1.png" />
+    <Content Include="Resources\image-removebg-preview %2811%291.png" />
+    <Content Include="Resources\Linea 1.png" />
+    <Content Include="Resources\Linea 2.png" />
+    <Content Include="Resources\Linea 3.png" />
+    <Content Include="Resources\loginnn.png" />
+    <Content Include="Resources\loguott.png" />
+    <Content Include="Resources\minimizzar.png" />
+    <Content Include="Resources\Rectangule 5.png" />
+    <Content Include="Resources\RegistrarBtont.png" />
+    <Content Include="Resources\RegistrarHHover.png" />
+    <Content Include="Resources\vaqueross.png" />
+    <Content Include="Resources\zapaatillass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

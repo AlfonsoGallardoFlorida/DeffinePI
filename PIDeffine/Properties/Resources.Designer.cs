@@ -63,9 +63,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap black {
+        internal static System.Drawing.Bitmap abiertoojo {
             get {
-                object obj = ResourceManager.GetObject("black", resourceCulture);
+                object obj = ResourceManager.GetObject("abiertoojo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap closewindowapplication_cerca_ventan_2874 {
+        internal static System.Drawing.Bitmap btttvolver {
             get {
-                object obj = ResourceManager.GetObject("closewindowapplication_cerca_ventan_2874", resourceCulture);
+                object obj = ResourceManager.GetObject("btttvolver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cross_icon_180682 {
+        internal static System.Drawing.Bitmap camiblanca {
             get {
-                object obj = ResourceManager.GetObject("cross_icon_180682", resourceCulture);
+                object obj = ResourceManager.GetObject("camiblanca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap deffine {
+        internal static System.Drawing.Bitmap camisetaazul {
             get {
-                object obj = ResourceManager.GetObject("deffine", resourceCulture);
+                object obj = ResourceManager.GetObject("camisetaazul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap deffinetitulo {
+        internal static System.Drawing.Bitmap camisetablancadisenyo {
             get {
-                object obj = ResourceManager.GetObject("deffinetitulo", resourceCulture);
+                object obj = ResourceManager.GetObject("camisetablancadisenyo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,259 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap deffinneHeader {
+        internal static System.Drawing.Bitmap camisetaHombreRubio {
             get {
-                object obj = ResourceManager.GetObject("deffinneHeader", resourceCulture);
+                object obj = ResourceManager.GetObject("camisetaHombreRubio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetakeepcalm {
+            get {
+                object obj = ResourceManager.GetObject("camisetakeepcalm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetalargadisenyo {
+            get {
+                object obj = ResourceManager.GetObject("camisetalargadisenyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetamujer {
+            get {
+                object obj = ResourceManager.GetObject("camisetamujer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetanegra {
+            get {
+                object obj = ResourceManager.GetObject("camisetanegra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetaninyo {
+            get {
+                object obj = ResourceManager.GetObject("camisetaninyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetarubius {
+            get {
+                object obj = ResourceManager.GetObject("camisetarubius", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetasudaderadisenyo {
+            get {
+                object obj = ResourceManager.GetObject("camisetasudaderadisenyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetatirantesdisenyo {
+            get {
+                object obj = ResourceManager.GetObject("camisetatirantesdisenyo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camisetaverde {
+            get {
+                object obj = ResourceManager.GetObject("camisetaverde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerradoojo {
+            get {
+                object obj = ResourceManager.GetObject("cerradoojo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerrar {
+            get {
+                object obj = ResourceManager.GetObject("cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deffineinicio {
+            get {
+                object obj = ResourceManager.GetObject("deffineinicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deffinneeHeader {
+            get {
+                object obj = ResourceManager.GetObject("deffinneeHeader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deffinnetitulo {
+            get {
+                object obj = ResourceManager.GetObject("deffinnetitulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disenyocalavera {
+            get {
+                object obj = ResourceManager.GetObject("disenyocalavera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disenyocorazon {
+            get {
+                object obj = ResourceManager.GetObject("disenyocorazon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disenyowili {
+            get {
+                object obj = ResourceManager.GetObject("disenyowili", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseazul {
+            get {
+                object obj = ResourceManager.GetObject("elipseazul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseazulS {
+            get {
+                object obj = ResourceManager.GetObject("elipseazulS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseblanca {
+            get {
+                object obj = ResourceManager.GetObject("elipseblanca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseblancaS {
+            get {
+                object obj = ResourceManager.GetObject("elipseblancaS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipsenegra {
+            get {
+                object obj = ResourceManager.GetObject("elipsenegra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipsenegraS {
+            get {
+                object obj = ResourceManager.GetObject("elipsenegraS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseverde {
+            get {
+                object obj = ResourceManager.GetObject("elipseverde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elipseverdeS {
+            get {
+                object obj = ResourceManager.GetObject("elipseverdeS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +403,16 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap engli_removebg_preview___copia {
+            get {
+                object obj = ResourceManager.GetObject("engli-removebg-preview - copia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap engli1 {
             get {
                 object obj = ResourceManager.GetObject("engli1", resourceCulture);
@@ -163,9 +423,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fondorectangulo3 {
+        internal static System.Drawing.Bitmap esppp {
             get {
-                object obj = ResourceManager.GetObject("fondorectangulo3", resourceCulture);
+                object obj = ResourceManager.GetObject("esppp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +433,19 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_11 {
+        internal static System.Drawing.Bitmap FONDOGRISS {
             get {
-                object obj = ResourceManager.GetObject("Group 11", resourceCulture);
+                object obj = ResourceManager.GetObject("FONDOGRISS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gato {
+            get {
+                object obj = ResourceManager.GetObject("gato", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +463,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap gtkgobackltr_104397 {
+        internal static System.Drawing.Bitmap hombre_1 {
             get {
-                object obj = ResourceManager.GetObject("gtkgobackltr_104397", resourceCulture);
+                object obj = ResourceManager.GetObject("hombre 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +473,19 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_removebg_preview__11_ {
+        internal static System.Drawing.Bitmap image_removebg_preview__11_1 {
             get {
-                object obj = ResourceManager.GetObject("image-removebg-preview (11)", resourceCulture);
+                object obj = ResourceManager.GetObject("image-removebg-preview (11)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_removebg_preview__11_11 {
+            get {
+                object obj = ResourceManager.GetObject("image-removebg-preview (11)11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,16 +503,6 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_removebg_preview__12_1 {
-            get {
-                object obj = ResourceManager.GetObject("image-removebg-preview (12)1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap image_removebg_preview__13_ {
             get {
                 object obj = ResourceManager.GetObject("image-removebg-preview (13)", resourceCulture);
@@ -243,9 +513,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iniciodesesion {
+        internal static System.Drawing.Bitmap image_removebg_preview__13_1 {
             get {
-                object obj = ResourceManager.GetObject("iniciodesesion", resourceCulture);
+                object obj = ResourceManager.GetObject("image-removebg-preview (13)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +523,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iniciodesesion1 {
+        internal static System.Drawing.Bitmap Line_1 {
             get {
-                object obj = ResourceManager.GetObject("iniciodesesion1", resourceCulture);
+                object obj = ResourceManager.GetObject("Line 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +533,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout_3622 {
+        internal static System.Drawing.Bitmap Linea_1 {
             get {
-                object obj = ResourceManager.GetObject("logout_3622", resourceCulture);
+                object obj = ResourceManager.GetObject("Linea 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +543,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout_3622_removebg_preview {
+        internal static System.Drawing.Bitmap Linea_2 {
             get {
-                object obj = ResourceManager.GetObject("logout_3622-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("Linea 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +553,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maximizethewindow_theapplication_maximizar_2873 {
+        internal static System.Drawing.Bitmap Linea_3 {
             get {
-                object obj = ResourceManager.GetObject("maximizethewindow_theapplication_maximizar_2873", resourceCulture);
+                object obj = ResourceManager.GetObject("Linea 3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +563,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimize_thewindow_theapplication_2872 {
+        internal static System.Drawing.Bitmap loginnn {
             get {
-                object obj = ResourceManager.GetObject("minimize_thewindow_theapplication_2872", resourceCulture);
+                object obj = ResourceManager.GetObject("loginnn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +573,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ojo {
+        internal static System.Drawing.Bitmap loguott {
             get {
-                object obj = ResourceManager.GetObject("ojo", resourceCulture);
+                object obj = ResourceManager.GetObject("loguott", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +583,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ojo2 {
+        internal static System.Drawing.Bitmap minimizzar {
             get {
-                object obj = ResourceManager.GetObject("ojo2", resourceCulture);
+                object obj = ResourceManager.GetObject("minimizzar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +593,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PIFONDOGRIS {
+        internal static System.Drawing.Bitmap Rectangle_10 {
             get {
-                object obj = ResourceManager.GetObject("PIFONDOGRIS", resourceCulture);
+                object obj = ResourceManager.GetObject("Rectangle 10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +603,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap programador_indio_infeliz_54668845 {
+        internal static System.Drawing.Bitmap Rectangule_5 {
             get {
-                object obj = ResourceManager.GetObject("programador-indio-infeliz-54668845", resourceCulture);
+                object obj = ResourceManager.GetObject("Rectangule 5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +613,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap RegistrarBtt {
+        internal static System.Drawing.Bitmap RegistrarBtont {
             get {
-                object obj = ResourceManager.GetObject("RegistrarBtt", resourceCulture);
+                object obj = ResourceManager.GetObject("RegistrarBtont", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +623,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap RegistrarHover {
+        internal static System.Drawing.Bitmap RegistrarHHover {
             get {
-                object obj = ResourceManager.GetObject("RegistrarHover", resourceCulture);
+                object obj = ResourceManager.GetObject("RegistrarHHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +633,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap registrarse {
+        internal static System.Drawing.Bitmap vaqueross {
             get {
-                object obj = ResourceManager.GetObject("registrarse", resourceCulture);
+                object obj = ResourceManager.GetObject("vaqueross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,39 +643,9 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap registrarse1 {
+        internal static System.Drawing.Bitmap zapaatillass {
             get {
-                object obj = ResourceManager.GetObject("registrarse1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap registrarse2 {
-            get {
-                object obj = ResourceManager.GetObject("registrarse2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap rightarrow_application_derecha_flech_4432 {
-            get {
-                object obj = ResourceManager.GetObject("rightarrow_application_derecha_flech_4432", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap spain {
-            get {
-                object obj = ResourceManager.GetObject("spain", resourceCulture);
+                object obj = ResourceManager.GetObject("zapaatillass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

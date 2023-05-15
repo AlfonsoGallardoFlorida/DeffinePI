@@ -21,7 +21,6 @@ namespace PIDeffine
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
-        private bool maximizar = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -107,7 +106,6 @@ namespace PIDeffine
         private void IdiomaIngles()
         {
             lblContra.Text = "Password";
-            lblLogIn.Show();
             lbliniciosesion.Hide();
             lblContraOlvidada.Text = "Have you forgot the password? ";
             lblCuenta.Text = "Don't have an account?";
@@ -119,7 +117,6 @@ namespace PIDeffine
         private void IdiomaSpanish()
         {
             lblContra.Text = "Contraseña";
-            lblLogIn.Hide();
             lbliniciosesion.Show();
             lblContraOlvidada.Text = "¿Has olvidado tu contraseña? ";
             lblCuenta.Text = "¿No tienes cuenta?";
@@ -189,43 +186,18 @@ namespace PIDeffine
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult salir = MessageBox.Show("¿Estas seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (salir == DialogResult.Yes)
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-                {
-                    Form formulario = Application.OpenForms[i];
+                Form formulario = Application.OpenForms[i];
 
-                    formulario.Close();
-                    formulario.Dispose();
-                }
+                formulario.Close();
+                formulario.Dispose();
             }
-        }
-
-        private void pcbMaximizar_Click(object sender, EventArgs e)
-        {
-            if (maximizar)
-            {
-                this.WindowState = FormWindowState.Maximized;
-                maximizar = false;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-                maximizar = true;
-            }
-        }
-
-        private void lblLogIn_MouseHover(object sender, EventArgs e)
-        {
-            lblLogIn.ForeColor = Color.Aqua;
-
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
     }
 }
