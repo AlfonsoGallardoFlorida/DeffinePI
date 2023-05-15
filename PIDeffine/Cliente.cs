@@ -30,6 +30,7 @@ namespace PIDeffine
 
         public static bool ComprobarExistencia(string correo)
         {
+            MySqlConnection conexion = ConBD.Conexion;
             ConBD.AbrirConexion();
             string consulta = String.Format("SELECT idCliente FROM Clientes WHERE correo = '{0}'", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);

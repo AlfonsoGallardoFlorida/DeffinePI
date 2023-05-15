@@ -105,18 +105,29 @@ namespace PIDeffine
 
         private void lbliniciosesion_Click(object sender, EventArgs e)
         {
-            /*
-             * IF USUARIO NO EXISTE
-             * {
-             * DialogResult crearNuevo = MessageBox.Show("No existe una cuenta con el correo proporcionado\n¿Desea crear una cuenta nueva?","Correo Inexistente",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-             * if(crearNuevo == DialogResult.Yes) ABRIR FORMULARIO DE REGISTRO
-             * }
-             * else ClearAll();
-             * IF USUARIO EXISTE
-             * {
-             * ABRIR FORMULARIO DE LA TIENDA
-             * }
-             */
+            string correo = txtCorreo.Text;
+            string contraseña = txtContra.Text;
+            if(correo != "")
+            {
+                    if (Cliente.ComprobarExistencia(correo))
+                    {
+                        if (Cliente.ComprobarClave(correo, contraseña))
+                        {
+                            FrmTienda tienda = new FrmTienda();
+                            tienda.Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El correo indicado no existe en la base de datos");
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Inserta el campo correo electronico");
+            }
         }
 
         private void IdiomaIngles()

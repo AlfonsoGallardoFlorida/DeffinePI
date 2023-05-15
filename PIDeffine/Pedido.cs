@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySqlConnector;
 
 namespace PIDeffine
 {
@@ -22,10 +23,10 @@ namespace PIDeffine
             precioTotal = precioTot;
         }
 
-        public static List<Producto> Carrito(int idProduct)
-        {
+        //public static List<Producto> Carrito(int idProduct)
+        //{
 
-        }
+        //}
 
         public static decimal ComprobarImporteTotal(int idProducto)
         {
@@ -34,7 +35,7 @@ namespace PIDeffine
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             ConBD.CerrarConexion();
-            return reader;
+            return 0;
         }
     }
 }

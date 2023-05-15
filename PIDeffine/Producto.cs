@@ -33,6 +33,17 @@ namespace PIDeffine
             imagen = img;
         }
 
+        public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte img)
+        {
+            descripcion = desc;
+            talla = tall;
+            genero = gen;
+            color = col;
+            precio = prec;
+            stock = sto;
+            imagen = img;
+        }
+
         public static List<Producto> ListarProductos()
         {
             ConBD.AbrirConexion();
@@ -61,7 +72,7 @@ namespace PIDeffine
 
         public static void BorrarProducto(int idProducto)
         {
-            ConBD.AbrirConexion()
+            ConBD.AbrirConexion();
             string consulta = String.Format("DETELE FROM Productos WHERE IdProducto = '{0}'", idProducto);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             ConBD.CerrarConexion();
