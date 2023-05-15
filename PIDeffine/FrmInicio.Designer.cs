@@ -44,27 +44,27 @@ namespace PIDeffine
             this.lblcorreoayuda = new System.Windows.Forms.Label();
             this.panelAyuda = new System.Windows.Forms.Panel();
             this.panelLogIn = new System.Windows.Forms.Panel();
-            this.paneldecontrol = new System.Windows.Forms.Panel();
-            this.pcbspain = new System.Windows.Forms.PictureBox();
-            this.pcbCerrar = new System.Windows.Forms.PictureBox();
-            this.pcbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pcbingle = new System.Windows.Forms.PictureBox();
-            this.pcbfotoprinc = new System.Windows.Forms.PictureBox();
             this.pcbOjoAbierto = new System.Windows.Forms.PictureBox();
             this.pcbOjoCerrado = new System.Windows.Forms.PictureBox();
+            this.paneldecontrol = new System.Windows.Forms.Panel();
+            this.pcbCerrar = new System.Windows.Forms.PictureBox();
+            this.pcbMinimizar = new System.Windows.Forms.PictureBox();
+            this.pcbspain = new System.Windows.Forms.PictureBox();
+            this.pcbingle = new System.Windows.Forms.PictureBox();
+            this.pcbfotoprinc = new System.Windows.Forms.PictureBox();
             this.pcbiniciosesion = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelAyuda.SuspendLayout();
             this.panelLogIn.SuspendLayout();
-            this.paneldecontrol.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).BeginInit();
+            this.paneldecontrol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbiniciosesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -247,6 +247,30 @@ namespace PIDeffine
             this.panelLogIn.Size = new System.Drawing.Size(224, 249);
             this.panelLogIn.TabIndex = 19;
             // 
+            // pcbOjoAbierto
+            // 
+            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
+            this.pcbOjoAbierto.Location = new System.Drawing.Point(189, 101);
+            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
+            this.pcbOjoAbierto.Size = new System.Drawing.Size(26, 22);
+            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoAbierto.TabIndex = 10;
+            this.pcbOjoAbierto.TabStop = false;
+            this.pcbOjoAbierto.Click += new System.EventHandler(this.pcbOjoAbierto_Click);
+            // 
+            // pcbOjoCerrado
+            // 
+            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
+            this.pcbOjoCerrado.Location = new System.Drawing.Point(189, 101);
+            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
+            this.pcbOjoCerrado.Size = new System.Drawing.Size(26, 22);
+            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoCerrado.TabIndex = 11;
+            this.pcbOjoCerrado.TabStop = false;
+            this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
+            // 
             // paneldecontrol
             // 
             this.paneldecontrol.BackColor = System.Drawing.Color.DimGray;
@@ -259,17 +283,6 @@ namespace PIDeffine
             this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
             this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
             this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
-            // 
-            // pcbspain
-            // 
-            this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
-            this.pcbspain.Location = new System.Drawing.Point(37, 56);
-            this.pcbspain.Name = "pcbspain";
-            this.pcbspain.Size = new System.Drawing.Size(56, 53);
-            this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbspain.TabIndex = 29;
-            this.pcbspain.TabStop = false;
             // 
             // pcbCerrar
             // 
@@ -295,6 +308,18 @@ namespace PIDeffine
             this.pcbMinimizar.TabStop = false;
             this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
             // 
+            // pcbspain
+            // 
+            this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
+            this.pcbspain.Location = new System.Drawing.Point(39, 56);
+            this.pcbspain.Name = "pcbspain";
+            this.pcbspain.Size = new System.Drawing.Size(56, 53);
+            this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbspain.TabIndex = 29;
+            this.pcbspain.TabStop = false;
+            this.pcbspain.Click += new System.EventHandler(this.pcbspain_Click);
+            // 
             // pcbingle
             // 
             this.pcbingle.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -305,6 +330,7 @@ namespace PIDeffine
             this.pcbingle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbingle.TabIndex = 30;
             this.pcbingle.TabStop = false;
+            this.pcbingle.Click += new System.EventHandler(this.pcbingle_Click);
             // 
             // pcbfotoprinc
             // 
@@ -315,30 +341,6 @@ namespace PIDeffine
             this.pcbfotoprinc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbfotoprinc.TabIndex = 12;
             this.pcbfotoprinc.TabStop = false;
-            // 
-            // pcbOjoAbierto
-            // 
-            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
-            this.pcbOjoAbierto.Location = new System.Drawing.Point(189, 101);
-            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
-            this.pcbOjoAbierto.Size = new System.Drawing.Size(26, 22);
-            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoAbierto.TabIndex = 10;
-            this.pcbOjoAbierto.TabStop = false;
-            this.pcbOjoAbierto.Click += new System.EventHandler(this.pcbOjoAbierto_Click);
-            // 
-            // pcbOjoCerrado
-            // 
-            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
-            this.pcbOjoCerrado.Location = new System.Drawing.Point(189, 101);
-            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
-            this.pcbOjoCerrado.Size = new System.Drawing.Size(26, 22);
-            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoCerrado.TabIndex = 11;
-            this.pcbOjoCerrado.TabStop = false;
-            this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
             // 
             // pcbiniciosesion
             // 
@@ -401,14 +403,14 @@ namespace PIDeffine
             this.panelAyuda.PerformLayout();
             this.panelLogIn.ResumeLayout(false);
             this.panelLogIn.PerformLayout();
-            this.paneldecontrol.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).EndInit();
+            this.paneldecontrol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbiniciosesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

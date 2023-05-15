@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
+using System.Threading;
+using System.Globalization;
 
 namespace PIDeffine
 {
@@ -21,6 +24,18 @@ namespace PIDeffine
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
+
+        private void AplicarIdioma()
+        {
+            lblAyuda.Text = StringRecursos.Ayuda;
+            lblContra.Text = StringRecursos.Contra;
+            lblContraOlvidada.Text = StringRecursos.ContraOlvidada;
+            lblcorreoayuda.Text = StringRecursos.correoAyuda;
+            lblCuenta.Text = StringRecursos.Cuenta;
+            lbliniciosesion.Text = StringRecursos.InicioSesion;
+            lblnuftno.Text = StringRecursos.numTelefono;
+            lblRegistrarse.Text = StringRecursos.Registrarse;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -89,41 +104,42 @@ namespace PIDeffine
 
         private void lbliniciosesion_Click(object sender, EventArgs e)
         {
-            /*
-             * IF USUARIO NO EXISTE
-             * {
-             * DialogResult crearNuevo = MessageBox.Show("No existe una cuenta con el correo proporcionado\n¿Desea crear una cuenta nueva?","Correo Inexistente",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-             * if(crearNuevo == DialogResult.Yes) ABRIR FORMULARIO DE REGISTRO
-             * }
-             * else ClearAll();
-             * IF USUARIO EXISTE
-             * {
-             * ABRIR FORMULARIO DE LA TIENDA
-             * }
-             */
+            string correo = txtCorreo.Text;
+            string contraseña = txtContra.Text;
+            if (correo != "")
+            {
+                if (Cliente.ComprobarExistencia(correo))
+                {
+                    if (Cliente.ComprobarClave(correo, contraseña))
+                    {
+                        FrmTienda tienda = new FrmTienda();
+                        tienda.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El correo indicado no existe en la base de datos");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Inserta el campo correo electronico");
+            }
         }
 
         private void IdiomaIngles()
         {
-            lblContra.Text = "Password";
-            lbliniciosesion.Hide();
-            lblContraOlvidada.Text = "Have you forgot the password? ";
-            lblCuenta.Text = "Don't have an account?";
-            lblAyuda.Text = "DO YOU NEED HELP?";
-            lblnuftno.Text = "Phone Number +34 *********";
-            lblcorreoayuda.Text = "Send us an e-mail";
-            lblIdioma.Text = "Language";
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
         }
         private void IdiomaSpanish()
         {
-            lblContra.Text = "Contraseña";
-            lbliniciosesion.Show();
-            lblContraOlvidada.Text = "¿Has olvidado tu contraseña? ";
-            lblCuenta.Text = "¿No tienes cuenta?";
-            lblAyuda.Text = "¿NECESITAS AYUDA?";
-            lblnuftno.Text = "Número de Teléfono +34 *********";
-            lblcorreoayuda.Text = "Envíanos un correo electrónico";
-            lblIdioma.Text = "Idioma";
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
 
         }
 

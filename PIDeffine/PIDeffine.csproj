@@ -120,6 +120,8 @@
     <Compile Include="FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Traduccion\StringRecursos.Designer.cs" />
+    <Compile Include="Traduccion\StringRecursos.EN-GB.Designer.cs" />
     <EmbeddedResource Include="FrmDisenyo.resx">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +142,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Traduccion\StringRecursos.EN-GB.resx" />
+    <EmbeddedResource Include="Traduccion\StringRecursos.resx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
