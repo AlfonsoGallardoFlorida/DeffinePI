@@ -312,7 +312,7 @@ namespace PIDeffine
             // 
             this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
-            this.pcbspain.Location = new System.Drawing.Point(39, 56);
+            this.pcbspain.Location = new System.Drawing.Point(34, 57);
             this.pcbspain.Name = "pcbspain";
             this.pcbspain.Size = new System.Drawing.Size(56, 53);
             this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -127,7 +127,7 @@ C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\bin\Debug\System.
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.Traduccion.StringRecursos.resources
-C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.Traduccion.StringRecursos.EN-GB.resources
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resources.dll
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.RecursosLocalizables.StringRecursos.resources
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.RecursosLocalizables.StringRecursos.EN-GB.resources
