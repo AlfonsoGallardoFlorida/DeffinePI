@@ -13,24 +13,24 @@
             flex-direction: column;
         }
 
-        h2{
-            font-size: 42px;
-            color:yellow;
-        }
         .encabezado {
             background-color: #181515;
             color: #fff;
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 17px;
             padding: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         .encabezado_titulo {
-            font-size: 24px;
+            font-size: 28px;
             margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
         }
 
         .encabezado_lenguaje {
@@ -40,12 +40,22 @@
         .encabezado_lenguaje img {
             height: 25px;
             cursor: pointer;
+            margin-right: 30px;
+            border-radius: 5px;
         }
 
         .centro {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 1300px;
+            height: 890px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #333;
+        }
+
+        .centro h2 {
+            font-size: 42px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         .piepagina {
@@ -84,8 +94,14 @@
         }
 
         .redes-sociales img {
-            height: 30px;
+            height: 40px;
             margin-right: 10px;
+        }
+
+        .redes-sociales a {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
         }
 
         .direccion {
@@ -106,18 +122,30 @@
         .contenido img {
             width: 50%;
             margin-right: 20px;
+            border-radius: 32px;
         }
 
         .contenido p {
-            font-size: 16px;
+            font-size: 32px;
             line-height: 1.5;
+            color: white;
+            font-family: 'Times New Roman', Times, serif
+        }
+
+        .centro h2::after {
+            content: "";
+            display: block;
+            width: 1250px;
+            height: 5px;
+            margin-top: 10px;
+            background-color: white;
         }
     </style>
 </head>
 
 <body>
     <div class="encabezado">
-        <h1 class="encabezado_titulo">Deffine Your Style</h1>
+        <h1 class="encabezado_titulo">DEFFINE YOUR STYLE</h1>
         <div class="fondo-navegacion">
             <a href="inicio.html">Aplicacion</a>
             <a href="infoequipo.html">Equipo de proyecto</a>
@@ -125,29 +153,30 @@
             <a href="contacta.html">Contacto</a>
         </div>
         <div class="encabezado_lenguaje">
-            <img src="spain.png" alt="Español">
+            <a href="ingles.html">
+                <img src="spain.png" alt="Español">
+            </a>
         </div>
     </div>
     <div class="centro">
-        <h2>Aplicación</h2>
+        <h2>APLICACIÓN</h2>
         <div class="contenido">
             <img src="logo.jpg" alt="Define Your Style">
-            <p>La aplicación Define Your Style te permitirá explorar las últimas tendencias en moda y encontrar prendas
+            <p>La aplicación Deffine Your Style te permitirá explorar las últimas tendencias en moda y encontrar prendas
                 que se ajusten a tu estilo personal. Con nuestra aplicación, podrás diseñar tu propia ropa a tu estilo.
             </p>
         </div>
     </div>
     <div class="piepagina">
         <div class="redes-sociales">
-            <a href="https://www.instagram.com/deffineyourstyle/"><img src="instagram.png"
-                    alt="Instagram">@deffineyourstyle</a>
-            <a href="https://twitter.com/deffineyourstyle"><img src="twitter.png" alt="Twitter">@deffineyourstyle</a>
-            <a href="https://www.facebook.com/deffineyourstyle/"><img src="facebook.png"
-                    alt="Facebook">@deffineyourstyle</a>
+            <a><img src="instagram.png" alt="Instagram">@deffineyourstyle</a>
+            <a>🔵</a>
+            <a><img src="twitter.png" alt="Twitter">@deffineyourstyle</a>
+            <a>🔵</a>
+            <a><img src="facebook.png" alt="Facebook">@deffineyourstyle</a>
         </div>
         <div class="direccion">
-            <p>Av. de Amado Granell Mesado</p>
-            <p>46013 Valencia</p>
+            <p>Av. de Amado Granell Mesado / 46013 Valencia</p>
         </div>
         <div class="telefono">
             <p>Teléfono: +34 662 650 170</p>

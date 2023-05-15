@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
             background-color: #333;
-            min-height: 100vh;
+            min-height: 960px;
             display: flex;
             flex-direction: column;
         }
@@ -17,16 +17,20 @@
             background-color: #181515;
             color: #fff;
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 17px;
             padding: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
 
         .encabezado_titulo {
-            font-size: 24px;
+            font-size: 28px;
             margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
         }
 
         .encabezado_lenguaje {
@@ -36,12 +40,23 @@
         .encabezado_lenguaje img {
             height: 25px;
             cursor: pointer;
+            margin-right: 30px;
+            border-radius: 5px;
         }
 
         .centro {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 1300px;
+            height: 1700px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #333;
+        }
+
+        .centro h2 {
+            font-size: 42px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
         }
 
         .piepagina {
@@ -80,8 +95,14 @@
         }
 
         .redes-sociales img {
-            height: 30px;
+            height: 40px;
             margin-right: 10px;
+        }
+
+        .redes-sociales a {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
         }
 
         .direccion {
@@ -93,12 +114,63 @@
             font-size: 16px;
             font-weight: bold;
         }
+
+        .centro h2::after {
+            content: "";
+            display: block;
+            width: 1250px;
+            height: 5px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .imagen_fondo {
+            background-color: rgb(255, 253, 181);
+            display: flex;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgb(36, 57, 58);
+            width: 1050px;
+            height: 250px;
+            margin: auto;
+        }
+
+        .foto_imag {
+            width: 30%;
+            margin-right: 20px;
+        }
+
+        .foto_imag img {
+            height: 250px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .equipo-texto {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .texto-nombre {
+            font-size: 32px;
+            color: #000000;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .texto-dentro {
+            font-size: 16px;
+            color: #0e0e0e;
+            margin: 2;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
 <body>
     <div class="encabezado">
-        <h1 class="encabezado_titulo">Deffine Your Style</h1>
+        <h1 class="encabezado_titulo">DEFFINE YOUR STYLE</h1>
         <div class="fondo-navegacion">
             <a href="inicio.html">Aplicacion</a>
             <a href="infoequipo.html">Equipo de proyecto</a>
@@ -106,24 +178,82 @@
             <a href="contacta.html">Contacto</a>
         </div>
         <div class="encabezado_lenguaje">
-            <img src="spain.png" alt="Español">
+            <a href=".html">
+                <img src="spain.png" alt="Español">
+            </a>
         </div>
     </div>
     <div class="centro">
-        <!-- aquí colocas la información que deseas mostrar -->
+        <h2>INFORMACIÓN DEL EQUIPO</h2>
+        <div class="imagen_fondo">
+            <div class="foto_imag">
+                <img src="ejemploPerfil.jpg" alt="Descripción de la imagen">
+            </div>
+            <div class="equipo-texto">
+                <p class="texto-nombre">Alfonso</p>
+                <p class="texto-dentro">Rol desempeñado: Diseñador de interfaces </p>
+                <p class="texto-dentro">Correo de contacto: caaslo@floridauniversitaria.es </p>
+            </div>
+        </div>
+        <br>
+        <div class="imagen_fondo">
+            <div class="foto_imag">
+                <img src="ejemploPerfil.jpg" alt="Descripción de la imagen">
+            </div>
+            <div class="equipo-texto">
+                <p class="texto-nombre">Carlos</p>
+                <p class="texto-dentro">Rol desempeñado: Administrador de Bases de Datos</p>
+                <p class="texto-dentro">Correo de contacto: algagu01@floridauniversitaria.es </p>
+            </div>
+        </div>
+        <br>
+        <div class="imagen_fondo">
+            <div class="foto_imag">
+                <img src="ejemploPerfil.jpg" alt="Descripción de la imagen">
+            </div>
+            <div class="equipo-texto">
+                <p class="texto-nombre">Sergi</p>
+                <p class="texto-dentro">Rol desempeñado: Programador</p>
+                <p class="texto-dentro">Correo de contacto: serore@floridauniversitaria.es </p>
+            </div>
+        </div>
+        <br>
+        <div class="imagen_fondo">
+            <div class="foto_imag">
+                <img src="ejemploPerfil.jpg" alt="Descripción de la imagen">
+            </div>
+            <div class="equipo-texto">
+                <p class="texto-nombre">Alvaro</p>
+                <p class="texto-dentro">Rol desempeñado: Administrador de Bases de Datos</p>
+                <p class="texto-dentro">Correo de contacto: alhupe@floridauniversitaria.es</p>
+            </div>
+        </div>
+        <br>
+        <div class="imagen_fondo">
+            <div class="foto_imag">
+                <img src="ejemploPerfil.jpg" alt="Descripción de la imagen">
+            </div>
+            <div class="equipo-texto">
+                <p class="texto-nombre">Tomás</p>
+                <p class="texto-dentro">Rol desempeñado: Desarrollador web</p>
+                <p class="texto-dentro">Correo de contacto: tochmo@floridauniversitaria.es </p>
+            </div>
+        </div>
+
     </div>
     <div class="piepagina">
         <div class="redes-sociales">
-            <a href="https://www.instagram.com/deffineyourstyle/"><img src="instagram.png" alt="Instagram">@deffineyourstyle</a>
-            <a href="https://twitter.com/deffineyourstyle"><img src="twitter.png" alt="Twitter">@deffineyourstyle</a>
-            <a href="https://www.facebook.com/deffineyourstyle/"><img src="facebook.png" alt="Facebook">@deffineyourstyle</a>
+            <a><img src="instagram.png" alt="Instagram">@deffineyourstyle</a>
+            <a>🔵</a>
+            <a><img src="twitter.png" alt="Twitter">@deffineyourstyle</a>
+            <a>🔵</a>
+            <a><img src="facebook.png" alt="Facebook">@deffineyourstyle</a>
         </div>
         <div class="direccion">
-            <p>30 N. Gould St</p>
-            <p>Sheridan, WY 82801</p>
+            <p>Av. de Amado Granell Mesado / 46013 Valencia</p>
         </div>
         <div class="telefono">
-            <p>Teléfono: +1 786 638-8688</p>
+            <p>Teléfono: +34 662 650 170</p>
         </div>
         <p>Define Your Style - Todos los derechos reservados &copy; 2023</p>
     </div>
