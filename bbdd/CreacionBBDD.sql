@@ -12,7 +12,7 @@ Precio DECIMAL(10, 2),
 Talla VARCHAR(50),
 Color VARCHAR(50),
 Genero VARCHAR(50),
-Imagen IMAGE
+Imagen LONGBLOB
 );
 
 -- Creación de la tabla "Clientes"
