@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
+using System.Threading;
+using System.Globalization;
 
 namespace PIDeffine
 {
@@ -22,6 +25,18 @@ namespace PIDeffine
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
         private bool maximizar = true;
+
+        private void AplicarIdioma()
+        {
+            lblAyuda.Text = StringRecursos.Ayuda;
+            lblContra.Text = StringRecursos.Contra;
+            lblContraOlvidada.Text = StringRecursos.ContraOlvidada;
+            lblcorreoayuda.Text = StringRecursos.correoAyuda;
+            lblCuenta.Text = StringRecursos.Cuenta;
+            lbliniciosesion.Text = StringRecursos.InicioSesion;
+            lblnuftno.Text = StringRecursos.numTelefono;
+            lblRegistrarse.Text = StringRecursos.Registrarse;
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -106,28 +121,15 @@ namespace PIDeffine
 
         private void IdiomaIngles()
         {
-            lblContra.Text = "Password";
-            lblLogIn.Show();
-            lbliniciosesion.Hide();
-            lblContraOlvidada.Text = "Have you forgot the password? ";
-            lblCuenta.Text = "Don't have an account?";
-            lblAyuda.Text = "DO YOU NEED HELP?";
-            lblnuftno.Text = "Phone Number +34 *********";
-            lblcorreoayuda.Text = "Send us an e-mail";
-            lblIdioma.Text = "Language";
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma(); 
         }
         private void IdiomaSpanish()
         {
-            lblContra.Text = "Contraseña";
-            lblLogIn.Hide();
-            lbliniciosesion.Show();
-            lblContraOlvidada.Text = "¿Has olvidado tu contraseña? ";
-            lblCuenta.Text = "¿No tienes cuenta?";
-            lblAyuda.Text = "¿NECESITAS AYUDA?";
-            lblnuftno.Text = "Número de Teléfono +34 *********";
-            lblcorreoayuda.Text = "Envíanos un correo electrónico";
-            lblIdioma.Text = "Idioma";
-
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
         }
 
         private void lblRegistrarse_Click(object sender, EventArgs e)
@@ -216,11 +218,7 @@ namespace PIDeffine
             }
         }
 
-        private void lblLogIn_MouseHover(object sender, EventArgs e)
-        {
-            lblLogIn.ForeColor = Color.Aqua;
-
-        }
+        
 
         private void pcbMinimizar_Click(object sender, EventArgs e)
         {
