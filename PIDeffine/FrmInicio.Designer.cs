@@ -130,11 +130,12 @@ namespace PIDeffine
             this.lbliniciosesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbliniciosesion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
             this.lbliniciosesion.ForeColor = System.Drawing.Color.White;
-            this.lbliniciosesion.Location = new System.Drawing.Point(64, 148);
+            this.lbliniciosesion.Location = new System.Drawing.Point(67, 148);
             this.lbliniciosesion.Name = "lbliniciosesion";
             this.lbliniciosesion.Size = new System.Drawing.Size(127, 23);
             this.lbliniciosesion.TabIndex = 8;
             this.lbliniciosesion.Text = "Iniciar Sesión";
+            this.lbliniciosesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbliniciosesion.Click += new System.EventHandler(this.lbliniciosesion_Click);
             this.lbliniciosesion.MouseLeave += new System.EventHandler(this.lbliniciosesion_MouseLeave);
             this.lbliniciosesion.MouseHover += new System.EventHandler(this.lbliniciosesion_MouseHover);
