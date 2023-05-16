@@ -121,7 +121,7 @@ namespace PIDeffine
             this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogOut.TabIndex = 26;
             this.pcbLogOut.TabStop = false;
-            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
+            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click_1);
             // 
             // pcbPrincipal
             // 

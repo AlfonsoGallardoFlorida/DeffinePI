@@ -19,9 +19,17 @@ namespace PIDeffine
         string color;
         decimal precio;
         int stock;
-        byte imagen;
-        
-        public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte img)
+        byte[] imagen;
+        public int IdProducto { get; set; }
+        public string Descripcion { get; set; }
+        public string Talla { get; set; }
+        public string Genero { get; set; }
+        public string Color { get; set; }
+        public decimal Precio { get; set; }
+        public int Stock { get; set; }
+        public byte[] Imagen { get; set; }
+
+        public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img)
         {
             descripcion = desc;
             talla = tall;
@@ -30,6 +38,10 @@ namespace PIDeffine
             precio = prec;
             stock = sto;
             imagen = img;
+        }
+
+        public Producto()
+        {
         }
 
         //public static List<Producto> ListarProductos()
@@ -48,8 +60,39 @@ namespace PIDeffine
         //    ConBD.CerrarConexion();
         //    return lista;
         //}
+        public void CargarImagen()
+        {
+            try
+            {
+                using (MySqlConnection connection = ConBD.Conexion)
+                {
+                    connection.Open();
 
-        public static void AgregarProducto(string descripcion, string talla, string genero, string color, decimal precio, int stock, byte imagen)
+                    string query = "SELECT Imagen FROM Productos WHERE idProducto = @ID";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", idProducto);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                if (!reader.IsDBNull(0))
+                                {
+                                    Imagen = (byte[])reader["Imagen"];
+                                }
+                            }
+                            reader.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al cargar la imagen: " + ex.Message);
+            }
+        }
+        public static void AgregarProducto(string descripcion, string talla, string genero, string color, decimal precio, int stock, byte[] imagen)
         {
             ConBD.AbrirConexion();
             Producto nuevoProducto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);

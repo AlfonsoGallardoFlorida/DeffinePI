@@ -191,15 +191,25 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\SusdaderaS.png" />
     <Resource Include="Resources\abiertoojo.png" />
     <Content Include="Resources\btttvolver.png" />
     <None Include="Resources\CA6554_20_2_1.jpg" />
     <None Include="Resources\CA6554_20_2_1-removebg-preview.png" />
+    <None Include="Resources\camiazulsudadera.png" />
     <Content Include="Resources\camiblanca.png" />
     <None Include="Resources\camiseta-m-c-roly-beagle.jpg" />
     <None Include="Resources\camiseta-roly-dogo-negra-1200Wx1200H.jpg" />
     <None Include="Resources\camiseta-roly-dogo-negra-1200Wx1200H-removebg-preview.png" />
     <None Include="Resources\camiseta-m-c-roly-beagle-removebg-preview.png" />
+    <None Include="Resources\camiblancaS.png" />
+    <None Include="Resources\camilargaS.png" />
+    <None Include="Resources\camiblancalarga.png" />
+    <None Include="Resources\camilargaverde.png" />
+    <None Include="Resources\camilargaazul.png" />
+    <None Include="Resources\caminegrasudadera.png" />
+    <None Include="Resources\caminegratirantes.png" />
+    <None Include="Resources\camilarganegra.png" />
     <Content Include="Resources\camisetaazul.jpg" />
     <Content Include="Resources\camisetablancadisenyo.png" />
     <Content Include="Resources\camisetaHombreRubio.png" />
@@ -212,6 +222,12 @@
     <Content Include="Resources\camisetasudaderadisenyo.png" />
     <Content Include="Resources\camisetatirantesdisenyo.png" />
     <Content Include="Resources\camisetaverde.png" />
+    <None Include="Resources\camitirantesS.png" />
+    <None Include="Resources\camitirantesverde.png" />
+    <None Include="Resources\camisudaderaverde.png" />
+    <None Include="Resources\camitirantesazul.png" />
+    <None Include="Resources\camitirantesblanca.png" />
+    <None Include="Resources\camisudaderablanca.png" />
     <Content Include="Resources\cerradoojo.png" />
     <Content Include="Resources\cerrar.png" />
     <Content Include="Resources\deffineinicio.png" />

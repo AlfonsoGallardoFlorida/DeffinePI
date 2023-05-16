@@ -19,6 +19,7 @@ namespace PIDeffine
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
+
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
         private void FrmDisenyo_Load(object sender, EventArgs e)
@@ -81,22 +82,22 @@ namespace PIDeffine
         {
             DesmarcarColores();
             pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblancaS;
-            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiblanca;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
         }
 
         private void pcbNegro_Click(object sender, EventArgs e)
         {
             DesmarcarColores();
             pcbNegro.Image = PIDeffine.Properties.Resources.elipsenegraS;
-            pcbCamiBlanca.BackColor = Color.White;
-            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
+            pcbCamisetaPrinc.BackColor = Color.White;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
         }
 
         private void pcbAzul_Click(object sender, EventArgs e)
         {
             DesmarcarColores();
             pcbAzul.Image = PIDeffine.Properties.Resources.elipseazulS;
-            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
 
         }
 
@@ -104,7 +105,70 @@ namespace PIDeffine
         {
             DesmarcarColores();
             pcbVerde.Image = PIDeffine.Properties.Resources.elipseverdeS;
-            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
+
+        }
+        private void pcbCamiseta_Click(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbCamiseta.Image = PIDeffine.Properties.Resources.camiblancaS;
+            if (pcbBlanco.Image == PIDeffine.Properties.Resources.elipseblancaS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
+            }
+            else if (pcbNegro.Image == PIDeffine.Properties.Resources.elipsenegraS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
+            }
+            else if (pcbAzul.Image == PIDeffine.Properties.Resources.elipseazulS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
+            }
+            else if (pcbVerde.Image == PIDeffine.Properties.Resources.elipseverdeS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
+            }
+            else
+            {
+                MessageBox.Show("No deberías ver esto");
+            }
+        }
+        private void pcbCamisetaLarga_Click(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbCamisetaLarga.Image = PIDeffine.Properties.Resources.camilargaS;
+
+            if (pcbBlanco.Image == PIDeffine.Properties.Resources.elipseblancaS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblancalarga;
+            }
+            else if (pcbNegro.Image == PIDeffine.Properties.Resources.elipsenegraS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilarganegra;
+            }
+            else if (pcbAzul.Image == PIDeffine.Properties.Resources.elipseazulS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaazul;
+            }
+            else if (pcbVerde.Image == PIDeffine.Properties.Resources.elipseverdeS)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaverde;
+            }
+            else { MessageBox.Show("No deberias ver esto"); }
+        }
+
+        private void pcbTirantes_Click(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbTirantes.Image = PIDeffine.Properties.Resources.camitirantesS;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesblanca;
+        }
+
+        private void pcbSudadera_Click(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbSudadera.Image = PIDeffine.Properties.Resources.SusdaderaS;
+            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camisudaderablanca;
 
         }
 
@@ -114,14 +178,24 @@ namespace PIDeffine
             mouseY = e.Y;
             mouseDown = true;
         }
+
+
         private void DesmarcarColores()
         {
             pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblanca;
             pcbAzul.Image = PIDeffine.Properties.Resources.elipseazul;
             pcbNegro.Image = PIDeffine.Properties.Resources.elipsenegra;
             pcbVerde.Image = PIDeffine.Properties.Resources.elipseverde;
-            pcbCamiBlanca.BackColor = Color.Black;
+            pcbCamisetaPrinc.BackColor = Color.Black;
         }
 
+
+        private void DesmarcarCamisetas()
+        {
+            pcbCamiseta.Image = PIDeffine.Properties.Resources.camisetablancadisenyo;
+            pcbCamisetaLarga.Image = PIDeffine.Properties.Resources.camisetalargadisenyo;
+            pcbTirantes.Image = PIDeffine.Properties.Resources.camisetatirantesdisenyo;
+            pcbSudadera.Image = PIDeffine.Properties.Resources.camisetasudaderadisenyo;
+        }
     }
 }

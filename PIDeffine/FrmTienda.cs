@@ -4,20 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlConnector;
 using PIDeffine.RecursosLocalizables;
 
 namespace PIDeffine
 {
     public partial class FrmTienda : Form
     {
+        private List<Producto> productos;
         public FrmTienda()
         {
             InitializeComponent();
+            productos = new List<Producto>();
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
@@ -41,6 +45,7 @@ namespace PIDeffine
         }
         private void FrmTienda_Load(object sender, EventArgs e)
         {
+            CargarProductos();
             this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
@@ -316,6 +321,127 @@ namespace PIDeffine
             frm.Show();
             this.Hide();
         }
+        private void CargarProductos()
+        {
+            try
+            {
+                string consulta = "SELECT IdProducto, Descripcion, Imagen FROM Productos";
+                using (MySqlConnection conexion = ConBD.Conexion)
+                {
+                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
+                    conexion.Open();
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
+
+                        int rowIndex = 0;
+                        int columnIndex = 0;
+                        int maxColumns = 3;
+                        int itemWidth = 208;
+                        int itemHeight = 248;
+                        int spacingX = 10;
+                        int spacingY = 10;
+
+                        while (reader.Read())
+                        {
+                            int idProducto = reader.GetInt32("IdProducto");
+                            string descripcion = reader.GetString("Descripcion");
+                            byte[] imagenBytes = (byte[])reader["Imagen"];
+
+                            // Crear el control de imagen
+                            PictureBox pictureBox = new PictureBox();
+                            pictureBox.Size = new Size(itemWidth, itemHeight);
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                            pictureBox.Image = ByteArrayToImage(imagenBytes);
+
+                            // Agregar borde a la imagen
+                            pictureBox.BorderStyle = BorderStyle.FixedSingle;
+
+                            // Asignar eventos MouseEnter y MouseLeave
+                            pictureBox.MouseEnter += (sender, e) =>
+                            {
+                                pictureBox.BackColor = Color.FromArgb(168, 168, 168);
+                            };
+
+                            pictureBox.MouseLeave += (sender, e) =>
+                            {
+                                pictureBox.BackColor = Color.FromArgb(41, 41, 41);
+                            };
+
+                            // Calcular la posición de la imagen
+                            int x = columnIndex * (itemWidth + spacingX);
+                            int y = rowIndex * (itemHeight + spacingY);
+
+                            // Establecer la posición de la imagen
+                            pictureBox.Location = new Point(x, y);
+
+                            // Agregar la imagen al panel
+                            panelPrinc.Controls.Add(pictureBox);
+
+                            // Calcular la siguiente posición
+                            columnIndex++;
+                            if (columnIndex >= maxColumns)
+                            {
+                                columnIndex = 0;
+                                rowIndex++;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los productos: " + ex.Message);
+            }
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void MostrarProductos()
+        {
+            foreach (Producto producto in productos)
+            {
+                // Create a PictureBox to display the image
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Width = 100;
+                pictureBox.Height = 100;
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.Image = Image.FromStream(new System.IO.MemoryStream(producto.Imagen));
+
+                // Create a Label to display the product name
+                Label label = new Label();
+                label.Text = producto.Descripcion;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+
+                // Create a FlowLayoutPanel to hold the PictureBox and Label
+                FlowLayoutPanel panel = new FlowLayoutPanel();
+                panel.Width = 120;
+                panel.Height = 160;
+                panel.Margin = new Padding(10);
+                panel.BorderStyle = BorderStyle.FixedSingle;
+                panel.FlowDirection = FlowDirection.TopDown;
+                panel.WrapContents = false;
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label);
+
+                // Add the panel to the main FlowLayoutPanel
+                panelPrinc.Controls.Add(panel);
+            }
+        }
+
+
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)
         {
@@ -328,3 +454,4 @@ namespace PIDeffine
         }
     }
 }
+

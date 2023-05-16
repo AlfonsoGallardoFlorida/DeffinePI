@@ -133,7 +133,7 @@ namespace PIDeffine
             Application.Exit();
         }
 
-        private void pcbLogOut_Click(object sender, EventArgs e)
+        private void pcbLogOut_Click_1(object sender, EventArgs e)
         {
             FrmInicio inicio = new FrmInicio();
             inicio.Show();
