@@ -121,6 +121,9 @@
   <data name="deffineinicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deffineinicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Rectangle 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rectangle 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="camisetablancadisenyo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camisetablancadisenyo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +171,9 @@
   </data>
   <data name="elipseazul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elipseazul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="camiseta-m-c-roly-beagle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camiseta-m-c-roly-beagle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="elipseazulS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elipseazulS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,6 +262,9 @@
   <data name="elipseverde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elipseverde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CA6554_20_2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CA6554_20_2_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="disenyocorazon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disenyocorazon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -283,6 +292,9 @@
   <data name="abiertoojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\abiertoojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="camiseta-roly-dogo-negra-1200Wx1200H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camiseta-roly-dogo-negra-1200Wx1200H.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="elipsenegra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elipsenegra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -292,7 +304,13 @@
   <data name="engli-removebg-preview - copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\engli-removebg-preview - copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rectangle 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rectangle 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="camiseta-roly-dogo-negra-1200Wx1200H-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camiseta-roly-dogo-negra-1200Wx1200H-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="camiseta-m-c-roly-beagle-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\camiseta-m-c-roly-beagle-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CA6554_20_2_1-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CA6554_20_2_1-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

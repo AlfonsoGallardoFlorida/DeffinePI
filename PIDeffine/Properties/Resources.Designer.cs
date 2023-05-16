@@ -83,9 +83,69 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CA6554_20_2_1 {
+            get {
+                object obj = ResourceManager.GetObject("CA6554_20_2_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CA6554_20_2_1_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("CA6554_20_2_1-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap camiblanca {
             get {
                 object obj = ResourceManager.GetObject("camiblanca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camiseta_m_c_roly_beagle {
+            get {
+                object obj = ResourceManager.GetObject("camiseta-m-c-roly-beagle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camiseta_m_c_roly_beagle_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("camiseta-m-c-roly-beagle-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camiseta_roly_dogo_negra_1200Wx1200H {
+            get {
+                object obj = ResourceManager.GetObject("camiseta-roly-dogo-negra-1200Wx1200H", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("camiseta-roly-dogo-negra-1200Wx1200H-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

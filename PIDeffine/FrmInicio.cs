@@ -116,16 +116,20 @@ namespace PIDeffine
                         tienda.Show();
                         this.Hide();
                     }
+                    else
+                    {
+                        MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El correo indicado no existe en la base de datos");
+                    MessageBox.Show("El correo indicado no está registrado","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Inserta el campo correo electronico");
+                MessageBox.Show("Inserta el campo correo electronico","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -209,6 +213,11 @@ namespace PIDeffine
                 formulario.Close();
                 formulario.Dispose();
             }
+        }
+
+        private void lblContraOlvidada_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)

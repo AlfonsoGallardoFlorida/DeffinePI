@@ -76,11 +76,51 @@ namespace PIDeffine
                 this.Hide();
             }
         }
+
+        private void pcbBlanco_Click(object sender, EventArgs e)
+        {
+            DesmarcarColores();
+            pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblancaS;
+            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiblanca;
+        }
+
+        private void pcbNegro_Click(object sender, EventArgs e)
+        {
+            DesmarcarColores();
+            pcbNegro.Image = PIDeffine.Properties.Resources.elipsenegraS;
+            pcbCamiBlanca.BackColor = Color.White;
+            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
+        }
+
+        private void pcbAzul_Click(object sender, EventArgs e)
+        {
+            DesmarcarColores();
+            pcbAzul.Image = PIDeffine.Properties.Resources.elipseazulS;
+            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
+
+        }
+
+        private void pcbVerde_Click(object sender, EventArgs e)
+        {
+            DesmarcarColores();
+            pcbVerde.Image = PIDeffine.Properties.Resources.elipseverdeS;
+            pcbCamiBlanca.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
+
+        }
+
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
             mouseX = e.X;
             mouseY = e.Y;
             mouseDown = true;
+        }
+        private void DesmarcarColores()
+        {
+            pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblanca;
+            pcbAzul.Image = PIDeffine.Properties.Resources.elipseazul;
+            pcbNegro.Image = PIDeffine.Properties.Resources.elipsenegra;
+            pcbVerde.Image = PIDeffine.Properties.Resources.elipseverde;
+            pcbCamiBlanca.BackColor = Color.Black;
         }
 
     }

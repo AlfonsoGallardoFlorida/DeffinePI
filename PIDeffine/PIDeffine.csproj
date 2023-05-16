@@ -193,7 +193,13 @@
   <ItemGroup>
     <Resource Include="Resources\abiertoojo.png" />
     <Content Include="Resources\btttvolver.png" />
+    <None Include="Resources\CA6554_20_2_1.jpg" />
+    <None Include="Resources\CA6554_20_2_1-removebg-preview.png" />
     <Content Include="Resources\camiblanca.png" />
+    <None Include="Resources\camiseta-m-c-roly-beagle.jpg" />
+    <None Include="Resources\camiseta-roly-dogo-negra-1200Wx1200H.jpg" />
+    <None Include="Resources\camiseta-roly-dogo-negra-1200Wx1200H-removebg-preview.png" />
+    <None Include="Resources\camiseta-m-c-roly-beagle-removebg-preview.png" />
     <Content Include="Resources\camisetaazul.jpg" />
     <Content Include="Resources\camisetablancadisenyo.png" />
     <Content Include="Resources\camisetaHombreRubio.png" />

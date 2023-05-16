@@ -39,23 +39,24 @@ namespace PIDeffine
             this.lblIdioma = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRegistro = new System.Windows.Forms.Panel();
-            this.lblDatos = new System.Windows.Forms.Label();
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblDatosPers = new System.Windows.Forms.Label();
-            this.lblConfirmContra = new System.Windows.Forms.Label();
-            this.lblContra = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.bttRegistrarse = new System.Windows.Forms.Button();
+            this.pcbOjoAbierto2 = new System.Windows.Forms.PictureBox();
+            this.pcbOjoCerrado2 = new System.Windows.Forms.PictureBox();
             this.pcbOjoAbierto = new System.Windows.Forms.PictureBox();
             this.pcbOjoCerrado = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.bttRegistrarse = new System.Windows.Forms.Button();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtConfirmContra = new System.Windows.Forms.TextBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
+            this.lblConfirmContra = new System.Windows.Forms.Label();
+            this.lblDatosPers = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.lblDatos = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -65,10 +66,11 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRegistro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -92,6 +94,7 @@ namespace PIDeffine
             this.pcbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCerrar.TabIndex = 24;
             this.pcbCerrar.TabStop = false;
+            this.pcbCerrar.Click += new System.EventHandler(this.pcbCerrar_Click);
             // 
             // pcbMinimizar
             // 
@@ -103,6 +106,7 @@ namespace PIDeffine
             this.pcbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbMinimizar.TabIndex = 0;
             this.pcbMinimizar.TabStop = false;
+            this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
             // 
             // pcbLogOut
             // 
@@ -171,15 +175,15 @@ namespace PIDeffine
             // 
             this.panelRegistro.BackColor = System.Drawing.Color.Gray;
             this.panelRegistro.Controls.Add(this.bttRegistrarse);
-            this.panelRegistro.Controls.Add(this.pictureBox2);
-            this.panelRegistro.Controls.Add(this.pictureBox3);
+            this.panelRegistro.Controls.Add(this.pcbOjoAbierto2);
+            this.panelRegistro.Controls.Add(this.pcbOjoCerrado2);
             this.panelRegistro.Controls.Add(this.pcbOjoAbierto);
             this.panelRegistro.Controls.Add(this.pcbOjoCerrado);
-            this.panelRegistro.Controls.Add(this.textBox5);
-            this.panelRegistro.Controls.Add(this.textBox4);
-            this.panelRegistro.Controls.Add(this.textBox3);
-            this.panelRegistro.Controls.Add(this.textBox2);
-            this.panelRegistro.Controls.Add(this.textBox1);
+            this.panelRegistro.Controls.Add(this.txtApellidos);
+            this.panelRegistro.Controls.Add(this.txtNombre);
+            this.panelRegistro.Controls.Add(this.txtConfirmContra);
+            this.panelRegistro.Controls.Add(this.txtContra);
+            this.panelRegistro.Controls.Add(this.txtCorreo);
             this.panelRegistro.Controls.Add(this.lblCorreo);
             this.panelRegistro.Controls.Add(this.lblContra);
             this.panelRegistro.Controls.Add(this.lblConfirmContra);
@@ -192,157 +196,6 @@ namespace PIDeffine
             this.panelRegistro.Name = "panelRegistro";
             this.panelRegistro.Size = new System.Drawing.Size(885, 403);
             this.panelRegistro.TabIndex = 35;
-            // 
-            // lblDatos
-            // 
-            this.lblDatos.AutoSize = true;
-            this.lblDatos.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatos.ForeColor = System.Drawing.Color.White;
-            this.lblDatos.Location = new System.Drawing.Point(22, 21);
-            this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(251, 30);
-            this.lblDatos.TabIndex = 0;
-            this.lblDatos.Text = "DATOS DE ACCESO";
-            // 
-            // lblApellidos
-            // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.ForeColor = System.Drawing.Color.White;
-            this.lblApellidos.Location = new System.Drawing.Point(325, 234);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(100, 25);
-            this.lblApellidos.TabIndex = 1;
-            this.lblApellidos.Text = "Apellidos";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(37, 234);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(90, 25);
-            this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblDatosPers
-            // 
-            this.lblDatosPers.AutoSize = true;
-            this.lblDatosPers.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosPers.ForeColor = System.Drawing.Color.White;
-            this.lblDatosPers.Location = new System.Drawing.Point(22, 188);
-            this.lblDatosPers.Name = "lblDatosPers";
-            this.lblDatosPers.Size = new System.Drawing.Size(276, 30);
-            this.lblDatosPers.TabIndex = 3;
-            this.lblDatosPers.Text = "DATOS PERSONALES";
-            // 
-            // lblConfirmContra
-            // 
-            this.lblConfirmContra.AutoSize = true;
-            this.lblConfirmContra.ForeColor = System.Drawing.Color.White;
-            this.lblConfirmContra.Location = new System.Drawing.Point(593, 74);
-            this.lblConfirmContra.Name = "lblConfirmContra";
-            this.lblConfirmContra.Size = new System.Drawing.Size(226, 25);
-            this.lblConfirmContra.TabIndex = 4;
-            this.lblConfirmContra.Text = "Confirmar Contraseña";
-            // 
-            // lblContra
-            // 
-            this.lblContra.AutoSize = true;
-            this.lblContra.ForeColor = System.Drawing.Color.White;
-            this.lblContra.Location = new System.Drawing.Point(309, 74);
-            this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(124, 25);
-            this.lblContra.TabIndex = 5;
-            this.lblContra.Text = "Contraseña";
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(37, 74);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(190, 25);
-            this.lblCorreo.TabIndex = 6;
-            this.lblCorreo.Text = "Correo electrónico";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(42, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 32);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(314, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 32);
-            this.textBox2.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(598, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 32);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(42, 262);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 32);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(314, 262);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(243, 32);
-            this.textBox5.TabIndex = 11;
-            // 
-            // pcbOjoAbierto
-            // 
-            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
-            this.pcbOjoAbierto.Location = new System.Drawing.Point(510, 93);
-            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
-            this.pcbOjoAbierto.Size = new System.Drawing.Size(47, 41);
-            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoAbierto.TabIndex = 12;
-            this.pcbOjoAbierto.TabStop = false;
-            // 
-            // pcbOjoCerrado
-            // 
-            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
-            this.pcbOjoCerrado.Location = new System.Drawing.Point(510, 93);
-            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
-            this.pcbOjoCerrado.Size = new System.Drawing.Size(47, 41);
-            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoCerrado.TabIndex = 13;
-            this.pcbOjoCerrado.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::PIDeffine.Properties.Resources.abiertoojo;
-            this.pictureBox2.Location = new System.Drawing.Point(816, 93);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::PIDeffine.Properties.Resources.cerradoojo;
-            this.pictureBox3.Location = new System.Drawing.Point(816, 93);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 15;
-            this.pictureBox3.TabStop = false;
             // 
             // bttRegistrarse
             // 
@@ -358,6 +211,170 @@ namespace PIDeffine
             this.bttRegistrarse.TabIndex = 49;
             this.bttRegistrarse.Text = "Registrarse";
             this.bttRegistrarse.UseVisualStyleBackColor = false;
+            this.bttRegistrarse.Click += new System.EventHandler(this.bttRegistrarse_Click);
+            // 
+            // pcbOjoAbierto2
+            // 
+            this.pcbOjoAbierto2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoAbierto2.Image = global::PIDeffine.Properties.Resources.abiertoojo;
+            this.pcbOjoAbierto2.Location = new System.Drawing.Point(816, 93);
+            this.pcbOjoAbierto2.Name = "pcbOjoAbierto2";
+            this.pcbOjoAbierto2.Size = new System.Drawing.Size(47, 41);
+            this.pcbOjoAbierto2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoAbierto2.TabIndex = 14;
+            this.pcbOjoAbierto2.TabStop = false;
+            this.pcbOjoAbierto2.Click += new System.EventHandler(this.pcbOjoAbierto2_Click);
+            // 
+            // pcbOjoCerrado2
+            // 
+            this.pcbOjoCerrado2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoCerrado2.Image = global::PIDeffine.Properties.Resources.cerradoojo;
+            this.pcbOjoCerrado2.Location = new System.Drawing.Point(816, 93);
+            this.pcbOjoCerrado2.Name = "pcbOjoCerrado2";
+            this.pcbOjoCerrado2.Size = new System.Drawing.Size(47, 41);
+            this.pcbOjoCerrado2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoCerrado2.TabIndex = 15;
+            this.pcbOjoCerrado2.TabStop = false;
+            this.pcbOjoCerrado2.Click += new System.EventHandler(this.pcbOjoCerrado2_Click);
+            // 
+            // pcbOjoAbierto
+            // 
+            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
+            this.pcbOjoAbierto.Location = new System.Drawing.Point(510, 93);
+            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
+            this.pcbOjoAbierto.Size = new System.Drawing.Size(47, 41);
+            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoAbierto.TabIndex = 12;
+            this.pcbOjoAbierto.TabStop = false;
+            this.pcbOjoAbierto.Click += new System.EventHandler(this.pcbOjoAbierto_Click);
+            // 
+            // pcbOjoCerrado
+            // 
+            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
+            this.pcbOjoCerrado.Location = new System.Drawing.Point(510, 93);
+            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
+            this.pcbOjoCerrado.Size = new System.Drawing.Size(47, 41);
+            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoCerrado.TabIndex = 13;
+            this.pcbOjoCerrado.TabStop = false;
+            this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(314, 262);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(243, 32);
+            this.txtApellidos.TabIndex = 11;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(42, 262);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(196, 32);
+            this.txtNombre.TabIndex = 10;
+            // 
+            // txtConfirmContra
+            // 
+            this.txtConfirmContra.Location = new System.Drawing.Point(598, 102);
+            this.txtConfirmContra.Name = "txtConfirmContra";
+            this.txtConfirmContra.Size = new System.Drawing.Size(221, 32);
+            this.txtConfirmContra.TabIndex = 9;
+            // 
+            // txtContra
+            // 
+            this.txtContra.Location = new System.Drawing.Point(314, 102);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(195, 32);
+            this.txtContra.TabIndex = 8;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(42, 102);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(243, 32);
+            this.txtCorreo.TabIndex = 7;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.Location = new System.Drawing.Point(37, 74);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(190, 25);
+            this.lblCorreo.TabIndex = 6;
+            this.lblCorreo.Text = "Correo electrónico";
+            // 
+            // lblContra
+            // 
+            this.lblContra.AutoSize = true;
+            this.lblContra.ForeColor = System.Drawing.Color.White;
+            this.lblContra.Location = new System.Drawing.Point(309, 74);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(124, 25);
+            this.lblContra.TabIndex = 5;
+            this.lblContra.Text = "Contraseña";
+            // 
+            // lblConfirmContra
+            // 
+            this.lblConfirmContra.AutoSize = true;
+            this.lblConfirmContra.ForeColor = System.Drawing.Color.White;
+            this.lblConfirmContra.Location = new System.Drawing.Point(593, 74);
+            this.lblConfirmContra.Name = "lblConfirmContra";
+            this.lblConfirmContra.Size = new System.Drawing.Size(226, 25);
+            this.lblConfirmContra.TabIndex = 4;
+            this.lblConfirmContra.Text = "Confirmar Contraseña";
+            // 
+            // lblDatosPers
+            // 
+            this.lblDatosPers.AutoSize = true;
+            this.lblDatosPers.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosPers.ForeColor = System.Drawing.Color.White;
+            this.lblDatosPers.Location = new System.Drawing.Point(22, 188);
+            this.lblDatosPers.Name = "lblDatosPers";
+            this.lblDatosPers.Size = new System.Drawing.Size(276, 30);
+            this.lblDatosPers.TabIndex = 3;
+            this.lblDatosPers.Text = "DATOS PERSONALES";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(37, 234);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(90, 25);
+            this.lblNombre.TabIndex = 2;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.ForeColor = System.Drawing.Color.White;
+            this.lblApellidos.Location = new System.Drawing.Point(325, 234);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(100, 25);
+            this.lblApellidos.TabIndex = 1;
+            this.lblApellidos.Text = "Apellidos";
+            // 
+            // lblDatos
+            // 
+            this.lblDatos.AutoSize = true;
+            this.lblDatos.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatos.ForeColor = System.Drawing.Color.White;
+            this.lblDatos.Location = new System.Drawing.Point(22, 21);
+            this.lblDatos.Name = "lblDatos";
+            this.lblDatos.Size = new System.Drawing.Size(251, 30);
+            this.lblDatos.TabIndex = 0;
+            this.lblDatos.Text = "DATOS DE ACCESO";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(1, 47);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1007, 700);
+            this.pictureBox4.TabIndex = 36;
+            this.pictureBox4.TabStop = false;
             // 
             // FrmRegistro
             // 
@@ -372,11 +389,14 @@ namespace PIDeffine
             this.Controls.Add(this.pcbingle);
             this.Controls.Add(this.pcbPrincipal);
             this.Controls.Add(this.paneldecontrol);
+            this.Controls.Add(this.pictureBox4);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistro";
+            this.Load += new System.EventHandler(this.FrmRegistro_Load);
             this.paneldecontrol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
@@ -387,10 +407,11 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelRegistro.ResumeLayout(false);
             this.panelRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,11 +429,11 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelRegistro;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtConfirmContra;
+        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Label lblConfirmContra;
@@ -420,10 +441,11 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.Label lblDatos;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pcbOjoAbierto2;
+        private System.Windows.Forms.PictureBox pcbOjoCerrado2;
         private System.Windows.Forms.PictureBox pcbOjoAbierto;
         private System.Windows.Forms.PictureBox pcbOjoCerrado;
         private System.Windows.Forms.Button bttRegistrarse;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

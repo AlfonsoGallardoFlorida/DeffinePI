@@ -151,6 +151,7 @@ namespace PIDeffine
             this.lblContraOlvidada.TabIndex = 9;
             this.lblContraOlvidada.Text = "¿Has olvidado tu contraseña?";
             this.lblContraOlvidada.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblContraOlvidada.Click += new System.EventHandler(this.lblContraOlvidada_Click);
             this.lblContraOlvidada.MouseLeave += new System.EventHandler(this.lblContraOlvidada_MouseLeave);
             this.lblContraOlvidada.MouseHover += new System.EventHandler(this.lblContraOlvidada_MouseHover);
             // 
