@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
 
 namespace PIDeffine
 {
@@ -21,6 +24,20 @@ namespace PIDeffine
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
+
+        private void AplicarIdioma()
+        {
+            lblApellidos.Text = StringRecursos.Apellidos;
+            lblConfirmContra.Text = StringRecursos.ConfirmContra;
+            lblContra.Text = StringRecursos.Contra;
+            lblCorreo.Text = StringRecursos.Correo;
+            lblDatos.Text = StringRecursos.Datos;
+            lblDatosPers.Text = StringRecursos.DatosPers;
+            lblIdioma.Text = StringRecursos.Idioma;
+            lblNombre.Text = StringRecursos.Nombre;
+            bttRegistrarse.Text = StringRecursos.Registrarse;
+        }
+
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
 
@@ -123,17 +140,50 @@ namespace PIDeffine
             mouseDown = true;
         }
 
-        private void pcbLogOut_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void pcbLogOut_Click_1(object sender, EventArgs e)
+        private void lblConfirmContra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelRegistro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void IdiomaIngles()
+        {
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+        private void IdiomaSpanish()
+        {
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+
+        private void pcbspain_Click(object sender, EventArgs e)
+        {
+            IdiomaIngles();
+            pcbspain.Hide();
+            pcbingle.Show();
+        }
+
+        private void pcbingle_Click(object sender, EventArgs e)
+        {
+            IdiomaSpanish();
+            pcbingle.Hide();
+            pcbspain.Show();
+        }
+
+        private void pcbLogOut_Click(object sender, EventArgs e)
         {
             FrmInicio inicio = new FrmInicio();
             inicio.Show();
