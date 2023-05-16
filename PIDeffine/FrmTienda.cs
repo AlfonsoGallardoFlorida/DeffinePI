@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
 
 namespace PIDeffine
 {
@@ -19,6 +22,23 @@ namespace PIDeffine
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
         private bool maximizar = true;
+
+        private void AplicarIdioma()
+        {
+            lblColecciones.Text = StringRecursos.Colecciones;
+            lblContacta.Text = StringRecursos.Contacta;
+            lblFiltrarRopa.Text = StringRecursos.FiltrarRopa;
+            lblIdioma.Text = StringRecursos.Idioma;
+            lblMaximo.Text = StringRecursos.Maximo;
+            lblMinimo.Text = StringRecursos.Minimo;
+            lblTalla.Text = StringRecursos.Talla;
+            lblPrecio.Text = StringRecursos.Precio;
+            bttCamis.Text = StringRecursos.Camiseta;
+            bttDiseño.Text = StringRecursos.Diseño;
+            bttFiltrar.Text = StringRecursos.Filtrar;
+            bttPants.Text = StringRecursos.Pantalones;
+            bttZapas.Text = StringRecursos.Zapatillas;
+        }
         private void FrmTienda_Load(object sender, EventArgs e)
         {
             this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
@@ -165,14 +185,32 @@ namespace PIDeffine
         {
         }
 
+        private void IdiomaIngles()
+        {
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+        private void IdiomaSpanish()
+        {
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+
+        }
+
         private void pcbspain_Click(object sender, EventArgs e)
         {
-
+            IdiomaIngles();
+            pcbspain.Hide();
+            pcbingle.Show();
         }
 
         private void pcbingle_Click(object sender, EventArgs e)
         {
-
+            IdiomaSpanish();
+            pcbingle.Hide();
+            pcbspain.Show();
         }
 
         private void pictureBox3_MouseEnter(object sender, EventArgs e)

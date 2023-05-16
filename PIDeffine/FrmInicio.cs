@@ -156,14 +156,14 @@ namespace PIDeffine
 
         private void pcbspain_Click(object sender, EventArgs e)
         {
-            IdiomaSpanish();
+            IdiomaIngles();
             pcbspain.Hide();
             pcbingle.Show();
         }
 
         private void pcbingle_Click(object sender, EventArgs e)
         {
-            IdiomaIngles();
+            IdiomaSpanish();
             pcbingle.Hide();
             pcbspain.Show();
         }

@@ -61,7 +61,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a DO YOU NEED HELP?.
+        ///   Busca una cadena traducida similar a ¿NECESITAS AYUDA?.
         /// </summary>
         internal static string Ayuda {
             get {
@@ -70,7 +70,34 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Password.
+        ///   Busca una cadena traducida similar a Camisetas.
+        /// </summary>
+        internal static string Camiseta {
+            get {
+                return ResourceManager.GetString("Camiseta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Colecciones.
+        /// </summary>
+        internal static string Colecciones {
+            get {
+                return ResourceManager.GetString("Colecciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contacta con nosotros.
+        /// </summary>
+        internal static string Contacta {
+            get {
+                return ResourceManager.GetString("Contacta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string Contra {
             get {
@@ -79,7 +106,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Have you forgot the password?.
+        ///   Busca una cadena traducida similar a ¿Has olvidado tu contraseña?.
         /// </summary>
         internal static string ContraOlvidada {
             get {
@@ -88,7 +115,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Send us an e-mail.
+        ///   Busca una cadena traducida similar a Envíanos un correo electrónico.
         /// </summary>
         internal static string correoAyuda {
             get {
@@ -97,7 +124,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Don&apos;t you have an account?.
+        ///   Busca una cadena traducida similar a ¿No tienes cuenta?.
         /// </summary>
         internal static string Cuenta {
             get {
@@ -106,7 +133,34 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Language.
+        ///   Busca una cadena traducida similar a Diseño.
+        /// </summary>
+        internal static string Diseño {
+            get {
+                return ResourceManager.GetString("Diseño", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtrar.
+        /// </summary>
+        internal static string Filtrar {
+            get {
+                return ResourceManager.GetString("Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtrar Ropa.
+        /// </summary>
+        internal static string FiltrarRopa {
+            get {
+                return ResourceManager.GetString("FiltrarRopa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Idioma.
         /// </summary>
         internal static string Idioma {
             get {
@@ -115,7 +169,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Login.
+        ///   Busca una cadena traducida similar a Iniciar Sesión.
         /// </summary>
         internal static string InicioSesion {
             get {
@@ -124,7 +178,25 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Phone Number +34 *********.
+        ///   Busca una cadena traducida similar a Máximo.
+        /// </summary>
+        internal static string Maximo {
+            get {
+                return ResourceManager.GetString("Maximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mínimo.
+        /// </summary>
+        internal static string Minimo {
+            get {
+                return ResourceManager.GetString("Minimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de Teléfono +34 *********.
         /// </summary>
         internal static string numTelefono {
             get {
@@ -133,11 +205,47 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Sign Up.
+        ///   Busca una cadena traducida similar a Pantalones.
+        /// </summary>
+        internal static string Pantalones {
+            get {
+                return ResourceManager.GetString("Pantalones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio.
+        /// </summary>
+        internal static string Precio {
+            get {
+                return ResourceManager.GetString("Precio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Regístrate.
         /// </summary>
         internal static string Registrarse {
             get {
                 return ResourceManager.GetString("Registrarse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Talla.
+        /// </summary>
+        internal static string Talla {
+            get {
+                return ResourceManager.GetString("Talla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Zapatillas.
+        /// </summary>
+        internal static string Zapatillas {
+            get {
+                return ResourceManager.GetString("Zapatillas", resourceCulture);
             }
         }
     }
