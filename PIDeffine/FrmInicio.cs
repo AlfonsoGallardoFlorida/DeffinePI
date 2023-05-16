@@ -35,6 +35,7 @@ namespace PIDeffine
             lbliniciosesion.Text = StringRecursos.InicioSesion;
             lblnuftno.Text = StringRecursos.numTelefono;
             lblRegistrarse.Text = StringRecursos.Registrarse;
+            lblIdioma.Text = StringRecursos.Idioma;
         }
 
         private void Form1_Load(object sender, EventArgs e)
