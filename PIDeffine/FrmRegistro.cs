@@ -97,13 +97,14 @@ namespace PIDeffine
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                Form formulario = Application.OpenForms[i];
+            Application.Exit();
+        }
 
-                formulario.Close();
-                formulario.Dispose();
-            }
+        private void pcbLogOut_Click(object sender, EventArgs e)
+        {
+            FrmInicio inicio = new FrmInicio();
+            inicio.Show();
+            this.Close();
         }
     }
 }
