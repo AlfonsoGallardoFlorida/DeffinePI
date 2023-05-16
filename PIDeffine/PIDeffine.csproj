@@ -120,15 +120,15 @@
     <Compile Include="FrmPedido.Designer.cs">
       <DependentUpon>FrmPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecursosLocalizables\StringRecursos.EN-GB.Designer.cs">
-      <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
+    <Compile Include="RecursosLocalizables\StringRecursos.Designer.cs">
+      <DependentUpon>StringRecursos.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="RecursosLocalizables\StringRecursos.Designer.cs">
+    <Compile Include="RecursosLocalizables\StringRecursos.EN-GB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StringRecursos.resx</DependentUpon>
+      <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmDisenyo.resx">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>
@@ -150,13 +150,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecursosLocalizables\StringRecursos.EN-GB.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringRecursos.EN-GB.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="RecursosLocalizables\StringRecursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StringRecursos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosLocalizables\StringRecursos.EN-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.EN-GB.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
