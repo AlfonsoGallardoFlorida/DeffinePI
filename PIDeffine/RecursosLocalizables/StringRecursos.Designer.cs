@@ -61,6 +61,15 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Apellidos.
+        /// </summary>
+        internal static string Apellidos {
+            get {
+                return ResourceManager.GetString("Apellidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¿NECESITAS AYUDA?.
         /// </summary>
         internal static string Ayuda {
@@ -84,6 +93,15 @@ namespace PIDeffine.RecursosLocalizables {
         internal static string Colecciones {
             get {
                 return ResourceManager.GetString("Colecciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirmar contraseña.
+        /// </summary>
+        internal static string ConfirmContra {
+            get {
+                return ResourceManager.GetString("ConfirmContra", resourceCulture);
             }
         }
         
@@ -115,6 +133,15 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Correo electrónico.
+        /// </summary>
+        internal static string Correo {
+            get {
+                return ResourceManager.GetString("Correo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Envíanos un correo electrónico.
         /// </summary>
         internal static string correoAyuda {
@@ -129,6 +156,24 @@ namespace PIDeffine.RecursosLocalizables {
         internal static string Cuenta {
             get {
                 return ResourceManager.GetString("Cuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DATOS DE ACCESO.
+        /// </summary>
+        internal static string Datos {
+            get {
+                return ResourceManager.GetString("Datos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DATOS PERSONALES.
+        /// </summary>
+        internal static string DatosPers {
+            get {
+                return ResourceManager.GetString("DatosPers", resourceCulture);
             }
         }
         
@@ -192,6 +237,15 @@ namespace PIDeffine.RecursosLocalizables {
         internal static string Minimo {
             get {
                 return ResourceManager.GetString("Minimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre.
+        /// </summary>
+        internal static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
             }
         }
         
