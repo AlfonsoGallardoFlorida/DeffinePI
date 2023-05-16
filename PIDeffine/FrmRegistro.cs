@@ -123,10 +123,6 @@ namespace PIDeffine
             mouseDown = true;
         }
 
-        private void pcbLogOut_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
