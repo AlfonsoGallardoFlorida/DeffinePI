@@ -10,7 +10,6 @@ namespace PIDeffine
 {
     public class ConBD
     {
-
         // atributo privado - referencia al objeto que se va a crear.
         private static MySqlConnection instancia = null;
         // objeto a utilizar para el bloqueo (no es totalmente necesario en el patrón).

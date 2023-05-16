@@ -83,6 +83,9 @@ namespace PIDeffine
             this.paneldecontrol.Name = "paneldecontrol";
             this.paneldecontrol.Size = new System.Drawing.Size(1022, 55);
             this.paneldecontrol.TabIndex = 25;
+            this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
+            this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
+            this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
             // 
             // pcbCerrar
             // 
@@ -118,6 +121,7 @@ namespace PIDeffine
             this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogOut.TabIndex = 26;
             this.pcbLogOut.TabStop = false;
+            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
             // 
             // pcbPrincipal
             // 
@@ -279,6 +283,7 @@ namespace PIDeffine
             // 
             this.txtConfirmContra.Location = new System.Drawing.Point(598, 102);
             this.txtConfirmContra.Name = "txtConfirmContra";
+            this.txtConfirmContra.PasswordChar = '●';
             this.txtConfirmContra.Size = new System.Drawing.Size(221, 32);
             this.txtConfirmContra.TabIndex = 9;
             // 
@@ -286,6 +291,7 @@ namespace PIDeffine
             // 
             this.txtContra.Location = new System.Drawing.Point(314, 102);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '●';
             this.txtContra.Size = new System.Drawing.Size(195, 32);
             this.txtContra.TabIndex = 8;
             // 

@@ -15,8 +15,12 @@ namespace PIDeffine
         public FrmRegistro()
         {
             InitializeComponent();
+            this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
+            this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
+            this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
-
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
 
@@ -31,35 +35,64 @@ namespace PIDeffine
 
         private void pcbOjoAbierto_Click(object sender, EventArgs e)
         {
-            pcbOjoCerrado.Hide();
-            pcbOjoAbierto.Show();
-            txtContra.PasswordChar = '●';
+            pcbOjoAbierto.Hide();
+            pcbOjoCerrado.Show();
+            txtContra.PasswordChar = '\0';
         }
 
         private void pcbOjoCerrado_Click(object sender, EventArgs e)
+        {
+            pcbOjoCerrado.Hide();
+            pcbOjoAbierto.Show();
+            txtContra.PasswordChar = '●';
+           
+        }
+
+        private void pcbOjoAbierto2_Click(object sender, EventArgs e)
         {
             pcbOjoAbierto.Hide();
             pcbOjoCerrado.Show();
             txtContra.PasswordChar = '\0';
         }
 
-        private void pcbOjoAbierto2_Click(object sender, EventArgs e)
+        private void pcbOjoCerrado2_Click(object sender, EventArgs e)
         {
             pcbOjoCerrado.Hide();
             pcbOjoAbierto.Show();
-            txtConfirmContra.PasswordChar = '●';
-        }
-
-        private void pcbOjoCerrado2_Click(object sender, EventArgs e)
-        {
-            pcbOjoAbierto.Hide();
-            pcbOjoCerrado.Show();
-            txtConfirmContra.PasswordChar = '\0';
+            txtContra.PasswordChar = '●';
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void paneldecontrol_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+
+        }
+
+        private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                int newX = this.Left + (e.X - mouseX);
+                int newY = this.Top + (e.Y - mouseY);
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseX = e.X;
+            mouseY = e.Y;
+            mouseDown = true;
+        }
+
+        private void pcbLogOut_Click(object sender, EventArgs e)
+        {
 
         }
 
