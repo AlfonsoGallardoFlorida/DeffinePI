@@ -31,20 +31,20 @@ namespace PIDeffine
         {
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.grbProducto = new System.Windows.Forms.GroupBox();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.lblImagen = new System.Windows.Forms.Label();
-            this.lblColor = new System.Windows.Forms.Label();
-            this.lblTalla = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblGenero = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
-            this.bttAdjuntar = new System.Windows.Forms.Button();
-            this.nudStock = new System.Windows.Forms.NumericUpDown();
-            this.cmbTalla = new System.Windows.Forms.ComboBox();
-            this.cmbColor = new System.Windows.Forms.ComboBox();
-            this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
+            this.cmbColor = new System.Windows.Forms.ComboBox();
+            this.cmbTalla = new System.Windows.Forms.ComboBox();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
+            this.bttAdjuntar = new System.Windows.Forms.Button();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblTalla = new System.Windows.Forms.Label();
+            this.lblColor = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,16 +54,18 @@ namespace PIDeffine
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.grbUsuario = new System.Windows.Forms.GroupBox();
-            this.txtContra = new System.Windows.Forms.TextBox();
+            this.txtConfContra = new System.Windows.Forms.TextBox();
+            this.lblConfContra = new System.Windows.Forms.Label();
             this.chkAdmin = new System.Windows.Forms.CheckBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
             this.bttInsertarProd = new System.Windows.Forms.Button();
             this.bttEliminarProd = new System.Windows.Forms.Button();
             this.bttInsertarUser = new System.Windows.Forms.Button();
             this.bttEliminarUser = new System.Windows.Forms.Button();
             this.grbProducto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.grbUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,98 +106,53 @@ namespace PIDeffine
             this.grbProducto.TabStop = false;
             this.grbProducto.Text = "Producto";
             // 
-            // lblStock
+            // pictureBox1
             // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(78, 104);
-            this.lblStock.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(83, 28);
-            this.lblStock.TabIndex = 1;
-            this.lblStock.Text = "Stock:";
+            this.pictureBox1.Location = new System.Drawing.Point(490, 337);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 132);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblImagen
+            // cmbGenero
             // 
-            this.lblImagen.AutoSize = true;
-            this.lblImagen.Location = new System.Drawing.Point(58, 405);
-            this.lblImagen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(103, 28);
-            this.lblImagen.TabIndex = 2;
-            this.lblImagen.Text = "Imágen:";
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGenero.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino",
+            "Unisex"});
+            this.cmbGenero.Location = new System.Drawing.Point(256, 337);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(193, 36);
+            this.cmbGenero.TabIndex = 11;
             // 
-            // lblColor
+            // cmbColor
             // 
-            this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(81, 282);
-            this.lblColor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(79, 28);
-            this.lblColor.TabIndex = 3;
-            this.lblColor.Text = "Color:";
+            this.cmbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbColor.Items.AddRange(new object[] {
+            "Blanco",
+            "Negro",
+            "Azul",
+            "Verde"});
+            this.cmbColor.Location = new System.Drawing.Point(256, 279);
+            this.cmbColor.Name = "cmbColor";
+            this.cmbColor.Size = new System.Drawing.Size(193, 36);
+            this.cmbColor.TabIndex = 10;
             // 
-            // lblTalla
+            // cmbTalla
             // 
-            this.lblTalla.AutoSize = true;
-            this.lblTalla.Location = new System.Drawing.Point(92, 227);
-            this.lblTalla.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblTalla.Name = "lblTalla";
-            this.lblTalla.Size = new System.Drawing.Size(70, 28);
-            this.lblTalla.TabIndex = 4;
-            this.lblTalla.Text = "Talla:";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(70, 162);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(91, 28);
-            this.lblPrecio.TabIndex = 5;
-            this.lblPrecio.Text = "Precio:";
-            // 
-            // lblGenero
-            // 
-            this.lblGenero.AutoSize = true;
-            this.lblGenero.Location = new System.Drawing.Point(58, 345);
-            this.lblGenero.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(102, 28);
-            this.lblGenero.TabIndex = 2;
-            this.lblGenero.Text = "Género:";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(275, 46);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(174, 36);
-            this.txtDescripcion.TabIndex = 6;
-            // 
-            // nudPrecio
-            // 
-            this.nudPrecio.Location = new System.Drawing.Point(329, 160);
-            this.nudPrecio.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(120, 36);
-            this.nudPrecio.TabIndex = 7;
-            this.nudPrecio.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // bttAdjuntar
-            // 
-            this.bttAdjuntar.Location = new System.Drawing.Point(309, 395);
-            this.bttAdjuntar.Name = "bttAdjuntar";
-            this.bttAdjuntar.Size = new System.Drawing.Size(140, 74);
-            this.bttAdjuntar.TabIndex = 8;
-            this.bttAdjuntar.Text = "Adjuntar Imagen";
-            this.bttAdjuntar.UseVisualStyleBackColor = true;
+            this.cmbTalla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTalla.Items.AddRange(new object[] {
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"});
+            this.cmbTalla.Location = new System.Drawing.Point(256, 219);
+            this.cmbTalla.Name = "cmbTalla";
+            this.cmbTalla.Size = new System.Drawing.Size(193, 36);
+            this.cmbTalla.TabIndex = 2;
             // 
             // nudStock
             // 
@@ -214,58 +171,103 @@ namespace PIDeffine
             0,
             0});
             // 
-            // cmbTalla
+            // bttAdjuntar
             // 
-            this.cmbTalla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTalla.Items.AddRange(new object[] {
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"});
-            this.cmbTalla.Location = new System.Drawing.Point(256, 219);
-            this.cmbTalla.Name = "cmbTalla";
-            this.cmbTalla.Size = new System.Drawing.Size(193, 36);
-            this.cmbTalla.TabIndex = 2;
+            this.bttAdjuntar.Location = new System.Drawing.Point(309, 395);
+            this.bttAdjuntar.Name = "bttAdjuntar";
+            this.bttAdjuntar.Size = new System.Drawing.Size(140, 74);
+            this.bttAdjuntar.TabIndex = 8;
+            this.bttAdjuntar.Text = "Adjuntar Imagen";
+            this.bttAdjuntar.UseVisualStyleBackColor = true;
             // 
-            // cmbColor
+            // nudPrecio
             // 
-            this.cmbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbColor.Items.AddRange(new object[] {
-            "Blanco",
-            "Negro",
-            "Azul",
-            "Verde"});
-            this.cmbColor.Location = new System.Drawing.Point(256, 279);
-            this.cmbColor.Name = "cmbColor";
-            this.cmbColor.Size = new System.Drawing.Size(193, 36);
-            this.cmbColor.TabIndex = 10;
+            this.nudPrecio.Location = new System.Drawing.Point(329, 160);
+            this.nudPrecio.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(120, 36);
+            this.nudPrecio.TabIndex = 7;
+            this.nudPrecio.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
-            // cmbGenero
+            // txtDescripcion
             // 
-            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGenero.Items.AddRange(new object[] {
-            "Masculino",
-            "Femenino",
-            "Unisex"});
-            this.cmbGenero.Location = new System.Drawing.Point(256, 337);
-            this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(193, 36);
-            this.cmbGenero.TabIndex = 11;
+            this.txtDescripcion.Location = new System.Drawing.Point(275, 46);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(174, 36);
+            this.txtDescripcion.TabIndex = 6;
             // 
-            // pictureBox1
+            // lblPrecio
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(490, 337);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 132);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(70, 162);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(91, 28);
+            this.lblPrecio.TabIndex = 5;
+            this.lblPrecio.Text = "Precio:";
+            // 
+            // lblTalla
+            // 
+            this.lblTalla.AutoSize = true;
+            this.lblTalla.Location = new System.Drawing.Point(92, 227);
+            this.lblTalla.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTalla.Name = "lblTalla";
+            this.lblTalla.Size = new System.Drawing.Size(70, 28);
+            this.lblTalla.TabIndex = 4;
+            this.lblTalla.Text = "Talla:";
+            // 
+            // lblColor
+            // 
+            this.lblColor.AutoSize = true;
+            this.lblColor.Location = new System.Drawing.Point(81, 282);
+            this.lblColor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblColor.Name = "lblColor";
+            this.lblColor.Size = new System.Drawing.Size(79, 28);
+            this.lblColor.TabIndex = 3;
+            this.lblColor.Text = "Color:";
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(58, 345);
+            this.lblGenero.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(102, 28);
+            this.lblGenero.TabIndex = 2;
+            this.lblGenero.Text = "Género:";
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(58, 405);
+            this.lblImagen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(103, 28);
+            this.lblImagen.TabIndex = 2;
+            this.lblImagen.Text = "Imágen:";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(78, 104);
+            this.lblStock.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(83, 28);
+            this.lblStock.TabIndex = 1;
+            this.lblStock.Text = "Stock:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(75, 98);
+            this.label7.Location = new System.Drawing.Point(75, 157);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 28);
@@ -275,7 +277,7 @@ namespace PIDeffine
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 156);
+            this.label6.Location = new System.Drawing.Point(63, 215);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 28);
@@ -285,7 +287,7 @@ namespace PIDeffine
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 334);
+            this.label3.Location = new System.Drawing.Point(17, 398);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 28);
@@ -305,7 +307,7 @@ namespace PIDeffine
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 214);
+            this.label1.Location = new System.Drawing.Point(89, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 28);
@@ -314,27 +316,29 @@ namespace PIDeffine
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(239, 95);
+            this.txtNombre.Location = new System.Drawing.Point(239, 154);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 36);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(239, 153);
+            this.txtApellidos.Location = new System.Drawing.Point(239, 212);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(215, 36);
             this.txtApellidos.TabIndex = 12;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(239, 214);
+            this.txtCorreo.Location = new System.Drawing.Point(239, 96);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(215, 36);
             this.txtCorreo.TabIndex = 13;
             // 
             // grbUsuario
             // 
+            this.grbUsuario.Controls.Add(this.txtConfContra);
+            this.grbUsuario.Controls.Add(this.lblConfContra);
             this.grbUsuario.Controls.Add(this.chkAdmin);
             this.grbUsuario.Controls.Add(this.txtContra);
             this.grbUsuario.Controls.Add(this.txtCorreo);
@@ -355,21 +359,38 @@ namespace PIDeffine
             this.grbUsuario.TabStop = false;
             this.grbUsuario.Text = "Usuario";
             // 
+            // txtConfContra
+            // 
+            this.txtConfContra.Location = new System.Drawing.Point(239, 342);
+            this.txtConfContra.Name = "txtConfContra";
+            this.txtConfContra.Size = new System.Drawing.Size(215, 36);
+            this.txtConfContra.TabIndex = 17;
+            // 
+            // lblConfContra
+            // 
+            this.lblConfContra.AutoSize = true;
+            this.lblConfContra.Location = new System.Drawing.Point(44, 345);
+            this.lblConfContra.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblConfContra.Name = "lblConfContra";
+            this.lblConfContra.Size = new System.Drawing.Size(149, 28);
+            this.lblConfContra.TabIndex = 16;
+            this.lblConfContra.Text = "Contraseña:";
+            // 
+            // chkAdmin
+            // 
+            this.chkAdmin.AutoSize = true;
+            this.chkAdmin.Location = new System.Drawing.Point(239, 405);
+            this.chkAdmin.Name = "chkAdmin";
+            this.chkAdmin.Size = new System.Drawing.Size(18, 17);
+            this.chkAdmin.TabIndex = 15;
+            this.chkAdmin.UseVisualStyleBackColor = true;
+            // 
             // txtContra
             // 
             this.txtContra.Location = new System.Drawing.Point(239, 276);
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(215, 36);
             this.txtContra.TabIndex = 14;
-            // 
-            // chkAdmin
-            // 
-            this.chkAdmin.AutoSize = true;
-            this.chkAdmin.Location = new System.Drawing.Point(239, 341);
-            this.chkAdmin.Name = "chkAdmin";
-            this.chkAdmin.Size = new System.Drawing.Size(18, 17);
-            this.chkAdmin.TabIndex = 15;
-            this.chkAdmin.UseVisualStyleBackColor = true;
             // 
             // bttInsertarProd
             // 
@@ -397,6 +418,7 @@ namespace PIDeffine
             this.bttInsertarUser.TabIndex = 15;
             this.bttInsertarUser.Text = "Insertar Usuario";
             this.bttInsertarUser.UseVisualStyleBackColor = true;
+            this.bttInsertarUser.Click += new System.EventHandler(this.bttInsertarUser_Click);
             // 
             // bttEliminarUser
             // 
@@ -406,6 +428,7 @@ namespace PIDeffine
             this.bttEliminarUser.TabIndex = 16;
             this.bttEliminarUser.Text = "Eliminar Usuario";
             this.bttEliminarUser.UseVisualStyleBackColor = true;
+            this.bttEliminarUser.Click += new System.EventHandler(this.bttEliminarUser_Click);
             // 
             // FrmAdmin
             // 
@@ -424,9 +447,9 @@ namespace PIDeffine
             this.Text = "FrmAdmin";
             this.grbProducto.ResumeLayout(false);
             this.grbProducto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);
@@ -466,5 +489,7 @@ namespace PIDeffine
         private System.Windows.Forms.Button bttEliminarProd;
         private System.Windows.Forms.Button bttInsertarUser;
         private System.Windows.Forms.Button bttEliminarUser;
+        private System.Windows.Forms.TextBox txtConfContra;
+        private System.Windows.Forms.Label lblConfContra;
     }
 }
