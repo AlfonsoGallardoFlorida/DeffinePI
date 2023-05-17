@@ -246,6 +246,8 @@
     <None Include="Resources\camitirantesazul.png" />
     <None Include="Resources\camitirantesblanca.png" />
     <None Include="Resources\camisudaderablanca.png" />
+    <None Include="Resources\Carrito.png" />
+    <None Include="Resources\Carrito1.png" />
     <Content Include="Resources\cerradoojo.png" />
     <Content Include="Resources\cerrar.png" />
     <Content Include="Resources\deffineinicio.png" />

@@ -58,6 +58,7 @@ namespace PIDeffine
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
+            this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -73,6 +74,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -155,7 +157,7 @@ namespace PIDeffine
             this.lblContacta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblContacta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContacta.ForeColor = System.Drawing.Color.White;
-            this.lblContacta.Location = new System.Drawing.Point(649, 104);
+            this.lblContacta.Location = new System.Drawing.Point(616, 105);
             this.lblContacta.Name = "lblContacta";
             this.lblContacta.Size = new System.Drawing.Size(211, 25);
             this.lblContacta.TabIndex = 50;
@@ -350,7 +352,7 @@ namespace PIDeffine
             // 
             this.pcbPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbPerfil.Image = global::PIDeffine.Properties.Resources.Ellipse_2;
-            this.pcbPerfil.Location = new System.Drawing.Point(866, 87);
+            this.pcbPerfil.Location = new System.Drawing.Point(841, 88);
             this.pcbPerfil.Name = "pcbPerfil";
             this.pcbPerfil.Size = new System.Drawing.Size(69, 67);
             this.pcbPerfil.TabIndex = 51;
@@ -396,6 +398,17 @@ namespace PIDeffine
             this.pcbingle.TabIndex = 74;
             this.pcbingle.TabStop = false;
             // 
+            // pcbCarrito
+            // 
+            this.pcbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCarrito.Image = global::PIDeffine.Properties.Resources.Carrito1;
+            this.pcbCarrito.Location = new System.Drawing.Point(931, 95);
+            this.pcbCarrito.Name = "pcbCarrito";
+            this.pcbCarrito.Size = new System.Drawing.Size(51, 50);
+            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCarrito.TabIndex = 75;
+            this.pcbCarrito.TabStop = false;
+            // 
             // FrmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -403,6 +416,7 @@ namespace PIDeffine
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
             this.ControlBox = false;
+            this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.pcbspain);
             this.Controls.Add(this.pcbingle);
             this.Controls.Add(this.panel1);
@@ -446,6 +460,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +496,6 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pcbspain;
         private System.Windows.Forms.PictureBox pcbingle;
+        private System.Windows.Forms.PictureBox pcbCarrito;
     }
 }

@@ -87,5 +87,20 @@ namespace PIDeffine
             int stock = Convert.ToInt32(nudStock.Value);
             decimal precio = Convert.ToDecimal(nudPrecio.Value);
         }
+
+        private void bttAdjuntar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog cargaImagen = new OpenFileDialog();
+            cargaImagen.InitialDirectory = @"C:\";
+            if (cargaImagen.ShowDialog() == DialogResult.OK)
+            {
+                pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
+                MessageBox.Show(cargaImagen.FileName);
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

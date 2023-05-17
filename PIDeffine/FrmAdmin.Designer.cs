@@ -31,7 +31,7 @@ namespace PIDeffine
         {
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.grbProducto = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbFotoCamiseta = new System.Windows.Forms.PictureBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.cmbColor = new System.Windows.Forms.ComboBox();
             this.cmbTalla = new System.Windows.Forms.ComboBox();
@@ -62,8 +62,10 @@ namespace PIDeffine
             this.bttEliminarProd = new System.Windows.Forms.Button();
             this.bttInsertarUser = new System.Windows.Forms.Button();
             this.bttEliminarUser = new System.Windows.Forms.Button();
+            this.bttVolver = new System.Windows.Forms.Button();
+            this.bttSalir = new System.Windows.Forms.Button();
             this.grbProducto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.grbUsuario.SuspendLayout();
@@ -81,7 +83,7 @@ namespace PIDeffine
             // 
             // grbProducto
             // 
-            this.grbProducto.Controls.Add(this.pictureBox1);
+            this.grbProducto.Controls.Add(this.pcbFotoCamiseta);
             this.grbProducto.Controls.Add(this.cmbGenero);
             this.grbProducto.Controls.Add(this.cmbColor);
             this.grbProducto.Controls.Add(this.cmbTalla);
@@ -106,13 +108,14 @@ namespace PIDeffine
             this.grbProducto.TabStop = false;
             this.grbProducto.Text = "Producto";
             // 
-            // pictureBox1
+            // pcbFotoCamiseta
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(490, 337);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 132);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pcbFotoCamiseta.Location = new System.Drawing.Point(490, 337);
+            this.pcbFotoCamiseta.Name = "pcbFotoCamiseta";
+            this.pcbFotoCamiseta.Size = new System.Drawing.Size(128, 132);
+            this.pcbFotoCamiseta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbFotoCamiseta.TabIndex = 12;
+            this.pcbFotoCamiseta.TabStop = false;
             // 
             // cmbGenero
             // 
@@ -179,6 +182,7 @@ namespace PIDeffine
             this.bttAdjuntar.TabIndex = 8;
             this.bttAdjuntar.Text = "Adjuntar Imagen";
             this.bttAdjuntar.UseVisualStyleBackColor = true;
+            this.bttAdjuntar.Click += new System.EventHandler(this.bttAdjuntar_Click);
             // 
             // nudPrecio
             // 
@@ -430,11 +434,32 @@ namespace PIDeffine
             this.bttEliminarUser.UseVisualStyleBackColor = true;
             this.bttEliminarUser.Click += new System.EventHandler(this.bttEliminarUser_Click);
             // 
+            // bttVolver
+            // 
+            this.bttVolver.Location = new System.Drawing.Point(16, 12);
+            this.bttVolver.Name = "bttVolver";
+            this.bttVolver.Size = new System.Drawing.Size(129, 39);
+            this.bttVolver.TabIndex = 17;
+            this.bttVolver.Text = "Volver";
+            this.bttVolver.UseVisualStyleBackColor = true;
+            // 
+            // bttSalir
+            // 
+            this.bttSalir.Location = new System.Drawing.Point(1208, 12);
+            this.bttSalir.Name = "bttSalir";
+            this.bttSalir.Size = new System.Drawing.Size(129, 39);
+            this.bttSalir.TabIndex = 18;
+            this.bttSalir.Text = "Salir";
+            this.bttSalir.UseVisualStyleBackColor = true;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 647);
+            this.ControlBox = false;
+            this.Controls.Add(this.bttSalir);
+            this.Controls.Add(this.bttVolver);
             this.Controls.Add(this.bttEliminarUser);
             this.Controls.Add(this.bttInsertarUser);
             this.Controls.Add(this.bttEliminarProd);
@@ -447,7 +472,7 @@ namespace PIDeffine
             this.Text = "FrmAdmin";
             this.grbProducto.ResumeLayout(false);
             this.grbProducto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.grbUsuario.ResumeLayout(false);
@@ -473,7 +498,7 @@ namespace PIDeffine
         private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.ComboBox cmbColor;
         private System.Windows.Forms.ComboBox cmbTalla;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbFotoCamiseta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
@@ -491,5 +516,7 @@ namespace PIDeffine
         private System.Windows.Forms.Button bttEliminarUser;
         private System.Windows.Forms.TextBox txtConfContra;
         private System.Windows.Forms.Label lblConfContra;
+        private System.Windows.Forms.Button bttVolver;
+        private System.Windows.Forms.Button bttSalir;
     }
 }

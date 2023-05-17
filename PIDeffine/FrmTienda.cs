@@ -38,7 +38,7 @@ namespace PIDeffine
             lblTalla.Text = StringRecursos.Talla;
             lblPrecio.Text = StringRecursos.Precio;
             rdbCamisetas.Text = StringRecursos.Camiseta;
-            rdbDisenyo.Text = StringRecursos.Diseño;
+            bttDesign.Text = StringRecursos.Diseño;
             bttFiltrar.Text = StringRecursos.Filtrar;
             rdbPantalones.Text = StringRecursos.Pantalones;
         }
