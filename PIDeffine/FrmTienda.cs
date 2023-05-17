@@ -369,7 +369,12 @@ namespace PIDeffine
             }
         }
 
-
+        private void bttDesign_Click(object sender, EventArgs e)
+        {
+            FrmDisenyo frmDisenyo = new FrmDisenyo();
+            frmDisenyo.Show();
+            this.Close();
+        }
 
         private void pictureBox_Click(object sender, EventArgs e)
         {
