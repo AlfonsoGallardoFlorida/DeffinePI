@@ -44,7 +44,8 @@ namespace PIDeffine
         }
         private void FrmTienda_Load(object sender, EventArgs e)
         {
-            CargarProductos();
+            string consulta = "SELECT * FROM Productos";
+            CargarProductos(consulta);
             this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
@@ -168,7 +169,33 @@ namespace PIDeffine
 
         private void bttFiltrar_Click(object sender, EventArgs e)
         {
-            // LLAMADA A LA FUNCION FILTRAR PRECIO Y QUE MUESTRE EN EL FORMULARIO PRODUCTOS QUE ESTEN ENTRE LOS PRECIOS INTRODUCIDOS
+            string talla = cmbTalla.Text;
+            decimal precioMin = nudMin.Value;
+            decimal precioMax = nudMax.Value;
+            string coleccion="";
+            string consulta;
+            if (rdbCamisetas.Checked) coleccion = "Camiseta";
+            else if (rdbPantalones.Checked) coleccion = "Pantalon";
+            else if (rdTodo.Checked) coleccion = "";
+
+            if (precioMin <= precioMax)
+            {
+                consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
+                if (talla != "")
+                {
+                    consulta += String.Format(" && Talla LIKE '{0}'", talla);
+                }
+                if (coleccion != "") 
+                {
+                    consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
+                }
+
+                CargarProductos(consulta);
+            }
+            else
+            {
+                MessageBox.Show("Introduce bien el rango de precios");
+            }
         }
 
         private void cmbTalla_SelectedIndexChanged(object sender, EventArgs e)
@@ -239,79 +266,67 @@ namespace PIDeffine
                 this.Location = new Point(newX, newY);
             }
         }
-        private void CargarProductos()
+        private void CargarProductos(string consulta)
         {
-            try
+            List<Producto> productos = Producto.CargarProductos(consulta);
+            panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
+
+            int rowIndex = 0;
+            int columnIndex = 0;
+            int maxColumns = 3;
+            int itemWidth = 208;
+            int itemHeight = 248;
+            int spacingX = 10;
+            int spacingY = 10;
+
+            for (int i = 0; i < productos.Count; i++)
             {
-                string consulta = "SELECT IdProducto, Descripcion, Imagen FROM Productos";
-                using (MySqlConnection conexion = ConBD.Conexion)
+                int idProducto = productos[i].IdProducto;
+                string descripcion = productos[i].Descripcion;
+                byte[] imagenBytes = productos[i].Imagen;
+
+                // Crear el control de imagen
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Size = new Size(itemWidth, itemHeight);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox.Image = ByteArrayToImage(imagenBytes);
+
+                // Agregar borde a la imagen
+                pictureBox.BorderStyle = BorderStyle.FixedSingle;
+
+                // Asignar eventos MouseEnter y MouseLeave
+                pictureBox.MouseEnter += (sender, e) =>
                 {
-                    MySqlCommand comando = new MySqlCommand(consulta, conexion);
-                    conexion.Open();
+                    pictureBox.BackColor = Color.FromArgb(168, 168, 168);
+                };
 
-                    using (MySqlDataReader reader = comando.ExecuteReader())
-                    {
-                        panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
+                pictureBox.MouseLeave += (sender, e) =>
+                {
+                    pictureBox.BackColor = Color.FromArgb(41, 41, 41);
+                };
 
-                        int rowIndex = 0;
-                        int columnIndex = 0;
-                        int maxColumns = 3;
-                        int itemWidth = 208;
-                        int itemHeight = 248;
-                        int spacingX = 10;
-                        int spacingY = 10;
+                // Calcular la posición de la imagen
+                int x = columnIndex * (itemWidth + spacingX);
+                int y = rowIndex * (itemHeight + spacingY);
 
-                        while (reader.Read())
-                        {
-                            int idProducto = reader.GetInt32("IdProducto");
-                            string descripcion = reader.GetString("Descripcion");
-                            byte[] imagenBytes = (byte[])reader["Imagen"];
+                // Establecer la posición de la imagen
+                pictureBox.Location = new Point(x, y);
 
-                            // Crear el control de imagen
-                            PictureBox pictureBox = new PictureBox();
-                            pictureBox.Size = new Size(itemWidth, itemHeight);
-                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                            pictureBox.Image = ByteArrayToImage(imagenBytes);
+                // Agregar la imagen al panel
+                panelPrinc.Controls.Add(pictureBox);
 
-                            // Agregar borde a la imagen
-                            pictureBox.BorderStyle = BorderStyle.FixedSingle;
-
-                            // Asignar eventos MouseEnter y MouseLeave
-                            pictureBox.MouseEnter += (sender, e) =>
-                            {
-                                pictureBox.BackColor = Color.FromArgb(168, 168, 168);
-                            };
-
-                            pictureBox.MouseLeave += (sender, e) =>
-                            {
-                                pictureBox.BackColor = Color.FromArgb(41, 41, 41);
-                            };
-
-                            // Calcular la posición de la imagen
-                            int x = columnIndex * (itemWidth + spacingX);
-                            int y = rowIndex * (itemHeight + spacingY);
-
-                            // Establecer la posición de la imagen
-                            pictureBox.Location = new Point(x, y);
-
-                            // Agregar la imagen al panel
-                            panelPrinc.Controls.Add(pictureBox);
-
-                            // Calcular la siguiente posición
-                            columnIndex++;
-                            if (columnIndex >= maxColumns)
-                            {
-                                columnIndex = 0;
-                                rowIndex++;
-                            }
-                        }
-                    }
+                // Calcular la siguiente posición
+                columnIndex++;
+                if (columnIndex >= maxColumns)
+                {
+                    columnIndex = 0;
+                    rowIndex++;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los productos: " + ex.Message);
-            }
+
+
+        
+    
         }
 
         private Image ByteArrayToImage(byte[] byteArray)

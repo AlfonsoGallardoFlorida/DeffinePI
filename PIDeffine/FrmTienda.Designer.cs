@@ -53,11 +53,12 @@ namespace PIDeffine
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelColecciones = new System.Windows.Forms.Panel();
-            this.rdbCamisetas = new System.Windows.Forms.RadioButton();
-            this.rdbPantalones = new System.Windows.Forms.RadioButton();
             this.rdbDisenyo = new System.Windows.Forms.RadioButton();
+            this.rdbPantalones = new System.Windows.Forms.RadioButton();
+            this.rdbCamisetas = new System.Windows.Forms.RadioButton();
             this.nudMin = new System.Windows.Forms.NumericUpDown();
             this.nudMax = new System.Windows.Forms.NumericUpDown();
+            this.rdTodo = new System.Windows.Forms.RadioButton();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -339,6 +340,7 @@ namespace PIDeffine
             // panelColecciones
             // 
             this.panelColecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panelColecciones.Controls.Add(this.rdTodo);
             this.panelColecciones.Controls.Add(this.rdbDisenyo);
             this.panelColecciones.Controls.Add(this.rdbPantalones);
             this.panelColecciones.Controls.Add(this.rdbCamisetas);
@@ -348,6 +350,26 @@ namespace PIDeffine
             this.panelColecciones.Size = new System.Drawing.Size(208, 120);
             this.panelColecciones.TabIndex = 0;
             // 
+            // rdbDisenyo
+            // 
+            this.rdbDisenyo.AutoSize = true;
+            this.rdbDisenyo.Location = new System.Drawing.Point(3, 60);
+            this.rdbDisenyo.Name = "rdbDisenyo";
+            this.rdbDisenyo.Size = new System.Drawing.Size(92, 27);
+            this.rdbDisenyo.TabIndex = 2;
+            this.rdbDisenyo.Text = "Diseño";
+            this.rdbDisenyo.UseVisualStyleBackColor = true;
+            // 
+            // rdbPantalones
+            // 
+            this.rdbPantalones.AutoSize = true;
+            this.rdbPantalones.Location = new System.Drawing.Point(3, 31);
+            this.rdbPantalones.Name = "rdbPantalones";
+            this.rdbPantalones.Size = new System.Drawing.Size(128, 27);
+            this.rdbPantalones.TabIndex = 1;
+            this.rdbPantalones.Text = "Pantalones";
+            this.rdbPantalones.UseVisualStyleBackColor = true;
+            // 
             // rdbCamisetas
             // 
             this.rdbCamisetas.AutoSize = true;
@@ -355,31 +377,8 @@ namespace PIDeffine
             this.rdbCamisetas.Name = "rdbCamisetas";
             this.rdbCamisetas.Size = new System.Drawing.Size(124, 27);
             this.rdbCamisetas.TabIndex = 0;
-            this.rdbCamisetas.TabStop = true;
             this.rdbCamisetas.Text = "Camisetas";
             this.rdbCamisetas.UseVisualStyleBackColor = true;
-            // 
-            // rdbPantalones
-            // 
-            this.rdbPantalones.AutoSize = true;
-            this.rdbPantalones.Location = new System.Drawing.Point(3, 36);
-            this.rdbPantalones.Name = "rdbPantalones";
-            this.rdbPantalones.Size = new System.Drawing.Size(128, 27);
-            this.rdbPantalones.TabIndex = 1;
-            this.rdbPantalones.TabStop = true;
-            this.rdbPantalones.Text = "Pantalones";
-            this.rdbPantalones.UseVisualStyleBackColor = true;
-            // 
-            // rdbDisenyo
-            // 
-            this.rdbDisenyo.AutoSize = true;
-            this.rdbDisenyo.Location = new System.Drawing.Point(3, 71);
-            this.rdbDisenyo.Name = "rdbDisenyo";
-            this.rdbDisenyo.Size = new System.Drawing.Size(92, 27);
-            this.rdbDisenyo.TabIndex = 2;
-            this.rdbDisenyo.TabStop = true;
-            this.rdbDisenyo.Text = "Diseño";
-            this.rdbDisenyo.UseVisualStyleBackColor = true;
             // 
             // nudMin
             // 
@@ -414,6 +413,18 @@ namespace PIDeffine
             0,
             0,
             0});
+            // 
+            // rdTodo
+            // 
+            this.rdTodo.AutoSize = true;
+            this.rdTodo.Checked = true;
+            this.rdTodo.Location = new System.Drawing.Point(3, 87);
+            this.rdTodo.Name = "rdTodo";
+            this.rdTodo.Size = new System.Drawing.Size(74, 27);
+            this.rdTodo.TabIndex = 3;
+            this.rdTodo.TabStop = true;
+            this.rdTodo.Text = "Todo";
+            this.rdTodo.UseVisualStyleBackColor = true;
             // 
             // FrmTienda
             // 
@@ -501,5 +512,6 @@ namespace PIDeffine
         private System.Windows.Forms.RadioButton rdbCamisetas;
         private System.Windows.Forms.NumericUpDown nudMin;
         private System.Windows.Forms.NumericUpDown nudMax;
+        private System.Windows.Forms.RadioButton rdTodo;
     }
 }

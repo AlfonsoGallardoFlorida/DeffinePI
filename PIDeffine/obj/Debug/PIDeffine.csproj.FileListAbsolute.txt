@@ -187,3 +187,5 @@ C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resource
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmAdmin.resources
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCarrito.resources
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmAdmin.resources
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCarrito.resources
