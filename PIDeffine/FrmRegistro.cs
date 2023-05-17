@@ -31,30 +31,31 @@ namespace PIDeffine
 
         private void pcbOjoAbierto_Click(object sender, EventArgs e)
         {
-            pcbOjoCerrado.Hide();
-            pcbOjoAbierto.Show();
-            txtContra.PasswordChar = '●';
-        }
-
-        private void pcbOjoCerrado_Click(object sender, EventArgs e)
-        {
             pcbOjoAbierto.Hide();
             pcbOjoCerrado.Show();
             txtContra.PasswordChar = '\0';
         }
 
-        private void pcbOjoAbierto2_Click(object sender, EventArgs e)
+        private void pcbOjoCerrado_Click(object sender, EventArgs e)
         {
             pcbOjoCerrado.Hide();
             pcbOjoAbierto.Show();
-            txtConfirmContra.PasswordChar = '●';
+            txtContra.PasswordChar = '●';
+            
+        }
+
+        private void pcbOjoAbierto2_Click(object sender, EventArgs e)
+        {
+            pcbOjoAbierto2.Hide();
+            pcbOjoCerrado2.Show();
+            txtConfirmContra.PasswordChar = '\0';
         }
 
         private void pcbOjoCerrado2_Click(object sender, EventArgs e)
         {
-            pcbOjoAbierto.Hide();
-            pcbOjoCerrado.Show();
-            txtConfirmContra.PasswordChar = '\0';
+            pcbOjoCerrado2.Hide();
+            pcbOjoAbierto2.Show();
+            txtConfirmContra.PasswordChar = '●';
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)

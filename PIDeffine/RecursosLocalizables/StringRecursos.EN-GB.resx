@@ -117,31 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Apellidos" xml:space="preserve">
+    <value>Surnames</value>
+  </data>
   <data name="Ayuda" xml:space="preserve">
-    <value>¿NECESITAS AYUDA?</value>
+    <value>DO YOU NEED HELP?</value>
+  </data>
+  <data name="Camiseta" xml:space="preserve">
+    <value>Shirts</value>
+  </data>
+  <data name="Colecciones" xml:space="preserve">
+    <value>Colections</value>
+  </data>
+  <data name="ConfirmContra" xml:space="preserve">
+    <value>Repeat Password</value>
+  </data>
+  <data name="Contacta" xml:space="preserve">
+    <value>Contact us</value>
   </data>
   <data name="Contra" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Password</value>
   </data>
   <data name="ContraOlvidada" xml:space="preserve">
-    <value>¿Has olvidado tu contraseña?</value>
+    <value>Have you forgot the password?</value>
+  </data>
+  <data name="Correo" xml:space="preserve">
+    <value>E-Mail</value>
   </data>
   <data name="correoAyuda" xml:space="preserve">
-    <value>Envíanos un correo electrónico</value>
+    <value>Send us an e-mail</value>
   </data>
   <data name="Cuenta" xml:space="preserve">
-    <value>¿No tienes cuenta?</value>
+    <value>Don't you have an account?</value>
+  </data>
+  <data name="Datos" xml:space="preserve">
+    <value>Login Data</value>
+  </data>
+  <data name="DatosPers" xml:space="preserve">
+    <value>Personal Data</value>
+  </data>
+  <data name="Diseño" xml:space="preserve">
+    <value>Design your own</value>
+  </data>
+  <data name="Filtrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FiltrarRopa" xml:space="preserve">
+    <value>Search clothes</value>
   </data>
   <data name="Idioma" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Language</value>
   </data>
   <data name="InicioSesion" xml:space="preserve">
-    <value>Iniciar Sesión</value>
+    <value>Login</value>
+  </data>
+  <data name="Maximo" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Minimo" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="numTelefono" xml:space="preserve">
-    <value>Número de Teléfono +34 *********</value>
+    <value>Phone Number +34 *********</value>
+  </data>
+  <data name="Pantalones" xml:space="preserve">
+    <value>Pants</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Cost</value>
   </data>
   <data name="Registrarse" xml:space="preserve">
-    <value>Regístrate</value>
+    <value>Sign Up</value>
+  </data>
+  <data name="Talla" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Zapatillas" xml:space="preserve">
+    <value>Shoes</value>
   </data>
 </root>

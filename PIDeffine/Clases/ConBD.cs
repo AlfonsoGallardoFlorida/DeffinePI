@@ -10,7 +10,13 @@ namespace PIDeffine
 {
     public class ConBD
     {
-
+        public static SqlConnection GetConexion()
+        {
+            string connectionString = "Data Source=database-pi.cqinzqt39djq.us-east-1.rds.amazonaws.com;Initial Catalog=PI;User ID=admin;Password=12345678;";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            return connection;
+        }
         // atributo privado - referencia al objeto que se va a crear.
         private static MySqlConnection instancia = null;
         // objeto a utilizar para el bloqueo (no es totalmente necesario en el patrón).

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlConnector;
+using System.Data.SqlClient;
 
 namespace PIDeffine
 {
@@ -19,7 +20,16 @@ namespace PIDeffine
         decimal precio;
         int stock;
         byte imagen;
-        
+
+        public int IdProducto { get; }
+        public string Descripcion { get; }
+        public string Talla { get; }
+        public string Genero { get; }
+        public string Color { get; }
+        public decimal Precio { get; }
+        public int Stock { get; }
+        public byte[] Imagen { get; }
+
         public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte img)
         {
             descripcion = desc;
@@ -104,6 +114,39 @@ namespace PIDeffine
         public static void ComprobarClaveValida(string clave)
         {
 
+        }
+        public static List<Producto> CargarProductos()
+        {
+            List<Producto> productos = new List<Producto>();
+
+            // Aquí se ejecutaría el código para obtener los productos de la base de datos
+            // y cargarlos en la lista 'productos'
+
+            // Ejemplo ficticio de obtención de productos desde la base de datos
+            // Supongamos que se utiliza un objeto 'command' para ejecutar una consulta SQL
+            string consulta = "SELECT * FROM productos";
+            SqlCommand command = new SqlCommand(consulta, ConBD.GetConexion());
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = (int)reader["Id"];
+                    string nombre = (string)reader["Nombre"];
+                    string descripcion = (string)reader["Descripcion"];
+                    string talla = (string)reader["Talla"];
+                    string genero = (string)reader["Genero"];
+                    string color = (string)reader["Color"];
+                    decimal precio = (decimal)reader["Precio"];
+                    int stock = (int)reader["Stock"];
+                    byte imagen = (byte)reader["Imagen"];
+
+                    Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
+                    productos.Add(producto);
+                }
+            }
+
+            return productos;
         }
     }
 }

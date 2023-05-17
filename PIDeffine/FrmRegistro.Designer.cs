@@ -279,6 +279,7 @@ namespace PIDeffine
             // 
             this.txtConfirmContra.Location = new System.Drawing.Point(598, 102);
             this.txtConfirmContra.Name = "txtConfirmContra";
+            this.txtConfirmContra.PasswordChar = '●';
             this.txtConfirmContra.Size = new System.Drawing.Size(221, 32);
             this.txtConfirmContra.TabIndex = 9;
             // 
@@ -286,6 +287,7 @@ namespace PIDeffine
             // 
             this.txtContra.Location = new System.Drawing.Point(314, 102);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '●';
             this.txtContra.Size = new System.Drawing.Size(195, 32);
             this.txtContra.TabIndex = 8;
             // 

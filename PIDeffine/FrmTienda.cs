@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -174,97 +175,6 @@ namespace PIDeffine
         {
 
         }
-
-        private void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            pcbCamiBlanca.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox4_MouseEnter(object sender, EventArgs e)
-        {
-            pcbCamiMujer.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox5_MouseEnter(object sender, EventArgs e)
-        {
-            pcbNinyo.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox6_MouseEnter(object sender, EventArgs e)
-        {
-            pcbPantacas.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox7_MouseEnter(object sender, EventArgs e)
-        {
-            pcbZapas.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox8_MouseEnter(object sender, EventArgs e)
-        {
-            pcbDisenyo.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox9_MouseEnter(object sender, EventArgs e)
-        {
-            pcbCamiSonrisa.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox10_MouseEnter(object sender, EventArgs e)
-        {
-            pcbCamiVerde.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox11_MouseEnter(object sender, EventArgs e)
-        {
-            pcbCamiAbuela.BackColor = Color.FromArgb(168, 168, 168);
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pcbCamiBlanca.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            pcbCamiMujer.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox5_MouseLeave(object sender, EventArgs e)
-        {
-            pcbNinyo.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            pcbPantacas.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox7_MouseLeave(object sender, EventArgs e)
-        {
-            pcbZapas.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox8_MouseLeave(object sender, EventArgs e)
-        {
-            pcbDisenyo.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox11_MouseLeave(object sender, EventArgs e)
-        {
-            pcbCamiAbuela.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox10_MouseLeave(object sender, EventArgs e)
-        {
-            pcbCamiVerde.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
-        private void pictureBox9_MouseLeave(object sender, EventArgs e)
-        {
-            pcbCamiSonrisa.BackColor = Color.FromArgb(41, 41, 41);
-        }
-
         private void pcbCamiBlanca_Click(object sender, EventArgs e)
         {
             FrmPedido frm = new FrmPedido();
@@ -287,6 +197,64 @@ namespace PIDeffine
                 int newY = this.Top + (e.Y - mouseY);
                 this.Location = new Point(newX, newY);
             }
+        }
+        private void CargarProductos()
+        {
+            if (ConBD.Conexion != null)
+            {
+                ConBD.AbrirConexion();
+                List<Producto> productos = Producto.CargarProductos();
+
+                if (productos != null && productos.Count > 0)
+                {
+                    int x = 10, y = 10;
+                    int peliculaCount = 0;
+                    int maxPeliculasPorFila = 5;
+                    panelPrinc.Width = 698;
+                    panelPrinc.Height = 531;
+                    panelPrinc.Text = "";
+                    this.Controls.Add(panelPrinc);
+                    foreach (Producto producto in productos)
+                    {
+                        PictureBox imagen = new PictureBox();
+                        imagen.Tag = producto.Descripcion;
+                        imagen.Click += new EventHandler(pictureBox_Click);
+
+                        imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                        imagen.BorderStyle = BorderStyle.FixedSingle;
+                        using (MemoryStream ms = new MemoryStream(producto.Imagen))
+                        {
+                            imagen.Image = Image.FromStream(ms);
+                        }
+                        imagen.Width = 208;
+                        imagen.Height = 248;
+                        imagen.Location = new Point(x, y);
+                        panelPrinc.Controls.Add(imagen);
+                        peliculaCount++;
+
+
+                        if (peliculaCount % maxPeliculasPorFila == 0)
+                        {
+                            x = 10;
+                            y = imagen.Bottom + 10;
+                        }
+                        else
+                        {
+                            x = imagen.Right + 10;
+                        }
+                    }
+                    ConBD.CerrarConexion();
+                }
+                else
+                {
+                    MessageBox.Show("No existe conexión a la Base de datos");
+                }
+            }
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
