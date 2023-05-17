@@ -35,6 +35,7 @@ namespace PIDeffine
             lbliniciosesion.Text = StringRecursos.InicioSesion;
             lblnuftno.Text = StringRecursos.numTelefono;
             lblRegistrarse.Text = StringRecursos.Registrarse;
+            lblIdioma.Text = StringRecursos.Idioma;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -156,14 +157,14 @@ namespace PIDeffine
 
         private void pcbspain_Click(object sender, EventArgs e)
         {
-            IdiomaSpanish();
+            IdiomaIngles();
             pcbspain.Hide();
             pcbingle.Show();
         }
 
         private void pcbingle_Click(object sender, EventArgs e)
         {
-            IdiomaIngles();
+            IdiomaSpanish();
             pcbingle.Hide();
             pcbspain.Show();
         }
@@ -206,13 +207,7 @@ namespace PIDeffine
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                Form formulario = Application.OpenForms[i];
-
-                formulario.Close();
-                formulario.Dispose();
-            }
+            Application.Exit();
         }
 
         private void lblContraOlvidada_Click(object sender, EventArgs e)

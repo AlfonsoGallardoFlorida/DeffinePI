@@ -14,16 +14,16 @@ namespace PIDeffine
         int idCliente;
         string nombre;
         string apellidos;
-        string correo;
         string clave;
+        string correo;
         bool administrador;
 
-        public Cliente(string nom, string ape, string corr, string clav, bool admin)
+        public Cliente(string nom, string ape,  string clav, string corr, bool admin)
         {
             nombre = nom;
             apellidos = ape;
-            correo = corr;
             clave = clav;
+            correo = corr;
             administrador = admin;
         }
 
@@ -88,14 +88,14 @@ namespace PIDeffine
             }
         }
 
-        public static void AgregarCliente(string nombre, string apellidos, string correo, string clave, bool admin)
+        public static void AgregarCliente(string nombre, string apellidos, string clave, string correo, bool admin)
         {
             ConBD.AbrirConexion();
-            Cliente nuevoCliente = new Cliente(nombre, apellidos, correo, clave, admin);
-            string consulta = "INSERT INTO Clientes (Nombre, Apellidos, Correo, Clave, Administrador) VALUES (@nombre, @apellidos, @correo, @clave, @admin)";
+            Cliente nuevoCliente = new Cliente(nombre, apellidos, clave, correo, admin);
+            string consulta = "INSERT INTO Clientes (Nombre, Apellido, Contraseña, Correo, Administrador) VALUES (@nombre, @apellidos,  @clave, @correo, @admin)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             comando.Parameters.AddWithValue("@nombre", nuevoCliente.nombre);
-            comando.Parameters.AddWithValue("@apellido", nuevoCliente.apellidos);
+            comando.Parameters.AddWithValue("@apellidos", nuevoCliente.apellidos);
             comando.Parameters.AddWithValue("@correo", nuevoCliente.correo);
             comando.Parameters.AddWithValue("@clave", nuevoCliente.clave);
             comando.Parameters.AddWithValue("@admin", nuevoCliente.administrador ? 1 : 0);

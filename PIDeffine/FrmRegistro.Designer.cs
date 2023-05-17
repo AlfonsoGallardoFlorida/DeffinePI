@@ -83,6 +83,9 @@ namespace PIDeffine
             this.paneldecontrol.Name = "paneldecontrol";
             this.paneldecontrol.Size = new System.Drawing.Size(1022, 55);
             this.paneldecontrol.TabIndex = 25;
+            this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
+            this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
+            this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
             // 
             // pcbCerrar
             // 
@@ -118,6 +121,7 @@ namespace PIDeffine
             this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogOut.TabIndex = 26;
             this.pcbLogOut.TabStop = false;
+            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
             // 
             // pcbPrincipal
             // 
@@ -133,12 +137,13 @@ namespace PIDeffine
             // 
             this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
-            this.pcbspain.Location = new System.Drawing.Point(38, 66);
+            this.pcbspain.Location = new System.Drawing.Point(40, 66);
             this.pcbspain.Name = "pcbspain";
             this.pcbspain.Size = new System.Drawing.Size(56, 53);
             this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbspain.TabIndex = 31;
             this.pcbspain.TabStop = false;
+            this.pcbspain.Click += new System.EventHandler(this.pcbspain_Click);
             // 
             // pcbingle
             // 
@@ -150,6 +155,7 @@ namespace PIDeffine
             this.pcbingle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbingle.TabIndex = 32;
             this.pcbingle.TabStop = false;
+            this.pcbingle.Click += new System.EventHandler(this.pcbingle_Click);
             // 
             // lblIdioma
             // 
@@ -196,6 +202,7 @@ namespace PIDeffine
             this.panelRegistro.Name = "panelRegistro";
             this.panelRegistro.Size = new System.Drawing.Size(885, 403);
             this.panelRegistro.TabIndex = 35;
+            this.panelRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRegistro_Paint);
             // 
             // bttRegistrarse
             // 
@@ -327,6 +334,7 @@ namespace PIDeffine
             this.lblConfirmContra.Size = new System.Drawing.Size(226, 25);
             this.lblConfirmContra.TabIndex = 4;
             this.lblConfirmContra.Text = "Confirmar Contraseña";
+            this.lblConfirmContra.Click += new System.EventHandler(this.lblConfirmContra_Click);
             // 
             // lblDatosPers
             // 
