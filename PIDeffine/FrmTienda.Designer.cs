@@ -317,6 +317,7 @@ namespace PIDeffine
             this.bttDesign.TabIndex = 70;
             this.bttDesign.Text = "Diseña tu estilo";
             this.bttDesign.UseVisualStyleBackColor = false;
+            this.bttDesign.Click += new System.EventHandler(this.bttDesign_Click);
             // 
             // pcbPerfil
             // 
