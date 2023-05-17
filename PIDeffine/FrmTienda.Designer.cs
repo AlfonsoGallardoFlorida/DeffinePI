@@ -39,12 +39,6 @@ namespace PIDeffine
             this.lblTalla = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblColecciones = new System.Windows.Forms.Label();
-            this.bttCamis = new System.Windows.Forms.Button();
-            this.bttPants = new System.Windows.Forms.Button();
-            this.bttZapas = new System.Windows.Forms.Button();
-            this.bttDiseño = new System.Windows.Forms.Button();
-            this.txtPrecioMin = new System.Windows.Forms.TextBox();
-            this.txtPrecioMax = new System.Windows.Forms.TextBox();
             this.lblMaximo = new System.Windows.Forms.Label();
             this.lblMinimo = new System.Windows.Forms.Label();
             this.lblContacta = new System.Windows.Forms.Label();
@@ -58,6 +52,12 @@ namespace PIDeffine
             this.pcbFiltros = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelColecciones = new System.Windows.Forms.Panel();
+            this.rdbCamisetas = new System.Windows.Forms.RadioButton();
+            this.rdbPantalones = new System.Windows.Forms.RadioButton();
+            this.rdbDisenyo = new System.Windows.Forms.RadioButton();
+            this.nudMin = new System.Windows.Forms.NumericUpDown();
+            this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -69,6 +69,9 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbFiltros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelColecciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -136,11 +139,11 @@ namespace PIDeffine
             // 
             this.lblFiltrarRopa.AutoSize = true;
             this.lblFiltrarRopa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblFiltrarRopa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblFiltrarRopa.Font = new System.Drawing.Font("Arial", 15F);
             this.lblFiltrarRopa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
             this.lblFiltrarRopa.Location = new System.Drawing.Point(73, 215);
             this.lblFiltrarRopa.Name = "lblFiltrarRopa";
-            this.lblFiltrarRopa.Size = new System.Drawing.Size(144, 29);
+            this.lblFiltrarRopa.Size = new System.Drawing.Size(143, 28);
             this.lblFiltrarRopa.TabIndex = 32;
             this.lblFiltrarRopa.Text = "Filtrar Ropa";
             // 
@@ -148,11 +151,11 @@ namespace PIDeffine
             // 
             this.lblTalla.AutoSize = true;
             this.lblTalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblTalla.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
             this.lblTalla.ForeColor = System.Drawing.Color.White;
             this.lblTalla.Location = new System.Drawing.Point(40, 292);
             this.lblTalla.Name = "lblTalla";
-            this.lblTalla.Size = new System.Drawing.Size(55, 25);
+            this.lblTalla.Size = new System.Drawing.Size(50, 23);
             this.lblTalla.TabIndex = 33;
             this.lblTalla.Text = "Talla";
             // 
@@ -160,11 +163,11 @@ namespace PIDeffine
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.ForeColor = System.Drawing.Color.White;
             this.lblPrecio.Location = new System.Drawing.Point(39, 405);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(67, 25);
+            this.lblPrecio.Size = new System.Drawing.Size(66, 23);
             this.lblPrecio.TabIndex = 34;
             this.lblPrecio.Text = "Precio";
             // 
@@ -172,81 +175,23 @@ namespace PIDeffine
             // 
             this.lblColecciones.AutoSize = true;
             this.lblColecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblColecciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColecciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColecciones.ForeColor = System.Drawing.Color.White;
             this.lblColecciones.Location = new System.Drawing.Point(39, 566);
             this.lblColecciones.Name = "lblColecciones";
-            this.lblColecciones.Size = new System.Drawing.Size(120, 25);
+            this.lblColecciones.Size = new System.Drawing.Size(116, 23);
             this.lblColecciones.TabIndex = 35;
             this.lblColecciones.Text = "Colecciones";
-            // 
-            // bttCamis
-            // 
-            this.bttCamis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttCamis.Location = new System.Drawing.Point(52, 594);
-            this.bttCamis.Name = "bttCamis";
-            this.bttCamis.Size = new System.Drawing.Size(185, 31);
-            this.bttCamis.TabIndex = 38;
-            this.bttCamis.Text = "Camisetas";
-            this.bttCamis.UseVisualStyleBackColor = true;
-            this.bttCamis.Click += new System.EventHandler(this.bttCamis_Click);
-            // 
-            // bttPants
-            // 
-            this.bttPants.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttPants.Location = new System.Drawing.Point(52, 631);
-            this.bttPants.Name = "bttPants";
-            this.bttPants.Size = new System.Drawing.Size(185, 31);
-            this.bttPants.TabIndex = 39;
-            this.bttPants.Text = "Pantalones";
-            this.bttPants.UseVisualStyleBackColor = true;
-            this.bttPants.Click += new System.EventHandler(this.bttPants_Click);
-            // 
-            // bttZapas
-            // 
-            this.bttZapas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttZapas.Location = new System.Drawing.Point(52, 668);
-            this.bttZapas.Name = "bttZapas";
-            this.bttZapas.Size = new System.Drawing.Size(185, 31);
-            this.bttZapas.TabIndex = 40;
-            this.bttZapas.Text = "Zapatillas";
-            this.bttZapas.UseVisualStyleBackColor = true;
-            this.bttZapas.Click += new System.EventHandler(this.bttZapas_Click);
-            // 
-            // bttDiseño
-            // 
-            this.bttDiseño.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttDiseño.Location = new System.Drawing.Point(52, 705);
-            this.bttDiseño.Name = "bttDiseño";
-            this.bttDiseño.Size = new System.Drawing.Size(185, 31);
-            this.bttDiseño.TabIndex = 41;
-            this.bttDiseño.Text = "Diseño";
-            this.bttDiseño.UseVisualStyleBackColor = true;
-            this.bttDiseño.Click += new System.EventHandler(this.bttDiseño_Click);
-            // 
-            // txtPrecioMin
-            // 
-            this.txtPrecioMin.Location = new System.Drawing.Point(45, 433);
-            this.txtPrecioMin.Name = "txtPrecioMin";
-            this.txtPrecioMin.Size = new System.Drawing.Size(100, 30);
-            this.txtPrecioMin.TabIndex = 42;
-            // 
-            // txtPrecioMax
-            // 
-            this.txtPrecioMax.Location = new System.Drawing.Point(45, 476);
-            this.txtPrecioMax.Name = "txtPrecioMax";
-            this.txtPrecioMax.Size = new System.Drawing.Size(100, 30);
-            this.txtPrecioMax.TabIndex = 43;
             // 
             // lblMaximo
             // 
             this.lblMaximo.AutoSize = true;
             this.lblMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaximo.ForeColor = System.Drawing.Color.White;
-            this.lblMaximo.Location = new System.Drawing.Point(170, 476);
+            this.lblMaximo.Location = new System.Drawing.Point(40, 471);
             this.lblMaximo.Name = "lblMaximo";
-            this.lblMaximo.Size = new System.Drawing.Size(81, 25);
+            this.lblMaximo.Size = new System.Drawing.Size(78, 23);
             this.lblMaximo.TabIndex = 44;
             this.lblMaximo.Text = "Máximo";
             // 
@@ -254,11 +199,11 @@ namespace PIDeffine
             // 
             this.lblMinimo.AutoSize = true;
             this.lblMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblMinimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimo.ForeColor = System.Drawing.Color.White;
-            this.lblMinimo.Location = new System.Drawing.Point(170, 438);
+            this.lblMinimo.Location = new System.Drawing.Point(40, 438);
             this.lblMinimo.Name = "lblMinimo";
-            this.lblMinimo.Size = new System.Drawing.Size(75, 25);
+            this.lblMinimo.Size = new System.Drawing.Size(74, 23);
             this.lblMinimo.TabIndex = 45;
             this.lblMinimo.Text = "Mínimo";
             // 
@@ -391,12 +336,94 @@ namespace PIDeffine
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
             // 
+            // panelColecciones
+            // 
+            this.panelColecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panelColecciones.Controls.Add(this.rdbDisenyo);
+            this.panelColecciones.Controls.Add(this.rdbPantalones);
+            this.panelColecciones.Controls.Add(this.rdbCamisetas);
+            this.panelColecciones.ForeColor = System.Drawing.Color.White;
+            this.panelColecciones.Location = new System.Drawing.Point(37, 594);
+            this.panelColecciones.Name = "panelColecciones";
+            this.panelColecciones.Size = new System.Drawing.Size(208, 120);
+            this.panelColecciones.TabIndex = 0;
+            // 
+            // rdbCamisetas
+            // 
+            this.rdbCamisetas.AutoSize = true;
+            this.rdbCamisetas.Location = new System.Drawing.Point(3, 3);
+            this.rdbCamisetas.Name = "rdbCamisetas";
+            this.rdbCamisetas.Size = new System.Drawing.Size(124, 27);
+            this.rdbCamisetas.TabIndex = 0;
+            this.rdbCamisetas.TabStop = true;
+            this.rdbCamisetas.Text = "Camisetas";
+            this.rdbCamisetas.UseVisualStyleBackColor = true;
+            // 
+            // rdbPantalones
+            // 
+            this.rdbPantalones.AutoSize = true;
+            this.rdbPantalones.Location = new System.Drawing.Point(3, 36);
+            this.rdbPantalones.Name = "rdbPantalones";
+            this.rdbPantalones.Size = new System.Drawing.Size(128, 27);
+            this.rdbPantalones.TabIndex = 1;
+            this.rdbPantalones.TabStop = true;
+            this.rdbPantalones.Text = "Pantalones";
+            this.rdbPantalones.UseVisualStyleBackColor = true;
+            // 
+            // rdbDisenyo
+            // 
+            this.rdbDisenyo.AutoSize = true;
+            this.rdbDisenyo.Location = new System.Drawing.Point(3, 71);
+            this.rdbDisenyo.Name = "rdbDisenyo";
+            this.rdbDisenyo.Size = new System.Drawing.Size(92, 27);
+            this.rdbDisenyo.TabIndex = 2;
+            this.rdbDisenyo.TabStop = true;
+            this.rdbDisenyo.Text = "Diseño";
+            this.rdbDisenyo.UseVisualStyleBackColor = true;
+            // 
+            // nudMin
+            // 
+            this.nudMin.Location = new System.Drawing.Point(190, 431);
+            this.nudMin.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudMin.Name = "nudMin";
+            this.nudMin.Size = new System.Drawing.Size(47, 30);
+            this.nudMin.TabIndex = 3;
+            this.nudMin.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // nudMax
+            // 
+            this.nudMax.Location = new System.Drawing.Point(190, 471);
+            this.nudMax.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudMax.Name = "nudMax";
+            this.nudMax.Size = new System.Drawing.Size(47, 30);
+            this.nudMax.TabIndex = 69;
+            this.nudMax.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // FrmTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
+            this.Controls.Add(this.nudMax);
+            this.Controls.Add(this.nudMin);
+            this.Controls.Add(this.panelColecciones);
             this.Controls.Add(this.panelPrinc);
             this.Controls.Add(this.cmbTalla);
             this.Controls.Add(this.pcbPerfil);
@@ -409,12 +436,6 @@ namespace PIDeffine
             this.Controls.Add(this.paneldecontrol);
             this.Controls.Add(this.lblMinimo);
             this.Controls.Add(this.lblMaximo);
-            this.Controls.Add(this.txtPrecioMax);
-            this.Controls.Add(this.txtPrecioMin);
-            this.Controls.Add(this.bttDiseño);
-            this.Controls.Add(this.bttZapas);
-            this.Controls.Add(this.bttPants);
-            this.Controls.Add(this.bttCamis);
             this.Controls.Add(this.lblColecciones);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblTalla);
@@ -441,6 +462,10 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbFiltros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelColecciones.ResumeLayout(false);
+            this.panelColecciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,12 +486,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblTalla;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblColecciones;
-        private System.Windows.Forms.Button bttCamis;
-        private System.Windows.Forms.Button bttPants;
-        private System.Windows.Forms.Button bttZapas;
-        private System.Windows.Forms.Button bttDiseño;
-        private System.Windows.Forms.TextBox txtPrecioMin;
-        private System.Windows.Forms.TextBox txtPrecioMax;
         private System.Windows.Forms.Label lblMaximo;
         private System.Windows.Forms.Label lblMinimo;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -476,5 +495,11 @@ namespace PIDeffine
         private System.Windows.Forms.ComboBox cmbTalla;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panelPrinc;
+        private System.Windows.Forms.Panel panelColecciones;
+        private System.Windows.Forms.RadioButton rdbDisenyo;
+        private System.Windows.Forms.RadioButton rdbPantalones;
+        private System.Windows.Forms.RadioButton rdbCamisetas;
+        private System.Windows.Forms.NumericUpDown nudMin;
+        private System.Windows.Forms.NumericUpDown nudMax;
     }
 }

@@ -37,11 +37,10 @@ namespace PIDeffine
             lblMinimo.Text = StringRecursos.Minimo;
             lblTalla.Text = StringRecursos.Talla;
             lblPrecio.Text = StringRecursos.Precio;
-            bttCamis.Text = StringRecursos.Camiseta;
-            bttDiseño.Text = StringRecursos.Diseño;
+            rdbCamisetas.Text = StringRecursos.Camiseta;
+            rdbDisenyo.Text = StringRecursos.Diseño;
             bttFiltrar.Text = StringRecursos.Filtrar;
-            bttPants.Text = StringRecursos.Pantalones;
-            bttZapas.Text = StringRecursos.Zapatillas;
+            rdbPantalones.Text = StringRecursos.Pantalones;
         }
         private void FrmTienda_Load(object sender, EventArgs e)
         {

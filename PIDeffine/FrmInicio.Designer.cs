@@ -277,7 +277,7 @@ namespace PIDeffine
             this.paneldecontrol.BackColor = System.Drawing.Color.DimGray;
             this.paneldecontrol.Controls.Add(this.pcbCerrar);
             this.paneldecontrol.Controls.Add(this.pcbMinimizar);
-            this.paneldecontrol.Location = new System.Drawing.Point(3, -15);
+            this.paneldecontrol.Location = new System.Drawing.Point(-3, -13);
             this.paneldecontrol.Name = "paneldecontrol";
             this.paneldecontrol.Size = new System.Drawing.Size(1010, 55);
             this.paneldecontrol.TabIndex = 24;

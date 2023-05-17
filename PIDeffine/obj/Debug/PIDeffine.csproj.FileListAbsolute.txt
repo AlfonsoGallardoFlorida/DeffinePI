@@ -186,3 +186,4 @@ C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\bin\Debug\System.Threading.Tasks.E
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resources.dll
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmAdmin.resources
+C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCarrito.resources
