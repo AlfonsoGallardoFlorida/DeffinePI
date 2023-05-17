@@ -234,6 +234,7 @@ namespace PIDeffine
             this.panelAyuda.Name = "panelAyuda";
             this.panelAyuda.Size = new System.Drawing.Size(324, 109);
             this.panelAyuda.TabIndex = 17;
+            this.panelAyuda.Click += new System.EventHandler(this.panelAyuda_Click);
             // 
             // panelLogIn
             // 

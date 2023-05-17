@@ -197,7 +197,7 @@ namespace PIDeffine
             // pcbPrincipal
             // 
             this.pcbPrincipal.Image = global::PIDeffine.Properties.Resources.FONDOGRISS;
-            this.pcbPrincipal.Location = new System.Drawing.Point(12, 151);
+            this.pcbPrincipal.Location = new System.Drawing.Point(12, 157);
             this.pcbPrincipal.Name = "pcbPrincipal";
             this.pcbPrincipal.Size = new System.Drawing.Size(952, 585);
             this.pcbPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -223,7 +223,7 @@ namespace PIDeffine
             this.dgvCarrito.Name = "dgvCarrito";
             this.dgvCarrito.RowHeadersWidth = 51;
             this.dgvCarrito.RowTemplate.Height = 24;
-            this.dgvCarrito.Size = new System.Drawing.Size(686, 406);
+            this.dgvCarrito.Size = new System.Drawing.Size(686, 343);
             this.dgvCarrito.TabIndex = 60;
             // 
             // cmbTalla
@@ -295,7 +295,7 @@ namespace PIDeffine
             // pcbFiltros
             // 
             this.pcbFiltros.Image = global::PIDeffine.Properties.Resources.Group11;
-            this.pcbFiltros.Location = new System.Drawing.Point(14, 158);
+            this.pcbFiltros.Location = new System.Drawing.Point(14, 163);
             this.pcbFiltros.Name = "pcbFiltros";
             this.pcbFiltros.Size = new System.Drawing.Size(238, 606);
             this.pcbFiltros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,6 +351,7 @@ namespace PIDeffine
             // rdbDisenyo
             // 
             this.rdbDisenyo.AutoSize = true;
+            this.rdbDisenyo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdbDisenyo.Location = new System.Drawing.Point(3, 71);
             this.rdbDisenyo.Name = "rdbDisenyo";
             this.rdbDisenyo.Size = new System.Drawing.Size(92, 27);
@@ -362,6 +363,7 @@ namespace PIDeffine
             // rdbPantalones
             // 
             this.rdbPantalones.AutoSize = true;
+            this.rdbPantalones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdbPantalones.Location = new System.Drawing.Point(3, 36);
             this.rdbPantalones.Name = "rdbPantalones";
             this.rdbPantalones.Size = new System.Drawing.Size(128, 27);
@@ -373,6 +375,7 @@ namespace PIDeffine
             // rdbCamisetas
             // 
             this.rdbCamisetas.AutoSize = true;
+            this.rdbCamisetas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdbCamisetas.Location = new System.Drawing.Point(3, 3);
             this.rdbCamisetas.Name = "rdbCamisetas";
             this.rdbCamisetas.Size = new System.Drawing.Size(124, 27);

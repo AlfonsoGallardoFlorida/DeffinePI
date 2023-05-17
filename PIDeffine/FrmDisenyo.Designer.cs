@@ -31,6 +31,10 @@ namespace PIDeffine
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDisenyo));
             this.paneldecontrol = new System.Windows.Forms.Panel();
+            this.pcbVolver = new System.Windows.Forms.PictureBox();
+            this.pcbCerrar = new System.Windows.Forms.PictureBox();
+            this.pcbMinimizar = new System.Windows.Forms.PictureBox();
+            this.pcbLogOut = new System.Windows.Forms.PictureBox();
             this.lblColores = new System.Windows.Forms.Label();
             this.lblCamiseta = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,12 +71,22 @@ namespace PIDeffine
             this.pcbrectangulo = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pcbCamisetaPrinc = new System.Windows.Forms.PictureBox();
-            this.pcbVolver = new System.Windows.Forms.PictureBox();
-            this.pcbCerrar = new System.Windows.Forms.PictureBox();
-            this.pcbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pcbLogOut = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rdbSuda = new System.Windows.Forms.RadioButton();
+            this.rdbTirant = new System.Windows.Forms.RadioButton();
+            this.rdbLarga = new System.Windows.Forms.RadioButton();
+            this.rdbCamiseta = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rdbBlanco = new System.Windows.Forms.RadioButton();
+            this.rdbNegro = new System.Windows.Forms.RadioButton();
+            this.rdbAzul = new System.Windows.Forms.RadioButton();
+            this.rdbVerde = new System.Windows.Forms.RadioButton();
             this.paneldecontrol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
@@ -96,11 +110,9 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbrectangulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCamisetaPrinc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -117,6 +129,54 @@ namespace PIDeffine
             this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
             this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
             this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
+            // 
+            // pcbVolver
+            // 
+            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
+            this.pcbVolver.Location = new System.Drawing.Point(24, 17);
+            this.pcbVolver.Name = "pcbVolver";
+            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
+            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbVolver.TabIndex = 27;
+            this.pcbVolver.TabStop = false;
+            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
+            // 
+            // pcbCerrar
+            // 
+            this.pcbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCerrar.Image = global::PIDeffine.Properties.Resources.cerrar;
+            this.pcbCerrar.Location = new System.Drawing.Point(953, 17);
+            this.pcbCerrar.Name = "pcbCerrar";
+            this.pcbCerrar.Size = new System.Drawing.Size(41, 35);
+            this.pcbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCerrar.TabIndex = 24;
+            this.pcbCerrar.TabStop = false;
+            this.pcbCerrar.Click += new System.EventHandler(this.pcbCerrar_Click);
+            // 
+            // pcbMinimizar
+            // 
+            this.pcbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbMinimizar.Image = global::PIDeffine.Properties.Resources.minimizzar;
+            this.pcbMinimizar.Location = new System.Drawing.Point(910, 17);
+            this.pcbMinimizar.Name = "pcbMinimizar";
+            this.pcbMinimizar.Size = new System.Drawing.Size(37, 35);
+            this.pcbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbMinimizar.TabIndex = 0;
+            this.pcbMinimizar.TabStop = false;
+            this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
+            // 
+            // pcbLogOut
+            // 
+            this.pcbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbLogOut.Image = global::PIDeffine.Properties.Resources.loguott;
+            this.pcbLogOut.Location = new System.Drawing.Point(866, 17);
+            this.pcbLogOut.Name = "pcbLogOut";
+            this.pcbLogOut.Size = new System.Drawing.Size(38, 35);
+            this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLogOut.TabIndex = 26;
+            this.pcbLogOut.TabStop = false;
+            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
             // 
             // lblColores
             // 
@@ -339,7 +399,7 @@ namespace PIDeffine
             this.pcbGato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcbGato.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbGato.Image = global::PIDeffine.Properties.Resources.gato;
-            this.pcbGato.Location = new System.Drawing.Point(597, 510);
+            this.pcbGato.Location = new System.Drawing.Point(597, 509);
             this.pcbGato.Name = "pcbGato";
             this.pcbGato.Size = new System.Drawing.Size(75, 77);
             this.pcbGato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -405,7 +465,7 @@ namespace PIDeffine
             // pcbCamiseta
             // 
             this.pcbCamiseta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbCamiseta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCamiseta.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbCamiseta.Image = global::PIDeffine.Properties.Resources.camiblancaS;
             this.pcbCamiseta.Location = new System.Drawing.Point(597, 370);
             this.pcbCamiseta.Name = "pcbCamiseta";
@@ -413,25 +473,23 @@ namespace PIDeffine
             this.pcbCamiseta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbCamiseta.TabIndex = 66;
             this.pcbCamiseta.TabStop = false;
-            this.pcbCamiseta.Click += new System.EventHandler(this.pcbCamiseta_Click);
             // 
             // pcbSudadera
             // 
             this.pcbSudadera.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbSudadera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbSudadera.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbSudadera.Image = global::PIDeffine.Properties.Resources.camisetasudaderadisenyo;
-            this.pcbSudadera.Location = new System.Drawing.Point(858, 370);
+            this.pcbSudadera.Location = new System.Drawing.Point(306, 3);
             this.pcbSudadera.Name = "pcbSudadera";
             this.pcbSudadera.Size = new System.Drawing.Size(75, 77);
             this.pcbSudadera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbSudadera.TabIndex = 65;
             this.pcbSudadera.TabStop = false;
-            this.pcbSudadera.Click += new System.EventHandler(this.pcbSudadera_Click);
             // 
             // pcbCamisetaLarga
             // 
             this.pcbCamisetaLarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbCamisetaLarga.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCamisetaLarga.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbCamisetaLarga.Image = global::PIDeffine.Properties.Resources.camisetalargadisenyo;
             this.pcbCamisetaLarga.Location = new System.Drawing.Point(689, 370);
             this.pcbCamisetaLarga.Name = "pcbCamisetaLarga";
@@ -439,72 +497,66 @@ namespace PIDeffine
             this.pcbCamisetaLarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCamisetaLarga.TabIndex = 64;
             this.pcbCamisetaLarga.TabStop = false;
-            this.pcbCamisetaLarga.Click += new System.EventHandler(this.pcbCamisetaLarga_Click);
             // 
             // pcbTirantes
             // 
             this.pcbTirantes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pcbTirantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbTirantes.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbTirantes.Image = global::PIDeffine.Properties.Resources.camisetatirantesdisenyo;
-            this.pcbTirantes.Location = new System.Drawing.Point(773, 370);
+            this.pcbTirantes.Location = new System.Drawing.Point(212, 4);
             this.pcbTirantes.Name = "pcbTirantes";
             this.pcbTirantes.Size = new System.Drawing.Size(75, 77);
             this.pcbTirantes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbTirantes.TabIndex = 63;
             this.pcbTirantes.TabStop = false;
-            this.pcbTirantes.Click += new System.EventHandler(this.pcbTirantes_Click);
             // 
             // pcbVerde
             // 
             this.pcbVerde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.pcbVerde.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVerde.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbVerde.Image = global::PIDeffine.Properties.Resources.elipseverde;
-            this.pcbVerde.Location = new System.Drawing.Point(858, 211);
+            this.pcbVerde.Location = new System.Drawing.Point(267, 6);
             this.pcbVerde.Name = "pcbVerde";
             this.pcbVerde.Size = new System.Drawing.Size(69, 67);
             this.pcbVerde.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbVerde.TabIndex = 58;
             this.pcbVerde.TabStop = false;
-            this.pcbVerde.Click += new System.EventHandler(this.pcbVerde_Click);
             // 
             // pcbAzul
             // 
             this.pcbAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.pcbAzul.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbAzul.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbAzul.Image = global::PIDeffine.Properties.Resources.elipseazul;
-            this.pcbAzul.Location = new System.Drawing.Point(779, 211);
+            this.pcbAzul.Location = new System.Drawing.Point(185, 7);
             this.pcbAzul.Name = "pcbAzul";
             this.pcbAzul.Size = new System.Drawing.Size(69, 67);
             this.pcbAzul.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbAzul.TabIndex = 57;
             this.pcbAzul.TabStop = false;
-            this.pcbAzul.Click += new System.EventHandler(this.pcbAzul_Click);
             // 
             // pcbNegro
             // 
             this.pcbNegro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.pcbNegro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbNegro.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbNegro.Image = global::PIDeffine.Properties.Resources.elipsenegra;
-            this.pcbNegro.Location = new System.Drawing.Point(695, 211);
+            this.pcbNegro.Location = new System.Drawing.Point(99, 7);
             this.pcbNegro.Name = "pcbNegro";
             this.pcbNegro.Size = new System.Drawing.Size(69, 67);
             this.pcbNegro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbNegro.TabIndex = 56;
             this.pcbNegro.TabStop = false;
-            this.pcbNegro.Click += new System.EventHandler(this.pcbNegro_Click);
             // 
             // pcbBlanco
             // 
             this.pcbBlanco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.pcbBlanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbBlanco.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pcbBlanco.Image = global::PIDeffine.Properties.Resources.elipseblancaS;
-            this.pcbBlanco.Location = new System.Drawing.Point(611, 211);
+            this.pcbBlanco.Location = new System.Drawing.Point(19, 7);
             this.pcbBlanco.Name = "pcbBlanco";
             this.pcbBlanco.Size = new System.Drawing.Size(69, 67);
             this.pcbBlanco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbBlanco.TabIndex = 55;
             this.pcbBlanco.TabStop = false;
-            this.pcbBlanco.Click += new System.EventHandler(this.pcbBlanco_Click);
             // 
             // pcbrectangulo
             // 
@@ -512,7 +564,7 @@ namespace PIDeffine
             this.pcbrectangulo.Image = global::PIDeffine.Properties.Resources.Rectangule_5;
             this.pcbrectangulo.Location = new System.Drawing.Point(597, 200);
             this.pcbrectangulo.Name = "pcbrectangulo";
-            this.pcbrectangulo.Size = new System.Drawing.Size(342, 88);
+            this.pcbrectangulo.Size = new System.Drawing.Size(357, 88);
             this.pcbrectangulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbrectangulo.TabIndex = 54;
             this.pcbrectangulo.TabStop = false;
@@ -539,54 +591,6 @@ namespace PIDeffine
             this.pcbCamisetaPrinc.TabIndex = 27;
             this.pcbCamisetaPrinc.TabStop = false;
             // 
-            // pcbVolver
-            // 
-            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
-            this.pcbVolver.Location = new System.Drawing.Point(24, 17);
-            this.pcbVolver.Name = "pcbVolver";
-            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
-            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbVolver.TabIndex = 27;
-            this.pcbVolver.TabStop = false;
-            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
-            // 
-            // pcbCerrar
-            // 
-            this.pcbCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbCerrar.Image = global::PIDeffine.Properties.Resources.cerrar;
-            this.pcbCerrar.Location = new System.Drawing.Point(953, 17);
-            this.pcbCerrar.Name = "pcbCerrar";
-            this.pcbCerrar.Size = new System.Drawing.Size(41, 35);
-            this.pcbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbCerrar.TabIndex = 24;
-            this.pcbCerrar.TabStop = false;
-            this.pcbCerrar.Click += new System.EventHandler(this.pcbCerrar_Click);
-            // 
-            // pcbMinimizar
-            // 
-            this.pcbMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbMinimizar.Image = global::PIDeffine.Properties.Resources.minimizzar;
-            this.pcbMinimizar.Location = new System.Drawing.Point(910, 17);
-            this.pcbMinimizar.Name = "pcbMinimizar";
-            this.pcbMinimizar.Size = new System.Drawing.Size(37, 35);
-            this.pcbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMinimizar.TabIndex = 0;
-            this.pcbMinimizar.TabStop = false;
-            this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
-            // 
-            // pcbLogOut
-            // 
-            this.pcbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbLogOut.Image = global::PIDeffine.Properties.Resources.loguott;
-            this.pcbLogOut.Location = new System.Drawing.Point(866, 17);
-            this.pcbLogOut.Name = "pcbLogOut";
-            this.pcbLogOut.Size = new System.Drawing.Size(38, 35);
-            this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbLogOut.TabIndex = 26;
-            this.pcbLogOut.TabStop = false;
-            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
-            // 
             // pcbPrincipal
             // 
             this.pcbPrincipal.Image = global::PIDeffine.Properties.Resources.FONDOGRISS;
@@ -596,6 +600,136 @@ namespace PIDeffine
             this.pcbPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbPrincipal.TabIndex = 53;
             this.pcbPrincipal.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.panel2.Controls.Add(this.rdbSuda);
+            this.panel2.Controls.Add(this.rdbTirant);
+            this.panel2.Controls.Add(this.rdbLarga);
+            this.panel2.Controls.Add(this.rdbCamiseta);
+            this.panel2.Controls.Add(this.pcbSudadera);
+            this.panel2.Controls.Add(this.pcbTirantes);
+            this.panel2.Location = new System.Drawing.Point(573, 366);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(390, 100);
+            this.panel2.TabIndex = 85;
+            // 
+            // rdbSuda
+            // 
+            this.rdbSuda.AutoSize = true;
+            this.rdbSuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.rdbSuda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbSuda.Location = new System.Drawing.Point(288, 39);
+            this.rdbSuda.Name = "rdbSuda";
+            this.rdbSuda.Size = new System.Drawing.Size(17, 16);
+            this.rdbSuda.TabIndex = 89;
+            this.rdbSuda.UseVisualStyleBackColor = false;
+            this.rdbSuda.CheckedChanged += new System.EventHandler(this.rdbSuda_CheckedChanged);
+            // 
+            // rdbTirant
+            // 
+            this.rdbTirant.AutoSize = true;
+            this.rdbTirant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.rdbTirant.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbTirant.Location = new System.Drawing.Point(194, 41);
+            this.rdbTirant.Name = "rdbTirant";
+            this.rdbTirant.Size = new System.Drawing.Size(17, 16);
+            this.rdbTirant.TabIndex = 88;
+            this.rdbTirant.UseVisualStyleBackColor = false;
+            this.rdbTirant.CheckedChanged += new System.EventHandler(this.rdbTirant_CheckedChanged);
+            // 
+            // rdbLarga
+            // 
+            this.rdbLarga.AutoSize = true;
+            this.rdbLarga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.rdbLarga.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbLarga.Location = new System.Drawing.Point(99, 39);
+            this.rdbLarga.Name = "rdbLarga";
+            this.rdbLarga.Size = new System.Drawing.Size(17, 16);
+            this.rdbLarga.TabIndex = 87;
+            this.rdbLarga.UseVisualStyleBackColor = false;
+            this.rdbLarga.CheckedChanged += new System.EventHandler(this.rdbLarga_CheckedChanged);
+            // 
+            // rdbCamiseta
+            // 
+            this.rdbCamiseta.AutoSize = true;
+            this.rdbCamiseta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.rdbCamiseta.Checked = true;
+            this.rdbCamiseta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbCamiseta.Location = new System.Drawing.Point(5, 39);
+            this.rdbCamiseta.Name = "rdbCamiseta";
+            this.rdbCamiseta.Size = new System.Drawing.Size(17, 16);
+            this.rdbCamiseta.TabIndex = 86;
+            this.rdbCamiseta.TabStop = true;
+            this.rdbCamiseta.UseVisualStyleBackColor = false;
+            this.rdbCamiseta.CheckedChanged += new System.EventHandler(this.rdbCamiseta_CheckedChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
+            this.panel3.Controls.Add(this.rdbVerde);
+            this.panel3.Controls.Add(this.rdbAzul);
+            this.panel3.Controls.Add(this.rdbNegro);
+            this.panel3.Controls.Add(this.rdbBlanco);
+            this.panel3.Controls.Add(this.pcbBlanco);
+            this.panel3.Controls.Add(this.pcbNegro);
+            this.panel3.Controls.Add(this.pcbAzul);
+            this.panel3.Controls.Add(this.pcbVerde);
+            this.panel3.Location = new System.Drawing.Point(601, 204);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(338, 78);
+            this.panel3.TabIndex = 86;
+            // 
+            // rdbBlanco
+            // 
+            this.rdbBlanco.AutoSize = true;
+            this.rdbBlanco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
+            this.rdbBlanco.Checked = true;
+            this.rdbBlanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbBlanco.Location = new System.Drawing.Point(3, 9);
+            this.rdbBlanco.Name = "rdbBlanco";
+            this.rdbBlanco.Size = new System.Drawing.Size(17, 16);
+            this.rdbBlanco.TabIndex = 90;
+            this.rdbBlanco.TabStop = true;
+            this.rdbBlanco.UseVisualStyleBackColor = false;
+            this.rdbBlanco.CheckedChanged += new System.EventHandler(this.rdbBlanco_CheckedChanged);
+            // 
+            // rdbNegro
+            // 
+            this.rdbNegro.AutoSize = true;
+            this.rdbNegro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
+            this.rdbNegro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbNegro.Location = new System.Drawing.Point(86, 9);
+            this.rdbNegro.Name = "rdbNegro";
+            this.rdbNegro.Size = new System.Drawing.Size(17, 16);
+            this.rdbNegro.TabIndex = 91;
+            this.rdbNegro.UseVisualStyleBackColor = false;
+            this.rdbNegro.CheckedChanged += new System.EventHandler(this.rdbNegro_CheckedChanged);
+            // 
+            // rdbAzul
+            // 
+            this.rdbAzul.AutoSize = true;
+            this.rdbAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
+            this.rdbAzul.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbAzul.Location = new System.Drawing.Point(170, 8);
+            this.rdbAzul.Name = "rdbAzul";
+            this.rdbAzul.Size = new System.Drawing.Size(17, 16);
+            this.rdbAzul.TabIndex = 92;
+            this.rdbAzul.UseVisualStyleBackColor = false;
+            this.rdbAzul.CheckedChanged += new System.EventHandler(this.rdbAzul_CheckedChanged);
+            // 
+            // rdbVerde
+            // 
+            this.rdbVerde.AutoSize = true;
+            this.rdbVerde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
+            this.rdbVerde.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbVerde.Location = new System.Drawing.Point(253, 10);
+            this.rdbVerde.Name = "rdbVerde";
+            this.rdbVerde.Size = new System.Drawing.Size(17, 16);
+            this.rdbVerde.TabIndex = 93;
+            this.rdbVerde.UseVisualStyleBackColor = false;
+            this.rdbVerde.CheckedChanged += new System.EventHandler(this.rdbVerde_CheckedChanged);
             // 
             // FrmDisenyo
             // 
@@ -621,19 +755,15 @@ namespace PIDeffine
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pcbCamiseta);
-            this.Controls.Add(this.pcbSudadera);
             this.Controls.Add(this.pcbCamisetaLarga);
-            this.Controls.Add(this.pcbTirantes);
             this.Controls.Add(this.lblCamiseta);
             this.Controls.Add(this.lblColores);
-            this.Controls.Add(this.pcbVerde);
-            this.Controls.Add(this.pcbAzul);
-            this.Controls.Add(this.pcbNegro);
-            this.Controls.Add(this.pcbBlanco);
-            this.Controls.Add(this.pcbrectangulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pcbCamisetaPrinc);
             this.Controls.Add(this.paneldecontrol);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pcbrectangulo);
             this.Controls.Add(this.pcbPrincipal);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -644,6 +774,10 @@ namespace PIDeffine
             this.Text = "DEFFINE - DISEÑA TU CAMISETA";
             this.Load += new System.EventHandler(this.FrmDisenyo_Load);
             this.paneldecontrol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -668,11 +802,11 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbrectangulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCamisetaPrinc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -722,5 +856,15 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblTallas;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pcbingle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rdbSuda;
+        private System.Windows.Forms.RadioButton rdbTirant;
+        private System.Windows.Forms.RadioButton rdbLarga;
+        private System.Windows.Forms.RadioButton rdbCamiseta;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rdbVerde;
+        private System.Windows.Forms.RadioButton rdbAzul;
+        private System.Windows.Forms.RadioButton rdbNegro;
+        private System.Windows.Forms.RadioButton rdbBlanco;
     }
 }

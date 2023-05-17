@@ -78,100 +78,6 @@ namespace PIDeffine
             }
         }
 
-        private void pcbBlanco_Click(object sender, EventArgs e)
-        {
-            DesmarcarColores();
-            pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblancaS;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
-        }
-
-        private void pcbNegro_Click(object sender, EventArgs e)
-        {
-            DesmarcarColores();
-            pcbNegro.Image = PIDeffine.Properties.Resources.elipsenegraS;
-            pcbCamisetaPrinc.BackColor = Color.White;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
-        }
-
-        private void pcbAzul_Click(object sender, EventArgs e)
-        {
-            DesmarcarColores();
-            pcbAzul.Image = PIDeffine.Properties.Resources.elipseazulS;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
-
-        }
-
-        private void pcbVerde_Click(object sender, EventArgs e)
-        {
-            DesmarcarColores();
-            pcbVerde.Image = PIDeffine.Properties.Resources.elipseverdeS;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
-
-        }
-        private void pcbCamiseta_Click(object sender, EventArgs e)
-        {
-            DesmarcarCamisetas();
-            pcbCamiseta.Image = PIDeffine.Properties.Resources.camiblancaS;
-            if (pcbBlanco.Image == PIDeffine.Properties.Resources.elipseblancaS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
-            }
-            else if (pcbNegro.Image == PIDeffine.Properties.Resources.elipsenegraS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
-            }
-            else if (pcbAzul.Image == PIDeffine.Properties.Resources.elipseazulS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
-            }
-            else if (pcbVerde.Image == PIDeffine.Properties.Resources.elipseverdeS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
-            }
-            else
-            {
-                MessageBox.Show("No deberías ver esto");
-            }
-        }
-        private void pcbCamisetaLarga_Click(object sender, EventArgs e)
-        {
-            DesmarcarCamisetas();
-            pcbCamisetaLarga.Image = PIDeffine.Properties.Resources.camilargaS;
-
-            if (pcbBlanco.Image == PIDeffine.Properties.Resources.elipseblancaS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblancalarga;
-            }
-            else if (pcbNegro.Image == PIDeffine.Properties.Resources.elipsenegraS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilarganegra;
-            }
-            else if (pcbAzul.Image == PIDeffine.Properties.Resources.elipseazulS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaazul;
-            }
-            else if (pcbVerde.Image == PIDeffine.Properties.Resources.elipseverdeS)
-            {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaverde;
-            }
-            else { MessageBox.Show("No deberias ver esto"); }
-        }
-
-        private void pcbTirantes_Click(object sender, EventArgs e)
-        {
-            DesmarcarCamisetas();
-            pcbTirantes.Image = PIDeffine.Properties.Resources.camitirantesS;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesblanca;
-        }
-
-        private void pcbSudadera_Click(object sender, EventArgs e)
-        {
-            DesmarcarCamisetas();
-            pcbSudadera.Image = PIDeffine.Properties.Resources.SusdaderaS;
-            pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camisudaderablanca;
-
-        }
-
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
             mouseX = e.X;
@@ -196,6 +102,138 @@ namespace PIDeffine
             pcbCamisetaLarga.Image = PIDeffine.Properties.Resources.camisetalargadisenyo;
             pcbTirantes.Image = PIDeffine.Properties.Resources.camisetatirantesdisenyo;
             pcbSudadera.Image = PIDeffine.Properties.Resources.camisetasudaderadisenyo;
+        }
+        private void rdbCamiseta_CheckedChanged(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbCamiseta.Image = PIDeffine.Properties.Resources.camiblancaS;
+            if (rdbBlanco.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
+                BackColorBlack();
+            }else if (rdbNegro.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
+                BackColorWhite();
+            }else if (rdbAzul.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
+                BackColorBlack();
+            }
+            else
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.CA6554_20_2_1_removebg_preview;
+                BackColorBlack();
+            }
+        }
+
+        private void rdbLarga_CheckedChanged(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbCamisetaLarga.Image = PIDeffine.Properties.Resources.camilargaS;
+            if (rdbBlanco.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblancalarga;
+                BackColorBlack();
+            }
+            else if (rdbNegro.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilarganegra;
+                BackColorWhite();
+            }
+            else if (rdbAzul.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaazul;
+                BackColorBlack();
+            }
+            else
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camilargaverde;
+                BackColorBlack();
+            }
+        }
+
+        private void rdbTirant_CheckedChanged(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbTirantes.Image = PIDeffine.Properties.Resources.camitirantesS;
+            if (rdbBlanco.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesblanca;
+                BackColorBlack();
+            }
+            else if (rdbNegro.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.caminegratirantes;
+                BackColorWhite();
+            }
+            else if (rdbAzul.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesazul;
+                BackColorBlack();
+            }
+            else
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesverde;
+                BackColorBlack();
+            }
+        }
+
+        private void rdbSuda_CheckedChanged(object sender, EventArgs e)
+        {
+            DesmarcarCamisetas();
+            pcbSudadera.Image = PIDeffine.Properties.Resources.SusdaderaS;
+            if (rdbBlanco.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camisudaderablanca;
+                BackColorBlack();
+            }
+            else if (rdbNegro.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.caminegrasudadera;
+                BackColorWhite();
+            }
+            else if (rdbAzul.Checked)
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiazulsudadera;
+                BackColorBlack();
+            }
+            else
+            {
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camisudaderaverde;
+                BackColorBlack();
+            }
+        }
+
+        private void rdbBlanco_CheckedChanged(object sender, EventArgs e)
+        {
+            DesmarcarColores();
+            pcbBlanco.Image = PIDeffine.Properties.Resources.elipseblancaS;
+
+        }
+
+        private void rdbNegro_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbAzul_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbVerde_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void BackColorWhite()
+        {
+            pcbCamisetaPrinc.BackColor = Color.White;
+        }
+
+        private void BackColorBlack()
+        {
+            pcbCamisetaPrinc.BackColor = Color.Black;
         }
     }
 }
