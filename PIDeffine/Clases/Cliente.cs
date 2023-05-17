@@ -103,9 +103,14 @@ namespace PIDeffine
             ConBD.CerrarConexion();
         }
 
-        public static void BorrarCliente(int idCliente)
+        public static void BorrarCliente(string correo)
         {
-            
+            MySqlConnection conexion = ConBD.Conexion;
+            ConBD.AbrirConexion();
+            string consulta = string.Format("DELETE FROM Clientes WHERE Correo = '{0}'", correo);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            comando.ExecuteNonQuery();
+            ConBD.CerrarConexion();
         }
     }
 }

@@ -20,14 +20,14 @@ namespace PIDeffine
         decimal precio;
         int stock;
         byte[] imagen;
-        public int IdProducto { get; set; }
-        public string Descripcion { get; set; }
-        public string Talla { get; set; }
-        public string Genero { get; set; }
-        public string Color { get; set; }
-        public decimal Precio { get; set; }
-        public int Stock { get; set; }
-        public byte[] Imagen { get; set; }
+        public int IdProducto { get {return idProducto; }}
+        public string Descripcion { get { return descripcion; } }
+        public string Talla { get { return talla; } }
+        public string Genero { get { return genero; } }
+        public string Color { get { return color; } }
+        public decimal Precio { get { return precio; } }
+        public int Stock { get { return stock; } }
+        public byte[] Imagen { get { return imagen; } set { imagen = value; } }
 
         public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img)
         {
@@ -149,24 +149,22 @@ namespace PIDeffine
         {
 
         }
-        public static List<Producto> CargarProductos()
+        public static List<Producto> CargarProductos(string consulta)
         {
             List<Producto> productos = new List<Producto>();
-
+            ConBD.AbrirConexion();
             // Aquí se ejecutaría el código para obtener los productos de la base de datos
             // y cargarlos en la lista 'productos'
 
             // Ejemplo ficticio de obtención de productos desde la base de datos
             // Supongamos que se utiliza un objeto 'command' para ejecutar una consulta SQL
-            string consulta = "SELECT * FROM productos";
-            SqlCommand command = new SqlCommand(consulta, ConBD.GetConexion());
+            MySqlCommand command = new MySqlCommand(consulta,ConBD.Conexion);
 
-            using (SqlDataReader reader = command.ExecuteReader())
+            using (MySqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    int id = (int)reader["Id"];
-                    string nombre = (string)reader["Nombre"];
+                    int id = reader.GetInt32("IdProducto");
                     string descripcion = (string)reader["Descripcion"];
                     string talla = (string)reader["Talla"];
                     string genero = (string)reader["Genero"];
@@ -179,7 +177,7 @@ namespace PIDeffine
                     productos.Add(producto);
                 }
             }
-
+            ConBD.CerrarConexion();
             return productos;
         }
     }

@@ -212,7 +212,8 @@ namespace PIDeffine
 
         private void lblContraOlvidada_Click(object sender, EventArgs e)
         {
-
+            FrmAdmin frmAdmin = new FrmAdmin();
+            frmAdmin.Show();
         }
 
         private void panelAyuda_Click(object sender, EventArgs e)
