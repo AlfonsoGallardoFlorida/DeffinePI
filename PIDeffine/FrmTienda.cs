@@ -242,59 +242,6 @@ namespace PIDeffine
         }
         private void CargarProductos()
         {
-            if (ConBD.Conexion != null)
-            {
-                ConBD.AbrirConexion();
-                List<Producto> productos = Producto.CargarProductos();
-
-                if (productos != null && productos.Count > 0)
-                {
-                    int x = 10, y = 10;
-                    int peliculaCount = 0;
-                    int maxPeliculasPorFila = 5;
-                    panelPrinc.Width = 698;
-                    panelPrinc.Height = 531;
-                    panelPrinc.Text = "";
-                    this.Controls.Add(panelPrinc);
-                    foreach (Producto producto in productos)
-                    {
-                        PictureBox imagen = new PictureBox();
-                        imagen.Tag = producto.Descripcion;
-                        imagen.Click += new EventHandler(pictureBox_Click);
-
-                        imagen.SizeMode = PictureBoxSizeMode.StretchImage;
-                        imagen.BorderStyle = BorderStyle.FixedSingle;
-                        using (MemoryStream ms = new MemoryStream(producto.Imagen))
-                        {
-                            imagen.Image = Image.FromStream(ms);
-                        }
-                        imagen.Width = 208;
-                        imagen.Height = 248;
-                        imagen.Location = new Point(x, y);
-                        panelPrinc.Controls.Add(imagen);
-                        peliculaCount++;
-
-
-                        if (peliculaCount % maxPeliculasPorFila == 0)
-                        {
-                            x = 10;
-                            y = imagen.Bottom + 10;
-                        }
-                        else
-                        {
-                            x = imagen.Right + 10;
-                        }
-                    }
-                    ConBD.CerrarConexion();
-                }
-                else
-                {
-                    MessageBox.Show("No existe conexión a la Base de datos");
-                }
-            }
-        }
-        private void CargarProductos()
-        {
             try
             {
                 string consulta = "SELECT IdProducto, Descripcion, Imagen FROM Productos";
@@ -413,16 +360,7 @@ namespace PIDeffine
         private void pictureBox_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
-        }
 
-        private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown)
-            {
-                int newX = this.Left + (e.X - mouseX);
-                int newY = this.Top + (e.Y - mouseY);
-                this.Location = new Point(newX, newY);
-            }
         }
     }
 }

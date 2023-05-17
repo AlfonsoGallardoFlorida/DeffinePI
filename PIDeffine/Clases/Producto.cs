@@ -173,7 +173,7 @@ namespace PIDeffine
                     string color = (string)reader["Color"];
                     decimal precio = (decimal)reader["Precio"];
                     int stock = (int)reader["Stock"];
-                    byte imagen = (byte)reader["Imagen"];
+                    byte[] imagen = (byte[])reader["Imagen"];
 
                     Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
                     productos.Add(producto);
