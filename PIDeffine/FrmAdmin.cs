@@ -100,16 +100,18 @@ namespace PIDeffine
 
         private void bttAdjuntar_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            OpenFileDialog cargaImagen = new OpenFileDialog();
+            cargaImagen.InitialDirectory = "C:\\";
+            cargaImagen.Filter = "Archivos de imagen (*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
+            cargaImagen.FilterIndex = 0;
+            if (cargaImagen.ShowDialog() == DialogResult.OK)
             {
-                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif";
-                openFileDialog.Title = "Seleccione una imagen";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string rutaImagen = openFileDialog.FileName;
-                    imagenBytes = File.ReadAllBytes(rutaImagen);
-                }
+                pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
+                MessageBox.Show(cargaImagen.FileName);
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

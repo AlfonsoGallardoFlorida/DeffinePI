@@ -226,3 +226,4 @@ C:\Users\alhupe\Desktop\Deffine NUEVO\DeffinePI\PIDeffine\bin\Debug\System.Runti
 C:\Users\alhupe\Desktop\Deffine NUEVO\DeffinePI\PIDeffine\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\alhupe\Desktop\Deffine NUEVO\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resources.dll
 C:\Users\alhupe\Desktop\Deffine NUEVO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
+C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmGuiaDeTallas.resources

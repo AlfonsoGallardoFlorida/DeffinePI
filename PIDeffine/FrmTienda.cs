@@ -18,15 +18,25 @@ namespace PIDeffine
     public partial class FrmTienda : Form
     {
         private List<Producto> productos;
+        private List<PictureBox> listaPictureBoxes;
         public FrmTienda()
         {
             InitializeComponent();
             productos = new List<Producto>();
+            listaPictureBoxes = new List<PictureBox>();
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
         private bool maximizar = true;
 
+        private void FrmTienda_Load(object sender, EventArgs e)
+        {
+            string consulta = "SELECT * FROM Productos";
+            CargarProductos(consulta);
+            this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
+            this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
+            this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
+        }
         private void AplicarIdioma()
         {
             lblColecciones.Text = StringRecursos.Colecciones;
@@ -41,14 +51,6 @@ namespace PIDeffine
             bttDesign.Text = StringRecursos.Diseño;
             bttFiltrar.Text = StringRecursos.Filtrar;
             rdbPantalones.Text = StringRecursos.Pantalones;
-        }
-        private void FrmTienda_Load(object sender, EventArgs e)
-        {
-            string consulta = "SELECT * FROM Productos";
-            CargarProductos(consulta);
-            this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
-            this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
-            this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
@@ -172,7 +174,7 @@ namespace PIDeffine
             string talla = cmbTalla.Text;
             decimal precioMin = nudMin.Value;
             decimal precioMax = nudMax.Value;
-            string coleccion="";
+            string coleccion = "";
             string consulta;
             if (rdbCamisetas.Checked) coleccion = "Camiseta";
             else if (rdbPantalones.Checked) coleccion = "Pantalon";
@@ -185,7 +187,7 @@ namespace PIDeffine
                 {
                     consulta += String.Format(" && Talla LIKE '{0}'", talla);
                 }
-                if (coleccion != "") 
+                if (coleccion != "")
                 {
                     consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
                 }
@@ -268,7 +270,7 @@ namespace PIDeffine
         }
         private void CargarProductos(string consulta)
         {
-            List<Producto> productos = Producto.CargarProductos(consulta);
+            productos = Producto.CargarProductos(consulta); // Utilizar la variable de instancia productos
             panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
 
             int rowIndex = 0;
@@ -290,6 +292,8 @@ namespace PIDeffine
                 pictureBox.Size = new Size(itemWidth, itemHeight);
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox.Image = ByteArrayToImage(imagenBytes);
+                pictureBox.Click += PictureBox_Click;
+                listaPictureBoxes.Add(pictureBox);
 
                 // Agregar borde a la imagen
                 pictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -325,8 +329,8 @@ namespace PIDeffine
             }
 
 
-        
-    
+
+
         }
 
         private Image ByteArrayToImage(byte[] byteArray)
@@ -376,6 +380,27 @@ namespace PIDeffine
             this.Close();
         }
 
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            List<Producto> productos = Producto.CargarProductos("SELECT * FROM Productos");
+            PictureBox pictureBox = (PictureBox)sender;
+            Producto producto = ObtenerProductoDesdePictureBox(pictureBox);
+
+            // Crear instancia del formulario FrmPedido
+            FrmPedido frmPedido = new FrmPedido();
+
+            // Asignar los valores del producto al formulario FrmPedido
+            frmPedido.NombreProducto = producto.Descripcion;
+            frmPedido.PrecioProducto = producto.Precio;
+            frmPedido.ImagenProducto = producto.Imagen;
+
+            // Cerrar el formulario FrmTienda
+            this.Close();
+
+            // Mostrar el formulario FrmPedido
+            frmPedido.Show();
+        }
+
         private void pcbCarrito_Click(object sender, EventArgs e)
         {
             FrmCarrito frmCarrito = new FrmCarrito();
@@ -383,10 +408,14 @@ namespace PIDeffine
             this.Close();
         }
 
-        private void pictureBox_Click(object sender, EventArgs e)
+        private Producto ObtenerProductoDesdePictureBox(PictureBox pictureBox)
         {
-            throw new NotImplementedException();
-
+            int indicePictureBox = listaPictureBoxes.IndexOf(pictureBox);
+            if (indicePictureBox != -1 && indicePictureBox < productos.Count)
+            {
+                return productos[indicePictureBox];
+            }
+            return null;
         }
     }
 }

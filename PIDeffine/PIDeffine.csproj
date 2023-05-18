@@ -106,6 +106,12 @@
     <Compile Include="FrmDisenyo.Designer.cs">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGuiaDeTallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGuiaDeTallas.Designer.cs">
+      <DependentUpon>FrmGuiaDeTallas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisenyo.resx">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGuiaDeTallas.resx">
+      <DependentUpon>FrmGuiaDeTallas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>
@@ -209,6 +218,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\guiadetallas.png" />
     <None Include="Resources\SusdaderaS.png" />
     <Resource Include="Resources\abiertoojo.png" />
     <Content Include="Resources\btttvolver.png" />

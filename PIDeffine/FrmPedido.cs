@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace PIDeffine
 {
     public partial class FrmPedido : Form
     {
+
         public FrmPedido()
         {
             InitializeComponent();
@@ -26,47 +28,45 @@ namespace PIDeffine
             this.productPrice = productPrice;
             this.productImage = productImage;
         }
+        public string NombreProducto { get; set; }
+        public decimal PrecioProducto { get; set; }
+        public byte[] ImagenProducto { get; set; }
+
+        public FrmPedido(string descripcion, decimal precio, byte[] imagen)
+        {
+            this.descripcion = descripcion;
+            this.precio = precio;
+            this.imagen = imagen;
+        }
 
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
         private string productName;
         private decimal productPrice;
         private Image productImage;
+        private string descripcion;
+        private decimal precio;
+        private byte[] imagen;
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
-            
-
-        }
-
-        private void bttS_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttL_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttXL_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttXXL_Click(object sender, EventArgs e)
-        {
+            if (ImagenProducto != null)
+            {
+                using (MemoryStream ms = new MemoryStream(ImagenProducto))
+                {
+                    productImage = Image.FromStream(ms);
+                }
+                pcbProd1.Image = productImage;
+            }
+            lblNomProd.Text = NombreProducto;
+            lblPrecioProducto.Text = Convert.ToString(PrecioProducto);
 
         }
 
         private void lblVerGuia_Click(object sender, EventArgs e)
         {
-
+            FrmGuiaDeTallas frmguiadetallas = new FrmGuiaDeTallas();
+            frmguiadetallas.Show();
         }
 
         private void bttAnyadir_Click(object sender, EventArgs e)
