@@ -19,8 +19,20 @@ namespace PIDeffine
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
+
+        public FrmPedido(string productName, decimal productPrice, Image productImage)
+        {
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productImage = productImage;
+        }
+
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
+        private string productName;
+        private decimal productPrice;
+        private Image productImage;
+
         private void FrmPedido_Load(object sender, EventArgs e)
         {
             
