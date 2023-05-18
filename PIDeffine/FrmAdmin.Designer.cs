@@ -405,6 +405,7 @@ namespace PIDeffine
             this.bttInsertarProd.TabIndex = 13;
             this.bttInsertarProd.Text = "Insertar Producto";
             this.bttInsertarProd.UseVisualStyleBackColor = true;
+            this.bttInsertarProd.Click += new System.EventHandler(this.bttInsertarProd_Click);
             // 
             // bttEliminarProd
             // 

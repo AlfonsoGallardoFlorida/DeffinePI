@@ -83,7 +83,9 @@ namespace PIDeffine
             }
         }
 
-        private void bttInsertarProd_Click(object sender, EventArgs e, Producto prod)
+        private byte[] imagenBytes;
+
+        private void bttInsertarProd_Click(object sender, EventArgs e)
         {
             string descripcion = txtDescripcion.Text;
             int stock = Convert.ToInt32(nudStock.Value);
@@ -91,22 +93,23 @@ namespace PIDeffine
             string talla = cmbTalla.Text;
             string color = cmbColor.Text;
             string genero = cmbGenero.Text;
-            byte[] img = pcbFotoCamiseta;
-            Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
+
+            // Utilizar la variable de imagenBytes aquí
+            Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, imagenBytes);
         }
 
         private void bttAdjuntar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog cargaImagen = new OpenFileDialog();
-            cargaImagen.InitialDirectory = @"C:\";
-            if (cargaImagen.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
-                MessageBox.Show(cargaImagen.FileName);
-            }
-            else
-            {
-                MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif";
+                openFileDialog.Title = "Seleccione una imagen";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string rutaImagen = openFileDialog.FileName;
+                    imagenBytes = File.ReadAllBytes(rutaImagen);
+                }
             }
         }
     }

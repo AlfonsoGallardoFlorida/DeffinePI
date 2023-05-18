@@ -94,10 +94,19 @@ namespace PIDeffine
         }
         public static void AgregarProducto(string descripcion, string talla, string genero, string color, decimal precio, int stock, byte[] imagen)
         {
+            MySqlConnection conexion = ConBD.Conexion;
             ConBD.AbrirConexion();
             Producto nuevoProducto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
-            string consulta = String.Format("INSERT INTO Productos (Descripcion, Talla, Genero, Color, Precio, Stock, Imagen) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}, '{6}'", descripcion, talla, genero, color, precio, stock, imagen);
+            string consulta = "INSERT INTO Productos (Descripcion, Talla, Genero, Color, Precio, Stock, Imagen) VALUES (@descripcion, @talla, @genero, @color, @precio, @stock, @imagen)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            comando.Parameters.AddWithValue("@descripcion", nuevoProducto.descripcion);
+            comando.Parameters.AddWithValue("@talla", nuevoProducto.talla);
+            comando.Parameters.AddWithValue("@genero", nuevoProducto.genero);
+            comando.Parameters.AddWithValue("@color", nuevoProducto.color);
+            comando.Parameters.AddWithValue("@precio", nuevoProducto.precio);
+            comando.Parameters.AddWithValue("@stock", nuevoProducto.stock);
+            comando.Parameters.AddWithValue("@imagen", nuevoProducto.imagen);
+            comando.ExecuteNonQuery();
             ConBD.CerrarConexion();
         }
 
