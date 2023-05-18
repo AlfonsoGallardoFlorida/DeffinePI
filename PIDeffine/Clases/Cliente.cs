@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using MySqlConnector;
+using Microsoft.SqlServer.Server;
 
 namespace PIDeffine
 {
@@ -20,6 +21,16 @@ namespace PIDeffine
 
         public Cliente(string nom, string ape,  string clav, string corr, bool admin)
         {
+            nombre = nom;
+            apellidos = ape;
+            clave = clav;
+            correo = corr;
+            administrador = admin;
+        }
+
+        public Cliente(int id, string nom, string ape, string clav, string corr, bool admin)
+        {
+            idCliente = id;
             nombre = nom;
             apellidos = ape;
             clave = clav;
@@ -128,6 +139,29 @@ namespace PIDeffine
             reader.Close();
             ConBD.CerrarConexion();
             return contra;
+        }
+
+        public static List<Cliente> clienteLogeado(string correo)
+        {
+           
+            List<Cliente> clienteLog = new List<Cliente>();
+            MySqlConnection conexion = ConBD.Conexion;
+            ConBD.AbrirConexion();
+            string consulta = String.Format("SELECT * FROM Clientes WHERE correo = '{0}'", correo);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32("IdCliente");
+                string nombre = (string)reader["Nombre"];
+                string apellidos = (string)reader["Apellido"];
+                string contraseña = (string)reader["Contraseña"];
+                bool admin = (bool)reader["Administrador"];
+
+                Cliente clienteLogeado = new Cliente(id, nombre, apellidos, contraseña, correo, admin);
+                clienteLog.Add(clienteLogeado);
+            }
+                return clienteLog;
         }
     }
 }

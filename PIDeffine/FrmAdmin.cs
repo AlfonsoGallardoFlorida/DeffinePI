@@ -94,8 +94,22 @@ namespace PIDeffine
             string color = cmbColor.Text;
             string genero = cmbGenero.Text;
 
-            // Utilizar la variable de imagenBytes aquí
-            Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, imagenBytes);
+            if (descripcion != "" && stock < 1 && precio <= 0 && talla != "" && color != "" && genero != "")
+            {
+                // Utilizar la variable de imagenBytes aquí
+                Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, imagenBytes);
+                MessageBox.Show("Producto agregado correctamente");
+                txtDescripcion.Text = "";
+                nudStock.Text = "";
+                nudPrecio.Text = "";
+                cmbTalla.Text = "";
+                cmbColor.Text = "";
+                cmbGenero.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos son obligatorios");
+            }
         }
 
         private void bttAdjuntar_Click(object sender, EventArgs e)
