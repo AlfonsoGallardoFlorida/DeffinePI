@@ -83,7 +83,9 @@ namespace PIDeffine
             }
         }
 
-        private void bttInsertarProd_Click(object sender, EventArgs e, Producto prod)
+        private byte[] imagenBytes;
+
+        private void bttInsertarProd_Click(object sender, EventArgs e)
         {
             string descripcion = txtDescripcion.Text;
             int stock = Convert.ToInt32(nudStock.Value);
@@ -109,6 +111,7 @@ namespace PIDeffine
             if (cargaImagen.ShowDialog() == DialogResult.OK)
             {
                 pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
+                MessageBox.Show(cargaImagen.FileName);
             }
             else
             {

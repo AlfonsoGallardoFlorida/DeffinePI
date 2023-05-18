@@ -276,6 +276,12 @@ namespace PIDeffine
             this.Hide();
         }
 
+        private void lblAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAdmin frm = new FrmAdmin();
+            frm.Show();
+        }
+
         private void pcbMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

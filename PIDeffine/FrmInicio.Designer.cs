@@ -195,6 +195,7 @@ namespace PIDeffine
             this.lblAyuda.Size = new System.Drawing.Size(213, 23);
             this.lblAyuda.TabIndex = 13;
             this.lblAyuda.Text = "¿NECESITAS AYUDA?";
+            this.lblAyuda.Click += new System.EventHandler(this.lblAyuda_Click);
             // 
             // lblnuftno
             // 
