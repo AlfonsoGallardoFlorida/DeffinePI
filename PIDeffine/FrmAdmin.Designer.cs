@@ -110,6 +110,7 @@ namespace PIDeffine
             // 
             // pcbFotoCamiseta
             // 
+            this.pcbFotoCamiseta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcbFotoCamiseta.Location = new System.Drawing.Point(490, 337);
             this.pcbFotoCamiseta.Name = "pcbFotoCamiseta";
             this.pcbFotoCamiseta.Size = new System.Drawing.Size(128, 132);

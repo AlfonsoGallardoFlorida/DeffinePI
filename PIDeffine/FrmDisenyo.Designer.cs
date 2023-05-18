@@ -54,6 +54,7 @@ namespace PIDeffine
             this.rdbNegro = new System.Windows.Forms.RadioButton();
             this.rdbAzul = new System.Windows.Forms.RadioButton();
             this.rdbVerde = new System.Windows.Forms.RadioButton();
+            this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -82,11 +83,11 @@ namespace PIDeffine
             this.pcbVerde = new System.Windows.Forms.PictureBox();
             this.pcbrectangulo = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
-            this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -114,7 +115,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbrectangulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -410,6 +410,17 @@ namespace PIDeffine
             this.rdbVerde.TabIndex = 93;
             this.rdbVerde.UseVisualStyleBackColor = false;
             this.rdbVerde.CheckedChanged += new System.EventHandler(this.rdbVerde_CheckedChanged);
+            // 
+            // pcbCarrito
+            // 
+            this.pcbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCarrito.Image = global::PIDeffine.Properties.Resources.Carrito1;
+            this.pcbCarrito.Location = new System.Drawing.Point(921, 66);
+            this.pcbCarrito.Name = "pcbCarrito";
+            this.pcbCarrito.Size = new System.Drawing.Size(51, 50);
+            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCarrito.TabIndex = 87;
+            this.pcbCarrito.TabStop = false;
             // 
             // pictureBox14
             // 
@@ -733,17 +744,6 @@ namespace PIDeffine
             this.pcbPrincipal.TabIndex = 53;
             this.pcbPrincipal.TabStop = false;
             // 
-            // pcbCarrito
-            // 
-            this.pcbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbCarrito.Image = global::PIDeffine.Properties.Resources.Carrito1;
-            this.pcbCarrito.Location = new System.Drawing.Point(921, 66);
-            this.pcbCarrito.Name = "pcbCarrito";
-            this.pcbCarrito.Size = new System.Drawing.Size(51, 50);
-            this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbCarrito.TabIndex = 87;
-            this.pcbCarrito.TabStop = false;
-            // 
             // FrmDisenyo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -794,6 +794,7 @@ namespace PIDeffine
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -821,7 +822,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbrectangulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -94,22 +94,21 @@ namespace PIDeffine
             pcbOjoCerrado.Hide();
             pcbOjoAbierto.Show();
             txtContra.PasswordChar = '●';
-           
         }
 
         private void pcbOjoAbierto2_Click(object sender, EventArgs e)
         {
-            pcbOjoCerrado.Hide();
-            pcbOjoAbierto.Show();
-            txtContra.PasswordChar = '●';
-            
+            pcbOjoAbierto2.Hide();
+            pcbOjoCerrado2.Show();
+            txtConfirmContra.PasswordChar = '\0';
+
         }
 
         private void pcbOjoCerrado2_Click(object sender, EventArgs e)
         {
-            pcbOjoCerrado.Hide();
-            pcbOjoAbierto.Show();
-            txtContra.PasswordChar = '●';
+            pcbOjoCerrado2.Hide();
+            pcbOjoAbierto2.Show();
+            txtConfirmContra.PasswordChar = '●';
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)
