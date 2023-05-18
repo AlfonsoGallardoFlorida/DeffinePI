@@ -376,6 +376,13 @@ namespace PIDeffine
             this.Close();
         }
 
+        private void pcbCarrito_Click(object sender, EventArgs e)
+        {
+            FrmCarrito frmCarrito = new FrmCarrito();
+            frmCarrito.Show();
+            this.Close();
+        }
+
         private void pictureBox_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();

@@ -178,7 +178,7 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Diseño.
+        ///   Busca una cadena traducida similar a Diseña tu estilo.
         /// </summary>
         internal static string Diseño {
             get {
