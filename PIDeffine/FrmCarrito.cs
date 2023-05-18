@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,13 +76,19 @@ namespace PIDeffine
         private void CargarProductos()
         {
             ConBD.AbrirConexion();
+
             string consulta = "SELECT * FROM Detalles_Pedido";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
+
             DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            dataGridView.DataSource = dataTable;
-            connection.Close();
-            adapter.Dispose();
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                dataTable.Load(reader);
+            }
+
+            dgvCarrito.DataSource = dataTable;
         }
     }
 }

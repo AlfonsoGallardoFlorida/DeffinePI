@@ -83,7 +83,6 @@ namespace PIDeffine
             }
         }
 
-        private byte[] imagenBytes;
 
         private void bttInsertarProd_Click(object sender, EventArgs e)
         {
@@ -93,18 +92,24 @@ namespace PIDeffine
             string talla = cmbTalla.Text;
             string color = cmbColor.Text;
             string genero = cmbGenero.Text;
-
-            if (descripcion != "" && stock < 1 && precio <= 0 && talla != "" && color != "" && genero != "")
+            byte[] img;
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
+                img = memoryStream.ToArray();
+            }
+            if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "")
             {
                 // Utilizar la variable de imagenBytes aquí
-                Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, imagenBytes);
+                Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
                 MessageBox.Show("Producto agregado correctamente");
                 txtDescripcion.Text = "";
-                nudStock.Text = "";
-                nudPrecio.Text = "";
-                cmbTalla.Text = "";
-                cmbColor.Text = "";
-                cmbGenero.Text = "";
+                nudStock.Text = "5";
+                nudPrecio.Text = "5";
+                cmbTalla.Text = "L";
+                cmbColor.Text = "Blanco";
+                cmbGenero.Text = "Masculino";
+                pcbFotoCamiseta.Image = null;
             }
             else
             {

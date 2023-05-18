@@ -13,8 +13,8 @@ namespace PIDeffine
 {
     public partial class FrmPedido : Form
     {
-        string consulta = String.Format("SELECT IdCliente FROM Clientes WHERE Correo='{0}'", )  
-        Pedido pedido = new Pedido();
+        //string consulta = String.Format("SELECT IdCliente FROM Clientes WHERE Correo='{0}'", )  
+       // Pedido pedido = new Pedido();
 
         public FrmPedido()
         {
@@ -74,7 +74,7 @@ namespace PIDeffine
         private void bttAnyadir_Click(object sender, EventArgs e)
         {
             ConBD.AbrirConexion();
-            string consulta = String.Format("INSERT INTO Detalle_Pedido (IdPedido, IdProducto, Cantidad, Subtotal) VALUES ('{0}', '{1}', '{2}', '{3}')", );
+           // string consulta = String.Format("INSERT INTO Detalle_Pedido (IdPedido, IdProducto, Cantidad, Subtotal) VALUES ('{0}', '{1}', '{2}', '{3}')", );
         }
 
         private void pcbCerrar_Click(object sender, EventArgs e)
