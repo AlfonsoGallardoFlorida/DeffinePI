@@ -126,7 +126,7 @@ namespace PIDeffine
 
         public static string DevolverClave(string correo)
         {
-            string contra="";
+            string contra = "";
             MySqlConnection conexion = ConBD.Conexion;
             ConBD.AbrirConexion();
             string consulta = String.Format("SELECT contraseña FROM Clientes WHERE correo = '{0}'", correo);

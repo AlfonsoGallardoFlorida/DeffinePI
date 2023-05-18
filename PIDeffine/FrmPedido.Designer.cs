@@ -60,6 +60,8 @@ namespace PIDeffine
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.lblDesc = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -75,6 +77,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -169,10 +172,11 @@ namespace PIDeffine
             // 
             this.lblNomProd.AutoSize = true;
             this.lblNomProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblNomProd.Font = new System.Drawing.Font("Arial", 15F);
             this.lblNomProd.ForeColor = System.Drawing.Color.White;
-            this.lblNomProd.Location = new System.Drawing.Point(662, 238);
+            this.lblNomProd.Location = new System.Drawing.Point(662, 244);
             this.lblNomProd.Name = "lblNomProd";
-            this.lblNomProd.Size = new System.Drawing.Size(155, 23);
+            this.lblNomProd.Size = new System.Drawing.Size(199, 28);
             this.lblNomProd.TabIndex = 55;
             this.lblNomProd.Text = "nombreProducto";
             // 
@@ -180,10 +184,11 @@ namespace PIDeffine
             // 
             this.lblPrecioProducto.AutoSize = true;
             this.lblPrecioProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblPrecioProducto.Font = new System.Drawing.Font("Arial", 15F);
             this.lblPrecioProducto.ForeColor = System.Drawing.Color.White;
-            this.lblPrecioProducto.Location = new System.Drawing.Point(662, 319);
+            this.lblPrecioProducto.Location = new System.Drawing.Point(662, 332);
             this.lblPrecioProducto.Name = "lblPrecioProducto";
-            this.lblPrecioProducto.Size = new System.Drawing.Size(143, 23);
+            this.lblPrecioProducto.Size = new System.Drawing.Size(182, 28);
             this.lblPrecioProducto.TabIndex = 57;
             this.lblPrecioProducto.Text = "precioProducto";
             // 
@@ -194,7 +199,7 @@ namespace PIDeffine
             this.lblVerGuia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblVerGuia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
             this.lblVerGuia.ForeColor = System.Drawing.Color.White;
-            this.lblVerGuia.Location = new System.Drawing.Point(696, 567);
+            this.lblVerGuia.Location = new System.Drawing.Point(700, 635);
             this.lblVerGuia.Name = "lblVerGuia";
             this.lblVerGuia.Size = new System.Drawing.Size(214, 23);
             this.lblVerGuia.TabIndex = 58;
@@ -205,11 +210,11 @@ namespace PIDeffine
             // 
             this.lblTallas.AutoSize = true;
             this.lblTallas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblTallas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
+            this.lblTallas.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Underline);
             this.lblTallas.ForeColor = System.Drawing.Color.White;
-            this.lblTallas.Location = new System.Drawing.Point(662, 359);
+            this.lblTallas.Location = new System.Drawing.Point(662, 379);
             this.lblTallas.Name = "lblTallas";
-            this.lblTallas.Size = new System.Drawing.Size(60, 23);
+            this.lblTallas.Size = new System.Drawing.Size(76, 28);
             this.lblTallas.TabIndex = 64;
             this.lblTallas.Text = "Tallas";
             this.lblTallas.Click += new System.EventHandler(this.lblTallas_Click);
@@ -234,7 +239,7 @@ namespace PIDeffine
             this.panel1.Controls.Add(this.rdbM);
             this.panel1.Controls.Add(this.rdbS);
             this.panel1.Controls.Add(this.rdbXS);
-            this.panel1.Location = new System.Drawing.Point(660, 398);
+            this.panel1.Location = new System.Drawing.Point(660, 418);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(292, 100);
             this.panel1.TabIndex = 68;
@@ -304,7 +309,7 @@ namespace PIDeffine
             this.bttAnyadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttAnyadir.ForeColor = System.Drawing.Color.White;
             this.bttAnyadir.Image = global::PIDeffine.Properties.Resources.Rectangle_10;
-            this.bttAnyadir.Location = new System.Drawing.Point(689, 630);
+            this.bttAnyadir.Location = new System.Drawing.Point(672, 661);
             this.bttAnyadir.Name = "bttAnyadir";
             this.bttAnyadir.Size = new System.Drawing.Size(263, 50);
             this.bttAnyadir.TabIndex = 66;
@@ -316,9 +321,9 @@ namespace PIDeffine
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.pictureBox1.Image = global::PIDeffine.Properties.Resources.Linea_1;
-            this.pictureBox1.Location = new System.Drawing.Point(666, 539);
+            this.pictureBox1.Location = new System.Drawing.Point(660, 622);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 10);
+            this.pictureBox1.Size = new System.Drawing.Size(293, 10);
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
@@ -401,16 +406,17 @@ namespace PIDeffine
             this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCarrito.TabIndex = 75;
             this.pcbCarrito.TabStop = false;
+            this.pcbCarrito.Click += new System.EventHandler(this.pcbCarrito_Click);
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
+            this.lblDesc.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Underline);
             this.lblDesc.ForeColor = System.Drawing.Color.White;
             this.lblDesc.Location = new System.Drawing.Point(661, 206);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(229, 23);
+            this.lblDesc.Size = new System.Drawing.Size(294, 28);
             this.lblDesc.TabIndex = 76;
             this.lblDesc.Text = "Descripción del Producto";
             // 
@@ -418,13 +424,43 @@ namespace PIDeffine
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
+            this.lblPrecio.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Underline);
             this.lblPrecio.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio.Location = new System.Drawing.Point(663, 280);
+            this.lblPrecio.Location = new System.Drawing.Point(663, 295);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(66, 23);
+            this.lblPrecio.Size = new System.Drawing.Size(84, 28);
             this.lblPrecio.TabIndex = 77;
             this.lblPrecio.Text = "Precio";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblCantidad.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Underline);
+            this.lblCantidad.ForeColor = System.Drawing.Color.White;
+            this.lblCantidad.Location = new System.Drawing.Point(661, 548);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(113, 28);
+            this.lblCantidad.TabIndex = 78;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(810, 550);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(51, 30);
+            this.nudCantidad.TabIndex = 79;
+            this.nudCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // FrmPedido
             // 
@@ -433,6 +469,8 @@ namespace PIDeffine
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
             this.ControlBox = false;
+            this.Controls.Add(this.nudCantidad);
+            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.pcbCarrito);
@@ -478,6 +516,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,5 +554,7 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
     }
 }
