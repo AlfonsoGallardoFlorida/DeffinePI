@@ -112,5 +112,22 @@ namespace PIDeffine
             comando.ExecuteNonQuery();
             ConBD.CerrarConexion();
         }
+
+        public static string DevolverClave(string correo)
+        {
+            string contra="";
+            MySqlConnection conexion = ConBD.Conexion;
+            ConBD.AbrirConexion();
+            string consulta = String.Format("SELECT contraseña FROM Clientes WHERE correo = '{0}'", correo);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                contra = reader.GetString(0);
+            }
+            reader.Close();
+            ConBD.CerrarConexion();
+            return contra;
+        }
     }
 }
