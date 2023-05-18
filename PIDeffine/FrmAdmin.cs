@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,11 +83,16 @@ namespace PIDeffine
             }
         }
 
-        private void bttInsertarProd_Click(object sender, EventArgs e)
+        private void bttInsertarProd_Click(object sender, EventArgs e, Producto prod)
         {
             string descripcion = txtDescripcion.Text;
             int stock = Convert.ToInt32(nudStock.Value);
             decimal precio = Convert.ToDecimal(nudPrecio.Value);
+            string talla = cmbTalla.Text;
+            string color = cmbColor.Text;
+            string genero = cmbGenero.Text;
+            byte[] img = pcbFotoCamiseta;
+            Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
         }
 
         private void bttAdjuntar_Click(object sender, EventArgs e)
