@@ -17,14 +17,30 @@ namespace PIDeffine
         string clave;
         string correo;
         bool administrador;
+        public List<Cliente> listaClientes = new List<Cliente>();
+        public int IdCliente { get { return idCliente; } }
 
-        public Cliente(string nom, string ape,  string clav, string corr, bool admin)
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+
+        public string Apellidos { get { return apellidos; } set { apellidos = value; } }
+
+        public string Clave { get { return clave; } set { clave = value; } }
+
+        public string Correo { get { return correo; } set { correo = value; } }
+
+        public bool Administrador { get { return administrador; } set { administrador = value; } }
+
+        public Cliente(string nom, string ape, string clav, string corr, bool admin)
         {
             nombre = nom;
             apellidos = ape;
             clave = clav;
             correo = corr;
             administrador = admin;
+        }
+
+        public Cliente()
+        {
         }
 
         public static bool ComprobarExistencia(string correo)
@@ -115,7 +131,7 @@ namespace PIDeffine
 
         public static string DevolverClave(string correo)
         {
-            string contra="";
+            string contra = "";
             MySqlConnection conexion = ConBD.Conexion;
             ConBD.AbrirConexion();
             string consulta = String.Format("SELECT contraseña FROM Clientes WHERE correo = '{0}'", correo);

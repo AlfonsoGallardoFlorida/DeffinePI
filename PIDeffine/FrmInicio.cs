@@ -22,6 +22,7 @@ namespace PIDeffine
 {
     public partial class FrmInicio : Form
     {
+
         public FrmInicio()
         {
             InitializeComponent();
@@ -131,13 +132,13 @@ namespace PIDeffine
                 }
                 else
                 {
-                    MessageBox.Show("El correo indicado no está registrado","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El correo indicado no está registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Inserta el campo correo electronico","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Inserta el campo correo electronico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

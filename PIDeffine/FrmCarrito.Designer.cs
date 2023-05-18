@@ -60,6 +60,7 @@ namespace PIDeffine
             this.lblPrecio = new System.Windows.Forms.Label();
             this.bttComprar = new System.Windows.Forms.Button();
             this.bttEliminarCarrito = new System.Windows.Forms.Button();
+            this.pcbVolver = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -75,11 +76,13 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
             this.panelColecciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
             // 
             this.paneldecontrol.BackColor = System.Drawing.Color.DimGray;
+            this.paneldecontrol.Controls.Add(this.pcbVolver);
             this.paneldecontrol.Controls.Add(this.pcbCerrar);
             this.paneldecontrol.Controls.Add(this.pcbMinimizar);
             this.paneldecontrol.Controls.Add(this.pcbLogOut);
@@ -87,6 +90,9 @@ namespace PIDeffine
             this.paneldecontrol.Name = "paneldecontrol";
             this.paneldecontrol.Size = new System.Drawing.Size(1022, 55);
             this.paneldecontrol.TabIndex = 25;
+            this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
+            this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
+            this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
             // 
             // pcbCerrar
             // 
@@ -98,6 +104,7 @@ namespace PIDeffine
             this.pcbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCerrar.TabIndex = 24;
             this.pcbCerrar.TabStop = false;
+            this.pcbCerrar.Click += new System.EventHandler(this.pcbCerrar_Click);
             // 
             // pcbMinimizar
             // 
@@ -109,17 +116,19 @@ namespace PIDeffine
             this.pcbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbMinimizar.TabIndex = 0;
             this.pcbMinimizar.TabStop = false;
+            this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
             // 
             // pcbLogOut
             // 
             this.pcbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbLogOut.Image = global::PIDeffine.Properties.Resources.loguott;
-            this.pcbLogOut.Location = new System.Drawing.Point(17, 17);
+            this.pcbLogOut.Location = new System.Drawing.Point(866, 17);
             this.pcbLogOut.Name = "pcbLogOut";
             this.pcbLogOut.Size = new System.Drawing.Size(38, 35);
             this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogOut.TabIndex = 26;
             this.pcbLogOut.TabStop = false;
+            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
             // 
             // pcbPerfil
             // 
@@ -450,6 +459,18 @@ namespace PIDeffine
             this.bttEliminarCarrito.Text = "Eliminar Carrito";
             this.bttEliminarCarrito.UseVisualStyleBackColor = false;
             // 
+            // pcbVolver
+            // 
+            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
+            this.pcbVolver.Location = new System.Drawing.Point(17, 17);
+            this.pcbVolver.Name = "pcbVolver";
+            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
+            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbVolver.TabIndex = 28;
+            this.pcbVolver.TabStop = false;
+            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
+            // 
             // FrmCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -485,7 +506,9 @@ namespace PIDeffine
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FrmCarrito";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCarrito";
+            this.Load += new System.EventHandler(this.FrmCarrito_Load);
             this.paneldecontrol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
@@ -502,6 +525,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
             this.panelColecciones.ResumeLayout(false);
             this.panelColecciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,5 +564,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Button bttComprar;
         private System.Windows.Forms.Button bttEliminarCarrito;
+        private System.Windows.Forms.PictureBox pcbVolver;
     }
 }

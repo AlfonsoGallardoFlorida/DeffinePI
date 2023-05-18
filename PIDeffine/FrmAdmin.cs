@@ -91,7 +91,12 @@ namespace PIDeffine
             string talla = cmbTalla.Text;
             string color = cmbColor.Text;
             string genero = cmbGenero.Text;
-            byte[] img = pcbFotoCamiseta;
+            byte[] img;
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
+                img = memoryStream.ToArray();
+            }
             Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
         }
 
