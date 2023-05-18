@@ -91,11 +91,12 @@ namespace PIDeffine
         private void bttAdjuntar_Click(object sender, EventArgs e)
         {
             OpenFileDialog cargaImagen = new OpenFileDialog();
-            cargaImagen.InitialDirectory = @"C:\";
+            cargaImagen.InitialDirectory = "C:\\";
+            cargaImagen.Filter = "Archivos de imagen (*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
+            cargaImagen.FilterIndex = 0;
             if (cargaImagen.ShowDialog() == DialogResult.OK)
             {
                 pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
-                MessageBox.Show(cargaImagen.FileName);
             }
             else
             {

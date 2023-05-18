@@ -703,6 +703,16 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap guiadetallas {
+            get {
+                object obj = ResourceManager.GetObject("guiadetallas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hombre_1 {
             get {
                 object obj = ResourceManager.GetObject("hombre 1", resourceCulture);

@@ -50,7 +50,6 @@ namespace PIDeffine
             this.rdbS = new System.Windows.Forms.RadioButton();
             this.bttAnyadir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pcbProd2 = new System.Windows.Forms.PictureBox();
             this.pcbProd1 = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pcbPerfil = new System.Windows.Forms.PictureBox();
@@ -59,6 +58,8 @@ namespace PIDeffine
             this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -66,7 +67,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbProd2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbProd1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).BeginInit();
@@ -170,7 +170,7 @@ namespace PIDeffine
             this.lblNomProd.AutoSize = true;
             this.lblNomProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblNomProd.ForeColor = System.Drawing.Color.White;
-            this.lblNomProd.Location = new System.Drawing.Point(662, 232);
+            this.lblNomProd.Location = new System.Drawing.Point(662, 238);
             this.lblNomProd.Name = "lblNomProd";
             this.lblNomProd.Size = new System.Drawing.Size(155, 23);
             this.lblNomProd.TabIndex = 55;
@@ -181,7 +181,7 @@ namespace PIDeffine
             this.lblPrecioProducto.AutoSize = true;
             this.lblPrecioProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.lblPrecioProducto.ForeColor = System.Drawing.Color.White;
-            this.lblPrecioProducto.Location = new System.Drawing.Point(662, 287);
+            this.lblPrecioProducto.Location = new System.Drawing.Point(662, 319);
             this.lblPrecioProducto.Name = "lblPrecioProducto";
             this.lblPrecioProducto.Size = new System.Drawing.Size(143, 23);
             this.lblPrecioProducto.TabIndex = 57;
@@ -205,7 +205,7 @@ namespace PIDeffine
             // 
             this.lblTallas.AutoSize = true;
             this.lblTallas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblTallas.Font = new System.Drawing.Font("Arial", 12F);
+            this.lblTallas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
             this.lblTallas.ForeColor = System.Drawing.Color.White;
             this.lblTallas.Location = new System.Drawing.Point(662, 359);
             this.lblTallas.Name = "lblTallas";
@@ -322,19 +322,12 @@ namespace PIDeffine
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
-            // pcbProd2
-            // 
-            this.pcbProd2.Location = new System.Drawing.Point(342, 232);
-            this.pcbProd2.Name = "pcbProd2";
-            this.pcbProd2.Size = new System.Drawing.Size(307, 485);
-            this.pcbProd2.TabIndex = 54;
-            this.pcbProd2.TabStop = false;
-            // 
             // pcbProd1
             // 
-            this.pcbProd1.Location = new System.Drawing.Point(29, 232);
+            this.pcbProd1.Location = new System.Drawing.Point(110, 206);
             this.pcbProd1.Name = "pcbProd1";
-            this.pcbProd1.Size = new System.Drawing.Size(307, 485);
+            this.pcbProd1.Size = new System.Drawing.Size(395, 505);
+            this.pcbProd1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbProd1.TabIndex = 53;
             this.pcbProd1.TabStop = false;
             // 
@@ -409,6 +402,30 @@ namespace PIDeffine
             this.pcbCarrito.TabIndex = 75;
             this.pcbCarrito.TabStop = false;
             // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblDesc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
+            this.lblDesc.ForeColor = System.Drawing.Color.White;
+            this.lblDesc.Location = new System.Drawing.Point(661, 206);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(229, 23);
+            this.lblDesc.TabIndex = 76;
+            this.lblDesc.Text = "Descripción del Producto";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
+            this.lblPrecio.ForeColor = System.Drawing.Color.White;
+            this.lblPrecio.Location = new System.Drawing.Point(663, 280);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(66, 23);
+            this.lblPrecio.TabIndex = 77;
+            this.lblPrecio.Text = "Precio";
+            // 
             // FrmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -416,6 +433,8 @@ namespace PIDeffine
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
             this.ControlBox = false;
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.pcbspain);
             this.Controls.Add(this.pcbingle);
@@ -426,7 +445,6 @@ namespace PIDeffine
             this.Controls.Add(this.lblPrecioProducto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNomProd);
-            this.Controls.Add(this.pcbProd2);
             this.Controls.Add(this.pcbProd1);
             this.Controls.Add(this.pcbPrincipal);
             this.Controls.Add(this.pcbPerfil);
@@ -452,7 +470,6 @@ namespace PIDeffine
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbProd2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbProd1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).EndInit();
@@ -479,7 +496,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblContacta;
         private System.Windows.Forms.PictureBox pcbPrincipal;
         private System.Windows.Forms.PictureBox pcbProd1;
-        private System.Windows.Forms.PictureBox pcbProd2;
         private System.Windows.Forms.Label lblNomProd;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPrecioProducto;
@@ -497,5 +513,7 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbspain;
         private System.Windows.Forms.PictureBox pcbingle;
         private System.Windows.Forms.PictureBox pcbCarrito;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Label lblPrecio;
     }
 }
