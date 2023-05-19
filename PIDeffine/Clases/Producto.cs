@@ -20,6 +20,7 @@ namespace PIDeffine
         decimal precio;
         int stock;
         byte[] imagen;
+        string cantidad;
         public int IdProducto { get {return idProducto; }}
         public string Descripcion { get { return descripcion; } }
         public string Talla { get { return talla; } }
@@ -28,6 +29,7 @@ namespace PIDeffine
         public decimal Precio { get { return precio; } }
         public int Stock { get { return stock; } }
         public byte[] Imagen { get { return imagen; } set { imagen = value; } }
+        public string Cantidad { get { return cantidad; } }
 
         public static List<Producto> carrito = new List<Producto>();
 
@@ -40,6 +42,19 @@ namespace PIDeffine
             precio = prec;
             stock = sto;
             imagen = img;
+        }
+
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img, string cant)
+        {
+            idProducto = id;
+            descripcion = desc;
+            talla = tall;
+            genero = gen;
+            color = col;
+            precio = prec;
+            stock = sto;
+            imagen = img;
+            cantidad = cant;
         }
 
         public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img)
@@ -190,7 +205,7 @@ namespace PIDeffine
             return productos;
         }
 
-        public static void RecogerDatosProducto(string descripcion, string talla)
+        public static void RecogerDatosProducto(string descripcion, string talla,string cant)
         {
             string consulta = String.Format("SELECT * FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
@@ -208,7 +223,7 @@ namespace PIDeffine
                     int stock = (int)reader["Stock"];
                     byte[] imagen = (byte[])reader["Imagen"];
 
-                    Producto alCarrito = new Producto(id, desc, tall, genero, color, precio, stock, imagen);
+                    Producto alCarrito = new Producto(id, desc, tall, genero, color, precio, stock, imagen,cant);
                     Producto.carrito.Add(alCarrito);
                 }
             }

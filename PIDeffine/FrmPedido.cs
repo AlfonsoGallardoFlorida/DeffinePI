@@ -101,7 +101,7 @@ namespace PIDeffine
                 }
 
             ConBD.AbrirConexion();
-            Producto.RecogerDatosProducto(detalles, talla);
+            Producto.RecogerDatosProducto(detalles, talla, Convert.ToString(nudCantidad.Value));
             ConBD.CerrarConexion();
         }
     

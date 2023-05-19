@@ -81,7 +81,15 @@ namespace PIDeffine
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
             dgvCarrito.DataSource = Producto.carrito;
+
+            dgvCarrito.Columns.Add("Cantidad Producto", "Cantidad Producto"); // Agrega la columna "Cantidad Producto"
+
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                dgvCarrito.Rows[i].Cells["Cantidad Producto"].Value = Producto.carrito[i].Cantidad; // Asigna la cantidad del producto a la columna "Cantidad Producto"
+            }
         }
+
         private void CargarProductos()
         {
             ConBD.AbrirConexion();
