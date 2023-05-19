@@ -30,6 +30,8 @@ namespace PIDeffine
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.lblProblema = new System.Windows.Forms.Label();
             this.bttEnviar = new System.Windows.Forms.Button();
             this.txtProblema = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@ namespace PIDeffine
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.lblCorreoAyuda = new System.Windows.Forms.Label();
             this.pcbDeffine = new System.Windows.Forms.PictureBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDeffine)).BeginInit();
@@ -59,6 +59,25 @@ namespace PIDeffine
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(923, 489);
             this.panel1.TabIndex = 0;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Arial", 15F);
+            this.txtCorreo.Location = new System.Drawing.Point(23, 54);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(279, 36);
+            this.txtCorreo.TabIndex = 69;
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblCorreo.Font = new System.Drawing.Font("Arial", 15F);
+            this.lblCorreo.ForeColor = System.Drawing.Color.White;
+            this.lblCorreo.Location = new System.Drawing.Point(18, 11);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(227, 29);
+            this.lblCorreo.TabIndex = 68;
+            this.lblCorreo.Text = "Correo Electrónico";
             // 
             // lblProblema
             // 
@@ -144,25 +163,6 @@ namespace PIDeffine
             this.pcbDeffine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbDeffine.TabIndex = 68;
             this.pcbDeffine.TabStop = false;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblCorreo.Font = new System.Drawing.Font("Arial", 15F);
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(18, 11);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(227, 29);
-            this.lblCorreo.TabIndex = 68;
-            this.lblCorreo.Text = "Correo Electrónico";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Font = new System.Drawing.Font("Arial", 15F);
-            this.txtCorreo.Location = new System.Drawing.Point(23, 54);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(222, 36);
-            this.txtCorreo.TabIndex = 69;
             // 
             // FrmCorreoAyuda
             // 

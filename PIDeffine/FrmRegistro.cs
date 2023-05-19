@@ -183,7 +183,7 @@ namespace PIDeffine
             pcbspain.Show();
         }
 
-        private void pcbLogOut_Click(object sender, EventArgs e)
+        private void pcbVolver_Click(object sender, EventArgs e)
         {
             FrmInicio inicio = new FrmInicio();
             inicio.Show();

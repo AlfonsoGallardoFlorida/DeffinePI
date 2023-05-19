@@ -20,6 +20,12 @@ namespace PIDeffine
             InitializeComponent();
         }
 
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            cmbColor.Text = "Blanco";
+            cmbGenero.Text = "Unisex";
+            cmbTalla.Text = "L";
+        }
         private void bttInsertarUser_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
@@ -133,5 +139,18 @@ namespace PIDeffine
                 MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void bttVolver_Click(object sender, EventArgs e)
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            frmInicio.Show();
+            this.Close();
+        }
+
+        private void bttSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
