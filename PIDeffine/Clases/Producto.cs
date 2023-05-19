@@ -29,8 +29,22 @@ namespace PIDeffine
         public int Stock { get { return stock; } }
         public byte[] Imagen { get { return imagen; } set { imagen = value; } }
 
+        public static List<Producto> carrito = new List<Producto>();
+
         public Producto(string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img)
         {
+            descripcion = desc;
+            talla = tall;
+            genero = gen;
+            color = col;
+            precio = prec;
+            stock = sto;
+            imagen = img;
+        }
+
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img)
+        {
+            idProducto = id;
             descripcion = desc;
             talla = tall;
             genero = gen;
@@ -149,6 +163,8 @@ namespace PIDeffine
         {
 
         }
+
+
         public static List<Producto> CargarProductos(string consulta)
         {
             List<Producto> productos = new List<Producto>();
@@ -172,6 +188,30 @@ namespace PIDeffine
                 }
             }
             return productos;
+        }
+
+        public static void RecogerDatosProducto(string descripcion, string talla)
+        {
+            string consulta = String.Format("SELECT * FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
+            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32("IdProducto");
+                    string desc = (string)reader["Descripcion"];
+                    string tall = (string)reader["Talla"];
+                    string genero = (string)reader["Genero"];
+                    string color = (string)reader["Color"];
+                    decimal precio = (decimal)reader["Precio"];
+                    int stock = (int)reader["Stock"];
+                    byte[] imagen = (byte[])reader["Imagen"];
+
+                    Producto alCarrito = new Producto(id, desc, tall, genero, color, precio, stock, imagen);
+                    Producto.carrito.Add(alCarrito);
+                }
+            }
         }
     }
 }

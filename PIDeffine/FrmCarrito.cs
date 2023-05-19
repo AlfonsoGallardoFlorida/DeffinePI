@@ -71,7 +71,7 @@ namespace PIDeffine
 
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
-
+            dgvCarrito.DataSource = Producto.carrito;
         }
         private void CargarProductos()
         {

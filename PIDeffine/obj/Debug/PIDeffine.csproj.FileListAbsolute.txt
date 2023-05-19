@@ -266,3 +266,4 @@ C:\Users\algagu01\Desktop\DeffinePI - copia de seguridad buena\PIDeffine\obj\Deb
 C:\Users\algagu01\Desktop\DeffinePI - copia de seguridad buena\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
 C:\Users\algagu01\Desktop\DeffinePI - copia de seguridad buena\PIDeffine\obj\Debug\PIDeffine.exe
 C:\Users\algagu01\Desktop\DeffinePI - copia de seguridad buena\PIDeffine\obj\Debug\PIDeffine.pdb
+C:\Users\alhupe\Desktop\Deffine NUEVO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources

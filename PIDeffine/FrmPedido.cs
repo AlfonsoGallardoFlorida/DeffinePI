@@ -73,8 +73,38 @@ namespace PIDeffine
 
         private void bttAnyadir_Click(object sender, EventArgs e)
         {
-           // string consulta = String.Format("INSERT INTO Detalle_Pedido (IdPedido, IdProducto, Cantidad, Subtotal) VALUES ('{0}', '{1}', '{2}', '{3}')", );
+                string detalles = lblNomProd.Text;
+                string talla = "";
+                if (rdbXS.Checked)
+                {
+                    talla = "XS";
+                }
+                else if (rdbS.Checked)
+                {
+                    talla = "S";
+                }
+                else if (rdbM.Checked)
+                {
+                    talla = "M";
+                }
+                else if (rdbL.Checked)
+                {
+                    talla = "L";
+                }
+                else if (rdbXL.Checked)
+                {
+                    talla = "XL";
+                }
+                else if (rdbXXL.Checked)
+                {
+                    talla = "XXL";
+                }
+
+            ConBD.AbrirConexion();
+            Producto.RecogerDatosProducto(detalles, talla);
+            ConBD.CerrarConexion();
         }
+    
 
         private void pcbCerrar_Click(object sender, EventArgs e)
         {

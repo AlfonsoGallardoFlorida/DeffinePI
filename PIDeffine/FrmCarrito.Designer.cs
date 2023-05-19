@@ -239,6 +239,11 @@ namespace PIDeffine
             // 
             // dgvCarrito
             // 
+            this.dgvCarrito.AllowUserToAddRows = false;
+            this.dgvCarrito.AllowUserToDeleteRows = false;
+            this.dgvCarrito.AllowUserToResizeColumns = false;
+            this.dgvCarrito.AllowUserToResizeRows = false;
+            this.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarrito.Location = new System.Drawing.Point(258, 235);
             this.dgvCarrito.Name = "dgvCarrito";
