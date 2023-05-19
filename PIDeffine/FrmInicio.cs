@@ -165,7 +165,7 @@ namespace PIDeffine
             {
                 ConBD.CerrarConexion();
             }
-            
+
         }
 
         private void IdiomaIngles()
@@ -313,20 +313,102 @@ namespace PIDeffine
             {
                 ConBD.CerrarConexion();
             }
-            
+
         }
 
-        private void panelAyuda_Click(object sender, EventArgs e)
+        private void pcbAdmin_Click(object sender, EventArgs e)
         {
-            FrmDisenyo frm = new FrmDisenyo();
-            frm.Show();
-            this.Hide();
+
+            try
+            {
+
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    FrmAdmin frmAdmin = new FrmAdmin();
+                    frmAdmin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
-        private void lblAyuda_Click(object sender, EventArgs e)
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
-            FrmAdmin frm = new FrmAdmin();
-            frm.Show();
+            try
+            {
+
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    if (Cliente.ComprobarAdmin(txtCorreo.Text) && Cliente.ComprobarClave(txtCorreo.Text,txtContra.Text))
+                    {
+                        pcbAdmin.Show();
+                    }
+                    else
+                    {
+                        pcbAdmin.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    if (Cliente.ComprobarAdmin(txtCorreo.Text) && Cliente.ComprobarClave(txtCorreo.Text, txtContra.Text))
+                    {
+                        pcbAdmin.Show();
+                    }
+                    else
+                    {
+                        pcbAdmin.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)

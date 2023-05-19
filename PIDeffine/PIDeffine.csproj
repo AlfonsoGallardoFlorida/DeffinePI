@@ -230,6 +230,7 @@
     <None Include="Resources\guiadetallas.png" />
     <None Include="Resources\SusdaderaS.png" />
     <Resource Include="Resources\abiertoojo.png" />
+    <None Include="Resources\admin.png" />
     <Content Include="Resources\btttvolver.png" />
     <None Include="Resources\CA6554_20_2_1.jpg" />
     <None Include="Resources\CA6554_20_2_1-removebg-preview.png" />
