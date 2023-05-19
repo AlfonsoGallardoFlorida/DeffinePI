@@ -187,7 +187,6 @@ namespace PIDeffine
                     if (cargaImagen.ShowDialog() == DialogResult.OK)
                     {
                         pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
-                        MessageBox.Show(cargaImagen.FileName);
                     }
                     else
                     {
