@@ -22,115 +22,185 @@ namespace PIDeffine
 
         private void bttInsertarUser_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string apellidos = txtApellidos.Text;
-            string clave = txtContra.Text;
-            string correo = txtCorreo.Text;
-            string confContra = txtConfContra.Text;
-            bool admin;
-            if (chkAdmin.Checked)
+            try
             {
-                admin = true;
-            }
-            else
-            {
-                admin = false;
-            }
-
-            if (correo != "" && nombre != "" && apellidos != "" && clave != "" && confContra != "")
-            {
-                if (confContra == clave)
+                if (ConBD.Conexion != null)
                 {
-                    if (Cliente.ComprobarExistencia(correo))
+                    ConBD.AbrirConexion();
+                    string nombre = txtNombre.Text;
+                    string apellidos = txtApellidos.Text;
+                    string clave = txtContra.Text;
+                    string correo = txtCorreo.Text;
+                    string confContra = txtConfContra.Text;
+                    bool admin;
+                    if (chkAdmin.Checked)
                     {
-                        MessageBox.Show("Ya existe un usuario con ese correo");
+                        admin = true;
                     }
                     else
                     {
-                        Cliente.AgregarCliente(nombre, apellidos, clave, correo, admin);
-                        MessageBox.Show("Cliente registado");
-                        txtCorreo.Text = "";
-                        txtNombre.Text = "";
-                        txtApellidos.Text = "";
-                        txtContra.Text = "";
-                        txtConfContra.Text = "";
+                        admin = false;
+                    }
+
+                    if (correo != "" && nombre != "" && apellidos != "" && clave != "" && confContra != "")
+                    {
+                        if (confContra == clave)
+                        {
+                            if (Cliente.ComprobarExistencia(correo))
+                            {
+                                MessageBox.Show("Ya existe un usuario con ese correo");
+                            }
+                            else
+                            {
+                                Cliente.AgregarCliente(nombre, apellidos, clave, correo, admin);
+                                MessageBox.Show("Cliente registado");
+                                txtCorreo.Text = "";
+                                txtNombre.Text = "";
+                                txtApellidos.Text = "";
+                                txtContra.Text = "";
+                                txtConfContra.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El campo confirmar contraseña y contraseña deben contener la misma contraseña");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Todos los campos son obligatorios");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("El campo confirmar contraseña y contraseña deben contener la misma contraseña");
-                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Todos los campos son obligatorios");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+           
         }
 
         private void bttEliminarUser_Click(object sender, EventArgs e)
         {
             string correo = txtCorreo.Text;
-
-            if (correo != "")
+            try
             {
-                Cliente.BorrarCliente(correo);
-                txtCorreo.Text = "";
-                MessageBox.Show("Usuario borrado correctamente");
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    if (correo != "")
+                    {
+                        Cliente.BorrarCliente(correo);
+                        txtCorreo.Text = "";
+                        MessageBox.Show("Usuario borrado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe especificar un correo");
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Debe especificar un correo");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
             }
         }
 
 
         private void bttInsertarProd_Click(object sender, EventArgs e)
         {
-            string descripcion = txtDescripcion.Text;
-            int stock = Convert.ToInt32(nudStock.Value);
-            decimal precio = Convert.ToDecimal(nudPrecio.Value);
-            string talla = cmbTalla.Text;
-            string color = cmbColor.Text;
-            string genero = cmbGenero.Text;
-            byte[] img;
-            using (MemoryStream memoryStream = new MemoryStream())
+            try
             {
-                pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
-                img = memoryStream.ToArray();
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    string descripcion = txtDescripcion.Text;
+                    int stock = Convert.ToInt32(nudStock.Value);
+                    decimal precio = Convert.ToDecimal(nudPrecio.Value);
+                    string talla = cmbTalla.Text;
+                    string color = cmbColor.Text;
+                    string genero = cmbGenero.Text;
+                    byte[] img;
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
+                        img = memoryStream.ToArray();
+                    }
+                    if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "")
+                    {
+                        // Utilizar la variable de imagenBytes aquí
+                        Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
+                        MessageBox.Show("Producto agregado correctamente");
+                        txtDescripcion.Text = "";
+                        nudStock.Text = "5";
+                        nudPrecio.Text = "5";
+                        cmbTalla.Text = "L";
+                        cmbColor.Text = "Blanco";
+                        cmbGenero.Text = "Masculino";
+                        pcbFotoCamiseta.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Todos los campos son obligatorios");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
             }
-            if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "")
+            catch (Exception ex)
             {
-                // Utilizar la variable de imagenBytes aquí
-                Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
-                MessageBox.Show("Producto agregado correctamente");
-                txtDescripcion.Text = "";
-                nudStock.Text = "5";
-                nudPrecio.Text = "5";
-                cmbTalla.Text = "L";
-                cmbColor.Text = "Blanco";
-                cmbGenero.Text = "Masculino";
-                pcbFotoCamiseta.Image = null;
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
-            else
+            finally
             {
-                MessageBox.Show("Todos los campos son obligatorios");
+                ConBD.CerrarConexion();
             }
         }
 
         private void bttAdjuntar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog cargaImagen = new OpenFileDialog();
-            cargaImagen.InitialDirectory = "C:\\";
-            cargaImagen.Filter = "Archivos de imagen (*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
-            cargaImagen.FilterIndex = 0;
-            if (cargaImagen.ShowDialog() == DialogResult.OK)
+            try
             {
-                pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
-                MessageBox.Show(cargaImagen.FileName);
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    OpenFileDialog cargaImagen = new OpenFileDialog();
+                    cargaImagen.InitialDirectory = "C:\\";
+                    cargaImagen.Filter = "Archivos de imagen (*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
+                    cargaImagen.FilterIndex = 0;
+                    if (cargaImagen.ShowDialog() == DialogResult.OK)
+                    {
+                        pcbFotoCamiseta.ImageLocation = cargaImagen.FileName;
+                        MessageBox.Show(cargaImagen.FileName);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
             }
         }
     }

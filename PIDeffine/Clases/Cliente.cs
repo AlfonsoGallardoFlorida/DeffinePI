@@ -42,67 +42,57 @@ namespace PIDeffine
         public static bool ComprobarExistencia(string correo)
         {
             MySqlConnection conexion = ConBD.Conexion;
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT idCliente FROM Clientes WHERE correo = '{0}'", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return true;
             }
             else
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return false;
             }
         }
 
         public static bool ComprobarClave(string correo, string clave)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT idCliente FROM Clientes WHERE correo = '{0}' AND contraseña = '{1}'", correo, clave);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return true;
             }
             else
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return false;
             }
         }
 
         public static bool ComprobarAdmin(string correo)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT idCliente FROM Clientes WHERE correo = '{0}' AND administrador = true", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return true;
             }
             else
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return false;
             }
         }
 
         public static void AgregarCliente(string nombre, string apellidos, string clave, string correo, bool admin)
         {
-            ConBD.AbrirConexion();
             Cliente nuevoCliente = new Cliente(nombre, apellidos, clave, correo, admin);
             string consulta = "INSERT INTO Clientes (Nombre, Apellido, Contraseña, Correo, Administrador) VALUES (@nombre, @apellidos,  @clave, @correo, @admin)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
@@ -112,24 +102,20 @@ namespace PIDeffine
             comando.Parameters.AddWithValue("@clave", nuevoCliente.clave);
             comando.Parameters.AddWithValue("@admin", nuevoCliente.administrador ? 1 : 0);
             comando.ExecuteNonQuery();
-            ConBD.CerrarConexion();
         }
 
         public static void BorrarCliente(string correo)
         {
             MySqlConnection conexion = ConBD.Conexion;
-            ConBD.AbrirConexion();
             string consulta = string.Format("DELETE FROM Clientes WHERE Correo = '{0}'", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             comando.ExecuteNonQuery();
-            ConBD.CerrarConexion();
         }
 
         public static string DevolverClave(string correo)
         {
             string contra = "";
             MySqlConnection conexion = ConBD.Conexion;
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT contraseña FROM Clientes WHERE correo = '{0}'", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
@@ -138,13 +124,11 @@ namespace PIDeffine
                 contra = reader.GetString(0);
             }
             reader.Close();
-            ConBD.CerrarConexion();
             return contra;
         }
         public static void DatosClienteActual(string correo)
         {
             MySqlConnection conexion = ConBD.Conexion;
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT * FROM Clientes WHERE correo = '{0}'", correo);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();

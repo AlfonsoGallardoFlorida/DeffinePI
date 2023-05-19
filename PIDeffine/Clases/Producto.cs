@@ -66,7 +66,6 @@ namespace PIDeffine
             {
                 using (MySqlConnection connection = ConBD.Conexion)
                 {
-                    connection.Open();
 
                     string query = "SELECT Imagen FROM Productos WHERE idProducto = @ID";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -95,7 +94,6 @@ namespace PIDeffine
         public static void AgregarProducto(string descripcion, string talla, string genero, string color, decimal precio, int stock, byte[] imagen)
         {
             MySqlConnection conexion = ConBD.Conexion;
-            ConBD.AbrirConexion();
             Producto nuevoProducto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
             string consulta = "INSERT INTO Productos (Descripcion, Talla, Genero, Color, Precio, Stock, Imagen) VALUES (@descripcion, @talla, @genero, @color, @precio, @stock, @imagen)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
@@ -107,40 +105,33 @@ namespace PIDeffine
             comando.Parameters.AddWithValue("@stock", nuevoProducto.stock);
             comando.Parameters.AddWithValue("@imagen", nuevoProducto.imagen);
             comando.ExecuteNonQuery();
-            ConBD.CerrarConexion();
         }
 
         public static void BorrarProducto(int idProducto)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("DETELE FROM Productos WHERE IdProducto = '{0}'", idProducto);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-            ConBD.CerrarConexion();
         }
 
         public static bool ComprobarStock(int idProducto, string talla)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT stock FROM Productos WHERE idProducto = '{0}' AND Talla = '{1}'", idProducto, talla);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return true;
             }
             else
             {
                 reader.Close();
-                ConBD.CerrarConexion();
                 return false;
             }
         }
 
         public static decimal ComprobarPrecio(int idProducto)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT precio FROM Productos WHERE idProducto = '{0}'", idProducto);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
@@ -161,12 +152,6 @@ namespace PIDeffine
         public static List<Producto> CargarProductos(string consulta)
         {
             List<Producto> productos = new List<Producto>();
-            ConBD.AbrirConexion();
-            // Aquí se ejecutaría el código para obtener los productos de la base de datos
-            // y cargarlos en la lista 'productos'
-
-            // Ejemplo ficticio de obtención de productos desde la base de datos
-            // Supongamos que se utiliza un objeto 'command' para ejecutar una consulta SQL
             MySqlCommand command = new MySqlCommand(consulta,ConBD.Conexion);
 
             using (MySqlDataReader reader = command.ExecuteReader())
@@ -186,7 +171,6 @@ namespace PIDeffine
                     productos.Add(producto);
                 }
             }
-            ConBD.CerrarConexion();
             return productos;
         }
     }

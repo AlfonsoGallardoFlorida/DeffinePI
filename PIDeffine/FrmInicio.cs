@@ -113,34 +113,59 @@ namespace PIDeffine
 
         private void lbliniciosesion_Click(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text;
-            string contraseña = txtContra.Text;
-            if (correo != "")
+
+            try
             {
-                if (Cliente.ComprobarExistencia(correo))
+
+                if (ConBD.Conexion != null)
                 {
-                    if (Cliente.ComprobarClave(correo, contraseña))
+                    ConBD.CerrarConexion();
+                    ConBD.AbrirConexion();
+                    string correo = txtCorreo.Text;
+                    string contraseña = txtContra.Text;
+                    if (correo != "")
                     {
-                        FrmTienda tienda = new FrmTienda();
-                        tienda.Show();
-                        this.Hide();
-                        Cliente.DatosClienteActual(correo);
+                        if (Cliente.ComprobarExistencia(correo))
+                        {
+                            if (Cliente.ComprobarClave(correo, contraseña))
+                            {
+                                FrmTienda tienda = new FrmTienda();
+                                tienda.Show();
+                                this.Hide();
+                                ConBD.AbrirConexion();
+                                Cliente.DatosClienteActual(correo);
+                                ConBD.CerrarConexion();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El correo indicado no está registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Contraseña Incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Inserta el campo correo electronico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El correo indicado no está registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
 
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Inserta el campo correo electronico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+            
         }
 
         private void IdiomaIngles()
@@ -222,52 +247,73 @@ namespace PIDeffine
         private void lblContraOlvidada_Click(object sender, EventArgs e)
         {
             string correo = txtCorreo.Text;
-            if (correo != "")
+            try
             {
-                if (Cliente.ComprobarExistencia(correo))
+                if (ConBD.Conexion != null)
                 {
-                    DialogResult respuesta = MessageBox.Show("¿Deseas recibir un correo de recuperacion de contraseña a esta direccion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (respuesta == DialogResult.Yes)
+                    ConBD.AbrirConexion();
+                    if (correo != "")
                     {
-                        try
+                        if (Cliente.ComprobarExistencia(correo))
                         {
-                            string contraseña = Cliente.DevolverClave(correo);
-                            MailMessage email = new MailMessage();
-                            email.To.Add(new MailAddress(correo));
-                            email.From = new MailAddress("deffinepi@gmail.com");
-                            email.Subject = "Recuperacion de contraseña (" + DateTime.Now.ToString("dd / MM / yyy hh:mm:ss") + " )";
-                            email.Body = ("Has solicitado la recuperacion de la contraseña, si no es asi informalo a nuestro equipo\n Tu contraseña es: " + contraseña);
-                            email.IsBodyHtml = true;
-                            email.Priority = MailPriority.Normal;
+                            DialogResult respuesta = MessageBox.Show("¿Deseas recibir un correo de recuperacion de contraseña a esta direccion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (respuesta == DialogResult.Yes)
+                            {
+                                try
+                                {
+                                    string contraseña = Cliente.DevolverClave(correo);
+                                    MailMessage email = new MailMessage();
+                                    email.To.Add(new MailAddress(correo));
+                                    email.From = new MailAddress("deffinepi@gmail.com");
+                                    email.Subject = "Recuperacion de contraseña (" + DateTime.Now.ToString("dd / MM / yyy hh:mm:ss") + " )";
+                                    email.Body = ("Has solicitado la recuperacion de la contraseña, si no es asi informalo a nuestro equipo\n Tu contraseña es: " + contraseña);
+                                    email.IsBodyHtml = true;
+                                    email.Priority = MailPriority.Normal;
 
-                            SmtpClient smtp = new SmtpClient();
-                            smtp.Host = "smtp.gmail.com";
-                            smtp.Port = 587;
-                            smtp.EnableSsl = true;
-                            smtp.UseDefaultCredentials = false;
-                            smtp.Credentials = new NetworkCredential("deffinepi@gmail.com", "kzjiwbnktbhwtmww");
+                                    SmtpClient smtp = new SmtpClient();
+                                    smtp.Host = "smtp.gmail.com";
+                                    smtp.Port = 587;
+                                    smtp.EnableSsl = true;
+                                    smtp.UseDefaultCredentials = false;
+                                    smtp.Credentials = new NetworkCredential("deffinepi@gmail.com", "kzjiwbnktbhwtmww");
 
 
-                            smtp.Send(email);
-                            email.Dispose();
-                            MessageBox.Show("Comprueba tu buzon de entrada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    smtp.Send(email);
+                                    email.Dispose();
+                                    MessageBox.Show("Comprueba tu buzon de entrada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("Error al mandar el correo: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+
+                            }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show("Error al mandar el correo: " + ex.Message, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("El correo indicado no existe en la base de datos, asegurate de estar registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("Rellena el campo de correo con el correo electronico del que deseas recuperar la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("El correo indicado no existe en la base de datos, asegurate de estar registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Rellena el campo de correo con el correo electronico del que deseas recuperar la contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+            
         }
 
         private void panelAyuda_Click(object sender, EventArgs e)

@@ -171,32 +171,47 @@ namespace PIDeffine
 
         private void bttFiltrar_Click(object sender, EventArgs e)
         {
-            string talla = cmbTalla.Text;
-            decimal precioMin = nudMin.Value;
-            decimal precioMax = nudMax.Value;
-            string coleccion = "";
-            string consulta;
-            if (rdbCamisetas.Checked) coleccion = "Camiseta";
-            else if (rdbPantalones.Checked) coleccion = "Pantalon";
-            else if (rdTodo.Checked) coleccion = "";
-
-            if (precioMin <= precioMax)
+            try
             {
-                consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
-                if (talla != "")
+                if (ConBD.Conexion != null)
                 {
-                    consulta += String.Format(" && Talla LIKE '{0}'", talla);
-                }
-                if (coleccion != "")
-                {
-                    consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
-                }
+                    ConBD.AbrirConexion();
+                    string talla = cmbTalla.Text;
+                    decimal precioMin = nudMin.Value;
+                    decimal precioMax = nudMax.Value;
+                    string coleccion = "";
+                    string consulta;
+                    if (rdbCamisetas.Checked) coleccion = "Camiseta";
+                    else if (rdbPantalones.Checked) coleccion = "Pantalon";
+                    else if (rdTodo.Checked) coleccion = "";
 
-                CargarProductos(consulta);
+                    if (precioMin <= precioMax)
+                    {
+                        consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
+                        if (talla != "")
+                        {
+                            consulta += String.Format(" && Talla LIKE '{0}'", talla);
+                        }
+                        if (coleccion != "")
+                        {
+                            consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
+                        }
+
+                        CargarProductos(consulta);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Introduce bien el rango de precios");
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Introduce bien el rango de precios");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
             }
         }
 
@@ -270,67 +285,79 @@ namespace PIDeffine
         }
         private void CargarProductos(string consulta)
         {
-            productos = Producto.CargarProductos(consulta); // Utilizar la variable de instancia productos
-            panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
-
-            int rowIndex = 0;
-            int columnIndex = 0;
-            int maxColumns = 3;
-            int itemWidth = 208;
-            int itemHeight = 248;
-            int spacingX = 10;
-            int spacingY = 10;
-
-            for (int i = 0; i < productos.Count; i++)
+            try
             {
-                int idProducto = productos[i].IdProducto;
-                string descripcion = productos[i].Descripcion;
-                byte[] imagenBytes = productos[i].Imagen;
-
-                // Crear el control de imagen
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Size = new Size(itemWidth, itemHeight);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Image = ByteArrayToImage(imagenBytes);
-                pictureBox.Click += PictureBox_Click;
-                listaPictureBoxes.Add(pictureBox);
-
-                // Agregar borde a la imagen
-                pictureBox.BorderStyle = BorderStyle.FixedSingle;
-
-                // Asignar eventos MouseEnter y MouseLeave
-                pictureBox.MouseEnter += (sender, e) =>
+                if (ConBD.Conexion != null)
                 {
-                    pictureBox.BackColor = Color.FromArgb(168, 168, 168);
-                };
+                    ConBD.CerrarConexion();
+                    ConBD.AbrirConexion();
+                    productos = Producto.CargarProductos(consulta); // Utilizar la variable de instancia productos
+                    panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
 
-                pictureBox.MouseLeave += (sender, e) =>
-                {
-                    pictureBox.BackColor = Color.FromArgb(41, 41, 41);
-                };
+                    int rowIndex = 0;
+                    int columnIndex = 0;
+                    int maxColumns = 3;
+                    int itemWidth = 208;
+                    int itemHeight = 248;
+                    int spacingX = 10;
+                    int spacingY = 10;
 
-                // Calcular la posición de la imagen
-                int x = columnIndex * (itemWidth + spacingX);
-                int y = rowIndex * (itemHeight + spacingY);
+                    for (int i = 0; i < productos.Count; i++)
+                    {
+                        int idProducto = productos[i].IdProducto;
+                        string descripcion = productos[i].Descripcion;
+                        byte[] imagenBytes = productos[i].Imagen;
 
-                // Establecer la posición de la imagen
-                pictureBox.Location = new Point(x, y);
+                        // Crear el control de imagen
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Size = new Size(itemWidth, itemHeight);
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox.Image = ByteArrayToImage(imagenBytes);
+                        pictureBox.Click += PictureBox_Click;
+                        listaPictureBoxes.Add(pictureBox);
 
-                // Agregar la imagen al panel
-                panelPrinc.Controls.Add(pictureBox);
+                        // Agregar borde a la imagen
+                        pictureBox.BorderStyle = BorderStyle.FixedSingle;
 
-                // Calcular la siguiente posición
-                columnIndex++;
-                if (columnIndex >= maxColumns)
-                {
-                    columnIndex = 0;
-                    rowIndex++;
+                        // Asignar eventos MouseEnter y MouseLeave
+                        pictureBox.MouseEnter += (sender, e) =>
+                        {
+                            pictureBox.BackColor = Color.FromArgb(168, 168, 168);
+                        };
+
+                        pictureBox.MouseLeave += (sender, e) =>
+                        {
+                            pictureBox.BackColor = Color.FromArgb(41, 41, 41);
+                        };
+
+                        // Calcular la posición de la imagen
+                        int x = columnIndex * (itemWidth + spacingX);
+                        int y = rowIndex * (itemHeight + spacingY);
+
+                        // Establecer la posición de la imagen
+                        pictureBox.Location = new Point(x, y);
+
+                        // Agregar la imagen al panel
+                        panelPrinc.Controls.Add(pictureBox);
+
+                        // Calcular la siguiente posición
+                        columnIndex++;
+                        if (columnIndex >= maxColumns)
+                        {
+                            columnIndex = 0;
+                            rowIndex++;
+                        }
+                    }
                 }
             }
-
-
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
         private Image ByteArrayToImage(byte[] byteArray)
@@ -382,23 +409,38 @@ namespace PIDeffine
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            List<Producto> productos = Producto.CargarProductos("SELECT * FROM Productos");
-            PictureBox pictureBox = (PictureBox)sender;
-            Producto producto = ObtenerProductoDesdePictureBox(pictureBox);
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    List<Producto> productos = Producto.CargarProductos("SELECT * FROM Productos");
+                    PictureBox pictureBox = (PictureBox)sender;
+                    Producto producto = ObtenerProductoDesdePictureBox(pictureBox);
 
-            // Crear instancia del formulario FrmPedido
-            FrmPedido frmPedido = new FrmPedido();
+                    // Crear instancia del formulario FrmPedido
+                    FrmPedido frmPedido = new FrmPedido();
 
-            // Asignar los valores del producto al formulario FrmPedido
-            frmPedido.NombreProducto = producto.Descripcion;
-            frmPedido.PrecioProducto = producto.Precio;
-            frmPedido.ImagenProducto = producto.Imagen;
+                    // Asignar los valores del producto al formulario FrmPedido
+                    frmPedido.NombreProducto = producto.Descripcion;
+                    frmPedido.PrecioProducto = producto.Precio;
+                    frmPedido.ImagenProducto = producto.Imagen;
 
-            // Cerrar el formulario FrmTienda
-            this.Close();
+                    // Cerrar el formulario FrmTienda
+                    this.Close();
 
-            // Mostrar el formulario FrmPedido
-            frmPedido.Show();
+                    // Mostrar el formulario FrmPedido
+                    frmPedido.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
         private void pcbCarrito_Click(object sender, EventArgs e)

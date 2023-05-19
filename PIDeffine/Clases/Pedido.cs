@@ -30,11 +30,9 @@ namespace PIDeffine
 
         public static decimal ComprobarImporteTotal(int idProducto)
         {
-            ConBD.AbrirConexion();
             string consulta = String.Format("SELECT precio FROM Productos WHERE idProducto = '{0}'", idProducto);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
-            ConBD.CerrarConexion();
             return 0;
         }
     }

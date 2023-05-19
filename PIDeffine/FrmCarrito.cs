@@ -89,6 +89,12 @@ namespace PIDeffine
             }
 
             dgvCarrito.DataSource = dataTable;
+            ConBD.CerrarConexion();
+        }
+
+        private void bttFiltrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

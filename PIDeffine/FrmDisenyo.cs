@@ -313,6 +313,11 @@ namespace PIDeffine
             pcbCamisetaPrinc.BackColor = Color.White;
         }
 
+        private void bttGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BackColorBlack()
         {
             pcbCamisetaPrinc.BackColor = Color.Black;

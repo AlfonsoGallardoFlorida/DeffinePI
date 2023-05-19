@@ -45,41 +45,57 @@ namespace PIDeffine
 
         private void bttRegistrarse_Click(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text;
-            string nombre = txtNombre.Text;
-            string apellidos = txtApellidos.Text;
-            string clave = txtContra.Text;
-            string confClave = txtConfirmContra.Text;
-            bool admin = false;
-
-            if (correo != "" && nombre != "" && apellidos != "" && clave != "" && confClave != "")
+            try
             {
-                if (confClave == clave)
+                if (ConBD.Conexion != null)
                 {
-                    if (Cliente.ComprobarExistencia(correo))
+                    ConBD.AbrirConexion();
+                    string correo = txtCorreo.Text;
+                    string nombre = txtNombre.Text;
+                    string apellidos = txtApellidos.Text;
+                    string clave = txtContra.Text;
+                    string confClave = txtConfirmContra.Text;
+                    bool admin = false;
+
+                    if (correo != "" && nombre != "" && apellidos != "" && clave != "" && confClave != "")
                     {
-                        MessageBox.Show("Ya existe un usuario con ese correo");
+                        if (confClave == clave)
+                        {
+                            if (Cliente.ComprobarExistencia(correo))
+                            {
+                                MessageBox.Show("Ya existe un usuario con ese correo");
+                            }
+                            else
+                            {
+                                Cliente.AgregarCliente(nombre, apellidos, clave, correo, admin);
+                                MessageBox.Show("Cliente registado");
+                                txtCorreo.Text = "";
+                                txtNombre.Text = "";
+                                txtApellidos.Text = "";
+                                txtContra.Text = "";
+                                txtConfirmContra.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El campo confirmar contraseña y contraseña deben contener la misma contraseña");
+                        }
                     }
                     else
                     {
-                        Cliente.AgregarCliente(nombre, apellidos, clave, correo, admin);
-                        MessageBox.Show("Cliente registado");
-                        txtCorreo.Text = "";
-                        txtNombre.Text = "";
-                        txtApellidos.Text = "";
-                        txtContra.Text = "";
-                        txtConfirmContra.Text = "";
+                        MessageBox.Show("Todos los campos son obligatorios");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("El campo confirmar contraseña y contraseña deben contener la misma contraseña");
-                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Todos los campos son obligatorios");
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+           
         }
 
         private void pcbOjoAbierto_Click(object sender, EventArgs e)

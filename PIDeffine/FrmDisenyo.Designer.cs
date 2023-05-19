@@ -609,6 +609,7 @@ namespace PIDeffine
             this.bttGuardar.TabIndex = 73;
             this.bttGuardar.Text = "Guardar";
             this.bttGuardar.UseVisualStyleBackColor = false;
+            this.bttGuardar.Click += new System.EventHandler(this.bttGuardar_Click);
             // 
             // pcbGato
             // 

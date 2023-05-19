@@ -30,6 +30,7 @@ namespace PIDeffine
         private void InitializeComponent()
         {
             this.paneldecontrol = new System.Windows.Forms.Panel();
+            this.pcbVolver = new System.Windows.Forms.PictureBox();
             this.pcbCerrar = new System.Windows.Forms.PictureBox();
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
             this.pcbLogOut = new System.Windows.Forms.PictureBox();
@@ -60,8 +61,8 @@ namespace PIDeffine
             this.lblPrecio = new System.Windows.Forms.Label();
             this.bttComprar = new System.Windows.Forms.Button();
             this.bttEliminarCarrito = new System.Windows.Forms.Button();
-            this.pcbVolver = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
@@ -76,7 +77,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
             this.panelColecciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -93,6 +93,18 @@ namespace PIDeffine
             this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
             this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
             this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
+            // 
+            // pcbVolver
+            // 
+            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
+            this.pcbVolver.Location = new System.Drawing.Point(17, 17);
+            this.pcbVolver.Name = "pcbVolver";
+            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
+            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbVolver.TabIndex = 28;
+            this.pcbVolver.TabStop = false;
+            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
             // 
             // pcbCerrar
             // 
@@ -264,6 +276,7 @@ namespace PIDeffine
             this.bttFiltrar.TabIndex = 75;
             this.bttFiltrar.Text = "Filtrar";
             this.bttFiltrar.UseVisualStyleBackColor = false;
+            this.bttFiltrar.Click += new System.EventHandler(this.bttFiltrar_Click);
             // 
             // lblColecciones
             // 
@@ -459,18 +472,6 @@ namespace PIDeffine
             this.bttEliminarCarrito.Text = "Eliminar Carrito";
             this.bttEliminarCarrito.UseVisualStyleBackColor = false;
             // 
-            // pcbVolver
-            // 
-            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
-            this.pcbVolver.Location = new System.Drawing.Point(17, 17);
-            this.pcbVolver.Name = "pcbVolver";
-            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
-            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbVolver.TabIndex = 28;
-            this.pcbVolver.TabStop = false;
-            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
-            // 
             // FrmCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -510,6 +511,7 @@ namespace PIDeffine
             this.Text = "FrmCarrito";
             this.Load += new System.EventHandler(this.FrmCarrito_Load);
             this.paneldecontrol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).EndInit();
@@ -525,7 +527,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
             this.panelColecciones.ResumeLayout(false);
             this.panelColecciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
