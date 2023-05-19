@@ -32,7 +32,7 @@ namespace PIDeffine
             this.paneldecontrol = new System.Windows.Forms.Panel();
             this.pcbCerrar = new System.Windows.Forms.PictureBox();
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pcbLogOut = new System.Windows.Forms.PictureBox();
+            this.pcbVolver = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
@@ -60,7 +60,7 @@ namespace PIDeffine
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
@@ -78,7 +78,7 @@ namespace PIDeffine
             this.paneldecontrol.BackColor = System.Drawing.Color.DimGray;
             this.paneldecontrol.Controls.Add(this.pcbCerrar);
             this.paneldecontrol.Controls.Add(this.pcbMinimizar);
-            this.paneldecontrol.Controls.Add(this.pcbLogOut);
+            this.paneldecontrol.Controls.Add(this.pcbVolver);
             this.paneldecontrol.Location = new System.Drawing.Point(-14, -10);
             this.paneldecontrol.Name = "paneldecontrol";
             this.paneldecontrol.Size = new System.Drawing.Size(1022, 55);
@@ -111,17 +111,17 @@ namespace PIDeffine
             this.pcbMinimizar.TabStop = false;
             this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
             // 
-            // pcbLogOut
+            // pcbVolver
             // 
-            this.pcbLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbLogOut.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
-            this.pcbLogOut.Location = new System.Drawing.Point(17, 16);
-            this.pcbLogOut.Name = "pcbLogOut";
-            this.pcbLogOut.Size = new System.Drawing.Size(38, 35);
-            this.pcbLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbLogOut.TabIndex = 26;
-            this.pcbLogOut.TabStop = false;
-            this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
+            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
+            this.pcbVolver.Location = new System.Drawing.Point(17, 16);
+            this.pcbVolver.Name = "pcbVolver";
+            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
+            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbVolver.TabIndex = 26;
+            this.pcbVolver.TabStop = false;
+            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
             // 
             // pcbPrincipal
             // 
@@ -410,7 +410,7 @@ namespace PIDeffine
             this.paneldecontrol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
@@ -432,7 +432,7 @@ namespace PIDeffine
         private System.Windows.Forms.Panel paneldecontrol;
         private System.Windows.Forms.PictureBox pcbCerrar;
         private System.Windows.Forms.PictureBox pcbMinimizar;
-        private System.Windows.Forms.PictureBox pcbLogOut;
+        private System.Windows.Forms.PictureBox pcbVolver;
         private System.Windows.Forms.PictureBox pcbPrincipal;
         private System.Windows.Forms.PictureBox pcbspain;
         private System.Windows.Forms.PictureBox pcbingle;

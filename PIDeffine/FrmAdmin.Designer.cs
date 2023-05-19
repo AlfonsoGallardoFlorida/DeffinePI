@@ -162,7 +162,7 @@ namespace PIDeffine
             // 
             this.nudStock.Location = new System.Drawing.Point(329, 102);
             this.nudStock.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
@@ -444,6 +444,7 @@ namespace PIDeffine
             this.bttVolver.TabIndex = 17;
             this.bttVolver.Text = "Volver";
             this.bttVolver.UseVisualStyleBackColor = true;
+            this.bttVolver.Click += new System.EventHandler(this.bttVolver_Click);
             // 
             // bttSalir
             // 
@@ -453,6 +454,7 @@ namespace PIDeffine
             this.bttSalir.TabIndex = 18;
             this.bttSalir.Text = "Salir";
             this.bttSalir.UseVisualStyleBackColor = true;
+            this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
             // FrmAdmin
             // 
@@ -473,6 +475,7 @@ namespace PIDeffine
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdmin";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.grbProducto.ResumeLayout(false);
             this.grbProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).EndInit();

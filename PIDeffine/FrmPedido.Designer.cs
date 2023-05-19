@@ -160,11 +160,12 @@ namespace PIDeffine
             this.lblContacta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblContacta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContacta.ForeColor = System.Drawing.Color.White;
-            this.lblContacta.Location = new System.Drawing.Point(616, 105);
+            this.lblContacta.Location = new System.Drawing.Point(624, 105);
             this.lblContacta.Name = "lblContacta";
             this.lblContacta.Size = new System.Drawing.Size(211, 25);
             this.lblContacta.TabIndex = 50;
             this.lblContacta.Text = "Contacta con Nosotros";
+            this.lblContacta.Click += new System.EventHandler(this.lblContacta_Click);
             this.lblContacta.MouseEnter += new System.EventHandler(this.lblContacta_MouseEnter);
             this.lblContacta.MouseLeave += new System.EventHandler(this.lblContacta_MouseLeave);
             // 
@@ -311,7 +312,7 @@ namespace PIDeffine
             this.bttAnyadir.Image = global::PIDeffine.Properties.Resources.Rectangle_10;
             this.bttAnyadir.Location = new System.Drawing.Point(672, 661);
             this.bttAnyadir.Name = "bttAnyadir";
-            this.bttAnyadir.Size = new System.Drawing.Size(263, 50);
+            this.bttAnyadir.Size = new System.Drawing.Size(263, 68);
             this.bttAnyadir.TabIndex = 66;
             this.bttAnyadir.Text = "Añadir al Carrito";
             this.bttAnyadir.UseVisualStyleBackColor = false;
