@@ -127,9 +127,9 @@ namespace PIDeffine
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
         }
 
-        public static bool ComprobarStock(int idProducto, string talla)
+        public static bool ComprobarStock(string descripcion, string talla)
         {
-            string consulta = String.Format("SELECT stock FROM Productos WHERE idProducto = '{0}' AND Talla = '{1}'", idProducto, talla);
+            string consulta = String.Format("SELECT stock FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
@@ -143,6 +143,7 @@ namespace PIDeffine
                 return false;
             }
         }
+
 
         public static decimal ComprobarPrecio(int idProducto)
         {

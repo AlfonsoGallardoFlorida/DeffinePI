@@ -80,7 +80,18 @@ namespace PIDeffine
 
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
-            dgvCarrito.DataSource = Producto.carrito;
+
+            if (Producto.carrito.Count < 1)
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = "El carrito esta vacío";
+                dgvCarrito.Visible = false;
+            }
+            else
+            {
+                lblMensaje.Visible = false;
+                dgvCarrito.DataSource = Producto.carrito;
+            }
         }
         private void CargarProductos()
         {
@@ -99,6 +110,14 @@ namespace PIDeffine
 
             dgvCarrito.DataSource = dataTable;
             ConBD.CerrarConexion();
+        }
+
+        private void bttEliminarCarrito_Click(object sender, EventArgs e)
+        {
+            Producto.carrito.Clear();
+            lblMensaje.Text = "El carrito esta vacío";
+            lblMensaje.Visible = true;
+            dgvCarrito.Visible = false;
         }
 
         private void bttFiltrar_Click(object sender, EventArgs e)

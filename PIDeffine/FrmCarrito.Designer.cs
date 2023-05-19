@@ -61,6 +61,7 @@ namespace PIDeffine
             this.lblPrecio = new System.Windows.Forms.Label();
             this.bttComprar = new System.Windows.Forms.Button();
             this.bttEliminarCarrito = new System.Windows.Forms.Button();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -476,6 +477,18 @@ namespace PIDeffine
             this.bttEliminarCarrito.TabIndex = 83;
             this.bttEliminarCarrito.Text = "Eliminar Carrito";
             this.bttEliminarCarrito.UseVisualStyleBackColor = false;
+            this.bttEliminarCarrito.Click += new System.EventHandler(this.bttEliminarCarrito_Click);
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Font = new System.Drawing.Font("Arial", 18F);
+            this.lblMensaje.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblMensaje.Location = new System.Drawing.Point(310, 264);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(127, 35);
+            this.lblMensaje.TabIndex = 84;
+            this.lblMensaje.Text = "Mensaje";
             // 
             // FrmCarrito
             // 
@@ -483,6 +496,7 @@ namespace PIDeffine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 735);
+            this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.bttEliminarCarrito);
             this.Controls.Add(this.bttComprar);
             this.Controls.Add(this.nudMax);
@@ -571,5 +585,6 @@ namespace PIDeffine
         private System.Windows.Forms.Button bttComprar;
         private System.Windows.Forms.Button bttEliminarCarrito;
         private System.Windows.Forms.PictureBox pcbVolver;
+        private System.Windows.Forms.Label lblMensaje;
     }
 }

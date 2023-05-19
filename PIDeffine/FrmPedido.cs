@@ -101,7 +101,18 @@ namespace PIDeffine
                 }
 
             ConBD.AbrirConexion();
-            Producto.RecogerDatosProducto(detalles, talla);
+
+            if(Producto.ComprobarStock(detalles, talla))
+            {
+                Producto.RecogerDatosProducto(detalles, talla);
+                MessageBox.Show("Producto agregado al carrito correctamente");
+            }
+            else
+            {
+                MessageBox.Show("No hay stock de la talla seleccionada");
+            }
+
+            
             ConBD.CerrarConexion();
         }
     
