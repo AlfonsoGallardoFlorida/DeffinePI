@@ -100,6 +100,12 @@
     <Compile Include="FrmCarrito.Designer.cs">
       <DependentUpon>FrmCarrito.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCorreoAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCorreoAyuda.Designer.cs">
+      <DependentUpon>FrmCorreoAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDisenyo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCarrito.resx">
       <DependentUpon>FrmCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCorreoAyuda.resx">
+      <DependentUpon>FrmCorreoAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisenyo.resx">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>

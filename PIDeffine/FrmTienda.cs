@@ -144,22 +144,10 @@ namespace PIDeffine
 
         private void lblContacta_Click(object sender, EventArgs e)
         {
-            if (lblIdioma.Text == "Language")
-            {
-                DialogResult help = MessageBox.Show("Do you want to send a help e-mail?", "Help", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (help == DialogResult.Yes)
-                {
-                    MessageBox.Show("Send an e-mail to: 'deffineyourstyle@info.com'.", "Help e-mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                DialogResult ayuda = MessageBox.Show("¿Desea enviar un correo eléctronico de ayuda?", "Ayuda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (ayuda == DialogResult.Yes)
-                {
-                    MessageBox.Show("Envíe un correo electronico a: 'deffineyourstyle@info.com'.", "Correo de Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            ConBD.CerrarConexion();
+            FrmCorreoAyuda frmCorreoAyuda = new FrmCorreoAyuda();
+            frmCorreoAyuda.Show();
+            this.Close();
         }
         private void FiltrarPrecio(double minPrecio, double maxPrecio)
         {

@@ -73,7 +73,7 @@ namespace PIDeffine
 
         private void bttAnyadir_Click(object sender, EventArgs e)
         {
-            ConBD.AbrirConexion();
+            //ConBD.AbrirConexion();
            // string consulta = String.Format("INSERT INTO Detalle_Pedido (IdPedido, IdProducto, Cantidad, Subtotal) VALUES ('{0}', '{1}', '{2}', '{3}')", );
         }
 
@@ -143,6 +143,11 @@ namespace PIDeffine
             FrmCarrito frmcarrito = new FrmCarrito();
             frmcarrito.Show();
             this.Close();
+        }
+
+        private void lblContacta_Click(object sender, EventArgs e)
+        {
+   
         }
 
         private void pcbLogOut_Click(object sender, EventArgs e)
