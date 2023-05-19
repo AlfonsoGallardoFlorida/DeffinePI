@@ -101,6 +101,26 @@ namespace PIDeffine
             ConBD.CerrarConexion();
         }
 
+        private void bttComprar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContacta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblInfoElim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCarrito_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void bttFiltrar_Click(object sender, EventArgs e)
         {
 
