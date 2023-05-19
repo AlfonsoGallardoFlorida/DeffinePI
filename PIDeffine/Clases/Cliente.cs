@@ -12,6 +12,7 @@ namespace PIDeffine
 {
     internal class Cliente
     {
+        private static List<Cliente> clienteLogeado = new List<Cliente>();
         int idCliente;
         string nombre;
         string apellidos;
@@ -140,11 +141,8 @@ namespace PIDeffine
             ConBD.CerrarConexion();
             return contra;
         }
-
-        public static List<Cliente> clienteLogeado(string correo)
+        public static void DatosClienteActual(string correo)
         {
-           
-            List<Cliente> clienteLog = new List<Cliente>();
             MySqlConnection conexion = ConBD.Conexion;
             ConBD.AbrirConexion();
             string consulta = String.Format("SELECT * FROM Clientes WHERE correo = '{0}'", correo);
@@ -158,10 +156,9 @@ namespace PIDeffine
                 string contraseña = (string)reader["Contraseña"];
                 bool admin = (bool)reader["Administrador"];
 
-                Cliente clienteLogeado = new Cliente(id, nombre, apellidos, contraseña, correo, admin);
-                clienteLog.Add(clienteLogeado);
+                Cliente actual = new Cliente(id, nombre, apellidos, contraseña, correo, admin);
+                clienteLogeado.Add(actual);
             }
-                return clienteLog;
         }
     }
 }

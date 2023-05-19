@@ -124,7 +124,7 @@ namespace PIDeffine
                         FrmTienda tienda = new FrmTienda();
                         tienda.Show();
                         this.Hide();
-                        Cliente.clienteLogeado(correo);
+                        Cliente.DatosClienteActual(correo);
                     }
                     else
                     {
