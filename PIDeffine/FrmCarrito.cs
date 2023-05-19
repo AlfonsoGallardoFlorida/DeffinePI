@@ -19,20 +19,29 @@ namespace PIDeffine
         {
             InitializeComponent();
         }
-
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
-
+            mouseX = e.X;
+            mouseY = e.Y;
+            mouseDown = true;
         }
 
         private void paneldecontrol_MouseUp(object sender, MouseEventArgs e)
         {
+            mouseDown = false;
 
         }
 
         private void paneldecontrol_MouseMove(object sender, MouseEventArgs e)
         {
-
+            if (mouseDown)
+            {
+                int newX = this.Left + (e.X - mouseX);
+                int newY = this.Top + (e.Y - mouseY);
+                this.Location = new Point(newX, newY);
+            }
         }
 
         private void pcbMinimizar_Click(object sender, EventArgs e)
