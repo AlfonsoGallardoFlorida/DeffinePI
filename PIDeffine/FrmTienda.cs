@@ -36,6 +36,7 @@ namespace PIDeffine
         {
             string consulta = "SELECT * FROM Productos";
             CargarProductos(consulta);
+            cmbTalla.Text = "L";
             this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
@@ -504,6 +505,14 @@ namespace PIDeffine
             FrmCarrito frmCarrito = new FrmCarrito();
             frmCarrito.Show();
             this.Close();
+        }
+
+        private void bttQuitarFiltros_Click(object sender, EventArgs e)
+        {
+            cmbTalla.Text = "L";
+            nudMax.Value = 5;
+            nudMin.Value = 5;
+            rdTodo.Checked = true;
         }
 
         private Producto ObtenerProductoDesdePictureBox(PictureBox pictureBox)

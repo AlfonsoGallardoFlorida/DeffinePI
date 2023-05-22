@@ -60,6 +60,7 @@ namespace PIDeffine
             this.pcbFiltros = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bttQuitarFiltros = new System.Windows.Forms.Button();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -447,12 +448,23 @@ namespace PIDeffine
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
             // 
+            // bttQuitarFiltros
+            // 
+            this.bttQuitarFiltros.Location = new System.Drawing.Point(34, 214);
+            this.bttQuitarFiltros.Name = "bttQuitarFiltros";
+            this.bttQuitarFiltros.Size = new System.Drawing.Size(42, 32);
+            this.bttQuitarFiltros.TabIndex = 72;
+            this.bttQuitarFiltros.Text = "X";
+            this.bttQuitarFiltros.UseVisualStyleBackColor = true;
+            this.bttQuitarFiltros.Click += new System.EventHandler(this.bttQuitarFiltros_Click);
+            // 
             // FrmTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
+            this.Controls.Add(this.bttQuitarFiltros);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.bttDesign);
             this.Controls.Add(this.nudMax);
@@ -538,5 +550,6 @@ namespace PIDeffine
         private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.Button bttDesign;
         private System.Windows.Forms.PictureBox pcbCarrito;
+        private System.Windows.Forms.Button bttQuitarFiltros;
     }
 }
