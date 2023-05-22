@@ -35,7 +35,6 @@ namespace PIDeffine
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
             this.pcbLogOut = new System.Windows.Forms.PictureBox();
             this.lblIdioma = new System.Windows.Forms.Label();
-            this.lblFiltrarRopa = new System.Windows.Forms.Label();
             this.lblTalla = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblColecciones = new System.Windows.Forms.Label();
@@ -60,7 +59,7 @@ namespace PIDeffine
             this.pcbFiltros = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bttQuitarFiltros = new System.Windows.Forms.Button();
+            this.btnBorrarFiltros = new System.Windows.Forms.Button();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -138,18 +137,6 @@ namespace PIDeffine
             this.lblIdioma.Size = new System.Drawing.Size(70, 25);
             this.lblIdioma.TabIndex = 29;
             this.lblIdioma.Text = "Idioma";
-            // 
-            // lblFiltrarRopa
-            // 
-            this.lblFiltrarRopa.AutoSize = true;
-            this.lblFiltrarRopa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.lblFiltrarRopa.Font = new System.Drawing.Font("Arial", 15F);
-            this.lblFiltrarRopa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-            this.lblFiltrarRopa.Location = new System.Drawing.Point(73, 215);
-            this.lblFiltrarRopa.Name = "lblFiltrarRopa";
-            this.lblFiltrarRopa.Size = new System.Drawing.Size(143, 28);
-            this.lblFiltrarRopa.TabIndex = 32;
-            this.lblFiltrarRopa.Text = "Filtrar Ropa";
             // 
             // lblTalla
             // 
@@ -376,7 +363,7 @@ namespace PIDeffine
             this.bttFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttFiltrar.ForeColor = System.Drawing.Color.White;
             this.bttFiltrar.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.bttFiltrar.Location = new System.Drawing.Point(61, 516);
+            this.bttFiltrar.Location = new System.Drawing.Point(61, 191);
             this.bttFiltrar.Name = "bttFiltrar";
             this.bttFiltrar.Size = new System.Drawing.Size(156, 36);
             this.bttFiltrar.TabIndex = 48;
@@ -448,15 +435,21 @@ namespace PIDeffine
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
             // 
-            // bttQuitarFiltros
+            // btnBorrarFiltros
             // 
-            this.bttQuitarFiltros.Location = new System.Drawing.Point(34, 214);
-            this.bttQuitarFiltros.Name = "bttQuitarFiltros";
-            this.bttQuitarFiltros.Size = new System.Drawing.Size(42, 32);
-            this.bttQuitarFiltros.TabIndex = 72;
-            this.bttQuitarFiltros.Text = "X";
-            this.bttQuitarFiltros.UseVisualStyleBackColor = true;
-            this.bttQuitarFiltros.Click += new System.EventHandler(this.bttQuitarFiltros_Click);
+            this.btnBorrarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnBorrarFiltros.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrarFiltros.FlatAppearance.BorderSize = 0;
+            this.btnBorrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarFiltros.ForeColor = System.Drawing.Color.White;
+            this.btnBorrarFiltros.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
+            this.btnBorrarFiltros.Location = new System.Drawing.Point(60, 233);
+            this.btnBorrarFiltros.Name = "btnBorrarFiltros";
+            this.btnBorrarFiltros.Size = new System.Drawing.Size(156, 36);
+            this.btnBorrarFiltros.TabIndex = 73;
+            this.btnBorrarFiltros.Text = "Borrar Filtros";
+            this.btnBorrarFiltros.UseVisualStyleBackColor = false;
+            this.btnBorrarFiltros.Click += new System.EventHandler(this.btnBorrarFiltros_Click);
             // 
             // FrmTienda
             // 
@@ -464,7 +457,7 @@ namespace PIDeffine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
-            this.Controls.Add(this.bttQuitarFiltros);
+            this.Controls.Add(this.btnBorrarFiltros);
             this.Controls.Add(this.pcbCarrito);
             this.Controls.Add(this.bttDesign);
             this.Controls.Add(this.nudMax);
@@ -485,7 +478,6 @@ namespace PIDeffine
             this.Controls.Add(this.lblColecciones);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblTalla);
-            this.Controls.Add(this.lblFiltrarRopa);
             this.Controls.Add(this.pcbFiltros);
             this.Controls.Add(this.pcbPrincipal);
             this.Controls.Add(this.pictureBox2);
@@ -529,7 +521,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.PictureBox pcbPrincipal;
         private System.Windows.Forms.PictureBox pcbFiltros;
-        private System.Windows.Forms.Label lblFiltrarRopa;
         private System.Windows.Forms.Label lblTalla;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblColecciones;
@@ -550,6 +541,6 @@ namespace PIDeffine
         private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.Button bttDesign;
         private System.Windows.Forms.PictureBox pcbCarrito;
-        private System.Windows.Forms.Button bttQuitarFiltros;
+        private System.Windows.Forms.Button btnBorrarFiltros;
     }
 }

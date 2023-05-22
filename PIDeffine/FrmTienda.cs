@@ -45,7 +45,6 @@ namespace PIDeffine
         {
             lblColecciones.Text = StringRecursos.Colecciones;
             lblContacta.Text = StringRecursos.Contacta;
-            lblFiltrarRopa.Text = StringRecursos.FiltrarRopa;
             lblIdioma.Text = StringRecursos.Idioma;
             lblMaximo.Text = StringRecursos.Maximo;
             lblMinimo.Text = StringRecursos.Minimo;
@@ -507,12 +506,90 @@ namespace PIDeffine
             this.Close();
         }
 
-        private void bttQuitarFiltros_Click(object sender, EventArgs e)
+        private void btnBorrarFiltros_Click(object sender, EventArgs e)
         {
+
             cmbTalla.Text = "L";
             nudMax.Value = 5;
             nudMin.Value = 5;
             rdTodo.Checked = true;
+            string consulta = "";
+            consulta = String.Format("SELECT * FROM Productos");
+
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.CerrarConexion();
+                    ConBD.AbrirConexion();
+
+                    // Reiniciar los PictureBoxes y limpiar las listas
+                    foreach (PictureBox pictureBox in listaPictureBoxes)
+                    {
+                        pictureBox.Click -= PictureBox_Click; // Desasociar el evento Click
+                        pictureBox.Dispose(); // Liberar recursos del PictureBox
+                    }
+                    listaPictureBoxes.Clear();
+                    productos.Clear();
+
+                    // Cargar la nueva lista de productos desde la base de datos o fuente de datos
+                    productos = Producto.FiltrarProducto(consulta); // Utilizar la variable de instancia productos
+
+                    panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
+
+                    int rowIndex = 0;
+                    int columnIndex = 0;
+                    int maxColumns = 3;
+                    int itemWidth = 208;
+                    int itemHeight = 248;
+                    int spacingX = 10;
+                    int spacingY = 10;
+
+                    for (int i = 0; i < productos.Count; i++)
+                    {
+                        int idProducto = productos[i].IdProducto;
+                        string descripcion = productos[i].Descripcion;
+                        Image imagenBytes = productos[i].Imagen;
+
+                        // Crear el control de imagen
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Size = new Size(itemWidth, itemHeight);
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox.Image = imagenBytes;
+                        pictureBox.Click += PictureBox_Click;
+                        listaPictureBoxes.Add(pictureBox);
+
+                        // Agregar borde a la imagen
+                        pictureBox.BorderStyle = BorderStyle.FixedSingle;
+
+                        // Calcular la posición de la imagen
+                        int x = columnIndex * (itemWidth + spacingX);
+                        int y = rowIndex * (itemHeight + spacingY);
+
+                        // Establecer la posición de la imagen
+                        pictureBox.Location = new Point(x, y);
+
+                        // Agregar la imagen al panel
+                        panelPrinc.Controls.Add(pictureBox);
+
+                        // Calcular la siguiente posición
+                        columnIndex++;
+                        if (columnIndex >= maxColumns)
+                        {
+                            columnIndex = 0;
+                            rowIndex++;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
         }
 
         private Producto ObtenerProductoDesdePictureBox(PictureBox pictureBox)
