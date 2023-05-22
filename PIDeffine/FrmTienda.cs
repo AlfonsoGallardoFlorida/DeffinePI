@@ -212,18 +212,27 @@ namespace PIDeffine
                     int spacingX = 10;
                     int spacingY = 10;
 
-                    for (int i = 0; i < productos.Count; i++)
+                    HashSet<string> descripcionesUnicas = new HashSet<string>(); // Conjunto para almacenar descripciones únicas
+
+                    foreach (Producto producto in productos)
                     {
-                        int idProducto = productos[i].IdProducto;
-                        string descripcion = productos[i].Descripcion;
-                        Image imagenBytes = productos[i].Imagen;
+                        string descripcion = producto.Descripcion;
+
+                        if (descripcionesUnicas.Contains(descripcion))
+                        {
+                            // Si la descripción ya existe, pasar al siguiente producto
+                            continue;
+                        }
+
+                        descripcionesUnicas.Add(descripcion); // Agregar la descripción al conjunto de descripciones únicas
 
                         // Crear el control de imagen
                         PictureBox pictureBox = new PictureBox();
                         pictureBox.Size = new Size(itemWidth, itemHeight);
                         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pictureBox.Image = imagenBytes;
+                        pictureBox.Image = producto.Imagen;
                         pictureBox.Click += PictureBox_Click;
+                        pictureBox.Tag = descripcion; // Asignar la descripción al Tag del PictureBox
                         listaPictureBoxes.Add(pictureBox);
 
                         // Agregar borde a la imagen
@@ -347,18 +356,27 @@ namespace PIDeffine
                     int spacingX = 10;
                     int spacingY = 10;
 
-                    for (int i = 0; i < productos.Count; i++)
+                    HashSet<string> descripcionesUnicas = new HashSet<string>(); // Conjunto para almacenar descripciones únicas
+
+                    foreach (Producto producto in productos)
                     {
-                        int idProducto = productos[i].IdProducto;
-                        string descripcion = productos[i].Descripcion;
-                        Image imagenBytes = productos[i].Imagen;
+                        string descripcion = producto.Descripcion;
+
+                        if (descripcionesUnicas.Contains(descripcion))
+                        {
+                            // Si la descripción ya existe, pasar al siguiente producto
+                            continue;
+                        }
+
+                        descripcionesUnicas.Add(descripcion); // Agregar la descripción al conjunto de descripciones únicas
 
                         // Crear el control de imagen
                         PictureBox pictureBox = new PictureBox();
                         pictureBox.Size = new Size(itemWidth, itemHeight);
                         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pictureBox.Image = imagenBytes;
+                        pictureBox.Image = producto.Imagen;
                         pictureBox.Click += PictureBox_Click;
+                        pictureBox.Tag = descripcion; // Asignar la descripción al Tag del PictureBox
                         listaPictureBoxes.Add(pictureBox);
 
                         // Agregar borde a la imagen
@@ -404,6 +422,8 @@ namespace PIDeffine
                 ConBD.CerrarConexion();
             }
         }
+
+
 
         private Image ByteArrayToImage(byte[] byteArray)
         {
@@ -594,11 +614,17 @@ namespace PIDeffine
 
         private Producto ObtenerProductoDesdePictureBox(PictureBox pictureBox)
         {
-            int indicePictureBox = listaPictureBoxes.IndexOf(pictureBox);
-            if (indicePictureBox != -1 && indicePictureBox < productos.Count)
+            string descripcionProducto = (string)pictureBox.Tag; // Obtener la descripción del Tag del PictureBox
+
+            // Buscar el primer producto con la descripción correspondiente
+            foreach (Producto producto in productos)
             {
-                return productos[indicePictureBox];
+                if (producto.Descripcion == descripcionProducto)
+                {
+                    return producto;
+                }
             }
+
             return null;
         }
     }
