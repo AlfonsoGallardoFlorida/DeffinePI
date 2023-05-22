@@ -50,6 +50,19 @@ namespace PIDeffine
             imagen = img;
         }
 
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, byte[] img, string cant)
+        {
+            idProducto = id;
+            descripcion = desc;
+            talla = tall;
+            genero = gen;
+            color = col;
+            precio = prec;
+            stock = sto;
+            imagen = img;
+            cantidad = cant;
+        }
+
         public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, string cant,decimal sub)
         {
             idProducto = id;
