@@ -79,7 +79,7 @@ namespace PIDeffine
             this.lblIdioma.ForeColor = System.Drawing.Color.White;
             this.lblIdioma.Location = new System.Drawing.Point(98, 69);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(70, 25);
+            this.lblIdioma.Size = new System.Drawing.Size(57, 20);
             this.lblIdioma.TabIndex = 2;
             this.lblIdioma.Text = "Idioma";
             // 
@@ -91,7 +91,7 @@ namespace PIDeffine
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
             this.lblCorreo.Location = new System.Drawing.Point(760, 262);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(66, 23);
+            this.lblCorreo.Size = new System.Drawing.Size(53, 18);
             this.lblCorreo.TabIndex = 4;
             this.lblCorreo.Text = "E-Mail";
             // 
@@ -100,9 +100,8 @@ namespace PIDeffine
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F);
             this.txtCorreo.Location = new System.Drawing.Point(690, 288);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(210, 30);
+            this.txtCorreo.Size = new System.Drawing.Size(210, 26);
             this.txtCorreo.TabIndex = 5;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // lblContra
             // 
@@ -112,7 +111,7 @@ namespace PIDeffine
             this.lblContra.ForeColor = System.Drawing.Color.White;
             this.lblContra.Location = new System.Drawing.Point(49, 75);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(112, 23);
+            this.lblContra.Size = new System.Drawing.Size(89, 18);
             this.lblContra.TabIndex = 6;
             this.lblContra.Text = "Contraseña";
             this.lblContra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,9 +122,8 @@ namespace PIDeffine
             this.txtContra.Location = new System.Drawing.Point(5, 101);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '●';
-            this.txtContra.Size = new System.Drawing.Size(178, 30);
+            this.txtContra.Size = new System.Drawing.Size(178, 26);
             this.txtContra.TabIndex = 7;
-            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // lbliniciosesion
             // 
@@ -136,7 +134,7 @@ namespace PIDeffine
             this.lbliniciosesion.ForeColor = System.Drawing.Color.White;
             this.lbliniciosesion.Location = new System.Drawing.Point(64, 148);
             this.lbliniciosesion.Name = "lbliniciosesion";
-            this.lbliniciosesion.Size = new System.Drawing.Size(127, 23);
+            this.lbliniciosesion.Size = new System.Drawing.Size(102, 18);
             this.lbliniciosesion.TabIndex = 8;
             this.lbliniciosesion.Text = "Iniciar Sesión";
             this.lbliniciosesion.Click += new System.EventHandler(this.lbliniciosesion_Click);
@@ -196,7 +194,7 @@ namespace PIDeffine
             this.lblAyuda.ForeColor = System.Drawing.Color.White;
             this.lblAyuda.Location = new System.Drawing.Point(3, 7);
             this.lblAyuda.Name = "lblAyuda";
-            this.lblAyuda.Size = new System.Drawing.Size(213, 23);
+            this.lblAyuda.Size = new System.Drawing.Size(172, 18);
             this.lblAyuda.TabIndex = 13;
             this.lblAyuda.Text = "¿NECESITAS AYUDA?";
             // 
@@ -208,7 +206,7 @@ namespace PIDeffine
             this.lblnuftno.ForeColor = System.Drawing.Color.White;
             this.lblnuftno.Location = new System.Drawing.Point(3, 41);
             this.lblnuftno.Name = "lblnuftno";
-            this.lblnuftno.Size = new System.Drawing.Size(305, 23);
+            this.lblnuftno.Size = new System.Drawing.Size(236, 18);
             this.lblnuftno.TabIndex = 14;
             this.lblnuftno.Text = "Número de Teléfono +34 *********";
             // 
@@ -221,7 +219,7 @@ namespace PIDeffine
             this.lblcorreoayuda.ForeColor = System.Drawing.Color.White;
             this.lblcorreoayuda.Location = new System.Drawing.Point(3, 76);
             this.lblcorreoayuda.Name = "lblcorreoayuda";
-            this.lblcorreoayuda.Size = new System.Drawing.Size(280, 23);
+            this.lblcorreoayuda.Size = new System.Drawing.Size(220, 18);
             this.lblcorreoayuda.TabIndex = 15;
             this.lblcorreoayuda.Text = "Envíanos un correo electrónico";
             this.lblcorreoayuda.Click += new System.EventHandler(this.lblcorreoayuda_Click);
@@ -299,7 +297,6 @@ namespace PIDeffine
             this.pcbAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbAdmin.TabIndex = 31;
             this.pcbAdmin.TabStop = false;
-            this.pcbAdmin.Visible = false;
             this.pcbAdmin.Click += new System.EventHandler(this.pcbAdmin_Click);
             // 
             // pcbCerrar
@@ -390,7 +387,7 @@ namespace PIDeffine
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;

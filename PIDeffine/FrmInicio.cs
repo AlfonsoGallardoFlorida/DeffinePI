@@ -22,7 +22,8 @@ namespace PIDeffine
 {
     public partial class FrmInicio : Form
     {
-
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
         public FrmInicio()
         {
             InitializeComponent();
@@ -30,8 +31,6 @@ namespace PIDeffine
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
-        private int mouseX = 0, mouseY = 0;
-        private bool mouseDown;
 
         private void AplicarIdioma()
         {
@@ -328,72 +327,6 @@ namespace PIDeffine
                     FrmAdmin frmAdmin = new FrmAdmin();
                     frmAdmin.Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                ConBD.CerrarConexion();
-            }
-        }
-
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (ConBD.Conexion != null)
-                {
-                    ConBD.AbrirConexion();
-                    if (Cliente.ComprobarAdmin(txtCorreo.Text) && Cliente.ComprobarClave(txtCorreo.Text,txtContra.Text))
-                    {
-                        pcbAdmin.Show();
-                    }
-                    else
-                    {
-                        pcbAdmin.Hide();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                ConBD.CerrarConexion();
-            }
-        }
-
-        private void txtContra_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (ConBD.Conexion != null)
-                {
-                    ConBD.AbrirConexion();
-                    if (Cliente.ComprobarAdmin(txtCorreo.Text) && Cliente.ComprobarClave(txtCorreo.Text, txtContra.Text))
-                    {
-                        pcbAdmin.Show();
-                    }
-                    else
-                    {
-                        pcbAdmin.Hide();
-                    }
                 }
                 else
                 {

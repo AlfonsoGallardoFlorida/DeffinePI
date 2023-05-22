@@ -14,8 +14,8 @@ namespace PIDeffine
     public partial class FrmPedido : Form
     {
         //string consulta = String.Format("SELECT IdCliente FROM Clientes WHERE Correo='{0}'", )  
-       // Pedido pedido = new Pedido();
-
+        // Pedido pedido = new Pedido();
+        private string nombre;
         public FrmPedido()
         {
             InitializeComponent();
@@ -23,7 +23,14 @@ namespace PIDeffine
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
-
+        public FrmPedido(string nombre)
+        {
+            InitializeComponent();
+            this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
+            this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
+            this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
+            this.nombre = nombre;
+        }
         public FrmPedido(string productName, decimal productPrice, Image productImage)
         {
             this.productName = productName;
@@ -101,7 +108,8 @@ namespace PIDeffine
                 }
 
             ConBD.AbrirConexion();
-            Producto.RecogerDatosProducto(detalles, talla);
+            Producto.RecogerDatosProducto(detalles, talla, Convert.ToString(nudCantidad.Value));
+            MessageBox.Show("Se ha añadido correcatamente el producto a el carrito");
             ConBD.CerrarConexion();
         }
     

@@ -46,8 +46,6 @@ namespace PIDeffine
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.bttComprar = new System.Windows.Forms.Button();
             this.bttEliminarCarrito = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblInfoElim = new System.Windows.Forms.Label();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -146,7 +144,6 @@ namespace PIDeffine
             this.lblContacta.Size = new System.Drawing.Size(211, 25);
             this.lblContacta.TabIndex = 53;
             this.lblContacta.Text = "Contacta con Nosotros";
-            this.lblContacta.Click += new System.EventHandler(this.lblContacta_Click);
             // 
             // pcbDeffine
             // 
@@ -235,7 +232,6 @@ namespace PIDeffine
             this.dgvCarrito.RowTemplate.Height = 24;
             this.dgvCarrito.Size = new System.Drawing.Size(686, 343);
             this.dgvCarrito.TabIndex = 60;
-            this.dgvCarrito.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellContentClick);
             // 
             // bttComprar
             // 
@@ -251,7 +247,6 @@ namespace PIDeffine
             this.bttComprar.TabIndex = 82;
             this.bttComprar.Text = "Comprar Ahora";
             this.bttComprar.UseVisualStyleBackColor = false;
-            this.bttComprar.Click += new System.EventHandler(this.bttComprar_Click);
             // 
             // bttEliminarCarrito
             // 
@@ -267,36 +262,19 @@ namespace PIDeffine
             this.bttEliminarCarrito.TabIndex = 83;
             this.bttEliminarCarrito.Text = "Eliminar Carrito";
             this.bttEliminarCarrito.UseVisualStyleBackColor = false;
+            this.bttEliminarCarrito.Click += new System.EventHandler(this.bttEliminarCarrito_Click);
+            // 
+            // lblMensaje
+            // 
+
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.button1.Location = new System.Drawing.Point(764, 238);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 57);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Eliminar Producto";
-            this.button1.UseVisualStyleBackColor = false;
+
             // 
             // lblInfoElim
             // 
-            this.lblInfoElim.AutoSize = true;
-            this.lblInfoElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.lblInfoElim.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoElim.ForeColor = System.Drawing.Color.White;
-            this.lblInfoElim.Location = new System.Drawing.Point(752, 298);
-            this.lblInfoElim.Name = "lblInfoElim";
-            this.lblInfoElim.Size = new System.Drawing.Size(195, 138);
-            this.lblInfoElim.TabIndex = 85;
-            this.lblInfoElim.Text = "Realiza click sobre el\r\nproducto que deseas\r\neliminar y después\r\nhaz click en el\r" +
-    "\nbotón eliminar\r\nproducto";
-            this.lblInfoElim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblInfoElim.Click += new System.EventHandler(this.lblInfoElim_Click);
+
             // 
             // FrmCarrito
             // 
@@ -304,8 +282,6 @@ namespace PIDeffine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 735);
-            this.Controls.Add(this.lblInfoElim);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.bttEliminarCarrito);
             this.Controls.Add(this.bttComprar);
             this.Controls.Add(this.dgvCarrito);
@@ -362,7 +338,5 @@ namespace PIDeffine
         private System.Windows.Forms.Button bttComprar;
         private System.Windows.Forms.Button bttEliminarCarrito;
         private System.Windows.Forms.PictureBox pcbVolver;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblInfoElim;
     }
 }

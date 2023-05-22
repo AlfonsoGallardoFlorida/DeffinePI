@@ -13,21 +13,24 @@ using System.Windows.Forms;
 using MySqlConnector;
 using PIDeffine.RecursosLocalizables;
 
+
 namespace PIDeffine
 {
     public partial class FrmTienda : Form
     {
         private List<Producto> productos;
         private List<PictureBox> listaPictureBoxes;
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
+        private bool maximizar = true;
+
         public FrmTienda()
         {
             InitializeComponent();
             productos = new List<Producto>();
             listaPictureBoxes = new List<PictureBox>();
         }
-        private int mouseX = 0, mouseY = 0;
-        private bool mouseDown;
-        private bool maximizar = true;
+
 
         private void FrmTienda_Load(object sender, EventArgs e)
         {
@@ -153,37 +156,96 @@ namespace PIDeffine
 
         private void bttFiltrar_Click(object sender, EventArgs e)
         {
+            string talla = cmbTalla.Text;
+            decimal precioMin = nudMin.Value;
+            decimal precioMax = nudMax.Value;
+            string coleccion = "";
+            string consulta = "";
+            if (rdbCamisetas.Checked) coleccion = "Camiseta";
+            else if (rdbPantalones.Checked) coleccion = "Pantalon";
+            else if (rdTodo.Checked) coleccion = "";
+
+            if (precioMin <= precioMax)
+            {
+                consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
+                if (talla != "")
+                {
+                    consulta += String.Format(" && Talla LIKE '{0}'", talla);
+                }
+                if (coleccion != "")
+                {
+                    consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Introduce bien el rango de precios");
+                return;
+            }
+
             try
             {
                 if (ConBD.Conexion != null)
                 {
+                    ConBD.CerrarConexion();
                     ConBD.AbrirConexion();
-                    string talla = cmbTalla.Text;
-                    decimal precioMin = nudMin.Value;
-                    decimal precioMax = nudMax.Value;
-                    string coleccion = "";
-                    string consulta;
-                    if (rdbCamisetas.Checked) coleccion = "Camiseta";
-                    else if (rdbPantalones.Checked) coleccion = "Pantalon";
-                    else if (rdTodo.Checked) coleccion = "";
 
-                    if (precioMin <= precioMax)
+                    // Reiniciar los PictureBoxes y limpiar las listas
+                    foreach (PictureBox pictureBox in listaPictureBoxes)
                     {
-                        consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
-                        if (talla != "")
-                        {
-                            consulta += String.Format(" && Talla LIKE '{0}'", talla);
-                        }
-                        if (coleccion != "")
-                        {
-                            consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
-                        }
-
-                        CargarProductos(consulta);
+                        pictureBox.Click -= PictureBox_Click; // Desasociar el evento Click
+                        pictureBox.Dispose(); // Liberar recursos del PictureBox
                     }
-                    else
+                    listaPictureBoxes.Clear();
+                    productos.Clear();
+
+                    // Cargar la nueva lista de productos desde la base de datos o fuente de datos
+                    productos = Producto.FiltrarProducto(consulta); // Utilizar la variable de instancia productos
+
+                    panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
+
+                    int rowIndex = 0;
+                    int columnIndex = 0;
+                    int maxColumns = 3;
+                    int itemWidth = 208;
+                    int itemHeight = 248;
+                    int spacingX = 10;
+                    int spacingY = 10;
+
+                    for (int i = 0; i < productos.Count; i++)
                     {
-                        MessageBox.Show("Introduce bien el rango de precios");
+                        int idProducto = productos[i].IdProducto;
+                        string descripcion = productos[i].Descripcion;
+                        Image imagenBytes = productos[i].Imagen;
+
+                        // Crear el control de imagen
+                        PictureBox pictureBox = new PictureBox();
+                        pictureBox.Size = new Size(itemWidth, itemHeight);
+                        pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                        pictureBox.Image = imagenBytes;
+                        pictureBox.Click += PictureBox_Click;
+                        listaPictureBoxes.Add(pictureBox);
+
+                        // Agregar borde a la imagen
+                        pictureBox.BorderStyle = BorderStyle.FixedSingle;
+
+                        // Calcular la posición de la imagen
+                        int x = columnIndex * (itemWidth + spacingX);
+                        int y = rowIndex * (itemHeight + spacingY);
+
+                        // Establecer la posición de la imagen
+                        pictureBox.Location = new Point(x, y);
+
+                        // Agregar la imagen al panel
+                        panelPrinc.Controls.Add(pictureBox);
+
+                        // Calcular la siguiente posición
+                        columnIndex++;
+                        if (columnIndex >= maxColumns)
+                        {
+                            columnIndex = 0;
+                            rowIndex++;
+                        }
                     }
                 }
             }
@@ -196,6 +258,7 @@ namespace PIDeffine
                 ConBD.CerrarConexion();
             }
         }
+
 
         private void cmbTalla_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -288,13 +351,13 @@ namespace PIDeffine
                     {
                         int idProducto = productos[i].IdProducto;
                         string descripcion = productos[i].Descripcion;
-                        byte[] imagenBytes = productos[i].Imagen;
+                        Image imagenBytes = productos[i].Imagen;
 
                         // Crear el control de imagen
                         PictureBox pictureBox = new PictureBox();
                         pictureBox.Size = new Size(itemWidth, itemHeight);
                         pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                        pictureBox.Image = ByteArrayToImage(imagenBytes);
+                        pictureBox.Image = imagenBytes;
                         pictureBox.Click += PictureBox_Click;
                         listaPictureBoxes.Add(pictureBox);
 
@@ -359,7 +422,7 @@ namespace PIDeffine
                 pictureBox.Width = 100;
                 pictureBox.Height = 100;
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Image = Image.FromStream(new System.IO.MemoryStream(producto.Imagen));
+                pictureBox.Image = producto.Imagen;
 
                 // Create a Label to display the product name
                 Label label = new Label();
@@ -396,7 +459,7 @@ namespace PIDeffine
                 if (ConBD.Conexion != null)
                 {
                     ConBD.AbrirConexion();
-                    List<Producto> productos = Producto.CargarProductos("SELECT * FROM Productos");
+                    List<Producto> productos = Producto.FiltrarProducto("SELECT * FROM Productos");
                     PictureBox pictureBox = (PictureBox)sender;
                     Producto producto = ObtenerProductoDesdePictureBox(pictureBox);
 
@@ -406,7 +469,7 @@ namespace PIDeffine
                     // Asignar los valores del producto al formulario FrmPedido
                     frmPedido.NombreProducto = producto.Descripcion;
                     frmPedido.PrecioProducto = producto.Precio;
-                    frmPedido.ImagenProducto = producto.Imagen;
+                    frmPedido.ImagenProducto = ImageToByteArray(producto.Imagen);
 
                     // Cerrar el formulario FrmTienda
                     this.Close();
@@ -424,6 +487,17 @@ namespace PIDeffine
                 ConBD.CerrarConexion();
             }
         }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+
 
         private void pcbCarrito_Click(object sender, EventArgs e)
         {
