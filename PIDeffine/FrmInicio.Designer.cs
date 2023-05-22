@@ -44,29 +44,29 @@ namespace PIDeffine
             this.lblcorreoayuda = new System.Windows.Forms.Label();
             this.panelAyuda = new System.Windows.Forms.Panel();
             this.panelLogIn = new System.Windows.Forms.Panel();
-            this.pcbOjoAbierto = new System.Windows.Forms.PictureBox();
-            this.pcbOjoCerrado = new System.Windows.Forms.PictureBox();
             this.paneldecontrol = new System.Windows.Forms.Panel();
+            this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbAdmin = new System.Windows.Forms.PictureBox();
             this.pcbCerrar = new System.Windows.Forms.PictureBox();
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
-            this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
             this.pcbfotoprinc = new System.Windows.Forms.PictureBox();
+            this.pcbOjoAbierto = new System.Windows.Forms.PictureBox();
+            this.pcbOjoCerrado = new System.Windows.Forms.PictureBox();
             this.pcbiniciosesion = new System.Windows.Forms.PictureBox();
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelAyuda.SuspendLayout();
             this.panelLogIn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).BeginInit();
             this.paneldecontrol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbiniciosesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,7 +79,7 @@ namespace PIDeffine
             this.lblIdioma.ForeColor = System.Drawing.Color.White;
             this.lblIdioma.Location = new System.Drawing.Point(98, 69);
             this.lblIdioma.Name = "lblIdioma";
-            this.lblIdioma.Size = new System.Drawing.Size(57, 20);
+            this.lblIdioma.Size = new System.Drawing.Size(70, 25);
             this.lblIdioma.TabIndex = 2;
             this.lblIdioma.Text = "Idioma";
             // 
@@ -91,7 +91,7 @@ namespace PIDeffine
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
             this.lblCorreo.Location = new System.Drawing.Point(760, 262);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(53, 18);
+            this.lblCorreo.Size = new System.Drawing.Size(66, 23);
             this.lblCorreo.TabIndex = 4;
             this.lblCorreo.Text = "E-Mail";
             // 
@@ -100,7 +100,7 @@ namespace PIDeffine
             this.txtCorreo.Font = new System.Drawing.Font("Arial", 12F);
             this.txtCorreo.Location = new System.Drawing.Point(690, 288);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(210, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(210, 30);
             this.txtCorreo.TabIndex = 5;
             // 
             // lblContra
@@ -111,7 +111,7 @@ namespace PIDeffine
             this.lblContra.ForeColor = System.Drawing.Color.White;
             this.lblContra.Location = new System.Drawing.Point(49, 75);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(89, 18);
+            this.lblContra.Size = new System.Drawing.Size(112, 23);
             this.lblContra.TabIndex = 6;
             this.lblContra.Text = "Contraseña";
             this.lblContra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,7 +122,7 @@ namespace PIDeffine
             this.txtContra.Location = new System.Drawing.Point(5, 101);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '●';
-            this.txtContra.Size = new System.Drawing.Size(178, 26);
+            this.txtContra.Size = new System.Drawing.Size(178, 30);
             this.txtContra.TabIndex = 7;
             // 
             // lbliniciosesion
@@ -134,7 +134,7 @@ namespace PIDeffine
             this.lbliniciosesion.ForeColor = System.Drawing.Color.White;
             this.lbliniciosesion.Location = new System.Drawing.Point(64, 148);
             this.lbliniciosesion.Name = "lbliniciosesion";
-            this.lbliniciosesion.Size = new System.Drawing.Size(102, 18);
+            this.lbliniciosesion.Size = new System.Drawing.Size(127, 23);
             this.lbliniciosesion.TabIndex = 8;
             this.lbliniciosesion.Text = "Iniciar Sesión";
             this.lbliniciosesion.Click += new System.EventHandler(this.lbliniciosesion_Click);
@@ -194,7 +194,7 @@ namespace PIDeffine
             this.lblAyuda.ForeColor = System.Drawing.Color.White;
             this.lblAyuda.Location = new System.Drawing.Point(3, 7);
             this.lblAyuda.Name = "lblAyuda";
-            this.lblAyuda.Size = new System.Drawing.Size(172, 18);
+            this.lblAyuda.Size = new System.Drawing.Size(213, 23);
             this.lblAyuda.TabIndex = 13;
             this.lblAyuda.Text = "¿NECESITAS AYUDA?";
             // 
@@ -206,7 +206,7 @@ namespace PIDeffine
             this.lblnuftno.ForeColor = System.Drawing.Color.White;
             this.lblnuftno.Location = new System.Drawing.Point(3, 41);
             this.lblnuftno.Name = "lblnuftno";
-            this.lblnuftno.Size = new System.Drawing.Size(236, 18);
+            this.lblnuftno.Size = new System.Drawing.Size(305, 23);
             this.lblnuftno.TabIndex = 14;
             this.lblnuftno.Text = "Número de Teléfono +34 *********";
             // 
@@ -219,7 +219,7 @@ namespace PIDeffine
             this.lblcorreoayuda.ForeColor = System.Drawing.Color.White;
             this.lblcorreoayuda.Location = new System.Drawing.Point(3, 76);
             this.lblcorreoayuda.Name = "lblcorreoayuda";
-            this.lblcorreoayuda.Size = new System.Drawing.Size(220, 18);
+            this.lblcorreoayuda.Size = new System.Drawing.Size(280, 23);
             this.lblcorreoayuda.TabIndex = 15;
             this.lblcorreoayuda.Text = "Envíanos un correo electrónico";
             this.lblcorreoayuda.Click += new System.EventHandler(this.lblcorreoayuda_Click);
@@ -250,30 +250,6 @@ namespace PIDeffine
             this.panelLogIn.Size = new System.Drawing.Size(224, 249);
             this.panelLogIn.TabIndex = 19;
             // 
-            // pcbOjoAbierto
-            // 
-            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
-            this.pcbOjoAbierto.Location = new System.Drawing.Point(189, 101);
-            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
-            this.pcbOjoAbierto.Size = new System.Drawing.Size(26, 22);
-            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoAbierto.TabIndex = 10;
-            this.pcbOjoAbierto.TabStop = false;
-            this.pcbOjoAbierto.Click += new System.EventHandler(this.pcbOjoAbierto_Click);
-            // 
-            // pcbOjoCerrado
-            // 
-            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
-            this.pcbOjoCerrado.Location = new System.Drawing.Point(189, 101);
-            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
-            this.pcbOjoCerrado.Size = new System.Drawing.Size(26, 22);
-            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbOjoCerrado.TabIndex = 11;
-            this.pcbOjoCerrado.TabStop = false;
-            this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
-            // 
             // paneldecontrol
             // 
             this.paneldecontrol.BackColor = System.Drawing.Color.DimGray;
@@ -287,6 +263,18 @@ namespace PIDeffine
             this.paneldecontrol.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseDown);
             this.paneldecontrol.MouseMove += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseMove);
             this.paneldecontrol.MouseUp += new System.Windows.Forms.MouseEventHandler(this.paneldecontrol_MouseUp);
+            // 
+            // pcbspain
+            // 
+            this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
+            this.pcbspain.Location = new System.Drawing.Point(35, 57);
+            this.pcbspain.Name = "pcbspain";
+            this.pcbspain.Size = new System.Drawing.Size(56, 53);
+            this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbspain.TabIndex = 29;
+            this.pcbspain.TabStop = false;
+            this.pcbspain.Click += new System.EventHandler(this.pcbspain_Click);
             // 
             // pcbAdmin
             // 
@@ -323,18 +311,6 @@ namespace PIDeffine
             this.pcbMinimizar.TabStop = false;
             this.pcbMinimizar.Click += new System.EventHandler(this.pcbMinimizar_Click);
             // 
-            // pcbspain
-            // 
-            this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
-            this.pcbspain.Location = new System.Drawing.Point(35, 57);
-            this.pcbspain.Name = "pcbspain";
-            this.pcbspain.Size = new System.Drawing.Size(56, 53);
-            this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbspain.TabIndex = 29;
-            this.pcbspain.TabStop = false;
-            this.pcbspain.Click += new System.EventHandler(this.pcbspain_Click);
-            // 
             // pcbingle
             // 
             this.pcbingle.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -349,13 +325,38 @@ namespace PIDeffine
             // 
             // pcbfotoprinc
             // 
-            this.pcbfotoprinc.Image = global::PIDeffine.Properties.Resources.deffineinicio;
-            this.pcbfotoprinc.Location = new System.Drawing.Point(38, 130);
+            this.pcbfotoprinc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.pcbfotoprinc.Image = global::PIDeffine.Properties.Resources.logo4;
+            this.pcbfotoprinc.Location = new System.Drawing.Point(172, 127);
             this.pcbfotoprinc.Name = "pcbfotoprinc";
-            this.pcbfotoprinc.Size = new System.Drawing.Size(594, 475);
+            this.pcbfotoprinc.Size = new System.Drawing.Size(393, 481);
             this.pcbfotoprinc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbfotoprinc.TabIndex = 12;
             this.pcbfotoprinc.TabStop = false;
+            // 
+            // pcbOjoAbierto
+            // 
+            this.pcbOjoAbierto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoAbierto.Image = global::PIDeffine.Properties.Resources.abiertoojo;
+            this.pcbOjoAbierto.Location = new System.Drawing.Point(189, 101);
+            this.pcbOjoAbierto.Name = "pcbOjoAbierto";
+            this.pcbOjoAbierto.Size = new System.Drawing.Size(26, 22);
+            this.pcbOjoAbierto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoAbierto.TabIndex = 10;
+            this.pcbOjoAbierto.TabStop = false;
+            this.pcbOjoAbierto.Click += new System.EventHandler(this.pcbOjoAbierto_Click);
+            // 
+            // pcbOjoCerrado
+            // 
+            this.pcbOjoCerrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbOjoCerrado.Image = global::PIDeffine.Properties.Resources.cerradoojo;
+            this.pcbOjoCerrado.Location = new System.Drawing.Point(189, 101);
+            this.pcbOjoCerrado.Name = "pcbOjoCerrado";
+            this.pcbOjoCerrado.Size = new System.Drawing.Size(26, 22);
+            this.pcbOjoCerrado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbOjoCerrado.TabIndex = 11;
+            this.pcbOjoCerrado.TabStop = false;
+            this.pcbOjoCerrado.Click += new System.EventHandler(this.pcbOjoCerrado_Click);
             // 
             // pcbiniciosesion
             // 
@@ -387,7 +388,7 @@ namespace PIDeffine
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -418,15 +419,15 @@ namespace PIDeffine
             this.panelAyuda.PerformLayout();
             this.panelLogIn.ResumeLayout(false);
             this.panelLogIn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).EndInit();
             this.paneldecontrol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbfotoprinc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoAbierto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbOjoCerrado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbiniciosesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -448,7 +449,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblContraOlvidada;
         private System.Windows.Forms.Label lblCuenta;
         private System.Windows.Forms.Label lblRegistrarse;
-        private System.Windows.Forms.PictureBox pcbfotoprinc;
         private System.Windows.Forms.Label lblAyuda;
         private System.Windows.Forms.Label lblnuftno;
         private System.Windows.Forms.Label lblcorreoayuda;
@@ -463,6 +463,7 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbspain;
         private System.Windows.Forms.PictureBox pcbingle;
         private System.Windows.Forms.PictureBox pcbAdmin;
+        private System.Windows.Forms.PictureBox pcbfotoprinc;
     }
 }
 

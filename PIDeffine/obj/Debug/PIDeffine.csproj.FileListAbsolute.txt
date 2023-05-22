@@ -383,3 +383,4 @@ C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resourc
 C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
 C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.exe
 C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.pdb
+C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources

@@ -227,6 +227,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\logo4.png" />
+    <None Include="Resources\logo3.png" />
+    <None Include="Resources\kologpistol.png" />
+    <None Include="Resources\necobien.png" />
+    <None Include="Resources\mc.png" />
+    <None Include="Resources\hombredisenyoinicio.png" />
+    <None Include="Resources\logo-removebg-preview.png" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\guiadetallas.png" />
     <None Include="Resources\SusdaderaS.png" />
     <Resource Include="Resources\abiertoojo.png" />
@@ -250,6 +258,7 @@
     <None Include="Resources\camilarganegra.png" />
     <Content Include="Resources\camisetaazul.jpg" />
     <Content Include="Resources\camisetablancadisenyo.png" />
+    <None Include="Resources\camisetablancainixio.png" />
     <Content Include="Resources\camisetaHombreRubio.png" />
     <Resource Include="Resources\camisetakeepcalm.png" />
     <Content Include="Resources\camisetalargadisenyo.png" />
@@ -259,6 +268,7 @@
     <Content Include="Resources\camisetarubius.png" />
     <Content Include="Resources\camisetasudaderadisenyo.png" />
     <Content Include="Resources\camisetatirantesdisenyo.png" />
+    <None Include="Resources\camisetatirantesverdebuena.png" />
     <Content Include="Resources\camisetaverde.png" />
     <None Include="Resources\camitirantesS.png" />
     <None Include="Resources\camitirantesverde.png" />
@@ -269,9 +279,11 @@
     <None Include="Resources\Carrito.png" />
     <None Include="Resources\Carrito1.png" />
     <None Include="Resources\CamitirantesS2.png" />
+    <None Include="Resources\car.jpg" />
     <Content Include="Resources\cerradoojo.png" />
     <Content Include="Resources\cerrar.png" />
     <Content Include="Resources\deffineinicio.png" />
+    <None Include="Resources\deffinetitulazo.png" />
     <Content Include="Resources\deffinneeHeader.png" />
     <Content Include="Resources\deffinnetitulo.png" />
     <Resource Include="Resources\Rectangle 10.png" />

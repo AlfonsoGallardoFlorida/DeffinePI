@@ -111,11 +111,13 @@ namespace PIDeffine
             {
                 pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiblanca;
                 BackColorBlack();
-            }else if (rdbNegro.Checked)
+            }
+            else if (rdbNegro.Checked)
             {
                 pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_roly_dogo_negra_1200Wx1200H_removebg_preview;
                 BackColorWhite();
-            }else if (rdbAzul.Checked)
+            }
+            else if (rdbAzul.Checked)
             {
                 pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camiseta_m_c_roly_beagle_removebg_preview;
                 BackColorBlack();
@@ -299,7 +301,7 @@ namespace PIDeffine
             }
             else if (rdbTirant.Checked)
             {
-                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camitirantesverde;
+                pcbCamisetaPrinc.Image = PIDeffine.Properties.Resources.camisetatirantesverdebuena;
                 BackColorBlack();
             }
             else
@@ -318,9 +320,102 @@ namespace PIDeffine
 
         }
 
+        private void pcbCalavera_Click(object sender, EventArgs e)
+        {
+            HideDisenyo();
+            pcbCalaveraGrande.Show();
+        }
+
+        private void pcbCorazon_Click(object sender, EventArgs e)
+        {
+            HideDisenyo();
+            pcbCorazonGrande.Show();
+        }
+
+        private void pcbWilly_Click(object sender, EventArgs e)
+        {
+            HideDisenyo();
+            pcbWillyGrande.Show();
+        }
+
+        private void pcbGato_Click(object sender, EventArgs e)
+        {
+            HideDisenyo();
+            pcbGatoGrande.Show();
+        }
         private void BackColorBlack()
         {
             pcbCamisetaPrinc.BackColor = Color.Black;
+        }
+
+        private void bttAdjuntar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    ConBD.AbrirConexion();
+                    HideDisenyo();
+                    OpenFileDialog cargaImagen = new OpenFileDialog();
+                    cargaImagen.InitialDirectory = "C:\\";
+                    cargaImagen.Filter = "Archivos de imagen (*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
+                    cargaImagen.FilterIndex = 0;
+                    if (cargaImagen.ShowDialog() == DialogResult.OK)
+                    {
+                        pcbimportar.ImageLocation = cargaImagen.FileName;
+                        pcbimportar.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado imagen", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+        }
+
+        private void bttAnyadirTexto_Click(object sender, EventArgs e)
+        {
+            lbltutextoaqui.Text = txtanyadirtexto.Text;
+            lbltutextoaqui.Show();
+        }
+
+        private void rdbTxtBlanco_CheckedChanged(object sender, EventArgs e)
+        {
+            lbltutextoaqui.ForeColor = Color.White;
+            lbltutextoaqui.BackColor = Color.Black;
+        }
+
+        private void rdbFondoNegro_CheckedChanged(object sender, EventArgs e)
+        {
+            lbltutextoaqui.BackColor = Color.White;
+            lbltutextoaqui.ForeColor = Color.Black;
+        }
+
+        private void txtanyadirtexto_TextChanged(object sender, EventArgs e)
+        {
+            if (txtanyadirtexto.Text == "") lbltutextoaqui.Hide();
+        }
+
+        private void HideDisenyo()
+        {
+            pcbGatoGrande.Hide();
+            pcbCalaveraGrande.Hide();
+            pcbCorazonGrande.Hide();
+            pcbWillyGrande.Hide();
+            pcbimportar.Hide();
         }
     }
 }
