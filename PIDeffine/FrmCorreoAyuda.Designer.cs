@@ -40,9 +40,11 @@ namespace PIDeffine
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.lblCorreoAyuda = new System.Windows.Forms.Label();
             this.pcbDeffine = new System.Windows.Forms.PictureBox();
+            this.pcbVolver = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDeffine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -164,12 +166,25 @@ namespace PIDeffine
             this.pcbDeffine.TabIndex = 68;
             this.pcbDeffine.TabStop = false;
             // 
+            // pcbVolver
+            // 
+            this.pcbVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbVolver.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_1;
+            this.pcbVolver.Location = new System.Drawing.Point(12, 12);
+            this.pcbVolver.Name = "pcbVolver";
+            this.pcbVolver.Size = new System.Drawing.Size(38, 35);
+            this.pcbVolver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbVolver.TabIndex = 70;
+            this.pcbVolver.TabStop = false;
+            this.pcbVolver.Click += new System.EventHandler(this.pcbVolver_Click);
+            // 
             // FrmCorreoAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(986, 688);
+            this.Controls.Add(this.pcbVolver);
             this.Controls.Add(this.pcbDeffine);
             this.Controls.Add(this.lblCorreoAyuda);
             this.Controls.Add(this.panel1);
@@ -184,6 +199,7 @@ namespace PIDeffine
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDeffine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +217,6 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbDeffine;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.PictureBox pcbVolver;
     }
 }
