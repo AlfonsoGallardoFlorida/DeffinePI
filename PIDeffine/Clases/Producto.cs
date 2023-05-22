@@ -169,14 +169,26 @@ namespace PIDeffine
             Producto nuevoProducto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
             string consulta = "INSERT INTO Productos (Descripcion, Talla, Genero, Color, Precio, Stock, Imagen) VALUES (@descripcion, @talla, @genero, @color, @precio, @stock, @imagen)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            // ...
             comando.Parameters.AddWithValue("@descripcion", nuevoProducto.descripcion);
             comando.Parameters.AddWithValue("@talla", nuevoProducto.talla);
             comando.Parameters.AddWithValue("@genero", nuevoProducto.genero);
             comando.Parameters.AddWithValue("@color", nuevoProducto.color);
             comando.Parameters.AddWithValue("@precio", nuevoProducto.precio);
             comando.Parameters.AddWithValue("@stock", nuevoProducto.stock);
-            comando.Parameters.AddWithValue("@imagen", nuevoProducto.imagen);
+
+            // Convertir la imagen a una matriz de bytes
+            byte[] imagenBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                nuevoProducto.imagen.Save(ms, nuevoProducto.imagen.RawFormat);
+                imagenBytes = ms.ToArray();
+            }
+
+            comando.Parameters.AddWithValue("@imagen", imagenBytes);
             comando.ExecuteNonQuery();
+            // ...
+
         }
 
         public static void BorrarProducto(int idProducto)
