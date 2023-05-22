@@ -24,7 +24,7 @@ namespace PIDeffine
         Image imagen;
         string cantidad;
         decimal subtotal;
-        public int IdProducto { get {return idProducto; }}
+        public int IdProducto { get { return idProducto; } }
         public string Descripcion { get { return descripcion; } }
         public string Talla { get { return talla; } }
         public string Genero { get { return genero; } }
@@ -63,7 +63,7 @@ namespace PIDeffine
             cantidad = cant;
         }
 
-        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, string cant,decimal sub)
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, string cant, decimal sub)
         {
             idProducto = id;
             descripcion = desc;
@@ -133,33 +133,33 @@ namespace PIDeffine
             List<Producto> prod = new List<Producto>();
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+            while (reader.Read())
+            {
+                int id = reader.GetInt32("IdProducto");
+                string descripcion = (string)reader["Descripcion"];
+                string talla = (string)reader["Talla"];
+                string genero = (string)reader["Genero"];
+                string color = (string)reader["Color"];
+                decimal precio = (decimal)reader["Precio"];
+                int stock = (int)reader["Stock"];
+                byte[] img = (byte[])(reader["Imagen"]);
+                Image imagen = null;
+                if (img != null)
                 {
-                    int id = reader.GetInt32("IdProducto");
-                    string descripcion = (string)reader["Descripcion"];
-                    string talla = (string)reader["Talla"];
-                    string genero = (string)reader["Genero"];
-                    string color = (string)reader["Color"];
-                    decimal precio = (decimal)reader["Precio"];
-                    int stock = (int)reader["Stock"];
-                    byte[] img = (byte[])(reader["Imagen"]);
-                    Image imagen = null;
-                    if (img != null)
+                    try
                     {
-                        try
-                        {
-                            System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
-                            imagen = (Image)converter.ConvertFrom(img);
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            MessageBox.Show("Error converting image: " + ex.Message);
-                        }
-
-                        Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
-                        prod.Add(producto);
+                        System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+                        imagen = (Image)converter.ConvertFrom(img);
                     }
+                    catch (ArgumentException ex)
+                    {
+                        MessageBox.Show("Error converting image: " + ex.Message);
+                    }
+
+                    Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
+                    prod.Add(producto);
                 }
+            }
             reader.Close();
             return prod;
         }
@@ -243,37 +243,37 @@ namespace PIDeffine
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
+            {
+                int id = reader.GetInt32("IdProducto");
+                string descripcion = (string)reader["Descripcion"];
+                string talla = (string)reader["Talla"];
+                string genero = (string)reader["Genero"];
+                string color = (string)reader["Color"];
+                decimal precio = (decimal)reader["Precio"];
+                int stock = (int)reader["Stock"];
+                byte[] img = (byte[])(reader["Imagen"]);
+                Image imagen = null;
+                if (img != null)
                 {
-                    int id = reader.GetInt32("IdProducto");
-                    string descripcion = (string)reader["Descripcion"];
-                    string talla = (string)reader["Talla"];
-                    string genero = (string)reader["Genero"];
-                    string color = (string)reader["Color"];
-                    decimal precio = (decimal)reader["Precio"];
-                    int stock = (int)reader["Stock"];
-                    byte[] img = (byte[])(reader["Imagen"]);
-                    Image imagen = null;
-                    if (img != null)
+                    try
                     {
-                        try
-                        {
-                            System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
-                            imagen = (Image)converter.ConvertFrom(img);
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            MessageBox.Show("Error converting image: " + ex.Message);
-                        }
-
-                        Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
-                        prod.Add(producto);
+                        System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+                        imagen = (Image)converter.ConvertFrom(img);
                     }
+                    catch (ArgumentException ex)
+                    {
+                        MessageBox.Show("Error converting image: " + ex.Message);
+                    }
+
+                    Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
+                    prod.Add(producto);
                 }
+            }
             reader.Close();
-                return prod;
+            return prod;
         }
 
-        public static void RecogerDatosProducto(string descripcion, string talla,string cant)
+        public static void RecogerDatosProducto(string descripcion, string talla, string cant)
         {
             string consulta = String.Format("SELECT * FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
@@ -298,7 +298,7 @@ namespace PIDeffine
                     }
 
 
-                    Producto alCarrito = new Producto(id, desc, tall, genero, color, precio, stock, imagen,cant,(Convert.ToDecimal(cant)*precio));
+                    Producto alCarrito = new Producto(id, desc, tall, genero, color, precio, stock, imagen, cant, (Convert.ToDecimal(cant) * precio));
                     Producto.carrito.Add(alCarrito);
                 }
             }

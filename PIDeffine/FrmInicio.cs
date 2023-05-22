@@ -96,7 +96,9 @@ namespace PIDeffine
                 DialogResult help = MessageBox.Show("Do you want to send a help e-mail?", "Help", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (help == DialogResult.Yes)
                 {
-                    MessageBox.Show("Send an e-mail to: 'deffineyourstyle@info.com'.", "Help E-mail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmCorreoAyuda frmCorreoAyuda = new FrmCorreoAyuda();
+                    frmCorreoAyuda.Show();
+                    this.Hide();
                 }
             }
             else
@@ -105,7 +107,9 @@ namespace PIDeffine
                 DialogResult ayuda = MessageBox.Show("¿Desea enviar un correo eléctronico de ayuda?", "Ayuda", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (ayuda == DialogResult.Yes)
                 {
-                    MessageBox.Show("Envíe un correo electronico a: 'deffineyourstyle@info.com'.", "Correo de Ayuda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmCorreoAyuda frmCorreoAyuda = new FrmCorreoAyuda();
+                    frmCorreoAyuda.Show();
+                    this.Hide();
                 }
             }
         }
@@ -324,9 +328,17 @@ namespace PIDeffine
                 if (ConBD.Conexion != null)
                 {
                     ConBD.AbrirConexion();
-                    FrmAdmin frmAdmin = new FrmAdmin();
-                    frmAdmin.Show();
-                    this.Hide();
+                    if (txtContra.Text != "" && txtCorreo.Text != "")
+                    {
+
+                        if (Cliente.ComprobarAdmin(txtCorreo.Text) && Cliente.ComprobarClave(txtCorreo.Text, txtContra.Text))
+                        {
+                            FrmAdmin frmAdmin = new FrmAdmin();
+                            frmAdmin.Show();
+                            this.Hide();
+                        }
+                        else MessageBox.Show("El correo o clave introducidos son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

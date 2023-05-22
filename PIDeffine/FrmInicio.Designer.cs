@@ -278,6 +278,7 @@ namespace PIDeffine
             // 
             // pcbAdmin
             // 
+            this.pcbAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbAdmin.Image = global::PIDeffine.Properties.Resources.admin;
             this.pcbAdmin.Location = new System.Drawing.Point(15, 17);
             this.pcbAdmin.Name = "pcbAdmin";

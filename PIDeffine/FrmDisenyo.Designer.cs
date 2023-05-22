@@ -435,10 +435,11 @@ namespace PIDeffine
             // lbltutextoaqui
             // 
             this.lbltutextoaqui.AutoSize = true;
+            this.lbltutextoaqui.Font = new System.Drawing.Font("Arial", 15F);
             this.lbltutextoaqui.ForeColor = System.Drawing.Color.White;
-            this.lbltutextoaqui.Location = new System.Drawing.Point(213, 510);
+            this.lbltutextoaqui.Location = new System.Drawing.Point(191, 510);
             this.lbltutextoaqui.Name = "lbltutextoaqui";
-            this.lbltutextoaqui.Size = new System.Drawing.Size(117, 23);
+            this.lbltutextoaqui.Size = new System.Drawing.Size(148, 28);
             this.lbltutextoaqui.TabIndex = 94;
             this.lbltutextoaqui.Text = "tu texto aqui";
             this.lbltutextoaqui.Visible = false;
