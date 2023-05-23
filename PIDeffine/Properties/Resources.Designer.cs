@@ -833,9 +833,29 @@ namespace PIDeffine.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_removebg_preview__20_ {
+            get {
+                object obj = ResourceManager.GetObject("image-removebg-preview (20)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kologpistol {
             get {
                 object obj = ResourceManager.GetObject("kologpistol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap labili {
+            get {
+                object obj = ResourceManager.GetObject("labili", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -966,6 +986,26 @@ namespace PIDeffine.Properties {
         internal static System.Drawing.Bitmap necobien {
             get {
                 object obj = ResourceManager.GetObject("necobien", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap peloplata {
+            get {
+                object obj = ResourceManager.GetObject("peloplata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap punkarra {
+            get {
+                object obj = ResourceManager.GetObject("punkarra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

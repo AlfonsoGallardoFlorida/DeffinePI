@@ -236,6 +236,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\image-removebg-preview %2820%29.png" />
+    <None Include="Resources\punkarra.png" />
+    <None Include="Resources\peloplata.png" />
+    <None Include="Resources\labili.png" />
     <None Include="Resources\logo4.png" />
     <None Include="Resources\logo3.png" />
     <None Include="Resources\kologpistol.png" />

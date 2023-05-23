@@ -414,7 +414,7 @@ namespace PIDeffine
         {
             FrmCarrito frmCarrito = new FrmCarrito();
             frmCarrito.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void HideDisenyo()

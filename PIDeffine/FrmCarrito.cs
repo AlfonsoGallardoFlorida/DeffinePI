@@ -82,19 +82,25 @@ namespace PIDeffine
 
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
-            if(Producto.carrito.Count == 0)
+            if (Producto.carrito.Count == 0)
             {
                 CarritoVacio();
             }
             btnConfCompra.Visible = false;
             grbComprar.Visible = false;
-            if(Producto.carrito.Count != 0)
+            if (Producto.carrito.Count != 0)
             {
-            dgvCarrito.DataSource = Producto.carrito;
-            dgvCarrito.Columns["IdProducto"].Visible = false;
-            dgvCarrito.Columns["Stock"].Visible = false;
-            dgvCarrito.Columns["Imagen"].Visible = false;
+                dgvCarrito.DataSource = Producto.carrito;
+                dgvCarrito.Columns["IdProducto"].Visible = false;
+                dgvCarrito.Columns["Stock"].Visible = false;
+                dgvCarrito.Columns["Imagen"].Visible = false;
             }
+            decimal importeTotal = 0;
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                importeTotal += Producto.carrito[i].Subtotal;
+            }
+            lblPrecioTotalCamb.Text = importeTotal.ToString();
         }
 
 
@@ -113,6 +119,8 @@ namespace PIDeffine
             bttVolverCarrito.Show();
             bttComprar.Hide();
             dgvCarrito.Hide();
+            lblPrecioTotalCamb.Hide();
+            lblTotalPedido.Hide();
             bttEliminarCarrito.Hide();
             txtCliente.Text = Cliente.clienteLogeado[0].Nombre + " " + Cliente.clienteLogeado[0].Apellidos;
             txtCorreo.Text = Cliente.clienteLogeado[0].Correo;
@@ -127,12 +135,14 @@ namespace PIDeffine
             }
             else
             {
-            grbComprar.Hide();
-            btnConfCompra.Hide();
-            bttVolverCarrito.Hide();
-            bttComprar.Show();
-            dgvCarrito.Show();
-            bttEliminarCarrito.Show();
+                grbComprar.Hide();
+                btnConfCompra.Hide();
+                bttVolverCarrito.Hide();
+                bttComprar.Show();
+                dgvCarrito.Show();
+                bttEliminarCarrito.Show();
+                lblTotalPedido.Show();
+                lblPrecioTotalCamb.Show();
             }
         }
 
@@ -187,6 +197,8 @@ namespace PIDeffine
             grbComprar.Hide();
             btnConfCompra.Hide();
             bttVolverCarrito.Hide();
+            lblPrecioTotalCamb.Hide();
+            lblTotalPedido.Hide();
         }
     }
 }
