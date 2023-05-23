@@ -34,7 +34,6 @@ namespace PIDeffine
             this.pcbCerrar = new System.Windows.Forms.PictureBox();
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
             this.pcbLogOut = new System.Windows.Forms.PictureBox();
-            this.lblContacta = new System.Windows.Forms.Label();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.lblCarrito = new System.Windows.Forms.Label();
             this.dgvCarrito = new System.Windows.Forms.DataGridView();
@@ -56,9 +55,10 @@ namespace PIDeffine
             this.pcbDeffine = new System.Windows.Forms.PictureBox();
             this.pcbspain = new System.Windows.Forms.PictureBox();
             this.pcbingle = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTotalPedido = new System.Windows.Forms.Label();
             this.lblPrecioTotalCamb = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pcbPerfil = new System.Windows.Forms.PictureBox();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -71,6 +71,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldecontrol
@@ -135,18 +136,6 @@ namespace PIDeffine
             this.pcbLogOut.TabIndex = 26;
             this.pcbLogOut.TabStop = false;
             this.pcbLogOut.Click += new System.EventHandler(this.pcbLogOut_Click);
-            // 
-            // lblContacta
-            // 
-            this.lblContacta.AutoSize = true;
-            this.lblContacta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblContacta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContacta.ForeColor = System.Drawing.Color.White;
-            this.lblContacta.Location = new System.Drawing.Point(668, 79);
-            this.lblContacta.Name = "lblContacta";
-            this.lblContacta.Size = new System.Drawing.Size(211, 25);
-            this.lblContacta.TabIndex = 53;
-            this.lblContacta.Text = "Contacta con Nosotros";
             // 
             // lblIdioma
             // 
@@ -390,14 +379,6 @@ namespace PIDeffine
             this.pcbingle.TabStop = false;
             this.pcbingle.Click += new System.EventHandler(this.pcbingle_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 44);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1007, 706);
-            this.pictureBox2.TabIndex = 57;
-            this.pictureBox2.TabStop = false;
-            // 
             // lblTotalPedido
             // 
             this.lblTotalPedido.AutoSize = true;
@@ -420,12 +401,31 @@ namespace PIDeffine
             this.lblPrecioTotalCamb.TabIndex = 89;
             this.lblPrecioTotalCamb.Text = "precio total";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(-3, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1007, 706);
+            this.pictureBox2.TabIndex = 57;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pcbPerfil
+            // 
+            this.pcbPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbPerfil.Image = global::PIDeffine.Properties.Resources.Ellipse_2;
+            this.pcbPerfil.Location = new System.Drawing.Point(863, 64);
+            this.pcbPerfil.Name = "pcbPerfil";
+            this.pcbPerfil.Size = new System.Drawing.Size(69, 67);
+            this.pcbPerfil.TabIndex = 90;
+            this.pcbPerfil.TabStop = false;
+            // 
             // FrmCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 735);
+            this.Controls.Add(this.pcbPerfil);
             this.Controls.Add(this.lblPrecioTotalCamb);
             this.Controls.Add(this.lblTotalPedido);
             this.Controls.Add(this.bttVolverCarrito);
@@ -438,7 +438,6 @@ namespace PIDeffine
             this.Controls.Add(this.lblCarrito);
             this.Controls.Add(this.pcbPrincipal);
             this.Controls.Add(this.paneldecontrol);
-            this.Controls.Add(this.lblContacta);
             this.Controls.Add(this.pcbDeffine);
             this.Controls.Add(this.lblIdioma);
             this.Controls.Add(this.pcbspain);
@@ -464,6 +463,7 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbspain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbingle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,12 +475,10 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbCerrar;
         private System.Windows.Forms.PictureBox pcbMinimizar;
         private System.Windows.Forms.PictureBox pcbLogOut;
-        private System.Windows.Forms.Label lblContacta;
         private System.Windows.Forms.PictureBox pcbDeffine;
         private System.Windows.Forms.PictureBox pcbspain;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.PictureBox pcbingle;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pcbPrincipal;
         private System.Windows.Forms.Label lblCarrito;
         private System.Windows.Forms.DataGridView dgvCarrito;
@@ -501,5 +499,7 @@ namespace PIDeffine
         private System.Windows.Forms.Button bttVolverCarrito;
         private System.Windows.Forms.Label lblTotalPedido;
         private System.Windows.Forms.Label lblPrecioTotalCamb;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pcbPerfil;
     }
 }
