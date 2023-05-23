@@ -423,3 +423,5 @@ C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeff
 C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
 C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.exe
 C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.pdb
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmGuiaDeTallas.resources

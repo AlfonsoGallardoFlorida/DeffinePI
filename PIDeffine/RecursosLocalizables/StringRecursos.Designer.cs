@@ -61,6 +61,15 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Añadir al Carrito.
+        /// </summary>
+        internal static string Anyadir {
+            get {
+                return ResourceManager.GetString("Anyadir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Apellidos.
         /// </summary>
         internal static string Apellidos {
@@ -79,11 +88,38 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Bandas de musica.
+        /// </summary>
+        internal static string Bandas {
+            get {
+                return ResourceManager.GetString("Bandas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Borrar Filtros.
+        /// </summary>
+        internal static string BorrarFiltros {
+            get {
+                return ResourceManager.GetString("BorrarFiltros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Camisetas.
         /// </summary>
         internal static string Camiseta {
             get {
                 return ResourceManager.GetString("Camiseta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad.
+        /// </summary>
+        internal static string Cantidad {
+            get {
+                return ResourceManager.GetString("Cantidad", resourceCulture);
             }
         }
         
@@ -174,6 +210,15 @@ namespace PIDeffine.RecursosLocalizables {
         internal static string DatosPers {
             get {
                 return ResourceManager.GetString("DatosPers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción del Producto.
+        /// </summary>
+        internal static string Desc {
+            get {
+                return ResourceManager.GetString("Desc", resourceCulture);
             }
         }
         
@@ -286,11 +331,38 @@ namespace PIDeffine.RecursosLocalizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Series y peliculas.
+        /// </summary>
+        internal static string Series {
+            get {
+                return ResourceManager.GetString("Series", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Talla.
         /// </summary>
         internal static string Talla {
             get {
                 return ResourceManager.GetString("Talla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a VER GUÍA DE TALLAS.
+        /// </summary>
+        internal static string VerGuia {
+            get {
+                return ResourceManager.GetString("VerGuia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Videojuegos.
+        /// </summary>
+        internal static string Videojuegos {
+            get {
+                return ResourceManager.GetString("Videojuegos", resourceCulture);
             }
         }
         

@@ -165,7 +165,6 @@ namespace PIDeffine
             this.lblContacta.Size = new System.Drawing.Size(211, 25);
             this.lblContacta.TabIndex = 50;
             this.lblContacta.Text = "Contacta con Nosotros";
-            this.lblContacta.Click += new System.EventHandler(this.lblContacta_Click);
             this.lblContacta.MouseEnter += new System.EventHandler(this.lblContacta_MouseEnter);
             this.lblContacta.MouseLeave += new System.EventHandler(this.lblContacta_MouseLeave);
             // 
@@ -218,7 +217,6 @@ namespace PIDeffine
             this.lblTallas.Size = new System.Drawing.Size(76, 28);
             this.lblTallas.TabIndex = 64;
             this.lblTallas.Text = "Tallas";
-            this.lblTallas.Click += new System.EventHandler(this.lblTallas_Click);
             // 
             // rdbXS
             // 
@@ -379,12 +377,13 @@ namespace PIDeffine
             // 
             this.pcbspain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbspain.Image = global::PIDeffine.Properties.Resources.image_removebg_preview__13_;
-            this.pcbspain.Location = new System.Drawing.Point(58, 88);
+            this.pcbspain.Location = new System.Drawing.Point(64, 88);
             this.pcbspain.Name = "pcbspain";
             this.pcbspain.Size = new System.Drawing.Size(56, 53);
             this.pcbspain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbspain.TabIndex = 73;
             this.pcbspain.TabStop = false;
+            this.pcbspain.Click += new System.EventHandler(this.pcbspain_Click);
             // 
             // pcbingle
             // 
@@ -396,6 +395,7 @@ namespace PIDeffine
             this.pcbingle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbingle.TabIndex = 74;
             this.pcbingle.TabStop = false;
+            this.pcbingle.Click += new System.EventHandler(this.pcbingle_Click);
             // 
             // pcbCarrito
             // 

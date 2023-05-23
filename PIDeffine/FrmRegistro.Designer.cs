@@ -202,7 +202,6 @@ namespace PIDeffine
             this.panelRegistro.Name = "panelRegistro";
             this.panelRegistro.Size = new System.Drawing.Size(885, 403);
             this.panelRegistro.TabIndex = 35;
-            this.panelRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRegistro_Paint);
             // 
             // bttRegistrarse
             // 
@@ -334,7 +333,6 @@ namespace PIDeffine
             this.lblConfirmContra.Size = new System.Drawing.Size(226, 25);
             this.lblConfirmContra.TabIndex = 4;
             this.lblConfirmContra.Text = "Confirmar Contraseña";
-            this.lblConfirmContra.Click += new System.EventHandler(this.lblConfirmContra_Click);
             // 
             // lblDatosPers
             // 
