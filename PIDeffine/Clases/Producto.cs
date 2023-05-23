@@ -336,5 +336,21 @@ namespace PIDeffine
                 }
             }
         }
+
+        public static void RestarStock(int idProducto, int cantidad)
+        {
+            
+            string consulta = String.Format("UPDATE Productos SET Stock = Stock - '{1}' WHERE IdProducto = '{0}'", idProducto, cantidad);
+            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
+            command.ExecuteNonQuery();
+        }
+
+        public static void AgregarDetallesPedido(int idPedido, int idProducto, int cantidad, decimal subtotal)
+        {
+            string consulta = String.Format("INSERT INTO Detalle_Pedido (IdPedido, IdProducto, Cantidad, Subtotal) " +
+                "VALUES ('{0}', '{1}', '{2}', '{3}')", idPedido, idProducto, cantidad, subtotal);
+            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
+            command.ExecuteNonQuery();
+        }
     }
 }

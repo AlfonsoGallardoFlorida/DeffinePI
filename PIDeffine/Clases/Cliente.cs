@@ -19,9 +19,10 @@ namespace PIDeffine
         string correo;
         bool administrador;
 
-        public string Nombre { get { return Nombre; } set { nombre = value; } }
-        public string Apellidos { get { return Apellidos; } set { apellidos = value; } }
-        public string Correo { get { return Correo; } set { correo = value; } }
+        public int IdCliente { get { return idCliente; } set { idCliente = value; } }
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public string Apellidos { get { return apellidos; } set { apellidos = value; } }
+        public string Correo { get { return correo; } set { correo = value; } }
         public static List<Cliente> clienteLogeado = new List<Cliente>();
 
 

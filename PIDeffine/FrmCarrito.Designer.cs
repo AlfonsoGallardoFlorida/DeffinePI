@@ -46,14 +46,15 @@ namespace PIDeffine
             this.pcbingle = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grbComprar = new System.Windows.Forms.GroupBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblCodPostal = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblCodPostal = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.btnConfCompra = new System.Windows.Forms.Button();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -279,46 +280,21 @@ namespace PIDeffine
             this.grbComprar.TabIndex = 84;
             this.grbComprar.TabStop = false;
             // 
-            // lblDireccion
+            // txtCliente
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(48, 163);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(97, 23);
-            this.lblDireccion.TabIndex = 0;
-            this.lblDireccion.Text = "Dirección:";
+            this.txtCliente.Location = new System.Drawing.Point(262, 53);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(481, 30);
+            this.txtCliente.TabIndex = 11;
             // 
-            // txtDireccion
+            // txtCorreo
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(262, 156);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(481, 30);
-            this.txtDireccion.TabIndex = 1;
-            // 
-            // lblCodPostal
-            // 
-            this.lblCodPostal.AutoSize = true;
-            this.lblCodPostal.Location = new System.Drawing.Point(48, 209);
-            this.lblCodPostal.Name = "lblCodPostal";
-            this.lblCodPostal.Size = new System.Drawing.Size(139, 23);
-            this.lblCodPostal.TabIndex = 4;
-            this.lblCodPostal.Text = "Código Postal:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(262, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(481, 30);
-            this.textBox3.TabIndex = 7;
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(48, 56);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(76, 23);
-            this.lblCliente.TabIndex = 8;
-            this.lblCliente.Text = "Cliente:";
+            this.txtCorreo.Location = new System.Drawing.Point(262, 103);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = true;
+            this.txtCorreo.Size = new System.Drawing.Size(481, 30);
+            this.txtCorreo.TabIndex = 10;
             // 
             // lblCorreo
             // 
@@ -329,21 +305,62 @@ namespace PIDeffine
             this.lblCorreo.TabIndex = 9;
             this.lblCorreo.Text = "Correo de contacto:";
             // 
-            // txtCorreo
+            // lblCliente
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(262, 103);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
-            this.txtCorreo.Size = new System.Drawing.Size(481, 30);
-            this.txtCorreo.TabIndex = 10;
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(48, 56);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(76, 23);
+            this.lblCliente.TabIndex = 8;
+            this.lblCliente.Text = "Cliente:";
             // 
-            // txtCliente
+            // textBox3
             // 
-            this.txtCliente.Location = new System.Drawing.Point(262, 53);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(481, 30);
-            this.txtCliente.TabIndex = 11;
+            this.textBox3.Location = new System.Drawing.Point(262, 206);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(481, 30);
+            this.textBox3.TabIndex = 7;
+            // 
+            // lblCodPostal
+            // 
+            this.lblCodPostal.AutoSize = true;
+            this.lblCodPostal.Location = new System.Drawing.Point(48, 209);
+            this.lblCodPostal.Name = "lblCodPostal";
+            this.lblCodPostal.Size = new System.Drawing.Size(139, 23);
+            this.lblCodPostal.TabIndex = 4;
+            this.lblCodPostal.Text = "Código Postal:";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(262, 156);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(481, 30);
+            this.txtDireccion.TabIndex = 1;
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(48, 163);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(97, 23);
+            this.lblDireccion.TabIndex = 0;
+            this.lblDireccion.Text = "Dirección:";
+            // 
+            // btnConfCompra
+            // 
+            this.btnConfCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.btnConfCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfCompra.FlatAppearance.BorderSize = 0;
+            this.btnConfCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfCompra.ForeColor = System.Drawing.Color.White;
+            this.btnConfCompra.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
+            this.btnConfCompra.Location = new System.Drawing.Point(317, 587);
+            this.btnConfCompra.Name = "btnConfCompra";
+            this.btnConfCompra.Size = new System.Drawing.Size(342, 57);
+            this.btnConfCompra.TabIndex = 85;
+            this.btnConfCompra.Text = "Confirmar Compra";
+            this.btnConfCompra.UseVisualStyleBackColor = false;
+            this.btnConfCompra.Click += new System.EventHandler(this.btnConfCompra_Click);
             // 
             // FrmCarrito
             // 
@@ -351,6 +368,7 @@ namespace PIDeffine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 735);
+            this.Controls.Add(this.btnConfCompra);
             this.Controls.Add(this.grbComprar);
             this.Controls.Add(this.bttEliminarCarrito);
             this.Controls.Add(this.bttComprar);
@@ -416,5 +434,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label lblCodPostal;
+        private System.Windows.Forms.Button btnConfCompra;
     }
 }

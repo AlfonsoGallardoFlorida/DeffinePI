@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,8 @@ namespace PIDeffine
 
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
+            btnConfCompra.Visible = false;
+            grbComprar.Visible = false;
             dgvCarrito.DataSource = Producto.carrito;
 
             dgvCarrito.Columns["IdProducto"].Visible = false;
@@ -117,10 +120,46 @@ namespace PIDeffine
         {
             dgvCarrito.Visible = false;
             grbComprar.Visible = true;
+            btnConfCompra.Visible = true;
             txtCliente.Text = Cliente.clienteLogeado[0].Nombre + " " + Cliente.clienteLogeado[0].Apellidos;
             txtCorreo.Text = Cliente.clienteLogeado[0].Correo;
             string direccion = txtDireccion.Text;
 
+        }
+
+        private void btnConfCompra_Click(object sender, EventArgs e)
+        {
+            string direccion = txtDireccion.Text;
+            int idCliente = Cliente.clienteLogeado[0].IdCliente;
+            string fechaString = DateTime.Now.ToString("yyyy-MM-dd");
+            DateTime fecha = DateTime.ParseExact(fechaString, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+            ConBD.AbrirConexion();
+            
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                int idProd = Producto.carrito[i].IdProducto;
+                int cantidad = Producto.carrito[i].Cantidad;
+                Producto.RestarStock(idProd, cantidad);
+            }
+
+            decimal importeTotal = 0;
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                importeTotal += Producto.carrito[i].Subtotal;
+            }
+
+            Pedido.AgregarPedido(idCliente, fecha, importeTotal, direccion);
+            int idPedido = Pedido.RecogerIdPedido(idCliente, fechaString, direccion, importeTotal);
+
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                Producto.AgregarDetallesPedido(idPedido, Producto.carrito[i].IdProducto, Producto.carrito[i].Cantidad, Producto.carrito[i].Subtotal);
+            }
+
+            MessageBox.Show("Tu compra se ha realizado correctamente. Gracias por confiar en nostros");
+            ConBD.CerrarConexion();
+            
         }
 
         private void bttFiltrar_Click(object sender, EventArgs e)
