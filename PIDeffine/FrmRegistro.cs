@@ -15,6 +15,8 @@ namespace PIDeffine
 {
     public partial class FrmRegistro : Form
     {
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
         public FrmRegistro()
         {
             InitializeComponent();
@@ -22,8 +24,7 @@ namespace PIDeffine
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
         }
-        private int mouseX = 0, mouseY = 0;
-        private bool mouseDown;
+
 
         private void AplicarIdioma()
         {
@@ -160,16 +161,6 @@ namespace PIDeffine
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblConfirmContra_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelRegistro_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void IdiomaIngles()

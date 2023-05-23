@@ -110,24 +110,6 @@ namespace PIDeffine
             return dataTable;
         }
 
-
-        //public static List<Producto> ListarProductos()
-        //{
-        //    ConBD.AbrirConexion();
-        //    List<Producto> lista = new List<Producto>();
-        //    string consulta = String.Format("SELECT * FROM Productos");
-        //    MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-        //    MySqlDataReader reader = comando.ExecuteReader();
-        //    while (reader.Read())
-        //    {
-        //        Producto product = new Producto(reader.GetInt32("idProducto"), reader.GetString("Descripcion"), reader.GetString("Talla"), reader.GetString("Genero"), reader.GetString("Color"), reader.GetDecimal("Precio"), reader.GetInt32("Stock"), reader.GetByte("Imagen"));
-        //        lista.Add(product);
-        //    }
-        //    reader.Close();
-        //    ConBD.CerrarConexion();
-        //    return lista;
-        //}
-
         public static byte[] CargarImagen(string nombre)
         {
             string consulta = "SELECT Imagen from Producto WHERE descripcion='" + nombre + "';";

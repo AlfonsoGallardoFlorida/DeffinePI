@@ -36,11 +36,6 @@ namespace PIDeffine
             direccion = dir;
         }
 
-        //public static List<Producto> Carrito(int idProduct)
-        //{
-            
-        //}
-
         public static decimal ComprobarImporteTotal(int idProducto)
         {
             string consulta = String.Format("SELECT precio FROM Productos WHERE idProducto = '{0}'", idProducto);
@@ -57,7 +52,6 @@ namespace PIDeffine
             Pedido nuevoPedido = new Pedido(idCliente, fecha, importeTotal, direccion);
             string consulta = "INSERT INTO Pedidos (IdCliente, Fecha, ImporteTotal, Direccion) VALUES (@idCliente, @fecha, @importeTotal, @direccion)";
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
-            // ...
             comando.Parameters.AddWithValue("@idCliente", nuevoPedido.idCliente);
             comando.Parameters.AddWithValue("@fecha", nuevoPedido.fecha);
             comando.Parameters.AddWithValue("@importeTotal", nuevoPedido.importeTotal);

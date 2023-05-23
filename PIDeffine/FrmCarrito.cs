@@ -91,24 +91,7 @@ namespace PIDeffine
             dgvCarrito.Columns["Imagen"].Visible = false;
         }
 
-        private void CargarProductos()
-        {
-            ConBD.AbrirConexion();
 
-            string consulta = "SELECT * FROM Detalles_Pedido";
-
-            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
-
-            DataTable dataTable = new DataTable();
-
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
-                dataTable.Load(reader);
-            }
-
-            dgvCarrito.DataSource = dataTable;
-            ConBD.CerrarConexion();
-        }
 
         private void bttEliminarCarrito_Click(object sender, EventArgs e)
         {
@@ -166,11 +149,6 @@ namespace PIDeffine
             }
             else MessageBox.Show("Debes rellenar todos los campos para poder realizar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
-        }
-
-        private void bttFiltrar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
