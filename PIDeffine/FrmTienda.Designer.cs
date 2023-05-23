@@ -47,8 +47,6 @@ namespace PIDeffine
             this.rdTodo = new System.Windows.Forms.RadioButton();
             this.rdbPantalones = new System.Windows.Forms.RadioButton();
             this.rdbCamisetas = new System.Windows.Forms.RadioButton();
-            this.nudMin = new System.Windows.Forms.NumericUpDown();
-            this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
             this.bttDesign = new System.Windows.Forms.Button();
             this.pcbPerfil = new System.Windows.Forms.PictureBox();
@@ -60,13 +58,16 @@ namespace PIDeffine
             this.pcbPrincipal = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnBorrarFiltros = new System.Windows.Forms.Button();
+            this.txtPrecioMin = new System.Windows.Forms.TextBox();
+            this.txtPrecioMax = new System.Windows.Forms.TextBox();
+            this.rdbBandas = new System.Windows.Forms.RadioButton();
+            this.rdbSeries = new System.Windows.Forms.RadioButton();
+            this.rdbVideojuegos = new System.Windows.Forms.RadioButton();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).BeginInit();
             this.panelColecciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -144,7 +145,7 @@ namespace PIDeffine
             this.lblTalla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.lblTalla.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline);
             this.lblTalla.ForeColor = System.Drawing.Color.White;
-            this.lblTalla.Location = new System.Drawing.Point(40, 292);
+            this.lblTalla.Location = new System.Drawing.Point(40, 565);
             this.lblTalla.Name = "lblTalla";
             this.lblTalla.Size = new System.Drawing.Size(50, 23);
             this.lblTalla.TabIndex = 33;
@@ -156,7 +157,7 @@ namespace PIDeffine
             this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.lblPrecio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecio.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio.Location = new System.Drawing.Point(39, 405);
+            this.lblPrecio.Location = new System.Drawing.Point(40, 292);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(66, 23);
             this.lblPrecio.TabIndex = 34;
@@ -168,7 +169,7 @@ namespace PIDeffine
             this.lblColecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.lblColecciones.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColecciones.ForeColor = System.Drawing.Color.White;
-            this.lblColecciones.Location = new System.Drawing.Point(39, 566);
+            this.lblColecciones.Location = new System.Drawing.Point(38, 411);
             this.lblColecciones.Name = "lblColecciones";
             this.lblColecciones.Size = new System.Drawing.Size(116, 23);
             this.lblColecciones.TabIndex = 35;
@@ -180,7 +181,7 @@ namespace PIDeffine
             this.lblMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.lblMaximo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaximo.ForeColor = System.Drawing.Color.White;
-            this.lblMaximo.Location = new System.Drawing.Point(40, 471);
+            this.lblMaximo.Location = new System.Drawing.Point(38, 361);
             this.lblMaximo.Name = "lblMaximo";
             this.lblMaximo.Size = new System.Drawing.Size(78, 23);
             this.lblMaximo.TabIndex = 44;
@@ -192,7 +193,7 @@ namespace PIDeffine
             this.lblMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.lblMinimo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimo.ForeColor = System.Drawing.Color.White;
-            this.lblMinimo.Location = new System.Drawing.Point(40, 438);
+            this.lblMinimo.Location = new System.Drawing.Point(38, 325);
             this.lblMinimo.Name = "lblMinimo";
             this.lblMinimo.Size = new System.Drawing.Size(74, 23);
             this.lblMinimo.TabIndex = 45;
@@ -221,7 +222,7 @@ namespace PIDeffine
             "L",
             "XL",
             "XXL"});
-            this.cmbTalla.Location = new System.Drawing.Point(44, 334);
+            this.cmbTalla.Location = new System.Drawing.Point(45, 602);
             this.cmbTalla.Name = "cmbTalla";
             this.cmbTalla.Size = new System.Drawing.Size(193, 31);
             this.cmbTalla.TabIndex = 0;
@@ -238,21 +239,25 @@ namespace PIDeffine
             // 
             // panelColecciones
             // 
+            this.panelColecciones.AutoScroll = true;
             this.panelColecciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.panelColecciones.Controls.Add(this.rdTodo);
+            this.panelColecciones.Controls.Add(this.rdbVideojuegos);
+            this.panelColecciones.Controls.Add(this.rdbSeries);
+            this.panelColecciones.Controls.Add(this.rdbBandas);
             this.panelColecciones.Controls.Add(this.rdbPantalones);
             this.panelColecciones.Controls.Add(this.rdbCamisetas);
             this.panelColecciones.ForeColor = System.Drawing.Color.White;
-            this.panelColecciones.Location = new System.Drawing.Point(37, 594);
+            this.panelColecciones.Location = new System.Drawing.Point(36, 437);
             this.panelColecciones.Name = "panelColecciones";
-            this.panelColecciones.Size = new System.Drawing.Size(208, 98);
+            this.panelColecciones.Size = new System.Drawing.Size(228, 99);
             this.panelColecciones.TabIndex = 0;
             // 
             // rdTodo
             // 
             this.rdTodo.AutoSize = true;
             this.rdTodo.Checked = true;
-            this.rdTodo.Location = new System.Drawing.Point(3, 64);
+            this.rdTodo.Location = new System.Drawing.Point(3, 3);
             this.rdTodo.Name = "rdTodo";
             this.rdTodo.Size = new System.Drawing.Size(74, 27);
             this.rdTodo.TabIndex = 3;
@@ -263,7 +268,7 @@ namespace PIDeffine
             // rdbPantalones
             // 
             this.rdbPantalones.AutoSize = true;
-            this.rdbPantalones.Location = new System.Drawing.Point(3, 31);
+            this.rdbPantalones.Location = new System.Drawing.Point(3, 64);
             this.rdbPantalones.Name = "rdbPantalones";
             this.rdbPantalones.Size = new System.Drawing.Size(128, 27);
             this.rdbPantalones.TabIndex = 1;
@@ -273,48 +278,12 @@ namespace PIDeffine
             // rdbCamisetas
             // 
             this.rdbCamisetas.AutoSize = true;
-            this.rdbCamisetas.Location = new System.Drawing.Point(3, 3);
+            this.rdbCamisetas.Location = new System.Drawing.Point(3, 31);
             this.rdbCamisetas.Name = "rdbCamisetas";
             this.rdbCamisetas.Size = new System.Drawing.Size(124, 27);
             this.rdbCamisetas.TabIndex = 0;
             this.rdbCamisetas.Text = "Camisetas";
             this.rdbCamisetas.UseVisualStyleBackColor = true;
-            // 
-            // nudMin
-            // 
-            this.nudMin.DecimalPlaces = 1;
-            this.nudMin.Location = new System.Drawing.Point(155, 431);
-            this.nudMin.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudMin.Name = "nudMin";
-            this.nudMin.Size = new System.Drawing.Size(62, 30);
-            this.nudMin.TabIndex = 3;
-            this.nudMin.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // nudMax
-            // 
-            this.nudMax.DecimalPlaces = 1;
-            this.nudMax.Location = new System.Drawing.Point(155, 471);
-            this.nudMax.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudMax.Name = "nudMax";
-            this.nudMax.Size = new System.Drawing.Size(62, 30);
-            this.nudMax.TabIndex = 69;
-            this.nudMax.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             // 
             // pcbCarrito
             // 
@@ -336,7 +305,7 @@ namespace PIDeffine
             this.bttDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttDesign.ForeColor = System.Drawing.Color.White;
             this.bttDesign.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.bttDesign.Location = new System.Drawing.Point(60, 698);
+            this.bttDesign.Location = new System.Drawing.Point(61, 212);
             this.bttDesign.Name = "bttDesign";
             this.bttDesign.Size = new System.Drawing.Size(156, 36);
             this.bttDesign.TabIndex = 70;
@@ -363,7 +332,7 @@ namespace PIDeffine
             this.bttFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttFiltrar.ForeColor = System.Drawing.Color.White;
             this.bttFiltrar.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.bttFiltrar.Location = new System.Drawing.Point(61, 191);
+            this.bttFiltrar.Location = new System.Drawing.Point(61, 649);
             this.bttFiltrar.Name = "bttFiltrar";
             this.bttFiltrar.Size = new System.Drawing.Size(156, 36);
             this.bttFiltrar.TabIndex = 48;
@@ -443,7 +412,7 @@ namespace PIDeffine
             this.btnBorrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarFiltros.ForeColor = System.Drawing.Color.White;
             this.btnBorrarFiltros.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.btnBorrarFiltros.Location = new System.Drawing.Point(60, 233);
+            this.btnBorrarFiltros.Location = new System.Drawing.Point(60, 691);
             this.btnBorrarFiltros.Name = "btnBorrarFiltros";
             this.btnBorrarFiltros.Size = new System.Drawing.Size(156, 36);
             this.btnBorrarFiltros.TabIndex = 73;
@@ -451,18 +420,65 @@ namespace PIDeffine
             this.btnBorrarFiltros.UseVisualStyleBackColor = false;
             this.btnBorrarFiltros.Click += new System.EventHandler(this.btnBorrarFiltros_Click);
             // 
+            // txtPrecioMin
+            // 
+            this.txtPrecioMin.Location = new System.Drawing.Point(138, 322);
+            this.txtPrecioMin.Name = "txtPrecioMin";
+            this.txtPrecioMin.Size = new System.Drawing.Size(100, 30);
+            this.txtPrecioMin.TabIndex = 0;
+            this.txtPrecioMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMin_KeyPress);
+            // 
+            // txtPrecioMax
+            // 
+            this.txtPrecioMax.Location = new System.Drawing.Point(138, 358);
+            this.txtPrecioMax.Name = "txtPrecioMax";
+            this.txtPrecioMax.Size = new System.Drawing.Size(100, 30);
+            this.txtPrecioMax.TabIndex = 74;
+            this.txtPrecioMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMax_KeyPress);
+            // 
+            // rdbBandas
+            // 
+            this.rdbBandas.AutoSize = true;
+            this.rdbBandas.Location = new System.Drawing.Point(3, 91);
+            this.rdbBandas.Name = "rdbBandas";
+            this.rdbBandas.Size = new System.Drawing.Size(192, 27);
+            this.rdbBandas.TabIndex = 4;
+            this.rdbBandas.Text = "Bandas de musica";
+            this.rdbBandas.UseVisualStyleBackColor = true;
+            // 
+            // rdbSeries
+            // 
+            this.rdbSeries.AutoSize = true;
+            this.rdbSeries.Location = new System.Drawing.Point(3, 122);
+            this.rdbSeries.Name = "rdbSeries";
+            this.rdbSeries.Size = new System.Drawing.Size(186, 27);
+            this.rdbSeries.TabIndex = 5;
+            this.rdbSeries.Text = "Series y películas";
+            this.rdbSeries.UseVisualStyleBackColor = true;
+            // 
+            // rdbVideojuegos
+            // 
+            this.rdbVideojuegos.AutoSize = true;
+            this.rdbVideojuegos.Location = new System.Drawing.Point(3, 155);
+            this.rdbVideojuegos.Name = "rdbVideojuegos";
+            this.rdbVideojuegos.Size = new System.Drawing.Size(138, 27);
+            this.rdbVideojuegos.TabIndex = 6;
+            this.rdbVideojuegos.Text = "Videojuegos";
+            this.rdbVideojuegos.UseVisualStyleBackColor = true;
+            // 
             // FrmTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 741);
+            this.Controls.Add(this.lblColecciones);
+            this.Controls.Add(this.panelColecciones);
+            this.Controls.Add(this.txtPrecioMax);
+            this.Controls.Add(this.txtPrecioMin);
+            this.Controls.Add(this.bttDesign);
             this.Controls.Add(this.btnBorrarFiltros);
             this.Controls.Add(this.pcbCarrito);
-            this.Controls.Add(this.bttDesign);
-            this.Controls.Add(this.nudMax);
-            this.Controls.Add(this.nudMin);
-            this.Controls.Add(this.panelColecciones);
             this.Controls.Add(this.panelPrinc);
             this.Controls.Add(this.cmbTalla);
             this.Controls.Add(this.pcbPerfil);
@@ -475,7 +491,6 @@ namespace PIDeffine
             this.Controls.Add(this.paneldecontrol);
             this.Controls.Add(this.lblMinimo);
             this.Controls.Add(this.lblMaximo);
-            this.Controls.Add(this.lblColecciones);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblTalla);
             this.Controls.Add(this.pcbFiltros);
@@ -495,8 +510,6 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogOut)).EndInit();
             this.panelColecciones.ResumeLayout(false);
             this.panelColecciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -536,11 +549,14 @@ namespace PIDeffine
         private System.Windows.Forms.Panel panelColecciones;
         private System.Windows.Forms.RadioButton rdbPantalones;
         private System.Windows.Forms.RadioButton rdbCamisetas;
-        private System.Windows.Forms.NumericUpDown nudMin;
-        private System.Windows.Forms.NumericUpDown nudMax;
         private System.Windows.Forms.RadioButton rdTodo;
         private System.Windows.Forms.Button bttDesign;
         private System.Windows.Forms.PictureBox pcbCarrito;
         private System.Windows.Forms.Button btnBorrarFiltros;
+        private System.Windows.Forms.TextBox txtPrecioMin;
+        private System.Windows.Forms.TextBox txtPrecioMax;
+        private System.Windows.Forms.RadioButton rdbVideojuegos;
+        private System.Windows.Forms.RadioButton rdbSeries;
+        private System.Windows.Forms.RadioButton rdbBandas;
     }
 }

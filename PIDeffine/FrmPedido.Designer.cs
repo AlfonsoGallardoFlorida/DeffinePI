@@ -224,11 +224,11 @@ namespace PIDeffine
             // 
             this.rdbXS.AutoSize = true;
             this.rdbXS.ForeColor = System.Drawing.Color.White;
-            this.rdbXS.Location = new System.Drawing.Point(44, 17);
+            this.rdbXS.Location = new System.Drawing.Point(21, 17);
             this.rdbXS.Name = "rdbXS";
-            this.rdbXS.Size = new System.Drawing.Size(57, 27);
+            this.rdbXS.Size = new System.Drawing.Size(77, 27);
             this.rdbXS.TabIndex = 67;
-            this.rdbXS.Text = "XS";
+            this.rdbXS.Text = "XS ()";
             this.rdbXS.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -251,9 +251,9 @@ namespace PIDeffine
             this.rdbXXL.ForeColor = System.Drawing.Color.White;
             this.rdbXXL.Location = new System.Drawing.Point(194, 50);
             this.rdbXXL.Name = "rdbXXL";
-            this.rdbXXL.Size = new System.Drawing.Size(68, 27);
+            this.rdbXXL.Size = new System.Drawing.Size(87, 27);
             this.rdbXXL.TabIndex = 72;
-            this.rdbXXL.Text = "XXL";
+            this.rdbXXL.Text = "XXL ()";
             this.rdbXXL.UseVisualStyleBackColor = true;
             // 
             // rdbXL
@@ -262,20 +262,20 @@ namespace PIDeffine
             this.rdbXL.ForeColor = System.Drawing.Color.White;
             this.rdbXL.Location = new System.Drawing.Point(194, 17);
             this.rdbXL.Name = "rdbXL";
-            this.rdbXL.Size = new System.Drawing.Size(55, 27);
+            this.rdbXL.Size = new System.Drawing.Size(74, 27);
             this.rdbXL.TabIndex = 71;
-            this.rdbXL.Text = "XL";
+            this.rdbXL.Text = "XL ()";
             this.rdbXL.UseVisualStyleBackColor = true;
             // 
             // rdbL
             // 
             this.rdbL.AutoSize = true;
             this.rdbL.ForeColor = System.Drawing.Color.White;
-            this.rdbL.Location = new System.Drawing.Point(116, 50);
+            this.rdbL.Location = new System.Drawing.Point(109, 50);
             this.rdbL.Name = "rdbL";
-            this.rdbL.Size = new System.Drawing.Size(42, 27);
+            this.rdbL.Size = new System.Drawing.Size(61, 27);
             this.rdbL.TabIndex = 70;
-            this.rdbL.Text = "L";
+            this.rdbL.Text = "L ()";
             this.rdbL.UseVisualStyleBackColor = true;
             // 
             // rdbM
@@ -283,23 +283,23 @@ namespace PIDeffine
             this.rdbM.AutoSize = true;
             this.rdbM.Checked = true;
             this.rdbM.ForeColor = System.Drawing.Color.White;
-            this.rdbM.Location = new System.Drawing.Point(116, 17);
+            this.rdbM.Location = new System.Drawing.Point(109, 17);
             this.rdbM.Name = "rdbM";
-            this.rdbM.Size = new System.Drawing.Size(48, 27);
+            this.rdbM.Size = new System.Drawing.Size(68, 27);
             this.rdbM.TabIndex = 69;
             this.rdbM.TabStop = true;
-            this.rdbM.Text = "M";
+            this.rdbM.Text = "M ()";
             this.rdbM.UseVisualStyleBackColor = true;
             // 
             // rdbS
             // 
             this.rdbS.AutoSize = true;
             this.rdbS.ForeColor = System.Drawing.Color.White;
-            this.rdbS.Location = new System.Drawing.Point(44, 50);
+            this.rdbS.Location = new System.Drawing.Point(21, 50);
             this.rdbS.Name = "rdbS";
-            this.rdbS.Size = new System.Drawing.Size(44, 27);
+            this.rdbS.Size = new System.Drawing.Size(64, 27);
             this.rdbS.TabIndex = 68;
-            this.rdbS.Text = "S";
+            this.rdbS.Text = "S ()";
             this.rdbS.UseVisualStyleBackColor = true;
             // 
             // bttAnyadir

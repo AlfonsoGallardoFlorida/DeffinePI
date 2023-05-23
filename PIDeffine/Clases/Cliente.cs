@@ -12,13 +12,19 @@ namespace PIDeffine
 {
     internal class Cliente
     {
-        private static List<Cliente> clienteLogeado = new List<Cliente>();
         int idCliente;
         string nombre;
         string apellidos;
         string clave;
         string correo;
         bool administrador;
+
+        public string Nombre { get { return Nombre; } set { nombre = value; } }
+        public string Apellidos { get { return Apellidos; } set { apellidos = value; } }
+        public string Correo { get { return Correo; } set { correo = value; } }
+        public static List<Cliente> clienteLogeado = new List<Cliente>();
+
+
 
         public Cliente(string nom, string ape,  string clav, string corr, bool admin)
         {

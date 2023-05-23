@@ -22,7 +22,7 @@ namespace PIDeffine
 
         private void FrmAdmin_Load(object sender, EventArgs e)
         {
-            cmbColor.Text = "Blanco";
+            cmbColor.Text = "Negro";
             cmbGenero.Text = "Unisex";
             cmbTalla.Text = "L";
         }
@@ -148,8 +148,8 @@ namespace PIDeffine
                         nudStock.Text = "5";
                         nudPrecio.Text = "5";
                         cmbTalla.Text = "L";
-                        cmbColor.Text = "Blanco";
-                        cmbGenero.Text = "Masculino";
+                        cmbColor.Text = "Negro";
+                        cmbGenero.Text = "Unisex";
                         pcbFotoCamiseta.Image = null;
                     }
                     else
@@ -219,6 +219,10 @@ namespace PIDeffine
         private void bttSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void bttEliminarProd_Click(object sender, EventArgs e)
+        {
         }
 
     }

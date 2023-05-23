@@ -64,6 +64,7 @@ namespace PIDeffine
             this.bttEliminarUser = new System.Windows.Forms.Button();
             this.bttVolver = new System.Windows.Forms.Button();
             this.bttSalir = new System.Windows.Forms.Button();
+            this.txtIdProd = new System.Windows.Forms.TextBox();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
@@ -122,9 +123,9 @@ namespace PIDeffine
             // 
             this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.Items.AddRange(new object[] {
+            "Unisex",
             "Masculino",
-            "Femenino",
-            "Unisex"});
+            "Femenino"});
             this.cmbGenero.Location = new System.Drawing.Point(256, 337);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(193, 36);
@@ -134,10 +135,13 @@ namespace PIDeffine
             // 
             this.cmbColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColor.Items.AddRange(new object[] {
-            "Blanco",
             "Negro",
+            "Blanco",
             "Azul",
-            "Verde"});
+            "Verde",
+            "Gris",
+            "Rosa",
+            "Multi"});
             this.cmbColor.Location = new System.Drawing.Point(256, 279);
             this.cmbColor.Name = "cmbColor";
             this.cmbColor.Size = new System.Drawing.Size(193, 36);
@@ -204,9 +208,9 @@ namespace PIDeffine
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(275, 46);
+            this.txtDescripcion.Location = new System.Drawing.Point(207, 46);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(174, 36);
+            this.txtDescripcion.Size = new System.Drawing.Size(242, 36);
             this.txtDescripcion.TabIndex = 6;
             // 
             // lblPrecio
@@ -409,12 +413,13 @@ namespace PIDeffine
             // 
             // bttEliminarProd
             // 
-            this.bttEliminarProd.Location = new System.Drawing.Point(385, 561);
+            this.bttEliminarProd.Location = new System.Drawing.Point(385, 569);
             this.bttEliminarProd.Name = "bttEliminarProd";
             this.bttEliminarProd.Size = new System.Drawing.Size(257, 38);
             this.bttEliminarProd.TabIndex = 14;
-            this.bttEliminarProd.Text = "Eliminar Producto";
+            this.bttEliminarProd.Text = "Eliminar Productos";
             this.bttEliminarProd.UseVisualStyleBackColor = true;
+            this.bttEliminarProd.Click += new System.EventHandler(this.bttEliminarProd_Click);
             // 
             // bttInsertarUser
             // 
@@ -456,6 +461,13 @@ namespace PIDeffine
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
+            // txtIdProd
+            // 
+            this.txtIdProd.Location = new System.Drawing.Point(1134, 126);
+            this.txtIdProd.Name = "txtIdProd";
+            this.txtIdProd.Size = new System.Drawing.Size(174, 30);
+            this.txtIdProd.TabIndex = 6;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -468,6 +480,7 @@ namespace PIDeffine
             this.Controls.Add(this.bttInsertarUser);
             this.Controls.Add(this.bttEliminarProd);
             this.Controls.Add(this.bttInsertarProd);
+            this.Controls.Add(this.txtIdProd);
             this.Controls.Add(this.grbUsuario);
             this.Controls.Add(this.grbProducto);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -484,6 +497,7 @@ namespace PIDeffine
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -524,5 +538,6 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblConfContra;
         private System.Windows.Forms.Button bttVolver;
         private System.Windows.Forms.Button bttSalir;
+        private System.Windows.Forms.TextBox txtIdProd;
     }
 }

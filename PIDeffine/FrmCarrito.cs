@@ -81,6 +81,10 @@ namespace PIDeffine
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
             dgvCarrito.DataSource = Producto.carrito;
+
+            dgvCarrito.Columns["IdProducto"].Visible = false;
+            dgvCarrito.Columns["Stock"].Visible = false;
+            dgvCarrito.Columns["Imagen"].Visible = false;
         }
 
         private void CargarProductos()
@@ -107,6 +111,16 @@ namespace PIDeffine
             Producto.carrito.Clear();
             MessageBox.Show("Se ha eliminado el carrito");
             dgvCarrito.Visible = false;
+        }
+
+        private void bttComprar_Click(object sender, EventArgs e)
+        {
+            dgvCarrito.Visible = false;
+            grbComprar.Visible = true;
+            txtCliente.Text = Cliente.clienteLogeado[0].Nombre + " " + Cliente.clienteLogeado[0].Apellidos;
+            txtCorreo.Text = Cliente.clienteLogeado[0].Correo;
+            string direccion = txtDireccion.Text;
+
         }
 
         private void bttFiltrar_Click(object sender, EventArgs e)

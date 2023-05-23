@@ -69,8 +69,66 @@ namespace PIDeffine
             }
             lblNomProd.Text = NombreProducto;
             lblPrecioProducto.Text = Convert.ToString(PrecioProducto);
-
+            MostrarStock();
         }
+
+        private void MostrarStock()
+        {
+            int cant = 0;
+            string[] tallas = { "XS", "S", "M", "L", "XL", "XXL" };
+            RadioButton[] radioButtons = { rdbXS, rdbS, rdbM, rdbL, rdbXL, rdbXXL };
+
+            for (int i = 0; i < tallas.Length; i++)
+            {
+                //Mostrar el stock disponible de cada talla
+                //radioButtons[i].Text = radioButtons[i].Text + " (" + (Producto.StockDisponible(lblNomProd.Text, tallas[i])).ToString() + ")";
+
+
+                // Obtener el texto existente sin el número
+                string textoExistente = radioButtons[i].Text;
+                int indiceParentesis = textoExistente.IndexOf('(');
+                string textoSinNumero = textoExistente.Substring(0, indiceParentesis);
+
+                // Obtener el nuevo número
+                int nuevoNumero = (Producto.StockDisponible(lblNomProd.Text, tallas[i])) - cant;
+
+                // Concatenar el nuevo número al texto sin número
+                string nuevoTexto = textoSinNumero + "(" + nuevoNumero.ToString() + ")";
+
+                radioButtons[i].Text = nuevoTexto;
+                //Si no hay stock, desactivar el radio button
+                if (!Producto.ComprobarStock(lblNomProd.Text, tallas[i], 1))
+                {
+                    radioButtons[i].Enabled = false;
+                }
+            }
+
+            //Mostrar correctamente el stock disponible si el producto ya está en el carrito
+            for (int j = 0; j < Producto.carrito.Count; j++)
+            {
+                for (int k = 0; k < tallas.Length; k++)
+                {
+                    if (Producto.carrito[j].Descripcion == lblNomProd.Text && Producto.carrito[j].Talla == tallas[k])
+                    {
+                        cant = Producto.carrito[j].Cantidad;
+                        // Obtener el texto existente sin el número
+                        string textoExistente = radioButtons[k].Text;
+                        int indiceParentesis = textoExistente.IndexOf('(');
+                        string textoSinNumero = textoExistente.Substring(0, indiceParentesis);
+
+                        // Obtener el nuevo número
+                        int nuevoNumero = (Producto.StockDisponible(lblNomProd.Text, tallas[k])) - cant;
+
+                        // Concatenar el nuevo número al texto sin número
+                        string nuevoTexto = textoSinNumero + "(" + nuevoNumero.ToString() + ")";
+
+                        radioButtons[k].Text = nuevoTexto;
+                    }
+                }
+            }
+        }
+    
+            
 
         private void lblVerGuia_Click(object sender, EventArgs e)
         {
@@ -80,38 +138,79 @@ namespace PIDeffine
 
         private void bttAnyadir_Click(object sender, EventArgs e)
         {
-                string detalles = lblNomProd.Text;
-                string talla = "";
-                if (rdbXS.Checked)
-                {
-                    talla = "XS";
-                }
-                else if (rdbS.Checked)
-                {
-                    talla = "S";
-                }
-                else if (rdbM.Checked)
-                {
-                    talla = "M";
-                }
-                else if (rdbL.Checked)
-                {
-                    talla = "L";
-                }
-                else if (rdbXL.Checked)
-                {
-                    talla = "XL";
-                }
-                else if (rdbXXL.Checked)
-                {
-                    talla = "XXL";
-                }
+            string detalles = lblNomProd.Text;
+            string talla = "";
+            int cantidad = ((int)nudCantidad.Value);
+            if (rdbXS.Checked)
+            {
+                talla = "XS";
+            }
+            else if (rdbS.Checked)
+            {
+                talla = "S";
+            }
+            else if (rdbM.Checked)
+            {
+                talla = "M";
+            }
+            else if (rdbL.Checked)
+            {
+                talla = "L";
+            }
+            else if (rdbXL.Checked)
+            {
+                talla = "XL";
+            }
+            else if (rdbXXL.Checked)
+            {
+                talla = "XXL";
+            }
 
             ConBD.AbrirConexion();
-            Producto.RecogerDatosProducto(detalles, talla, Convert.ToString(nudCantidad.Value));
-            MessageBox.Show("Se ha añadido correcatamente el producto a el carrito");
+
+
+            
+            bool productoEncontrado = false;
+            bool suficienteStock = false;
+
+            for (int i = 0; i < Producto.carrito.Count; i++)
+            {
+                if (Producto.carrito[i].Descripcion == detalles && Producto.carrito[i].Talla == talla)
+                {
+                    productoEncontrado = true;
+                    int nuevaCant = Producto.carrito[i].Cantidad + cantidad;
+                    if (Producto.ComprobarStock(detalles, talla, nuevaCant))
+                    {
+                        suficienteStock = true;
+                        Producto.carrito[i].Cantidad = nuevaCant;
+                        Producto.carrito[i].Subtotal = Producto.carrito[i].Precio * nuevaCant;
+                        break;
+                    }
+                }
+            }
+
+            if (!productoEncontrado)
+            {
+                if (Producto.ComprobarStock(detalles, talla, cantidad))
+                {
+                    Producto.RecogerDatosProducto(detalles, talla, cantidad);
+                    suficienteStock = true;
+                }
+            }
+
+            if (suficienteStock)
+            {
+                MostrarStock();
+                MessageBox.Show("Producto agregado correctamente al carrito");
+            }
+            else
+            {
+                MessageBox.Show("No hay suficiente stock de la talla seleccionada");
+            }
+
             ConBD.CerrarConexion();
         }
+    
     
 
         private void pcbCerrar_Click(object sender, EventArgs e)

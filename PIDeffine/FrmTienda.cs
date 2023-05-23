@@ -36,7 +36,7 @@ namespace PIDeffine
         {
             string consulta = "SELECT * FROM Productos";
             CargarProductos(consulta);
-            cmbTalla.Text = "L";
+            cmbTalla.Text = "";
             this.MouseDown += new MouseEventHandler(paneldecontrol_MouseDown);
             this.MouseMove += new MouseEventHandler(paneldecontrol_MouseMove);
             this.MouseUp += new MouseEventHandler(paneldecontrol_MouseUp);
@@ -154,34 +154,97 @@ namespace PIDeffine
             }
         }
 
+        //Solo se admiten numeros enteros en el filtro de precio minimo
+        private void txtPrecioMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
+        }
+
+        //Admitir solo numeros enteros en el filtro de precio maximo
+        private void txtPrecioMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignorar el carácter ingresado
+            }
+        }
+
+
         private void bttFiltrar_Click(object sender, EventArgs e)
         {
             string talla = cmbTalla.Text;
-            decimal precioMin = nudMin.Value;
-            decimal precioMax = nudMax.Value;
+            decimal precioMin = 0;
+            decimal precioMax = 99999;
             string coleccion = "";
-            string consulta = "";
+            string consulta = "SELECT * FROM Productos";
+            string whereConsulta = "";
+
+            if (txtPrecioMin.Text != "") precioMin = decimal.Parse(txtPrecioMin.Text);
+            if (txtPrecioMax.Text != "") precioMax = decimal.Parse(txtPrecioMax.Text);
+
             if (rdbCamisetas.Checked) coleccion = "Camiseta";
             else if (rdbPantalones.Checked) coleccion = "Pantalon";
             else if (rdTodo.Checked) coleccion = "";
+            else if (rdbBandas.Checked) coleccion = "banda";
+            else if (rdbSeries.Checked) coleccion = "cineytv";
+            else if (rdbVideojuegos.Checked) coleccion = "game";
 
             if (precioMin <= precioMax)
             {
-                consulta = String.Format("SELECT * FROM Productos WHERE Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
-                if (talla != "")
+                whereConsulta += string.Format("Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
+                if (!string.IsNullOrEmpty(talla))
                 {
-                    consulta += String.Format(" && Talla LIKE '{0}'", talla);
+                    if (!string.IsNullOrEmpty(whereConsulta))
+                    {
+                        whereConsulta += " AND ";
+                    }
+                    whereConsulta += string.Format("Talla LIKE '{0}'", talla);
                 }
-                if (coleccion != "")
+                if (!string.IsNullOrEmpty(coleccion))
                 {
-                    consulta += String.Format(" && Descripcion LIKE '%{0}%'", coleccion);
+                    if (!string.IsNullOrEmpty(whereConsulta))
+                    {
+                        whereConsulta += " AND ";
+                    }
+                    whereConsulta += string.Format("Descripcion LIKE '%{0}%'", coleccion);
+                }
+
+                if (!string.IsNullOrEmpty(whereConsulta))
+                {
+                    consulta += " WHERE " + whereConsulta;
                 }
             }
             else
             {
-                MessageBox.Show("Introduce bien el rango de precios");
+                MessageBox.Show("Introduce correctamente el rango de precios");
                 return;
             }
+
+            //if (precioMin != 0 || precioMax != 0 || coleccion != "" || talla != "")
+            //{
+            //    consulta += " WHERE ";
+            //    if (precioMin <= precioMax)
+            //    {
+            //        whereConsulta += String.Format("Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Introduce bien el rango de precios");
+            //        return;
+            //    }
+            //}
+            //if (coleccion != "")
+            //{
+            //    whereConsulta += String.Format("Descripcion LIKE '%{0}%'", coleccion);
+            //}
+            //if (talla != "")
+            //{
+            //    whereConsulta += String.Format("Talla LIKE '{0}'", talla);
+            //}
+
 
             try
             {
@@ -529,9 +592,9 @@ namespace PIDeffine
         private void btnBorrarFiltros_Click(object sender, EventArgs e)
         {
 
-            cmbTalla.Text = "L";
-            nudMax.Value = 5;
-            nudMin.Value = 5;
+            cmbTalla.Text = "";
+            txtPrecioMax.Clear();
+            txtPrecioMin.Clear();
             rdTodo.Checked = true;
             string consulta = "";
             consulta = String.Format("SELECT * FROM Productos");

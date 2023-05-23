@@ -9,6 +9,7 @@ using MySqlConnector;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using System.Data;
 
 namespace PIDeffine
 {
@@ -22,7 +23,7 @@ namespace PIDeffine
         decimal precio;
         int stock;
         Image imagen;
-        string cantidad;
+        int cantidad;
         decimal subtotal;
         public int IdProducto { get { return idProducto; } }
         public string Descripcion { get { return descripcion; } }
@@ -32,8 +33,8 @@ namespace PIDeffine
         public decimal Precio { get { return precio; } }
         public int Stock { get { return stock; } }
         public Image Imagen { get { return imagen; } set { imagen = value; } }
-        public string Cantidad { get { return cantidad; } }
-        public decimal Subtotal { get { return subtotal; } }
+        public int Cantidad { get { return cantidad; } set { cantidad = value; } }
+        public decimal Subtotal { get { return subtotal; } set { subtotal = value; } }
 
 
 
@@ -50,7 +51,7 @@ namespace PIDeffine
             imagen = img;
         }
 
-        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, string cant)
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, int cant)
         {
             idProducto = id;
             descripcion = desc;
@@ -63,7 +64,7 @@ namespace PIDeffine
             cantidad = cant;
         }
 
-        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, string cant, decimal sub)
+        public Producto(int id, string desc, string tall, string gen, string col, decimal prec, int sto, Image img, int cant, decimal sub)
         {
             idProducto = id;
             descripcion = desc;
@@ -93,6 +94,23 @@ namespace PIDeffine
         {
         }
 
+
+        public static DataTable ListarProductos()
+        {
+            ConBD.AbrirConexion();
+            DataTable dataTable = new DataTable();
+            string consulta = "SELECT * FROM Productos";
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            dataTable.Load(reader);
+
+            reader.Close();
+            ConBD.CerrarConexion();
+            return dataTable;
+        }
+
+
         //public static List<Producto> ListarProductos()
         //{
         //    ConBD.AbrirConexion();
@@ -109,6 +127,7 @@ namespace PIDeffine
         //    ConBD.CerrarConexion();
         //    return lista;
         //}
+
         public static byte[] CargarImagen(string nombre)
         {
             string consulta = "SELECT Imagen from Producto WHERE descripcion='" + nombre + "';";
@@ -197,9 +216,9 @@ namespace PIDeffine
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
         }
 
-        public static bool ComprobarStock(string descripcion, string talla)
+        public static bool ComprobarStock(string descripcion, string talla, int cantidad)
         {
-            string consulta = String.Format("SELECT stock FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
+            string consulta = String.Format("SELECT stock FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}' AND Stock >= '{2}'", descripcion, talla, cantidad);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
             MySqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
@@ -212,6 +231,20 @@ namespace PIDeffine
                 reader.Close();
                 return false;
             }
+        }
+
+        public static int StockDisponible(string descripcion, string talla)
+        {
+            int stock = 0;
+            string consulta = String.Format("SELECT stock FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                stock = reader.GetInt32("stock");
+            }
+            reader.Close();
+            return stock;
         }
 
 
@@ -273,7 +306,7 @@ namespace PIDeffine
             return prod;
         }
 
-        public static void RecogerDatosProducto(string descripcion, string talla, string cant)
+        public static void RecogerDatosProducto(string descripcion, string talla, int cant)
         {
             string consulta = String.Format("SELECT * FROM Productos WHERE Descripcion = '{0}' AND Talla = '{1}'", descripcion, talla);
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);

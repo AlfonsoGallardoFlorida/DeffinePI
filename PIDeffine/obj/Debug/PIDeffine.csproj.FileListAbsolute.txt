@@ -384,3 +384,42 @@ C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyCo
 C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.exe
 C:\Users\Carlos\Desktop\PI\DeffinePI\PIDeffine\obj\Debug\PIDeffine.pdb
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\PIDeffine.exe.config
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\PIDeffine.exe
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\PIDeffine.pdb
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\EN-GB\PIDeffine.resources.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\MySqlConnector.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Buffers.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Memory.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\MySqlConnector.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Buffers.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Memory.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.AssemblyReference.cache
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.g.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmAdmin.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCarrito.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmDisenyo.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmGuiaDeTallas.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmPedido.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmRegistro.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmTienda.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmInicio.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.Properties.Resources.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.RecursosLocalizables.StringRecursos.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.RecursosLocalizables.StringRecursos.EN-GB.resources
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.GenerateResource.cache
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CoreCompileInputs.cache
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\EN-GB\PIDeffine.resources.dll
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.csproj.CopyComplete
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.exe
+C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.pdb
