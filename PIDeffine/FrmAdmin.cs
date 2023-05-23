@@ -135,12 +135,14 @@ namespace PIDeffine
                     string genero = cmbGenero.Text;
                     Image img = pcbFotoCamiseta.Image;
 
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "" && img != null)
                     {
-                        pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
-                    }
-                    if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "")
-                    {
+
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
+                        }
+
                         // Utilizar la variable de imagenBytes aquí
                         Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
                         MessageBox.Show("Producto agregado correctamente");
