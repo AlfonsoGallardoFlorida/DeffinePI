@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
 
 namespace PIDeffine
 {
@@ -22,6 +25,19 @@ namespace PIDeffine
 
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
+
+        private void AplicarIdioma()
+        {
+            lblAnyadirTexto.Text = StringRecursos.AnyadirTexto;
+            lblCamiseta.Text = StringRecursos.EstiloCamiseta;
+            lblColores.Text = StringRecursos.Colores;
+            lblDisenyos.Text = StringRecursos.Diseños;
+            lblIdioma.Text = StringRecursos.Idioma;
+            lblTallas.Text = StringRecursos.Tallas;
+            bttAdjuntar.Text = StringRecursos.Adjuntar;
+            bttAnyadirTexto.Text = StringRecursos.btnAnyadir;
+            bttGuardar.Text = StringRecursos.Guardar;
+        }
         private void FrmDisenyo_Load(object sender, EventArgs e)
         {
 
@@ -415,6 +431,34 @@ namespace PIDeffine
             FrmCarrito frmCarrito = new FrmCarrito();
             frmCarrito.Show();
             this.Hide();
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            IdiomaIngles();
+            pictureBox14.Hide();
+            pcbingle.Show();
+        }
+
+        private void pcbingle_Click(object sender, EventArgs e)
+        {
+            IdiomaSpanish();
+            pcbingle.Hide();
+            pictureBox14.Show();
+        }
+
+        private void IdiomaIngles()
+        {
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+        private void IdiomaSpanish()
+        {
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+
         }
 
         private void HideDisenyo()

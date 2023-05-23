@@ -426,3 +426,4 @@ C:\Users\Alvaro\Desktop\Deffine BUENO\DeffinePI\PIDeffine\obj\Debug\PIDeffine.pd
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyuda.resources
 C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmGuiaDeTallas.resources
 C:\Users\algagu01\Desktop\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyudaApp.resources
+C:\Users\serore\Desktop\Proyecto integrado\DeffinePI\PIDeffine\obj\Debug\PIDeffine.FrmCorreoAyudaApp.resources

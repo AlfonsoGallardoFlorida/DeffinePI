@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Adjuntar" xml:space="preserve">
+    <value>Add image</value>
+  </data>
   <data name="Anyadir" xml:space="preserve">
     <value>Add to the cart</value>
+  </data>
+  <data name="AnyadirTexto" xml:space="preserve">
+    <value>ADD YOUR TEXT:</value>
   </data>
   <data name="Apellidos" xml:space="preserve">
     <value>Surnames</value>
@@ -132,14 +138,38 @@
   <data name="BorrarFiltros" xml:space="preserve">
     <value>Delete Filters</value>
   </data>
+  <data name="btnAnyadir" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="Camiseta" xml:space="preserve">
     <value>Shirts</value>
   </data>
   <data name="Cantidad" xml:space="preserve">
     <value>Quantity</value>
   </data>
+  <data name="Carrito" xml:space="preserve">
+    <value>SHOPPING CART</value>
+  </data>
+  <data name="CarritoVacio" xml:space="preserve">
+    <value>THE SHOPPING CART IS EMPTY</value>
+  </data>
+  <data name="Cliente" xml:space="preserve">
+    <value>Customer:</value>
+  </data>
+  <data name="CodPostal" xml:space="preserve">
+    <value>Postcode:</value>
+  </data>
   <data name="Colecciones" xml:space="preserve">
     <value>Colections</value>
+  </data>
+  <data name="Colores" xml:space="preserve">
+    <value>Colors</value>
+  </data>
+  <data name="Comprar" xml:space="preserve">
+    <value>Purchase Now</value>
+  </data>
+  <data name="ConfCompra" xml:space="preserve">
+    <value>Confirm Order</value>
   </data>
   <data name="ConfirmContra" xml:space="preserve">
     <value>Repeat Password</value>
@@ -159,6 +189,9 @@
   <data name="correoAyuda" xml:space="preserve">
     <value>Send us an e-mail</value>
   </data>
+  <data name="CorreoElec" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
   <data name="Cuenta" xml:space="preserve">
     <value>Don't you have an account?</value>
   </data>
@@ -171,14 +204,29 @@
   <data name="Desc" xml:space="preserve">
     <value>Product name</value>
   </data>
+  <data name="Direccion" xml:space="preserve">
+    <value>Adress:</value>
+  </data>
   <data name="Diseño" xml:space="preserve">
     <value>Design your own</value>
+  </data>
+  <data name="Diseños" xml:space="preserve">
+    <value>Designs</value>
+  </data>
+  <data name="EliminarCarrito" xml:space="preserve">
+    <value>Empty shopping cart</value>
+  </data>
+  <data name="EstiloCamiseta" xml:space="preserve">
+    <value>Shirt type</value>
   </data>
   <data name="Filtrar" xml:space="preserve">
     <value>Filter</value>
   </data>
   <data name="FiltrarRopa" xml:space="preserve">
     <value>Search clothes</value>
+  </data>
+  <data name="Guardar" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="Idioma" xml:space="preserve">
     <value>Language</value>
@@ -213,11 +261,20 @@
   <data name="Talla" xml:space="preserve">
     <value>Size</value>
   </data>
+  <data name="Tallas" xml:space="preserve">
+    <value>Sizes</value>
+  </data>
+  <data name="TotalPedido" xml:space="preserve">
+    <value>Order Value:</value>
+  </data>
   <data name="VerGuia" xml:space="preserve">
     <value>SEE THE SIZE GUIDE</value>
   </data>
   <data name="Videojuegos" xml:space="preserve">
     <value>Videogames</value>
+  </data>
+  <data name="VolverCarrito" xml:space="preserve">
+    <value>Return to the shopping cart</value>
   </data>
   <data name="Zapatillas" xml:space="preserve">
     <value>Shoes</value>

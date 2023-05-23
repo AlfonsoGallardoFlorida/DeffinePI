@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
+using System.Threading;
 
 namespace PIDeffine
 {
@@ -22,6 +24,24 @@ namespace PIDeffine
         }
         private int mouseX = 0, mouseY = 0;
         private bool mouseDown;
+
+        private void AplicarIdioma()
+        {
+            lblCarrito.Text = StringRecursos.Carrito;
+            lblCarritoVacio.Text = StringRecursos.CarritoVacio;
+            lblCliente.Text = StringRecursos.Cliente;
+            lblCodPostal.Text = StringRecursos.CodPostal;
+            lblContacta.Text = StringRecursos.Contacta;
+            lblCorreo.Text = StringRecursos.CorreoElec;
+            lblDireccion.Text = StringRecursos.Direccion;
+            lblIdioma.Text = StringRecursos.Idioma;
+            lblTotalPedido.Text = StringRecursos.TotalPedido;
+            btnConfCompra.Text = StringRecursos.ConfCompra;
+            bttComprar.Text = StringRecursos.Comprar;
+            bttEliminarCarrito.Text = StringRecursos.EliminarCarrito;
+            bttVolverCarrito.Text = StringRecursos.VolverCarrito;
+        }
+
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
             mouseX = e.X;
@@ -186,7 +206,32 @@ namespace PIDeffine
             else MessageBox.Show("Debes rellenar todos los campos para poder realizar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void pcbspain_Click(object sender, EventArgs e)
+        {
+            IdiomaIngles();
+            pcbspain.Hide();
+            pcbingle.Show();
+        }
 
+        private void pcbingle_Click(object sender, EventArgs e)
+        {
+            IdiomaSpanish();
+            pcbingle.Hide();
+            pcbspain.Show();
+        }
+        private void IdiomaIngles()
+        {
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+        private void IdiomaSpanish()
+        {
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+
+        }
         private void CarritoVacio()
         {
             lblCarritoVacio.Show();
