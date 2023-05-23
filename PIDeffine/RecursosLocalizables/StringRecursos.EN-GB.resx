@@ -117,14 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Anyadir" xml:space="preserve">
+    <value>Add to the cart</value>
+  </data>
   <data name="Apellidos" xml:space="preserve">
     <value>Surnames</value>
   </data>
   <data name="Ayuda" xml:space="preserve">
     <value>DO YOU NEED HELP?</value>
   </data>
+  <data name="Bandas" xml:space="preserve">
+    <value>Music Groups</value>
+  </data>
+  <data name="BorrarFiltros" xml:space="preserve">
+    <value>Delete Filters</value>
+  </data>
   <data name="Camiseta" xml:space="preserve">
     <value>Shirts</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>Quantity</value>
   </data>
   <data name="Colecciones" xml:space="preserve">
     <value>Colections</value>
@@ -155,6 +167,9 @@
   </data>
   <data name="DatosPers" xml:space="preserve">
     <value>Personal Data</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Product name</value>
   </data>
   <data name="Diseño" xml:space="preserve">
     <value>Design your own</value>
@@ -192,8 +207,17 @@
   <data name="Registrarse" xml:space="preserve">
     <value>Sign Up</value>
   </data>
+  <data name="Series" xml:space="preserve">
+    <value>TV Series and Films</value>
+  </data>
   <data name="Talla" xml:space="preserve">
     <value>Size</value>
+  </data>
+  <data name="VerGuia" xml:space="preserve">
+    <value>SEE THE SIZE GUIDE</value>
+  </data>
+  <data name="Videojuegos" xml:space="preserve">
+    <value>Videogames</value>
   </data>
   <data name="Zapatillas" xml:space="preserve">
     <value>Shoes</value>

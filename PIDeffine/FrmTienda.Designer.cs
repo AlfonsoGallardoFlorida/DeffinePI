@@ -45,6 +45,9 @@ namespace PIDeffine
             this.panelPrinc = new System.Windows.Forms.Panel();
             this.panelColecciones = new System.Windows.Forms.Panel();
             this.rdTodo = new System.Windows.Forms.RadioButton();
+            this.rdbVideojuegos = new System.Windows.Forms.RadioButton();
+            this.rdbSeries = new System.Windows.Forms.RadioButton();
+            this.rdbBandas = new System.Windows.Forms.RadioButton();
             this.rdbPantalones = new System.Windows.Forms.RadioButton();
             this.rdbCamisetas = new System.Windows.Forms.RadioButton();
             this.pcbCarrito = new System.Windows.Forms.PictureBox();
@@ -60,9 +63,6 @@ namespace PIDeffine
             this.btnBorrarFiltros = new System.Windows.Forms.Button();
             this.txtPrecioMin = new System.Windows.Forms.TextBox();
             this.txtPrecioMax = new System.Windows.Forms.TextBox();
-            this.rdbBandas = new System.Windows.Forms.RadioButton();
-            this.rdbSeries = new System.Windows.Forms.RadioButton();
-            this.rdbVideojuegos = new System.Windows.Forms.RadioButton();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizar)).BeginInit();
@@ -264,6 +264,36 @@ namespace PIDeffine
             this.rdTodo.Text = "Todo";
             this.rdTodo.UseVisualStyleBackColor = true;
             // 
+            // rdbVideojuegos
+            // 
+            this.rdbVideojuegos.AutoSize = true;
+            this.rdbVideojuegos.Location = new System.Drawing.Point(3, 155);
+            this.rdbVideojuegos.Name = "rdbVideojuegos";
+            this.rdbVideojuegos.Size = new System.Drawing.Size(138, 27);
+            this.rdbVideojuegos.TabIndex = 6;
+            this.rdbVideojuegos.Text = "Videojuegos";
+            this.rdbVideojuegos.UseVisualStyleBackColor = true;
+            // 
+            // rdbSeries
+            // 
+            this.rdbSeries.AutoSize = true;
+            this.rdbSeries.Location = new System.Drawing.Point(3, 122);
+            this.rdbSeries.Name = "rdbSeries";
+            this.rdbSeries.Size = new System.Drawing.Size(186, 27);
+            this.rdbSeries.TabIndex = 5;
+            this.rdbSeries.Text = "Series y películas";
+            this.rdbSeries.UseVisualStyleBackColor = true;
+            // 
+            // rdbBandas
+            // 
+            this.rdbBandas.AutoSize = true;
+            this.rdbBandas.Location = new System.Drawing.Point(3, 91);
+            this.rdbBandas.Name = "rdbBandas";
+            this.rdbBandas.Size = new System.Drawing.Size(192, 27);
+            this.rdbBandas.TabIndex = 4;
+            this.rdbBandas.Text = "Bandas de musica";
+            this.rdbBandas.UseVisualStyleBackColor = true;
+            // 
             // rdbPantalones
             // 
             this.rdbPantalones.AutoSize = true;
@@ -391,6 +421,7 @@ namespace PIDeffine
             this.pcbPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbPrincipal.TabIndex = 30;
             this.pcbPrincipal.TabStop = false;
+            this.pcbPrincipal.Click += new System.EventHandler(this.pcbPrincipal_Click);
             // 
             // pictureBox2
             // 
@@ -431,36 +462,6 @@ namespace PIDeffine
             this.txtPrecioMax.Size = new System.Drawing.Size(100, 30);
             this.txtPrecioMax.TabIndex = 74;
             this.txtPrecioMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMax_KeyPress);
-            // 
-            // rdbBandas
-            // 
-            this.rdbBandas.AutoSize = true;
-            this.rdbBandas.Location = new System.Drawing.Point(3, 91);
-            this.rdbBandas.Name = "rdbBandas";
-            this.rdbBandas.Size = new System.Drawing.Size(192, 27);
-            this.rdbBandas.TabIndex = 4;
-            this.rdbBandas.Text = "Bandas de musica";
-            this.rdbBandas.UseVisualStyleBackColor = true;
-            // 
-            // rdbSeries
-            // 
-            this.rdbSeries.AutoSize = true;
-            this.rdbSeries.Location = new System.Drawing.Point(3, 122);
-            this.rdbSeries.Name = "rdbSeries";
-            this.rdbSeries.Size = new System.Drawing.Size(186, 27);
-            this.rdbSeries.TabIndex = 5;
-            this.rdbSeries.Text = "Series y películas";
-            this.rdbSeries.UseVisualStyleBackColor = true;
-            // 
-            // rdbVideojuegos
-            // 
-            this.rdbVideojuegos.AutoSize = true;
-            this.rdbVideojuegos.Location = new System.Drawing.Point(3, 155);
-            this.rdbVideojuegos.Name = "rdbVideojuegos";
-            this.rdbVideojuegos.Size = new System.Drawing.Size(138, 27);
-            this.rdbVideojuegos.TabIndex = 6;
-            this.rdbVideojuegos.Text = "Videojuegos";
-            this.rdbVideojuegos.UseVisualStyleBackColor = true;
             // 
             // FrmTienda
             // 
