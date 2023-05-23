@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIDeffine.RecursosLocalizables;
 
 namespace PIDeffine
 {
@@ -56,6 +59,18 @@ namespace PIDeffine
         private string descripcion;
         private decimal precio;
         private byte[] imagen;
+
+        private void AplicarIdioma()
+        {
+            lblCantidad.Text = StringRecursos.Cantidad;
+            lblContacta.Text = StringRecursos.Contacta;
+            lblDesc.Text = StringRecursos.Desc;
+            lblIdioma.Text = StringRecursos.Idioma;
+            lblPrecio.Text = StringRecursos.Precio;
+            lblTallas.Text = StringRecursos.Talla;
+            lblVerGuia.Text = StringRecursos.VerGuia;
+            bttAnyadir.Text = StringRecursos.Anyadir;
+        }
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
@@ -278,6 +293,34 @@ namespace PIDeffine
         private void lblContacta_Click(object sender, EventArgs e)
         {
    
+        }
+
+        private void pcbspain_Click(object sender, EventArgs e)
+        {
+            IdiomaIngles();
+            pcbspain.Hide();
+            pcbingle.Show();
+        }
+
+        private void pcbingle_Click(object sender, EventArgs e)
+        {
+            IdiomaSpanish();
+            pcbingle.Hide();
+            pcbspain.Show();
+        }
+
+        private void IdiomaIngles()
+        {
+            string cultura = "EN-GB";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+        }
+        private void IdiomaSpanish()
+        {
+            string cultura = "ES-ES";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultura);
+            AplicarIdioma();
+
         }
 
         private void pcbLogOut_Click(object sender, EventArgs e)

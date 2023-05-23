@@ -54,6 +54,10 @@ namespace PIDeffine
             bttDesign.Text = StringRecursos.Diseño;
             bttFiltrar.Text = StringRecursos.Filtrar;
             rdbPantalones.Text = StringRecursos.Pantalones;
+            rdbBandas.Text = StringRecursos.Bandas;
+            rdbSeries.Text = StringRecursos.Series;
+            rdbVideojuegos.Text = StringRecursos.Videojuegos;
+            btnBorrarFiltros.Text = StringRecursos.BorrarFiltros;
         }
         private void paneldecontrol_MouseDown(object sender, MouseEventArgs e)
         {
@@ -682,6 +686,11 @@ namespace PIDeffine
             {
                 ConBD.CerrarConexion();
             }
+        }
+
+        private void pcbPrincipal_Click(object sender, EventArgs e)
+        {
+
         }
 
         private Producto ObtenerProductoDesdePictureBox(PictureBox pictureBox)
