@@ -64,7 +64,6 @@ namespace PIDeffine
             this.bttEliminarUser = new System.Windows.Forms.Button();
             this.bttVolver = new System.Windows.Forms.Button();
             this.bttSalir = new System.Windows.Forms.Button();
-            this.txtIdProd = new System.Windows.Forms.TextBox();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
@@ -461,13 +460,6 @@ namespace PIDeffine
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
-            // txtIdProd
-            // 
-            this.txtIdProd.Location = new System.Drawing.Point(1134, 126);
-            this.txtIdProd.Name = "txtIdProd";
-            this.txtIdProd.Size = new System.Drawing.Size(174, 30);
-            this.txtIdProd.TabIndex = 6;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -480,7 +472,6 @@ namespace PIDeffine
             this.Controls.Add(this.bttInsertarUser);
             this.Controls.Add(this.bttEliminarProd);
             this.Controls.Add(this.bttInsertarProd);
-            this.Controls.Add(this.txtIdProd);
             this.Controls.Add(this.grbUsuario);
             this.Controls.Add(this.grbProducto);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -497,7 +488,6 @@ namespace PIDeffine
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -538,6 +528,5 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblConfContra;
         private System.Windows.Forms.Button bttVolver;
         private System.Windows.Forms.Button bttSalir;
-        private System.Windows.Forms.TextBox txtIdProd;
     }
 }

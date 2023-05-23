@@ -105,39 +105,6 @@ namespace PIDeffine
             }
         }
 
-        private void bttTallaPeque_Click(object sender, EventArgs e)
-        {
-            // INSERCION SQL MUESTRA LAS TALLAS ORDENADAS DE MAS PEQUEÑAS A MAS GRANDES
-        }
-
-        private void bttTallaGrande_Click(object sender, EventArgs e)
-        {
-            // INSERCION SQL MUESTRA LAS TALLAS ORDENADAS DE MAS GRANDES A MAS PEQUEÑAS
-
-        }
-
-        private void bttCamis_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE CAMISETAS
-        }
-
-        private void bttPants_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE PANTALONES
-
-        }
-
-        private void bttZapas_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE ZAPATILLAS
-
-        }
-
-        private void bttDiseño_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE EL PRODUCTO DE DISEÑAR TU CAMISETA
-
-        }
 
         private void lblContacta_Click(object sender, EventArgs e)
         {
@@ -272,8 +239,8 @@ namespace PIDeffine
                     int maxColumns = 3;
                     int itemWidth = 208;
                     int itemHeight = 248;
-                    int spacingX = 10;
-                    int spacingY = 10;
+                    int spacingX = 20;
+                    int spacingY = 30;
 
                     HashSet<string> descripcionesUnicas = new HashSet<string>(); // Conjunto para almacenar descripciones únicas
 
@@ -310,6 +277,23 @@ namespace PIDeffine
 
                         // Agregar la imagen al panel
                         panelPrinc.Controls.Add(pictureBox);
+
+
+                        // Crear el control de etiqueta para mostrar el precio
+                        Label labelPrecio = new Label();
+                        labelPrecio.ForeColor = Color.White;
+                        labelPrecio.Text = "Precio: " + producto.Precio.ToString(); // Obtener el precio del producto
+                        labelPrecio.AutoSize = true;
+
+                        // Calcular la posición de la etiqueta
+                        int labelX = x; // Misma posición horizontal que la imagen
+                        int labelY = y + itemHeight; // Posición vertical debajo de la imagen
+
+                        // Establecer la posición de la etiqueta
+                        labelPrecio.Location = new Point(labelX, labelY);
+
+                        // Agregar la etiqueta al panel
+                        panelPrinc.Controls.Add(labelPrecio);
 
                         // Calcular la siguiente posición
                         columnIndex++;
@@ -416,8 +400,8 @@ namespace PIDeffine
                     int maxColumns = 3;
                     int itemWidth = 208;
                     int itemHeight = 248;
-                    int spacingX = 10;
-                    int spacingY = 10;
+                    int spacingX = 20;
+                    int spacingY = 30;
 
                     HashSet<string> descripcionesUnicas = new HashSet<string>(); // Conjunto para almacenar descripciones únicas
 
@@ -465,6 +449,22 @@ namespace PIDeffine
 
                         // Agregar la imagen al panel
                         panelPrinc.Controls.Add(pictureBox);
+
+                        // Crear el control de etiqueta para mostrar el precio
+                        Label labelPrecio = new Label();
+                        labelPrecio.ForeColor = Color.White;
+                        labelPrecio.Text = "Precio: " + producto.Precio.ToString(); // Obtener el precio del producto
+                        labelPrecio.AutoSize = true;
+
+                        // Calcular la posición de la etiqueta
+                        int labelX = x; // Misma posición horizontal que la imagen
+                        int labelY = y + itemHeight; // Posición vertical debajo de la imagen
+
+                        // Establecer la posición de la etiqueta
+                        labelPrecio.Location = new Point(labelX, labelY);
+
+                        // Agregar la etiqueta al panel
+                        panelPrinc.Controls.Add(labelPrecio);
 
                         // Calcular la siguiente posición
                         columnIndex++;
