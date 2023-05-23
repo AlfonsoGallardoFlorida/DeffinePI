@@ -86,7 +86,7 @@ namespace PIDeffine
             {
                 ConBD.CerrarConexion();
             }
-           
+
         }
 
         private void bttEliminarUser_Click(object sender, EventArgs e)
@@ -135,12 +135,13 @@ namespace PIDeffine
                     string genero = cmbGenero.Text;
                     Image img = pcbFotoCamiseta.Image;
 
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "" && img != null)
                     {
-                        pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
-                    }
-                    if (descripcion != "" && stock > 0 && precio > 0 && talla != "" && color != "" && genero != "")
-                    {
+
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            pcbFotoCamiseta.Image.Save(memoryStream, ImageFormat.Png);
+                        }
                         // Utilizar la variable de imagenBytes aquí
                         Producto.AgregarProducto(descripcion, talla, genero, color, precio, stock, img);
                         MessageBox.Show("Producto agregado correctamente");
@@ -223,7 +224,91 @@ namespace PIDeffine
 
         private void bttEliminarProd_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    if (txtID.Text != "")
+                    {
+
+                        ConBD.AbrirConexion();
+                        int.TryParse(txtID.Text, out int id);
+                        if (Producto.ComprobarExistencia(id))
+                        {
+                            if (Producto.ComprobarProductoEnPedido(id))
+                                MessageBox.Show("Este producto no puede ser eliminado ya que está presente en un pedido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else
+                            {
+                                Producto.BorrarProducto(id);
+                                MessageBox.Show("Producto eliminado correctamente");
+                                txtID.Text = "";
+                                string consulta = "SELECT * FROM Productos";
+                                List<Producto> productos = Producto.CargarProductos(consulta);
+                                dgvProductos.DataSource = productos;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El producto con id " + txtID.Text + " no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Todos los campos son obligatorios");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+
         }
 
+        private void bttMostrarProd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ConBD.Conexion != null)
+                {
+                    if (bttMostrarProd.Text == "Mostrar Productos")
+                    {
+                        ConBD.AbrirConexion();
+                        bttMostrarProd.Text = "Ocultar Productos";
+                        string consulta = "SELECT * FROM Productos";
+                        List<Producto> productos = Producto.CargarProductos(consulta);
+                        dgvProductos.DataSource = productos;
+                        dgvProductos.Show();
+                    }
+                    else if (bttMostrarProd.Text == "Ocultar Productos")
+                    {
+                        bttMostrarProd.Text = "Mostrar Productos";
+                        dgvProductos.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido abrir la conexión con la Base de Datos");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                ConBD.CerrarConexion();
+            }
+        }
     }
 }

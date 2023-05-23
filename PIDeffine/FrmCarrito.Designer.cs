@@ -50,7 +50,7 @@ namespace PIDeffine
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCodPostal = new System.Windows.Forms.TextBox();
             this.lblCodPostal = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -188,7 +188,7 @@ namespace PIDeffine
             this.bttEliminarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttEliminarCarrito.ForeColor = System.Drawing.Color.White;
             this.bttEliminarCarrito.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.bttEliminarCarrito.Location = new System.Drawing.Point(133, 639);
+            this.bttEliminarCarrito.Location = new System.Drawing.Point(133, 648);
             this.bttEliminarCarrito.Name = "bttEliminarCarrito";
             this.bttEliminarCarrito.Size = new System.Drawing.Size(342, 57);
             this.bttEliminarCarrito.TabIndex = 83;
@@ -204,7 +204,7 @@ namespace PIDeffine
             this.bttComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttComprar.ForeColor = System.Drawing.Color.White;
             this.bttComprar.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.bttComprar.Location = new System.Drawing.Point(525, 639);
+            this.bttComprar.Location = new System.Drawing.Point(525, 648);
             this.bttComprar.Name = "bttComprar";
             this.bttComprar.Size = new System.Drawing.Size(342, 57);
             this.bttComprar.TabIndex = 82;
@@ -269,7 +269,7 @@ namespace PIDeffine
             this.grbComprar.Controls.Add(this.txtCorreo);
             this.grbComprar.Controls.Add(this.lblCorreo);
             this.grbComprar.Controls.Add(this.lblCliente);
-            this.grbComprar.Controls.Add(this.textBox3);
+            this.grbComprar.Controls.Add(this.txtCodPostal);
             this.grbComprar.Controls.Add(this.lblCodPostal);
             this.grbComprar.Controls.Add(this.txtDireccion);
             this.grbComprar.Controls.Add(this.lblDireccion);
@@ -314,12 +314,12 @@ namespace PIDeffine
             this.lblCliente.TabIndex = 8;
             this.lblCliente.Text = "Cliente:";
             // 
-            // textBox3
+            // txtCodPostal
             // 
-            this.textBox3.Location = new System.Drawing.Point(262, 206);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(481, 30);
-            this.textBox3.TabIndex = 7;
+            this.txtCodPostal.Location = new System.Drawing.Point(262, 206);
+            this.txtCodPostal.Name = "txtCodPostal";
+            this.txtCodPostal.Size = new System.Drawing.Size(481, 30);
+            this.txtCodPostal.TabIndex = 7;
             // 
             // lblCodPostal
             // 
@@ -432,7 +432,7 @@ namespace PIDeffine
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.Label lblCodPostal;
         private System.Windows.Forms.Button btnConfCompra;
     }

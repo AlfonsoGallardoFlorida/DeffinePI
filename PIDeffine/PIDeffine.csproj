@@ -88,6 +88,12 @@
     <Compile Include="Clases\ConBD.cs" />
     <Compile Include="Clases\Pedido.cs" />
     <Compile Include="Clases\Producto.cs" />
+    <Compile Include="FrmCorreoAyudaApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCorreoAyudaApp.Designer.cs">
+      <DependentUpon>FrmCorreoAyudaApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCorreoAyuda.resx">
       <DependentUpon>FrmCorreoAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCorreoAyudaApp.resx">
+      <DependentUpon>FrmCorreoAyudaApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDisenyo.resx">
       <DependentUpon>FrmDisenyo.cs</DependentUpon>

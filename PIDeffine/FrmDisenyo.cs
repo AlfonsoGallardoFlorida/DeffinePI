@@ -74,6 +74,7 @@ namespace PIDeffine
             {
                 FrmInicio frm = new FrmInicio();
                 frm.Show();
+                Cliente.clienteLogeado.Clear();
                 this.Hide();
             }
         }

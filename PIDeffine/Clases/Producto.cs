@@ -212,8 +212,9 @@ namespace PIDeffine
 
         public static void BorrarProducto(int idProducto)
         {
-            string consulta = String.Format("DETELE FROM Productos WHERE IdProducto = '{0}'", idProducto);
+            string consulta = String.Format("DELETE FROM Productos WHERE IdProducto = '{0}'", idProducto);
             MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            comando.ExecuteNonQuery();
         }
 
         public static bool ComprobarStock(string descripcion, string talla, int cantidad)
@@ -267,6 +268,23 @@ namespace PIDeffine
         {
 
         }
+        public static bool ComprobarProductoEnPedido(int idProducto)
+        {
+            string consulta = string.Format("SELECT IdPedido FROM Detalle_Pedido WHERE IdProducto = '{0}'", idProducto);
+            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                reader.Close();
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
+        }
 
 
         public static List<Producto> CargarProductos(string consulta)
@@ -298,7 +316,7 @@ namespace PIDeffine
                         MessageBox.Show("Error converting image: " + ex.Message);
                     }
 
-                    Producto producto = new Producto(descripcion, talla, genero, color, precio, stock, imagen);
+                    Producto producto = new Producto(id, descripcion, talla, genero, color, precio, stock, imagen);
                     prod.Add(producto);
                 }
             }
@@ -339,7 +357,7 @@ namespace PIDeffine
 
         public static void RestarStock(int idProducto, int cantidad)
         {
-            
+
             string consulta = String.Format("UPDATE Productos SET Stock = Stock - '{1}' WHERE IdProducto = '{0}'", idProducto, cantidad);
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
             command.ExecuteNonQuery();
@@ -351,6 +369,23 @@ namespace PIDeffine
                 "VALUES ('{0}', '{1}', '{2}', '{3}')", idPedido, idProducto, cantidad, subtotal);
             MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
             command.ExecuteNonQuery();
+        }
+        public static bool ComprobarExistencia(int id)
+        {
+            MySqlConnection conexion = ConBD.Conexion;
+            string consulta = String.Format("SELECT IdProducto FROM Productos WHERE IdProducto = '{0}'", id);
+            MySqlCommand comando = new MySqlCommand(consulta, ConBD.Conexion);
+            MySqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                reader.Close();
+                return true;
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
         }
     }
 }

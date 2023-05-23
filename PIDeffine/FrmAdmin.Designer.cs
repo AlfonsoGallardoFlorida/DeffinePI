@@ -64,12 +64,16 @@ namespace PIDeffine
             this.bttEliminarUser = new System.Windows.Forms.Button();
             this.bttVolver = new System.Windows.Forms.Button();
             this.bttSalir = new System.Windows.Forms.Button();
-            this.txtIdProd = new System.Windows.Forms.TextBox();
+            this.bttMostrarProd = new System.Windows.Forms.Button();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.grbUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescripcion
@@ -84,6 +88,8 @@ namespace PIDeffine
             // 
             // grbProducto
             // 
+            this.grbProducto.Controls.Add(this.txtID);
+            this.grbProducto.Controls.Add(this.lblID);
             this.grbProducto.Controls.Add(this.pcbFotoCamiseta);
             this.grbProducto.Controls.Add(this.cmbGenero);
             this.grbProducto.Controls.Add(this.cmbColor);
@@ -413,7 +419,7 @@ namespace PIDeffine
             // 
             // bttEliminarProd
             // 
-            this.bttEliminarProd.Location = new System.Drawing.Point(385, 569);
+            this.bttEliminarProd.Location = new System.Drawing.Point(385, 562);
             this.bttEliminarProd.Name = "bttEliminarProd";
             this.bttEliminarProd.Size = new System.Drawing.Size(257, 38);
             this.bttEliminarProd.TabIndex = 14;
@@ -461,12 +467,43 @@ namespace PIDeffine
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
-            // txtIdProd
+            // bttMostrarProd
             // 
-            this.txtIdProd.Location = new System.Drawing.Point(1134, 126);
-            this.txtIdProd.Name = "txtIdProd";
-            this.txtIdProd.Size = new System.Drawing.Size(174, 30);
-            this.txtIdProd.TabIndex = 6;
+            this.bttMostrarProd.Location = new System.Drawing.Point(208, 602);
+            this.bttMostrarProd.Name = "bttMostrarProd";
+            this.bttMostrarProd.Size = new System.Drawing.Size(257, 39);
+            this.bttMostrarProd.TabIndex = 19;
+            this.bttMostrarProd.Text = "Mostrar Productos";
+            this.bttMostrarProd.UseVisualStyleBackColor = true;
+            this.bttMostrarProd.Click += new System.EventHandler(this.bttMostrarProd_Click);
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(654, 70);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.RowTemplate.Height = 24;
+            this.dgvProductos.Size = new System.Drawing.Size(665, 539);
+            this.dgvProductos.TabIndex = 0;
+            this.dgvProductos.Visible = false;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(458, 49);
+            this.lblID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(39, 28);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "Id:";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(504, 46);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(58, 36);
+            this.txtID.TabIndex = 14;
             // 
             // FrmAdmin
             // 
@@ -474,20 +511,21 @@ namespace PIDeffine
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 647);
             this.ControlBox = false;
+            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.bttMostrarProd);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.bttVolver);
             this.Controls.Add(this.bttEliminarUser);
             this.Controls.Add(this.bttInsertarUser);
             this.Controls.Add(this.bttEliminarProd);
             this.Controls.Add(this.bttInsertarProd);
-            this.Controls.Add(this.txtIdProd);
             this.Controls.Add(this.grbUsuario);
             this.Controls.Add(this.grbProducto);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAdmin";
+            this.Text = "Administración y Mantenimiento";
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.grbProducto.ResumeLayout(false);
             this.grbProducto.PerformLayout();
@@ -496,8 +534,8 @@ namespace PIDeffine
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.grbUsuario.ResumeLayout(false);
             this.grbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -538,6 +576,9 @@ namespace PIDeffine
         private System.Windows.Forms.Label lblConfContra;
         private System.Windows.Forms.Button bttVolver;
         private System.Windows.Forms.Button bttSalir;
-        private System.Windows.Forms.TextBox txtIdProd;
+        private System.Windows.Forms.Button bttMostrarProd;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblID;
     }
 }

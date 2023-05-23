@@ -221,18 +221,6 @@ namespace PIDeffine
         {
 
         }
-
-        private void lblContacta_MouseEnter(object sender, EventArgs e)
-        {
-            lblContacta.ForeColor = Color.Aqua;
-        }
-
-        private void lblContacta_MouseLeave(object sender, EventArgs e)
-        {
-            lblContacta.ForeColor = Color.White;
-
-        }
-
         private void pcbVolver_Click(object sender, EventArgs e)
         {
             FrmTienda frm = new FrmTienda();
@@ -287,6 +275,7 @@ namespace PIDeffine
             {
                 FrmInicio frm = new FrmInicio();
                 frm.Show();
+                Cliente.clienteLogeado.Clear();
                 this.Hide();
             }
         }

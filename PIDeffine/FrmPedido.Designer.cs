@@ -36,7 +36,6 @@ namespace PIDeffine
             this.pcbMinimizar = new System.Windows.Forms.PictureBox();
             this.pcbLogOut = new System.Windows.Forms.PictureBox();
             this.lblIdioma = new System.Windows.Forms.Label();
-            this.lblContacta = new System.Windows.Forms.Label();
             this.lblNomProd = new System.Windows.Forms.Label();
             this.lblPrecioProducto = new System.Windows.Forms.Label();
             this.lblVerGuia = new System.Windows.Forms.Label();
@@ -153,21 +152,6 @@ namespace PIDeffine
             this.lblIdioma.Size = new System.Drawing.Size(70, 25);
             this.lblIdioma.TabIndex = 49;
             this.lblIdioma.Text = "Idioma";
-            // 
-            // lblContacta
-            // 
-            this.lblContacta.AutoSize = true;
-            this.lblContacta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblContacta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContacta.ForeColor = System.Drawing.Color.White;
-            this.lblContacta.Location = new System.Drawing.Point(624, 105);
-            this.lblContacta.Name = "lblContacta";
-            this.lblContacta.Size = new System.Drawing.Size(211, 25);
-            this.lblContacta.TabIndex = 50;
-            this.lblContacta.Text = "Contacta con Nosotros";
-            this.lblContacta.Click += new System.EventHandler(this.lblContacta_Click);
-            this.lblContacta.MouseEnter += new System.EventHandler(this.lblContacta_MouseEnter);
-            this.lblContacta.MouseLeave += new System.EventHandler(this.lblContacta_MouseLeave);
             // 
             // lblNomProd
             // 
@@ -487,7 +471,6 @@ namespace PIDeffine
             this.Controls.Add(this.pcbProd1);
             this.Controls.Add(this.pcbPrincipal);
             this.Controls.Add(this.pcbPerfil);
-            this.Controls.Add(this.lblContacta);
             this.Controls.Add(this.lblIdioma);
             this.Controls.Add(this.pcbDeffine);
             this.Controls.Add(this.paneldecontrol);
@@ -533,7 +516,6 @@ namespace PIDeffine
         private System.Windows.Forms.PictureBox pcbDeffine;
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.PictureBox pcbPerfil;
-        private System.Windows.Forms.Label lblContacta;
         private System.Windows.Forms.PictureBox pcbPrincipal;
         private System.Windows.Forms.PictureBox pcbProd1;
         private System.Windows.Forms.Label lblNomProd;
