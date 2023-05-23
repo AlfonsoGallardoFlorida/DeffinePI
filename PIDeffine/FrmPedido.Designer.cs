@@ -153,20 +153,6 @@ namespace PIDeffine
             this.lblIdioma.TabIndex = 49;
             this.lblIdioma.Text = "Idioma";
             // 
-            // lblContacta
-            // 
-            this.lblContacta.AutoSize = true;
-            this.lblContacta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblContacta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContacta.ForeColor = System.Drawing.Color.White;
-            this.lblContacta.Location = new System.Drawing.Point(624, 105);
-            this.lblContacta.Name = "lblContacta";
-            this.lblContacta.Size = new System.Drawing.Size(211, 25);
-            this.lblContacta.TabIndex = 50;
-            this.lblContacta.Text = "Contacta con Nosotros";
-            this.lblContacta.MouseEnter += new System.EventHandler(this.lblContacta_MouseEnter);
-            this.lblContacta.MouseLeave += new System.EventHandler(this.lblContacta_MouseLeave);
-            // 
             // lblNomProd
             // 
             this.lblNomProd.AutoSize = true;

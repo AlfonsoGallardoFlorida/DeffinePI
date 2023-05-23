@@ -65,7 +65,6 @@ namespace PIDeffine
         private void AplicarIdioma()
         {
             lblCantidad.Text = StringRecursos.Cantidad;
-            lblContacta.Text = StringRecursos.Contacta;
             lblDesc.Text = StringRecursos.Desc;
             lblIdioma.Text = StringRecursos.Idioma;
             lblPrecio.Text = StringRecursos.Precio;
@@ -233,17 +232,6 @@ namespace PIDeffine
         private void pcbCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblContacta_MouseEnter(object sender, EventArgs e)
-        {
-            lblContacta.ForeColor = Color.Aqua;
-        }
-
-        private void lblContacta_MouseLeave(object sender, EventArgs e)
-        {
-            lblContacta.ForeColor = Color.White;
-
         }
 
         private void pcbVolver_Click(object sender, EventArgs e)

@@ -699,6 +699,7 @@ namespace PIDeffine
             this.pcbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbCarrito.TabIndex = 87;
             this.pcbCarrito.TabStop = false;
+            this.pcbCarrito.Click += new System.EventHandler(this.pcbCarrito_Click);
             // 
             // pictureBox14
             // 

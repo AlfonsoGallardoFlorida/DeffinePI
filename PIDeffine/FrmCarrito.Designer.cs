@@ -55,6 +55,8 @@ namespace PIDeffine
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.btnConfCompra = new System.Windows.Forms.Button();
+            this.lblCarritoVacio = new System.Windows.Forms.Label();
+            this.bttVolverCarrito = new System.Windows.Forms.Button();
             this.paneldecontrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCerrar)).BeginInit();
@@ -354,7 +356,7 @@ namespace PIDeffine
             this.btnConfCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfCompra.ForeColor = System.Drawing.Color.White;
             this.btnConfCompra.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
-            this.btnConfCompra.Location = new System.Drawing.Point(317, 587);
+            this.btnConfCompra.Location = new System.Drawing.Point(525, 585);
             this.btnConfCompra.Name = "btnConfCompra";
             this.btnConfCompra.Size = new System.Drawing.Size(342, 57);
             this.btnConfCompra.TabIndex = 85;
@@ -362,12 +364,44 @@ namespace PIDeffine
             this.btnConfCompra.UseVisualStyleBackColor = false;
             this.btnConfCompra.Click += new System.EventHandler(this.btnConfCompra_Click);
             // 
+            // lblCarritoVacio
+            // 
+            this.lblCarritoVacio.AutoSize = true;
+            this.lblCarritoVacio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.lblCarritoVacio.Font = new System.Drawing.Font("Arial", 30F);
+            this.lblCarritoVacio.ForeColor = System.Drawing.Color.White;
+            this.lblCarritoVacio.Location = new System.Drawing.Point(181, 362);
+            this.lblCarritoVacio.Name = "lblCarritoVacio";
+            this.lblCarritoVacio.Size = new System.Drawing.Size(631, 57);
+            this.lblCarritoVacio.TabIndex = 86;
+            this.lblCarritoVacio.Text = "EL CARRITO ESTÁ VACÍO";
+            this.lblCarritoVacio.Visible = false;
+            // 
+            // bttVolverCarrito
+            // 
+            this.bttVolverCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.bttVolverCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttVolverCarrito.FlatAppearance.BorderSize = 0;
+            this.bttVolverCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttVolverCarrito.ForeColor = System.Drawing.Color.White;
+            this.bttVolverCarrito.Image = global::PIDeffine.Properties.Resources.RegistrarBtont;
+            this.bttVolverCarrito.Location = new System.Drawing.Point(133, 585);
+            this.bttVolverCarrito.Name = "bttVolverCarrito";
+            this.bttVolverCarrito.Size = new System.Drawing.Size(342, 57);
+            this.bttVolverCarrito.TabIndex = 87;
+            this.bttVolverCarrito.Text = "Volver Al Carrito";
+            this.bttVolverCarrito.UseVisualStyleBackColor = false;
+            this.bttVolverCarrito.Visible = false;
+            this.bttVolverCarrito.Click += new System.EventHandler(this.bttVolverCarrito_Click);
+            // 
             // FrmCarrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1004, 735);
+            this.Controls.Add(this.bttVolverCarrito);
+            this.Controls.Add(this.lblCarritoVacio);
             this.Controls.Add(this.btnConfCompra);
             this.Controls.Add(this.grbComprar);
             this.Controls.Add(this.bttEliminarCarrito);
@@ -435,5 +469,7 @@ namespace PIDeffine
         private System.Windows.Forms.TextBox txtCodPostal;
         private System.Windows.Forms.Label lblCodPostal;
         private System.Windows.Forms.Button btnConfCompra;
+        private System.Windows.Forms.Label lblCarritoVacio;
+        private System.Windows.Forms.Button bttVolverCarrito;
     }
 }

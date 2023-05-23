@@ -318,7 +318,7 @@ namespace PIDeffine
 
         private void bttGuardar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Se ha guardado tu diseño correctamente, en breve nos pondremos en contacto contigo.", "Producto Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void pcbCalavera_Click(object sender, EventArgs e)
@@ -408,6 +408,13 @@ namespace PIDeffine
         private void txtanyadirtexto_TextChanged(object sender, EventArgs e)
         {
             if (txtanyadirtexto.Text == "") lbltutextoaqui.Hide();
+        }
+
+        private void pcbCarrito_Click(object sender, EventArgs e)
+        {
+            FrmCarrito frmCarrito = new FrmCarrito();
+            frmCarrito.Show();
+            this.Close();
         }
 
         private void HideDisenyo()

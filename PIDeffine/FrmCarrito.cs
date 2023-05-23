@@ -82,13 +82,19 @@ namespace PIDeffine
 
         private void FrmCarrito_Load(object sender, EventArgs e)
         {
+            if(Producto.carrito.Count == 0)
+            {
+                CarritoVacio();
+            }
             btnConfCompra.Visible = false;
             grbComprar.Visible = false;
+            if(Producto.carrito.Count != 0)
+            {
             dgvCarrito.DataSource = Producto.carrito;
-
             dgvCarrito.Columns["IdProducto"].Visible = false;
             dgvCarrito.Columns["Stock"].Visible = false;
             dgvCarrito.Columns["Imagen"].Visible = false;
+            }
         }
 
 
@@ -97,23 +103,42 @@ namespace PIDeffine
         {
             Producto.carrito.Clear();
             MessageBox.Show("Se ha eliminado el carrito");
-            dgvCarrito.Visible = false;
+            CarritoVacio();
         }
 
         private void bttComprar_Click(object sender, EventArgs e)
         {
-            dgvCarrito.Visible = false;
-            grbComprar.Visible = true;
-            btnConfCompra.Visible = true;
+            grbComprar.Show();
+            btnConfCompra.Show();
+            bttVolverCarrito.Show();
+            bttComprar.Hide();
+            dgvCarrito.Hide();
+            bttEliminarCarrito.Hide();
             txtCliente.Text = Cliente.clienteLogeado[0].Nombre + " " + Cliente.clienteLogeado[0].Apellidos;
             txtCorreo.Text = Cliente.clienteLogeado[0].Correo;
             string direccion = txtDireccion.Text;
 
         }
+        private void bttVolverCarrito_Click(object sender, EventArgs e)
+        {
+            if (Producto.carrito.Count == 0)
+            {
+                CarritoVacio();
+            }
+            else
+            {
+            grbComprar.Hide();
+            btnConfCompra.Hide();
+            bttVolverCarrito.Hide();
+            bttComprar.Show();
+            dgvCarrito.Show();
+            bttEliminarCarrito.Show();
+            }
+        }
 
         private void btnConfCompra_Click(object sender, EventArgs e)
         {
-            if (txtDireccion.Text != "" || txtCodPostal.Text != "")
+            if (txtDireccion.Text != "" && txtCodPostal.Text != "")
             {
 
                 string direccion = txtDireccion.Text;
@@ -143,12 +168,25 @@ namespace PIDeffine
                 {
                     Producto.AgregarDetallesPedido(idPedido, Producto.carrito[i].IdProducto, Producto.carrito[i].Cantidad, Producto.carrito[i].Subtotal);
                 }
-
+                Producto.carrito.Clear();
                 MessageBox.Show("Tu compra se ha realizado correctamente. Gracias por confiar en nostros");
+                CarritoVacio();
                 ConBD.CerrarConexion();
             }
             else MessageBox.Show("Debes rellenar todos los campos para poder realizar la compra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+        }
+
+
+        private void CarritoVacio()
+        {
+            lblCarritoVacio.Show();
+            dgvCarrito.Hide();
+            bttComprar.Hide();
+            bttEliminarCarrito.Hide();
+            dgvCarrito.Hide();
+            grbComprar.Hide();
+            btnConfCompra.Hide();
+            bttVolverCarrito.Hide();
         }
     }
 }
