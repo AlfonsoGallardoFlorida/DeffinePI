@@ -165,7 +165,6 @@ namespace PIDeffine
             this.lblContacta.Size = new System.Drawing.Size(211, 25);
             this.lblContacta.TabIndex = 50;
             this.lblContacta.Text = "Contacta con Nosotros";
-            this.lblContacta.Click += new System.EventHandler(this.lblContacta_Click);
             this.lblContacta.MouseEnter += new System.EventHandler(this.lblContacta_MouseEnter);
             this.lblContacta.MouseLeave += new System.EventHandler(this.lblContacta_MouseLeave);
             // 
@@ -218,7 +217,6 @@ namespace PIDeffine
             this.lblTallas.Size = new System.Drawing.Size(76, 28);
             this.lblTallas.TabIndex = 64;
             this.lblTallas.Text = "Tallas";
-            this.lblTallas.Click += new System.EventHandler(this.lblTallas_Click);
             // 
             // rdbXS
             // 

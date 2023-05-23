@@ -16,6 +16,19 @@ namespace PIDeffine
         //string consulta = String.Format("SELECT IdCliente FROM Clientes WHERE Correo='{0}'", )  
         // Pedido pedido = new Pedido();
         private string nombre;
+        private int mouseX = 0, mouseY = 0;
+        private bool mouseDown;
+        private string productName;
+        private decimal productPrice;
+        private Image productImage;
+        private string descripcion;
+        private decimal precio;
+        private byte[] imagen;
+
+        public string NombreProducto { get; set; }
+        public decimal PrecioProducto { get; set; }
+        public byte[] ImagenProducto { get; set; }
+
         public FrmPedido()
         {
             InitializeComponent();
@@ -37,9 +50,6 @@ namespace PIDeffine
             this.productPrice = productPrice;
             this.productImage = productImage;
         }
-        public string NombreProducto { get; set; }
-        public decimal PrecioProducto { get; set; }
-        public byte[] ImagenProducto { get; set; }
 
         public FrmPedido(string descripcion, decimal precio, byte[] imagen)
         {
@@ -48,14 +58,6 @@ namespace PIDeffine
             this.imagen = imagen;
         }
 
-        private int mouseX = 0, mouseY = 0;
-        private bool mouseDown;
-        private string productName;
-        private decimal productPrice;
-        private Image productImage;
-        private string descripcion;
-        private decimal precio;
-        private byte[] imagen;
 
         private void FrmPedido_Load(object sender, EventArgs e)
         {
@@ -217,10 +219,6 @@ namespace PIDeffine
         {
             Application.Exit();
         }
-        private void lblTallas_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lblContacta_MouseEnter(object sender, EventArgs e)
         {
@@ -275,10 +273,6 @@ namespace PIDeffine
             this.Close();
         }
 
-        private void lblContacta_Click(object sender, EventArgs e)
-        {
-   
-        }
 
         private void pcbLogOut_Click(object sender, EventArgs e)
         {

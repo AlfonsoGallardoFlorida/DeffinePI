@@ -226,7 +226,6 @@ namespace PIDeffine
             this.cmbTalla.Name = "cmbTalla";
             this.cmbTalla.Size = new System.Drawing.Size(193, 31);
             this.cmbTalla.TabIndex = 0;
-            this.cmbTalla.SelectedIndexChanged += new System.EventHandler(this.cmbTalla_SelectedIndexChanged);
             // 
             // panelPrinc
             // 
@@ -322,7 +321,6 @@ namespace PIDeffine
             this.pcbPerfil.Size = new System.Drawing.Size(69, 67);
             this.pcbPerfil.TabIndex = 49;
             this.pcbPerfil.TabStop = false;
-            this.pcbPerfil.Click += new System.EventHandler(this.pcbPerfil_Click);
             // 
             // bttFiltrar
             // 
@@ -339,8 +337,6 @@ namespace PIDeffine
             this.bttFiltrar.Text = "Filtrar";
             this.bttFiltrar.UseVisualStyleBackColor = false;
             this.bttFiltrar.Click += new System.EventHandler(this.bttFiltrar_Click);
-            this.bttFiltrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bttFiltrar_MouseDown);
-            this.bttFiltrar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.bttFiltrar_MouseUp);
             // 
             // pictureBox1
             // 

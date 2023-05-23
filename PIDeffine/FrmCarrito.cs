@@ -90,24 +90,7 @@ namespace PIDeffine
             dgvCarrito.Columns["Imagen"].Visible = false;
         }
 
-        private void CargarProductos()
-        {
-            ConBD.AbrirConexion();
 
-            string consulta = "SELECT * FROM Detalles_Pedido";
-
-            MySqlCommand command = new MySqlCommand(consulta, ConBD.Conexion);
-
-            DataTable dataTable = new DataTable();
-
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
-                dataTable.Load(reader);
-            }
-
-            dgvCarrito.DataSource = dataTable;
-            ConBD.CerrarConexion();
-        }
 
         private void bttEliminarCarrito_Click(object sender, EventArgs e)
         {
@@ -160,11 +143,6 @@ namespace PIDeffine
             MessageBox.Show("Tu compra se ha realizado correctamente. Gracias por confiar en nostros");
             ConBD.CerrarConexion();
             
-        }
-
-        private void bttFiltrar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

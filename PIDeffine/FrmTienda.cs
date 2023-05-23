@@ -105,53 +105,12 @@ namespace PIDeffine
             }
         }
 
-        private void bttTallaPeque_Click(object sender, EventArgs e)
-        {
-            // INSERCION SQL MUESTRA LAS TALLAS ORDENADAS DE MAS PEQUEÑAS A MAS GRANDES
-        }
-
-        private void bttTallaGrande_Click(object sender, EventArgs e)
-        {
-            // INSERCION SQL MUESTRA LAS TALLAS ORDENADAS DE MAS GRANDES A MAS PEQUEÑAS
-
-        }
-
-        private void bttCamis_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE CAMISETAS
-        }
-
-        private void bttPants_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE PANTALONES
-
-        }
-
-        private void bttZapas_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE ZAPATILLAS
-
-        }
-
-        private void bttDiseño_Click(object sender, EventArgs e)
-        {
-            // MUESTRA UNICAMENTE EL PRODUCTO DE DISEÑAR TU CAMISETA
-
-        }
-
         private void lblContacta_Click(object sender, EventArgs e)
         {
             ConBD.CerrarConexion();
             FrmCorreoAyuda frmCorreoAyuda = new FrmCorreoAyuda();
             frmCorreoAyuda.Show();
             this.Close();
-        }
-        private void FiltrarPrecio(double minPrecio, double maxPrecio)
-        {
-            if (minPrecio < maxPrecio)
-            {
-                // INSERCION SELECT PRODUCTOS WHERE PRECIO = minPrecio && PRECIO = MAXPRECIO no se hacer sql perdon(?)
-            }
         }
 
         //Solo se admiten numeros enteros en el filtro de precio minimo
@@ -222,30 +181,6 @@ namespace PIDeffine
                 MessageBox.Show("Introduce correctamente el rango de precios");
                 return;
             }
-
-            //if (precioMin != 0 || precioMax != 0 || coleccion != "" || talla != "")
-            //{
-            //    consulta += " WHERE ";
-            //    if (precioMin <= precioMax)
-            //    {
-            //        whereConsulta += String.Format("Precio >= '{0}' && Precio <= '{1}'", precioMin, precioMax);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Introduce bien el rango de precios");
-            //        return;
-            //    }
-            //}
-            //if (coleccion != "")
-            //{
-            //    whereConsulta += String.Format("Descripcion LIKE '%{0}%'", coleccion);
-            //}
-            //if (talla != "")
-            //{
-            //    whereConsulta += String.Format("Talla LIKE '{0}'", talla);
-            //}
-
-
             try
             {
                 if (ConBD.Conexion != null)
@@ -329,25 +264,6 @@ namespace PIDeffine
             {
                 ConBD.CerrarConexion();
             }
-        }
-
-
-        private void cmbTalla_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // DEPENDIENDO SI LA TALLA ES XS S M L XL O XXL MOSTRARA EN EL FORM LOS PRODUCTOS CON LA TALLA SELECCIONADA
-        }
-
-        private void pcbPerfil_Click(object sender, EventArgs e)
-        {
-            // ABRE EL FORMULARIO CON LA INFORMACIÓN DEL USUARIO
-        }
-
-        private void bttFiltrar_MouseDown(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void bttFiltrar_MouseUp(object sender, MouseEventArgs e)
-        {
         }
 
         private void IdiomaIngles()
@@ -493,38 +409,6 @@ namespace PIDeffine
             using (MemoryStream ms = new MemoryStream(byteArray))
             {
                 return Image.FromStream(ms);
-            }
-        }
-
-        private void MostrarProductos()
-        {
-            foreach (Producto producto in productos)
-            {
-                // Create a PictureBox to display the image
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Width = 100;
-                pictureBox.Height = 100;
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Image = producto.Imagen;
-
-                // Create a Label to display the product name
-                Label label = new Label();
-                label.Text = producto.Descripcion;
-                label.TextAlign = ContentAlignment.MiddleCenter;
-
-                // Create a FlowLayoutPanel to hold the PictureBox and Label
-                FlowLayoutPanel panel = new FlowLayoutPanel();
-                panel.Width = 120;
-                panel.Height = 160;
-                panel.Margin = new Padding(10);
-                panel.BorderStyle = BorderStyle.FixedSingle;
-                panel.FlowDirection = FlowDirection.TopDown;
-                panel.WrapContents = false;
-                panel.Controls.Add(pictureBox);
-                panel.Controls.Add(label);
-
-                // Add the panel to the main FlowLayoutPanel
-                panelPrinc.Controls.Add(panel);
             }
         }
 
