@@ -542,14 +542,13 @@ namespace PIDeffine
                     productos = Producto.FiltrarProducto(consulta); // Utilizar la variable de instancia productos
 
                     panelPrinc.Controls.Clear(); // Limpiar el contenido actual del panel
-
                     int rowIndex = 0;
                     int columnIndex = 0;
                     int maxColumns = 3;
                     int itemWidth = 208;
                     int itemHeight = 248;
-                    int spacingX = 10;
-                    int spacingY = 10;
+                    int spacingX = 20;
+                    int spacingY = 30;
 
                     HashSet<string> descripcionesUnicas = new HashSet<string>(); // Conjunto para almacenar descripciones únicas
 
@@ -586,6 +585,22 @@ namespace PIDeffine
 
                         // Agregar la imagen al panel
                         panelPrinc.Controls.Add(pictureBox);
+
+                        // Crear el control de etiqueta para mostrar el precio
+                        Label labelPrecio = new Label();
+                        labelPrecio.ForeColor = Color.White;
+                        labelPrecio.Text = "Precio: " + producto.Precio.ToString(); // Obtener el precio del producto
+                        labelPrecio.AutoSize = true;
+
+                        // Calcular la posición de la etiqueta
+                        int labelX = x; // Misma posición horizontal que la imagen
+                        int labelY = y + itemHeight; // Posición vertical debajo de la imagen
+
+                        // Establecer la posición de la etiqueta
+                        labelPrecio.Location = new Point(labelX, labelY);
+
+                        // Agregar la etiqueta al panel
+                        panelPrinc.Controls.Add(labelPrecio);
 
                         // Calcular la siguiente posición
                         columnIndex++;

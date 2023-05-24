@@ -31,6 +31,8 @@ namespace PIDeffine
         {
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.grbProducto = new System.Windows.Forms.GroupBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.pcbFotoCamiseta = new System.Windows.Forms.PictureBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.cmbColor = new System.Windows.Forms.ComboBox();
@@ -66,8 +68,6 @@ namespace PIDeffine
             this.bttSalir = new System.Windows.Forms.Button();
             this.bttMostrarProd = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFotoCamiseta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
@@ -82,7 +82,7 @@ namespace PIDeffine
             this.lblDescripcion.Location = new System.Drawing.Point(10, 46);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(152, 28);
+            this.lblDescripcion.Size = new System.Drawing.Size(118, 23);
             this.lblDescripcion.TabIndex = 0;
             this.lblDescripcion.Text = "Descripción:";
             // 
@@ -115,6 +115,23 @@ namespace PIDeffine
             this.grbProducto.TabStop = false;
             this.grbProducto.Text = "Producto";
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(504, 46);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(58, 30);
+            this.txtID.TabIndex = 14;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(458, 49);
+            this.lblID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(33, 23);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "Id:";
+            // 
             // pcbFotoCamiseta
             // 
             this.pcbFotoCamiseta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -134,7 +151,7 @@ namespace PIDeffine
             "Femenino"});
             this.cmbGenero.Location = new System.Drawing.Point(256, 337);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(193, 36);
+            this.cmbGenero.Size = new System.Drawing.Size(193, 31);
             this.cmbGenero.TabIndex = 11;
             // 
             // cmbColor
@@ -150,7 +167,7 @@ namespace PIDeffine
             "Multi"});
             this.cmbColor.Location = new System.Drawing.Point(256, 279);
             this.cmbColor.Name = "cmbColor";
-            this.cmbColor.Size = new System.Drawing.Size(193, 36);
+            this.cmbColor.Size = new System.Drawing.Size(193, 31);
             this.cmbColor.TabIndex = 10;
             // 
             // cmbTalla
@@ -165,7 +182,7 @@ namespace PIDeffine
             "XXL"});
             this.cmbTalla.Location = new System.Drawing.Point(256, 219);
             this.cmbTalla.Name = "cmbTalla";
-            this.cmbTalla.Size = new System.Drawing.Size(193, 36);
+            this.cmbTalla.Size = new System.Drawing.Size(193, 31);
             this.cmbTalla.TabIndex = 2;
             // 
             // nudStock
@@ -177,7 +194,7 @@ namespace PIDeffine
             0,
             0});
             this.nudStock.Name = "nudStock";
-            this.nudStock.Size = new System.Drawing.Size(120, 36);
+            this.nudStock.Size = new System.Drawing.Size(120, 30);
             this.nudStock.TabIndex = 9;
             this.nudStock.Value = new decimal(new int[] {
             5,
@@ -204,7 +221,7 @@ namespace PIDeffine
             0,
             0});
             this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(120, 36);
+            this.nudPrecio.Size = new System.Drawing.Size(120, 30);
             this.nudPrecio.TabIndex = 7;
             this.nudPrecio.Value = new decimal(new int[] {
             5,
@@ -216,7 +233,7 @@ namespace PIDeffine
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(207, 46);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(242, 36);
+            this.txtDescripcion.Size = new System.Drawing.Size(242, 30);
             this.txtDescripcion.TabIndex = 6;
             // 
             // lblPrecio
@@ -225,7 +242,7 @@ namespace PIDeffine
             this.lblPrecio.Location = new System.Drawing.Point(70, 162);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(91, 28);
+            this.lblPrecio.Size = new System.Drawing.Size(72, 23);
             this.lblPrecio.TabIndex = 5;
             this.lblPrecio.Text = "Precio:";
             // 
@@ -235,7 +252,7 @@ namespace PIDeffine
             this.lblTalla.Location = new System.Drawing.Point(92, 227);
             this.lblTalla.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTalla.Name = "lblTalla";
-            this.lblTalla.Size = new System.Drawing.Size(70, 28);
+            this.lblTalla.Size = new System.Drawing.Size(56, 23);
             this.lblTalla.TabIndex = 4;
             this.lblTalla.Text = "Talla:";
             // 
@@ -245,7 +262,7 @@ namespace PIDeffine
             this.lblColor.Location = new System.Drawing.Point(81, 282);
             this.lblColor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(79, 28);
+            this.lblColor.Size = new System.Drawing.Size(63, 23);
             this.lblColor.TabIndex = 3;
             this.lblColor.Text = "Color:";
             // 
@@ -255,7 +272,7 @@ namespace PIDeffine
             this.lblGenero.Location = new System.Drawing.Point(58, 345);
             this.lblGenero.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(102, 28);
+            this.lblGenero.Size = new System.Drawing.Size(82, 23);
             this.lblGenero.TabIndex = 2;
             this.lblGenero.Text = "Género:";
             // 
@@ -265,7 +282,7 @@ namespace PIDeffine
             this.lblImagen.Location = new System.Drawing.Point(58, 405);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(103, 28);
+            this.lblImagen.Size = new System.Drawing.Size(81, 23);
             this.lblImagen.TabIndex = 2;
             this.lblImagen.Text = "Imágen:";
             // 
@@ -275,7 +292,7 @@ namespace PIDeffine
             this.lblStock.Location = new System.Drawing.Point(78, 104);
             this.lblStock.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(83, 28);
+            this.lblStock.Size = new System.Drawing.Size(66, 23);
             this.lblStock.TabIndex = 1;
             this.lblStock.Text = "Stock:";
             // 
@@ -285,7 +302,7 @@ namespace PIDeffine
             this.label7.Location = new System.Drawing.Point(75, 157);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 28);
+            this.label7.Size = new System.Drawing.Size(85, 23);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre:";
             // 
@@ -295,7 +312,7 @@ namespace PIDeffine
             this.label6.Location = new System.Drawing.Point(63, 215);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 28);
+            this.label6.Size = new System.Drawing.Size(95, 23);
             this.label6.TabIndex = 1;
             this.label6.Text = "Apellidos:";
             // 
@@ -305,7 +322,7 @@ namespace PIDeffine
             this.label3.Location = new System.Drawing.Point(17, 398);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 28);
+            this.label3.Size = new System.Drawing.Size(137, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Administrador:";
             // 
@@ -315,7 +332,7 @@ namespace PIDeffine
             this.label2.Location = new System.Drawing.Point(44, 279);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 28);
+            this.label2.Size = new System.Drawing.Size(118, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña:";
             // 
@@ -325,7 +342,7 @@ namespace PIDeffine
             this.label1.Location = new System.Drawing.Point(89, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 28);
+            this.label1.Size = new System.Drawing.Size(77, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Correo:";
             // 
@@ -333,21 +350,21 @@ namespace PIDeffine
             // 
             this.txtNombre.Location = new System.Drawing.Point(239, 154);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(174, 36);
+            this.txtNombre.Size = new System.Drawing.Size(174, 30);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(239, 212);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(215, 36);
+            this.txtApellidos.Size = new System.Drawing.Size(215, 30);
             this.txtApellidos.TabIndex = 12;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(239, 96);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(215, 36);
+            this.txtCorreo.Size = new System.Drawing.Size(215, 30);
             this.txtCorreo.TabIndex = 13;
             // 
             // grbUsuario
@@ -378,25 +395,25 @@ namespace PIDeffine
             // 
             this.txtConfContra.Location = new System.Drawing.Point(239, 342);
             this.txtConfContra.Name = "txtConfContra";
-            this.txtConfContra.Size = new System.Drawing.Size(215, 36);
+            this.txtConfContra.Size = new System.Drawing.Size(215, 30);
             this.txtConfContra.TabIndex = 17;
             // 
             // lblConfContra
             // 
             this.lblConfContra.AutoSize = true;
-            this.lblConfContra.Location = new System.Drawing.Point(44, 345);
+            this.lblConfContra.Location = new System.Drawing.Point(17, 349);
             this.lblConfContra.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblConfContra.Name = "lblConfContra";
-            this.lblConfContra.Size = new System.Drawing.Size(149, 28);
+            this.lblConfContra.Size = new System.Drawing.Size(210, 23);
             this.lblConfContra.TabIndex = 16;
-            this.lblConfContra.Text = "Contraseña:";
+            this.lblConfContra.Text = "Confirmar Contraseña:";
             // 
             // chkAdmin
             // 
             this.chkAdmin.AutoSize = true;
             this.chkAdmin.Location = new System.Drawing.Point(239, 405);
             this.chkAdmin.Name = "chkAdmin";
-            this.chkAdmin.Size = new System.Drawing.Size(18, 17);
+            this.chkAdmin.Size = new System.Drawing.Size(15, 14);
             this.chkAdmin.TabIndex = 15;
             this.chkAdmin.UseVisualStyleBackColor = true;
             // 
@@ -404,7 +421,7 @@ namespace PIDeffine
             // 
             this.txtContra.Location = new System.Drawing.Point(239, 276);
             this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(215, 36);
+            this.txtContra.Size = new System.Drawing.Size(215, 30);
             this.txtContra.TabIndex = 14;
             // 
             // bttInsertarProd
@@ -488,30 +505,12 @@ namespace PIDeffine
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.Visible = false;
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(458, 49);
-            this.lblID.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(39, 28);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "Id:";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(504, 46);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(58, 36);
-            this.txtID.TabIndex = 14;
-            // 
             // FrmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 647);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.bttMostrarProd);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.bttVolver);
@@ -521,6 +520,7 @@ namespace PIDeffine
             this.Controls.Add(this.bttInsertarProd);
             this.Controls.Add(this.grbUsuario);
             this.Controls.Add(this.grbProducto);
+            this.Controls.Add(this.dgvProductos);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FrmAdmin";
