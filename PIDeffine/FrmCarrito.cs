@@ -31,7 +31,6 @@ namespace PIDeffine
             lblCarritoVacio.Text = StringRecursos.CarritoVacio;
             lblCliente.Text = StringRecursos.Cliente;
             lblCodPostal.Text = StringRecursos.CodPostal;
-            lblContacta.Text = StringRecursos.Contacta;
             lblCorreo.Text = StringRecursos.CorreoElec;
             lblDireccion.Text = StringRecursos.Direccion;
             lblIdioma.Text = StringRecursos.Idioma;
